@@ -28,4 +28,16 @@
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768) close();
   });
+
+  let lastY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (nav.classList.contains('open')) { lastY = y; return; }
+    if (y > lastY && y > nav.offsetHeight) {
+      nav.classList.add('hidden');
+    } else {
+      nav.classList.remove('hidden');
+    }
+    lastY = y;
+  }, { passive: true });
 })();

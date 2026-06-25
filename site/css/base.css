@@ -46,7 +46,10 @@ nav.top{
   backdrop-filter:saturate(140%) blur(14px);
   -webkit-backdrop-filter:saturate(140%) blur(14px);
   border-bottom:1px solid var(--rule);
+  transform:translateY(0);
+  transition:transform .25s ease;
 }
+nav.top.hidden{transform:translateY(-100%)}
 nav.top .inner{max-width:1440px;margin:0 auto;padding:14px 56px;display:flex;align-items:center;justify-content:space-between;gap:48px}
 nav.top .navPanel{display:contents}
 nav.top .links{display:flex;gap:34px;font-family:"Geist",sans-serif;font-size:13.5px;color:var(--ink-2)}
