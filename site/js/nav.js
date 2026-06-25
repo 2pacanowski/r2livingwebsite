@@ -40,4 +40,25 @@
     }
     lastY = y;
   }, { passive: true });
+
+  const links = Array.from(nav.querySelectorAll('.links a[href^="#"]'));
+  const sections = links
+    .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+    .filter(Boolean);
+
+  if (sections.length) {
+    const setActive = id => {
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries.filter(e => e.isIntersecting);
+      if (visible.length) {
+        const top = visible.reduce((a, b) => (a.intersectionRatio > b.intersectionRatio ? a : b));
+        setActive(top.target.id);
+      }
+    }, { rootMargin: `-${nav.offsetHeight + 1}px 0px -60% 0px`, threshold: 0 });
+
+    sections.forEach(s => observer.observe(s));
+  }
 })();

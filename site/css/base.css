@@ -54,9 +54,11 @@ nav.top .inner{max-width:1440px;margin:0 auto;padding:14px 56px;display:flex;ali
 nav.top .navPanel{display:contents}
 nav.top .links{display:flex;gap:34px;font-family:"Geist",sans-serif;font-size:13.5px;color:var(--ink-2)}
 nav.top .links a{position:relative;padding:6px 0;letter-spacing:-.005em}
+nav.top .links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--moss);transform:scaleX(0);transition:transform .2s ease}
 nav.top .links a:hover{color:var(--ink)}
+nav.top .links a:hover::after,
+nav.top .links a.active::after{transform:scaleX(1)}
 nav.top .links a.active{color:var(--ink)}
-nav.top .links a.active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--moss)}
 nav.top .right{display:flex;align-items:center;gap:18px}
 nav.top .lang{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);display:flex;gap:8px}
 nav.top .lang b{color:var(--ink);font-weight:500}
