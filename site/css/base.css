@@ -1,0 +1,125 @@
+/* ===== Design tokens ===== */
+:root{
+  --ink:#14120F;
+  --ink-2:#2A2622;
+  --ink-3:#4A443D;
+  --bone:#F3EFE8;
+  --paper:#FAF7F2;
+  --stone:#BFB6A6;
+  --stone-2:#E1DACB;
+  --moss:#3D4A3A;
+  --moss-2:#5C6B57;
+  --sky:#D6DEE0;
+  --rule:rgba(20,18,15,.10);
+  --rule-strong:rgba(20,18,15,.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Geist",ui-sans-serif,system-ui,sans-serif;
+  font-weight:400;font-size:16px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ===== Logo lockup ===== */
+.logo{display:inline-flex;align-items:baseline;font-family:"Instrument Serif",serif;line-height:.9;color:currentColor}
+.logo .r{letter-spacing:-.025em}
+.logo .two{position:relative;color:var(--moss);margin-right:.18em}
+.logo .living{font-style:italic;letter-spacing:-.015em}
+.logo.s-32 .r{font-size:32px} .logo.s-32 .two{font-size:11px;top:-16px}  .logo.s-32 .living{font-size:25px}
+.logo.s-24 .r{font-size:24px} .logo.s-24 .two{font-size:9px;top:-12px}   .logo.s-24 .living{font-size:19px}
+.logo.s-22 .r{font-size:22px} .logo.s-22 .two{font-size:8px;top:-11px}   .logo.s-22 .living{font-size:18px}
+.dark .logo .two{color:var(--stone)}
+.logo-mark{height:26px;width:auto;display:block}
+.logo-mark.footer{height:30px;filter:invert(1) brightness(1.7)}
+.iglink{display:inline-flex;align-items:center;gap:10px}
+.iglink svg{width:17px;height:17px;flex:none}
+
+/* ===== Nav ===== */
+nav.top{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,247,242,.86);
+  backdrop-filter:saturate(140%) blur(14px);
+  -webkit-backdrop-filter:saturate(140%) blur(14px);
+  border-bottom:1px solid var(--rule);
+}
+nav.top .inner{max-width:1440px;margin:0 auto;padding:14px 56px;display:flex;align-items:center;justify-content:space-between;gap:48px}
+nav.top .links{display:flex;gap:34px;font-family:"Geist",sans-serif;font-size:13.5px;color:var(--ink-2)}
+nav.top .links a{position:relative;padding:6px 0;letter-spacing:-.005em}
+nav.top .links a:hover{color:var(--ink)}
+nav.top .links a.active{color:var(--ink)}
+nav.top .links a.active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--moss)}
+nav.top .right{display:flex;align-items:center;gap:18px}
+nav.top .lang{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);display:flex;gap:8px}
+nav.top .lang b{color:var(--ink);font-weight:500}
+nav.top .btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--ink);color:var(--bone);
+  font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  padding:10px 16px;border:1px solid var(--ink);transition:background .2s
+}
+nav.top .btn:hover{background:var(--moss);border-color:var(--moss)}
+nav.top .btn::after{content:"→";font-family:"Geist",sans-serif}
+
+/* ===== Section primitives ===== */
+.eyebrow{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
+h2.title{font-family:"Instrument Serif",serif;font-weight:400;font-size:72px;line-height:.96;letter-spacing:-.02em;margin-top:14px;max-width:18ch}
+h2.title em{font-style:italic;color:var(--moss)}
+p.sub{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.4;color:var(--ink-2);max-width:46ch}
+
+/* ===== Shared form ===== */
+.form{background:var(--paper);border:1px solid var(--rule);padding:40px}
+.form .field{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+.form label{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss)}
+.form input,.form select,.form textarea{
+  border:none;border-bottom:1px solid var(--rule-strong);padding:10px 0;
+  background:transparent;font-family:"Instrument Serif",serif;font-size:20px;color:var(--ink);
+  width:100%;outline:none;transition:border-color .2s
+}
+.form input::placeholder,.form textarea::placeholder{color:rgba(20,18,15,.32)}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--moss)}
+.form .row2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.form .row2 .field{margin-bottom:0}
+.form .submit{
+  margin-top:28px;display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--bone);
+  font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  padding:16px 22px;border:none;cursor:pointer;transition:background .2s
+}
+.form .submit:hover{background:var(--moss)}
+.form .submit::after{content:"→"}
+.form .small{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.14em;color:var(--ink-2);margin-top:14px;text-transform:uppercase;opacity:.7}
+
+/* ===== Shared studio card ===== */
+.studioCard{background:var(--ink);color:var(--bone);padding:48px 44px;display:flex;flex-direction:column;gap:32px}
+.studioCard .sc-label{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone)}
+.studioCard .sc-statement{font-family:"Instrument Serif",serif;font-weight:400;font-size:31px;line-height:1.14;letter-spacing:-.01em;color:var(--bone)}
+.studioCard .sc-statement em{font-style:italic;color:var(--stone-2)}
+.studioCard .sc-stats{margin-top:auto;display:flex;flex-direction:column;border-top:1px solid rgba(243,239,232,.16)}
+.studioCard .sc-stat{display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:18px 0;border-bottom:1px solid rgba(243,239,232,.12)}
+.studioCard .sc-stat:last-child{border-bottom:none}
+.studioCard .sc-stat .v{font-family:"Instrument Serif",serif;font-size:36px;line-height:1;letter-spacing:-.02em}
+.studioCard .sc-stat .v em{font-style:italic;color:var(--stone);font-size:19px}
+.studioCard .sc-stat .k{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);text-align:right;max-width:18ch}
+
+/* ===== Footer ===== */
+footer{background:var(--ink);color:var(--bone);padding:80px 56px 48px}
+footer .inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;align-items:start;padding-bottom:60px;border-bottom:1px solid rgba(243,239,232,.14)}
+footer .brand .logo .two{color:var(--stone)}
+footer .brand p{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.35;color:rgba(243,239,232,.88);max-width:34ch;margin:24px 0 24px}
+footer .brand .stamp{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);display:flex;gap:14px;align-items:center}
+footer .brand .stamp .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--moss)}
+footer h5{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:18px;font-weight:500}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+footer ul a{color:rgba(243,239,232,.82);font-size:14px;transition:color .2s}
+footer ul a:hover{color:var(--bone)}
+footer .disclaimer{max-width:1440px;margin:28px auto 0;font-family:"Geist Mono",monospace;font-size:10.5px;line-height:1.7;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,239,232,.42)}
+footer .legal{max-width:1440px;margin:24px auto 0;display:flex;justify-content:space-between;font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone)}
+
+@media(max-width:980px){
+  footer .inner{grid-template-columns:1fr 1fr}
+  footer .legal{flex-direction:column;gap:8px}
+}

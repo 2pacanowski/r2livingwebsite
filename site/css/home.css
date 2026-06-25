@@ -1,0 +1,137 @@
+/* ===== Hero — brand statement ===== */
+.home-hero{max-width:1440px;margin:0 auto;padding:120px 56px 96px;position:relative}
+.home-hero .eyebrow{display:flex;align-items:center;gap:10px}
+.home-hero .eyebrow .dot{display:inline-block;width:6px;height:6px;background:var(--moss);border-radius:50%}
+.home-hero h1{
+  font-family:"Instrument Serif",serif;font-weight:400;
+  font-size:74px;line-height:1.08;letter-spacing:-.022em;
+  margin:30px 0 0;max-width:17ch;
+}
+.home-hero h1 em{font-style:italic;color:var(--moss)}
+.home-hero .lede{font-family:"Instrument Serif",serif;font-size:23px;line-height:1.42;color:var(--ink-2);max-width:50ch;margin-top:52px}
+.home-hero .heroStats{
+  display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:64px;
+  margin-top:56px;padding-top:34px;border-top:1px solid var(--rule)
+}
+.home-hero .heroStats .hs .num{font-family:"Instrument Serif",serif;font-size:48px;line-height:.9;letter-spacing:-.02em;color:var(--ink)}
+.home-hero .heroStats .hs .num em{font-style:italic;color:var(--moss);font-size:19px;vertical-align:super;position:relative;top:-12px;margin-left:1px}
+.home-hero .heroStats .hs .lbl{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-top:12px}
+
+/* ===== Projects ===== */
+.projects{background:var(--bone);padding:112px 0 120px;border-top:1px solid var(--rule)}
+.projects .inner{max-width:1440px;margin:0 auto;padding:0 56px}
+.projects .secLabel{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:60px}
+.projects .secLabel h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:40px;line-height:1;letter-spacing:-.015em;color:var(--ink)}
+.projects .secLabel .count{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+
+.project{display:grid;grid-template-columns:1.55fr 1fr;gap:0;border:1px solid var(--rule);background:var(--paper);margin-bottom:28px}
+.project:last-child{margin-bottom:0}
+.project.flip{grid-template-columns:1fr 1.55fr}
+.project .pic{position:relative;overflow:hidden;background:var(--stone);min-height:520px}
+.project.flip .pic{order:2}
+.project .pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s ease;position:absolute;inset:0}
+.project:hover .pic img{transform:scale(1.035)}
+.project .pic .tag{
+  position:absolute;top:22px;left:22px;z-index:3;
+  font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  padding:8px 12px;display:inline-flex;align-items:center;gap:9px;
+  background:rgba(20,18,15,.72);color:var(--bone);backdrop-filter:blur(6px)
+}
+.project .pic .tag .ind{width:7px;height:7px;border-radius:50%}
+.project .pic .tag.completed .ind{background:#9FB58A;box-shadow:0 0 10px rgba(159,181,138,.7)}
+.project .pic .tag.soon .ind{background:var(--stone)}
+
+.project .info{padding:52px 48px;display:flex;flex-direction:column}
+.project .info .pnum{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
+.project .info .pname{font-family:"Instrument Serif",serif;font-weight:400;font-size:60px;line-height:.95;letter-spacing:-.02em;margin:16px 0 8px}
+.project .info .ploc{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+.project .info .pdesc{font-family:"Instrument Serif",serif;font-size:21px;line-height:1.4;color:var(--ink-2);margin-top:26px;max-width:34ch}
+.project .info dl{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px;margin-top:auto;padding-top:36px}
+.project .info dt{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin-bottom:6px}
+.project .info dd{font-family:"Instrument Serif",serif;font-size:23px;line-height:1;letter-spacing:-.01em;color:var(--ink)}
+.project .info dd small{font-family:"Geist Mono",monospace;font-size:9.5px;letter-spacing:.12em;color:var(--ink-2);display:block;margin-top:5px;text-transform:uppercase}
+.project .info .plink{
+  margin-top:34px;display:inline-flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:18px 22px;border:1px solid var(--ink);background:var(--ink);color:var(--bone);
+  font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  transition:background .2s,color .2s;align-self:flex-start;min-width:240px
+}
+.project .info .plink:hover{background:transparent;color:var(--ink)}
+.project .info .plink::after{content:"→";font-family:"Geist",sans-serif}
+.project .info .plink.ghost{background:transparent;color:var(--ink);border-color:var(--rule-strong)}
+.project .info .plink.ghost:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+
+/* ===== Configure (dark marketing beat) ===== */
+.configure{background:var(--ink);color:var(--bone);padding:116px 0 104px;border-top:1px solid var(--rule)}
+.configure .inner{max-width:1440px;margin:0 auto;padding:0 56px}
+.configure .secLabel{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px}
+.configure .eyebrow{color:var(--moss-2)}
+.configure h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:56px;line-height:1.0;letter-spacing:-.02em;margin-top:18px;max-width:15ch}
+.configure h2 em{font-style:italic;color:var(--stone-2)}
+.configure .lede{font-family:"Instrument Serif",serif;font-size:23px;line-height:1.46;color:rgba(243,239,232,.78);max-width:46ch}
+.configure .lede strong{color:var(--bone);font-weight:400;font-style:italic}
+
+.configure .items{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(243,239,232,.16)}
+.configure .citem{padding:38px 40px 42px;border-right:1px solid rgba(243,239,232,.12);display:flex;flex-direction:column;min-height:300px}
+.configure .citem:first-child{padding-left:0}
+.configure .citem:last-child{border-right:none;padding-right:0}
+.configure .citem .top{display:flex;align-items:center;gap:12px}
+.configure .citem .cnum{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss-2)}
+.configure .citem .mark{width:9px;height:9px;background:var(--moss-2);transform:rotate(45deg);flex:none}
+.configure .citem .cname{font-family:"Instrument Serif",serif;font-size:34px;line-height:1.04;letter-spacing:-.01em;color:var(--bone);margin:22px 0 14px}
+.configure .citem .cname em{font-style:italic;color:var(--stone)}
+.configure .citem .cdesc{font-family:"Geist",sans-serif;font-size:14.5px;line-height:1.62;color:rgba(243,239,232,.72);max-width:32ch}
+.configure .citem .ctag{margin-top:auto;padding-top:24px;font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);display:flex;align-items:center;gap:9px}
+.configure .citem .ctag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--moss-2);flex:none}
+
+.configure .cta{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;margin-top:56px;padding-top:44px;border-top:1px solid rgba(243,239,232,.16)}
+.configure .cta .pitch .k{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss-2);margin-bottom:14px}
+.configure .cta .pitch p{font-family:"Instrument Serif",serif;font-size:27px;line-height:1.32;letter-spacing:-.01em;color:rgba(243,239,232,.92);max-width:52ch}
+.configure .cta .pitch p em{font-style:italic;color:var(--stone-2)}
+.configure .cta .link{
+  display:inline-flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:20px 24px;background:var(--bone);color:var(--ink);border:1px solid var(--bone);
+  font-family:"Geist Mono",monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+  transition:background .2s,color .2s,border-color .2s;min-width:300px;white-space:nowrap
+}
+.configure .cta .link:hover{background:var(--moss);border-color:var(--moss);color:var(--bone)}
+.configure .cta .link::after{content:"→";font-family:"Geist",sans-serif;font-size:15px}
+
+@media(max-width:980px){
+  .configure .secLabel{grid-template-columns:1fr;gap:28px;align-items:start}
+  .configure h2{font-size:44px}
+  .configure .items{grid-template-columns:1fr}
+  .configure .citem,.configure .citem:first-child,.configure .citem:last-child{padding:32px 0;border-right:none;border-bottom:1px solid rgba(243,239,232,.12);min-height:0}
+  .configure .citem:last-child{border-bottom:none}
+  .configure .cta{grid-template-columns:1fr;gap:28px;align-items:start}
+  .configure .cta .link{width:100%}
+}
+
+/* ===== About ===== */
+.aboutSection{max-width:1440px;margin:0 auto;padding:120px 56px}
+.aboutSection .grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.aboutSection h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:60px;line-height:.98;letter-spacing:-.02em;margin-top:16px;max-width:14ch}
+.aboutSection h2 em{font-style:italic;color:var(--moss)}
+.aboutSection .body p{font-family:"Geist",sans-serif;font-size:16px;line-height:1.68;color:var(--ink-2);margin-bottom:20px;max-width:50ch}
+.aboutSection .body p strong{color:var(--ink);font-weight:500}
+.aboutSection .body p:last-child{margin-bottom:0}
+
+/* ===== Contact ===== */
+.contactSection{background:var(--bone);padding:120px 0;border-top:1px solid var(--rule)}
+.contactSection .inner{max-width:1440px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contactSection h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:60px;line-height:.98;letter-spacing:-.02em;margin:16px 0 22px;max-width:13ch}
+.contactSection h2 em{font-style:italic;color:var(--moss)}
+.contactSection .csub{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.42;color:var(--ink-2);max-width:42ch;margin-bottom:40px}
+.contactSection .deets{list-style:none;border-top:1px solid var(--rule)}
+.contactSection .deets li{display:grid;grid-template-columns:max-content 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.contactSection .deets .k{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss)}
+.contactSection .deets .v{font-family:"Instrument Serif",serif;font-size:21px;color:var(--ink)}
+
+@media(max-width:980px){
+  .home-hero h1{font-size:60px}
+  .home-hero .heroStats{grid-template-columns:1fr 1fr;gap:32px}
+  .project,.project.flip{grid-template-columns:1fr}
+  .project.flip .pic{order:0}
+  .project .pic{min-height:340px}
+  .aboutSection .grid,.contactSection .inner{grid-template-columns:1fr;gap:48px}
+}
