@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>R2 Living — Photography Prompts · Nano Banana</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14120F;
+    --ink-2:#2A2622;
+    --bone:#F3EFE8;
+    --paper:#FAF7F2;
+    --stone:#BFB6A6;
+    --moss:#3D4A3A;
+    --rule:rgba(20,18,15,.12);
+    --rule-strong:rgba(20,18,15,.28);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#E9E4DA;color:var(--ink);font-family:"Geist",ui-sans-serif,system-ui,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased}
+  body{padding:48px 24px 96px;display:flex;justify-content:center}
+
+  .sheet{
+    width:1280px;max-width:100%;
+    background:var(--paper);
+    box-shadow:0 1px 0 rgba(0,0,0,.04),0 30px 80px -30px rgba(20,18,15,.25),0 8px 24px -10px rgba(20,18,15,.12);
+    border:1px solid var(--rule);
+  }
+  .meta{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 56px;border-bottom:1px solid var(--rule);
+    font-family:"Geist Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);
+  }
+  .meta .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--moss);margin-right:8px;vertical-align:middle}
+
+  header.intro{padding:56px 56px 44px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:end}
+  .eyebrow{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);}
+  header.intro h1{font-family:"Instrument Serif",serif;font-weight:400;font-size:64px;line-height:.96;letter-spacing:-.015em;margin:14px 0 0}
+  header.intro h1 em{font-style:italic;color:var(--moss)}
+  header.intro p{font-family:"Instrument Serif",serif;font-size:20px;line-height:1.4;color:var(--ink-2);margin:0;max-width:46ch}
+
+  /* Universal direction card */
+  .universal{padding:32px 56px 40px;border-bottom:1px solid var(--rule);background:var(--bone);display:grid;grid-template-columns:1fr 2fr;gap:36px;align-items:start}
+  .universal h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:28px;line-height:1.05;letter-spacing:-.01em;margin:0 0 8px}
+  .universal p{font-size:14px;line-height:1.55;color:var(--ink-2);margin:0;max-width:38ch}
+  .universal .stub{position:relative;border:1px solid var(--rule);background:var(--paper);padding:18px 20px;font-family:"Geist Mono",monospace;font-size:12px;line-height:1.65;color:var(--ink-2);max-height:280px;overflow:auto}
+  .universal .stub b{font-weight:500;color:var(--moss);text-transform:uppercase;font-size:10.5px;letter-spacing:.18em}
+  .copyBtn{position:absolute;top:14px;right:14px;background:var(--ink);color:var(--bone);font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:7px 12px;border:none;cursor:pointer;border-radius:1px}
+  .copyBtn:hover{background:var(--moss)}
+  .copyBtn.done{background:var(--moss)}
+  .copyBtn.done::after{content:" ·"}
+
+  /* Prompt cards */
+  .promptList{padding:0}
+  .prompt{display:grid;grid-template-columns:380px 1fr;gap:0;border-bottom:1px solid var(--rule)}
+  .prompt .preview{padding:36px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:14px;background:var(--paper)}
+  .prompt .preview .frameWrap{position:relative;border:1px solid var(--rule);overflow:hidden;color:var(--bone);min-height:280px;display:flex;flex-direction:column;justify-content:flex-end}
+  .prompt .preview .scene{position:absolute;inset:0;z-index:0}
+  .prompt .preview .scene::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(20,18,15,.55) 100%);z-index:1}
+  .prompt .preview .frameNo{position:absolute;top:12px;left:14px;font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(243,239,232,.85);z-index:2}
+  .prompt .preview .ratio{position:absolute;top:12px;right:14px;font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(243,239,232,.7);z-index:2}
+  .prompt .preview .cap{position:relative;z-index:2;padding:16px 18px 18px;background:linear-gradient(180deg,transparent,rgba(20,18,15,.7))}
+  .prompt .preview .cap h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:20px;line-height:1.15;letter-spacing:-.01em;margin:0;color:var(--bone)}
+  .prompt .preview .scene-tag{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss)}
+
+  .prompt .body{padding:36px 40px;background:var(--paper);position:relative;display:flex;flex-direction:column;gap:18px}
+  .prompt .body h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:32px;line-height:1.05;letter-spacing:-.01em;margin:0}
+  .prompt .body h3 em{font-style:italic;color:var(--moss)}
+  .prompt .body .promptBlock{position:relative;border:1px solid var(--rule);background:var(--bone);padding:22px 24px;padding-right:120px;font-size:13.5px;line-height:1.65;color:var(--ink-2);min-height:120px}
+  .prompt .body .promptBlock p{margin:0}
+  .prompt .body .specs{display:flex;flex-wrap:wrap;gap:14px;font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .prompt .body .specs .chip{border:1px solid var(--rule);padding:6px 10px}
+  .prompt .body .specs .chip b{color:var(--moss);font-weight:500;margin-right:6px}
+
+  /* Scene compositions (reused from brand sheet) */
+  .sc-kitchen{
+    background:
+      radial-gradient(ellipse 90% 70% at 18% 22%, rgba(255,236,196,.95) 0%, rgba(245,221,170,.6) 30%, rgba(208,180,134,.2) 55%, transparent 75%),
+      linear-gradient(135deg,#E9D9B5 0%,#C7AC7D 45%,#7C6440 100%);
+  }
+  .sc-kitchen .windowLine{position:absolute;left:6%;top:0;width:30%;height:60%;border-right:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.14);z-index:0}
+  .sc-kitchen .windowLine::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(255,255,255,.18)}
+
+  .sc-plans{
+    background:
+      radial-gradient(ellipse 60% 50% at 30% 35%, rgba(255,255,255,.45) 0%, transparent 65%),
+      linear-gradient(140deg,#E8DFC8 0%,#C9B98F 60%,#8F7E54 100%);
+  }
+  .sc-plans .lines{position:absolute;inset:0;z-index:0;opacity:.32;background:
+    linear-gradient(90deg,transparent 49.5%,rgba(20,18,15,.45) 49.5% 50%,transparent 50%),
+    linear-gradient(0deg,transparent 49.5%,rgba(20,18,15,.35) 49.5% 50%,transparent 50%);
+    background-size:14% 100%, 100% 18%;
+    mix-blend-mode:multiply}
+  .sc-plans .ring{position:absolute;left:62%;top:46%;width:48px;height:48px;border:1.5px solid rgba(61,74,58,.85);border-radius:50%;z-index:1}
+
+  .sc-door{
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 70%, rgba(255,228,170,.55) 0%, rgba(214,189,140,.2) 35%, transparent 70%),
+      linear-gradient(180deg,#3D4856 0%,#2C3340 50%,#1B2028 100%);
+  }
+  .sc-door .doorway{position:absolute;left:34%;bottom:0;width:32%;height:64%;background:linear-gradient(180deg,rgba(255,228,170,.3),rgba(255,213,138,.55));border:1px solid rgba(255,228,170,.4);border-bottom:none;z-index:0}
+
+  .sc-terrace{
+    background:
+      linear-gradient(180deg,#C6CFC4 0%,#A6B0A1 35%,#6E7A66 60%,#3D4A3A 100%);
+  }
+  .sc-terrace .horizon{position:absolute;left:0;right:0;top:38%;height:1px;background:rgba(20,18,15,.18);z-index:0}
+  .sc-terrace .trees{position:absolute;left:0;right:0;bottom:36%;height:24%;background:
+    radial-gradient(ellipse 12% 60% at 12% 100%, #4C5A45 0 60%, transparent 70%),
+    radial-gradient(ellipse 10% 50% at 28% 100%, #3F4D39 0 60%, transparent 70%),
+    radial-gradient(ellipse 14% 70% at 50% 100%, #45533F 0 60%, transparent 70%),
+    radial-gradient(ellipse 9% 45% at 74% 100%, #3F4D39 0 60%, transparent 70%),
+    radial-gradient(ellipse 12% 60% at 92% 100%, #4C5A45 0 60%, transparent 70%);
+    opacity:.85;z-index:0}
+
+  .sc-walk{
+    background:
+      radial-gradient(ellipse 70% 50% at 75% 18%, rgba(255,228,170,.32) 0%, transparent 60%),
+      linear-gradient(180deg,#43505C 0%,#2D3540 60%,#1A1F26 100%);
+  }
+  .sc-walk .road{position:absolute;left:0;right:0;bottom:0;height:38%;background:linear-gradient(180deg,#262C36,#13171D);z-index:0}
+  .sc-walk .road::after{content:"";position:absolute;left:0;right:0;top:24%;height:1px;background:rgba(255,228,170,.22)}
+
+  .sc-empty{
+    background:
+      linear-gradient(180deg,#EBE5D7 0%,#D7CFBE 55%,#9B947F 100%);
+  }
+  .sc-empty .sunbar{position:absolute;left:8%;right:8%;top:62%;height:18%;background:linear-gradient(180deg,rgba(255,228,170,.65),rgba(255,213,138,.1));transform:skewX(-12deg);z-index:0}
+  .sc-empty .box{position:absolute;left:18%;bottom:18%;width:60px;height:46px;background:#9F8D6A;border:1px solid #6A5A3F;z-index:1}
+  .sc-empty .bike{position:absolute;right:18%;bottom:16%;width:54px;height:62px;z-index:1;border-bottom:2px solid #3D4A3A;border-right:1.5px solid #3D4A3A}
+  .sc-empty .bike::before{content:"";position:absolute;left:-2px;bottom:-2px;width:18px;height:18px;border:1.5px solid #3D4A3A;border-radius:50%;background:transparent}
+  .sc-empty .bike::after{content:"";position:absolute;right:-2px;bottom:-2px;width:18px;height:18px;border:1.5px solid #3D4A3A;border-radius:50%;background:transparent}
+
+  .sc-site{
+    background:linear-gradient(180deg,#C8C2B3 0%,#A8A294 50%,#6D6857 100%);
+  }
+  .sc-site .stud{position:absolute;top:0;bottom:0;width:6px;background:#3D4A3A;opacity:.85;z-index:0}
+  .sc-site .stud.a{left:22%}.sc-site .stud.b{left:52%}.sc-site .stud.c{left:78%}
+  .sc-site .beam{position:absolute;left:0;right:0;top:24%;height:8px;background:#3D4A3A;opacity:.85;z-index:0}
+
+  .sc-readingNook{
+    background:
+      radial-gradient(ellipse 45% 40% at 30% 60%, rgba(255,218,150,.7) 0%, rgba(212,168,100,.25) 40%, transparent 70%),
+      linear-gradient(180deg,#2A2622 0%,#1A1714 60%,#0F0D0B 100%);
+  }
+  .sc-readingNook .lampGlow{position:absolute;left:22%;top:38%;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,rgba(255,218,150,.65),transparent 60%);z-index:0}
+
+  footer{padding:32px 56px 48px;display:grid;grid-template-columns:1fr 1fr;gap:36px;border-top:1px solid var(--rule)}
+  footer h5{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);margin:0 0 12px;font-weight:500}
+  footer p,footer li{font-size:13px;line-height:1.55;color:var(--ink-2);margin:0 0 8px}
+  footer ol{padding-left:18px;margin:0}
+</style>
+</head>
+<body>
+
+<main class="sheet">
+
+  <div class="meta">
+    <div><span class="dot"></span>R2 Living &nbsp;·&nbsp; Photography Prompts</div>
+    <div>For Nano Banana · 8 frames</div>
+    <div>v 0.1 · May 2026</div>
+  </div>
+
+  <header class="intro">
+    <div>
+      <div class="eyebrow">— Companion to Brand Guidelines · Section 06</div>
+      <h1>Eight prompts.<br/>One <em>way of seeing.</em></h1>
+    </div>
+    <p>Each prompt below is written for Nano Banana — Google’s Gemini 2.5 Flash Image — which responds best to descriptive natural language, not Midjourney-style flags. Paste, generate, iterate. Bring the keepers back and we’ll wire them into the brand sheet in place of the gradient stand-ins.</p>
+  </header>
+
+  <!-- Universal style suffix -->
+  <section class="universal">
+    <div>
+      <h2>The universal style suffix.</h2>
+      <p>Every R2 frame inherits the same look. To keep generations consistent across the eight scenes (and any future ones), append this block to the end of any prompt. Or paste it once and use Nano Banana’s edit mode to apply it across a set.</p>
+    </div>
+    <div class="stub" id="universal">
+<b>R2 Living — house style ·</b><br/>
+Documentary lifestyle photography, not advertising. Polish family in modern suburban Warsaw architecture (clean modern duplex, brick path, oak, birch, no manicured perfection). Natural light only — window, garden, or single warm lamp — never on-camera flash, never golden-hour cinematic glow, never teal-orange color grading. True skin tones, muted warm palette: cream, oak, charcoal, deep moss green, soft stone. Real wardrobe — knits, tees, jeans, socks, never styled. Real bodies, real ages, real expressions — mid-laugh, mid-sentence, mid-pour, never camera-aware smiles. Generous framing on a 35mm or 50mm prime, eye-level or slightly low, shallow depth of field, mild film grain. Avoid: keys-in-the-air pose, handshake with agent, champagne clink, drone subdivision, single-white-tulip staging, group portrait centred to camera. The frame should plausibly come from the family’s own phone — only better lit and better composed. Photorealistic, 8K, subtle warm cast in post.
+      <button class="copyBtn" data-target="universal">Copy</button>
+    </div>
+  </section>
+
+  <!-- 8 prompt cards -->
+  <section class="promptList">
+
+    <!-- 001 -->
+    <article class="prompt">
+      <div class="preview">
+        <div class="frameWrap">
+          <div class="scene sc-kitchen"><span class="windowLine"></span></div>
+          <span class="frameNo">R2 · PHOTO · 001</span>
+          <span class="ratio">3 : 4 · 35 mm</span>
+          <div class="cap"><h3>Tuesday morning, half-eaten cereal.</h3></div>
+        </div>
+        <span class="scene-tag">— Scene · Kitchen · Resident</span>
+      </div>
+      <div class="body">
+        <h3>001 · <em>Tuesday morning, half-eaten cereal.</em></h3>
+        <div class="promptBlock" id="p1">
+A candid documentary photograph of a Polish mother, 32, with shoulder-length dark blonde hair tied in a loose low ponytail, wearing a soft cream cotton t-shirt and dark grey sweatpants. She is leaning with one elbow on the kitchen counter of a modern duplex home while her four-year-old daughter, also in pyjamas, picks raisins out of a half-eaten bowl of muesli on the counter. Late-morning daylight comes from a large window on the left — soft, warm, not cinematic. The kitchen is real and lived-in: oak veneer cabinetry, a stainless kettle, a single small succulent on the windowsill, a child’s drawing held to the fridge with a magnet. The mother is mid-yawn-into-a-smile, eyes on her daughter, not the camera. Shot on a 35mm lens, eye level, shallow depth of field. Aspect ratio 3:4 portrait. Then apply the R2 Living house style.
+          <button class="copyBtn" data-target="p1">Copy</button>
+        </div>
+        <div class="specs">
+          <span class="chip"><b>Ratio</b>3 : 4 portrait</span>
+          <span class="chip"><b>Lens</b>35 mm</span>
+          <span class="chip"><b>Light</b>Window, left</span>
+          <span class="chip"><b>Cast</b>Mother · Child</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 002 -->
+    <article class="prompt">
+      <div class="preview">
+        <div class="frameWrap">
+          <div class="scene sc-plans"><span class="lines"></span><span class="ring"></span></div>
+          <span class="frameNo">R2 · PHOTO · 002</span>
+          <span class="ratio">4 : 3 · 50 mm</span>
+          <div class="cap"><h3>The wall, before the wall.</h3></div>
+        </div>
+        <span class="scene-tag">— Scene · Configuration · Detail</span>
+      </div>
+      <div class="body">
+        <h3>002 · <em>The wall, before the wall.</em></h3>
+        <div class="promptBlock" id="p2">
+An overhead three-quarter documentary photograph of a printed architectural floor plan unrolled on a wooden kitchen table. A woman’s hand, early thirties, no rings, slim silver bracelet on the wrist, holds a thin black marker mid-stroke, drawing a soft circle around an interior wall on the plan. A pale ceramic mug sits at the edge of the plan, leaving a faint coffee ring on the paper. To the side, partially in frame, a child’s wax-crayon drawing of a stick-figure family. Soft natural daylight from the right, no harsh shadows. Shallow depth of field with the marker tip in sharp focus, the rest gently soft. Warm muted palette — cream paper, blue-black ink, soft ceramic, brown wax crayon. The image captures the moment of decision, not the result. Aspect ratio 4:3 landscape. Then apply the R2 Living house style.
+          <button class="copyBtn" data-target="p2">Copy</button>
+        </div>
+        <div class="specs">
+          <span class="chip"><b>Ratio</b>4 : 3 landscape</span>
+          <span class="chip"><b>Lens</b>50 mm</span>
+          <span class="chip"><b>Light</b>Window, right</span>
+          <span class="chip"><b>Cast</b>Hand only</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 003 -->
+    <article class="prompt">
+      <div class="preview">
+        <div class="frameWrap">
+          <div class="scene sc-door"><span class="doorway"></span></div>
+          <span class="frameNo">R2 · PHOTO · 003</span>
+          <span class="ratio">3 : 4 · 35 mm</span>
+          <div class="cap"><h3>Dad, toddler, light rain.</h3></div>
+        </div>
+        <span class="scene-tag">— Scene · Threshold · Resident</span>
+      </div>
+      <div class="body">
+        <h3>003 · <em>Dad, toddler, light rain.</em></h3>
+        <div class="promptBlock" id="p3">
+A documentary still of a Polish father, 38, short dark-brown hair and a few days of stubble, wearing a faded olive zip-up hoodie and dark jeans. He stands at the open front door of a modern duplex home holding his eighteen-month-old son on his hip. The toddler, in a striped long-sleeve and corduroy trousers, looks out at light rain falling on the brick driveway, one small hand reaching toward the water. Behind the father, a wooden coat rack with adult coats and one small puffer jacket; a pair of muddy boots on the floor. The father looks out at the rain, not the camera. Cool diffuse natural daylight, slightly desaturated. Eye level, shot on a 35mm lens. Real Polish suburban architecture — clean modern lines, no perfection. Aspect ratio 3:4 portrait. Then apply the R2 Living house style.
+          <button class="copyBtn" data-target="p3">Copy</button>
+        </div>
+        <div class="specs">
+          <span class="chip"><b>Ratio</b>3 : 4 portrait</span>
+          <span class="chip"><b>Lens</b>35 mm</span>
+          <span class="chip"><b>Light</b>Overcast, soft</span>
+          <span class="chip"><b>Cast</b>Father · Toddler</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 004 -->
+    <article class="prompt">
+      <div class="preview">
+        <div class="frameWrap">
+          <div class="scene sc-terrace"><span class="trees"></span><span class="horizon"></span></div>
+          <span class="frameNo">R2 · PHOTO · 004</span>
+          <span class="ratio">3 : 4 · 50 mm</span>
+          <div class="cap"><h3>“We thought the swing here.”</h3></div>
+        </div>
+        <span class="scene-tag">— Scene · Garden · Future</span>
+      </div>
+      <div class="body">
+        <h3>004 · <em>“We thought the swing here.”</em></h3>
+        <div class="promptBlock" id="p4">
+A documentary photograph of a Polish couple in their late thirties standing on the wooden back terrace of a modern duplex home, looking out at a bare autumn garden. The woman wears a charcoal wool sweater pushed up to her elbows, hair tied back, holding a ceramic mug in both hands. The man wears a deep-blue flannel shirt and dark jeans, hands in his pockets. The garden beyond them is bare grass, bordered by birch and oak trees with leaves in muted bronze and yellow. The couple are mid-conversation, the woman gesturing softly toward a spot in the empty garden. Overcast Polish autumn light, soft and even. Shot from behind them at a three-quarter angle on a 50mm lens, shallow depth of field. Warm-muted palette dominated by moss greens, bronzes, soft greys — no blue sky, no golden hour. Aspect ratio 3:4 portrait. Then apply the R2 Living house style.
+          <button class="copyBtn" data-target="p4">Copy</button>
+        </div>
+        <div class="specs">
+          <span class="chip"><b>Ratio</b>3 : 4 portrait</span>
+          <span class="chip"><b>Lens</b>50 mm</span>
+          <span class="chip"><b>Light</b>Overcast, autumn</span>
+          <span class="chip"><b>Cast</b>Couple, late 30s</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 005 -->
+    <article class="prompt">
+      <div class="preview">
+        <div class="frameWrap">
+          <div class="scene sc-walk"><span class="road"></span></div>
+          <span class="frameNo">R2 · PHOTO · 005</span>
+          <span class="ratio">3 : 4 · 50 mm</span>
+          <div class="cap"><h3>School run, wet morning.</h3></div>
+        </div>
+        <span class="scene-tag">— Scene · Street · Routine</span>
+      </div>
+      <div class="body">
+        <h3>005 · <em>School run, wet morning.</em></h3>
+        <div class="promptBlock" id="p5">
+A documentary photograph from behind a Polish family of four walking away from the front door of a modern duplex home toward a parked car in the early morning. The mother, 33, in a long camel wool coat, holds the hand of a six-year-old daughter in a yellow rain mac and small black rubber boots. The father, 36, in a dark-navy raincoat, carries a toddler in one arm and a small school backpack in the other hand. Wet pavement reflects soft cool morning light. The street is a real Polish suburb — modest, neat, autumn leaves on the pavement, a low brick wall. Backs of heads only, no faces. Shot on a 50mm lens from a low three-quarter rear angle. Cool muted palette with one warm note — the yellow rain mac. Mild film grain. Aspect ratio 3:4 portrait. Then apply the R2 Living house style.
+          <button class="copyBtn" data-target="p5">Copy</button>
+        </div>
+        <div class="specs">
+          <span class="chip"><b>Ratio</b>3 : 4 portrait</span>
+          <span class="chip"><b>Lens</b>50 mm</span>
+          <span class="chip"><b>Light</b>Wet dawn</span>
+          <span class="chip"><b>Cast</b>Family · 4 · backs</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 006 -->
+    <article class="prompt">
+      <div class="preview">
+        <div class="frameWrap">
+          <div class="scene sc-empty"><span class="sunbar"></span><span class="box"></span><span class="bike"></span></div>
+          <span class="frameNo">R2 · PHOTO · 006</span>
+          <span class="ratio">3 : 2 · 35 mm</span>
+          <div class="cap"><h3>One box. One balance bike.</h3></div>
+        </div>
+        <span class="scene-tag">— Scene · Move-in · Still life</span>
+      </div>
+      <div class="body">
+        <h3>006 · <em>One box. One balance bike.</em></h3>
+        <div class="promptBlock" id="p6">
+A still-life documentary photograph of an empty, recently finished room in a modern Polish family home — bare oak floor, soft white walls, a single tall window with no blinds. In the centre of the room: one closed cardboard moving box, slightly battered at one corner, and one well-used wooden balance bike with worn rubber tyres leaning casually against the wall. A bright diagonal bar of late-afternoon sunlight cuts across the floor through the window. No people in the frame. The room is freshly finished but not staged — a small smudge on the wall by the door frame, one nail still in the trim. Shot on a 35mm lens, eye level, perfectly composed. Warm honey-toned afternoon light. Aspect ratio 3:2 landscape. The image evokes potential, beginning, the day before everything starts. Then apply the R2 Living house style.
+          <button class="copyBtn" data-target="p6">Copy</button>
+        </div>
+        <div class="specs">
+          <span class="chip"><b>Ratio</b>3 : 2 landscape</span>
+          <span class="chip"><b>Lens</b>35 mm</span>
+          <span class="chip"><b>Light</b>Honey afternoon</span>
+          <span class="chip"><b>Cast</b>Still life</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 007 -->
+    <article class="prompt">
+      <div class="preview">
+        <div class="frameWrap">
+          <div class="scene sc-site"><span class="stud a"></span><span class="stud b"></span><span class="stud c"></span><span class="beam"></span></div>
+          <span class="frameNo">R2 · PHOTO · 007</span>
+          <span class="ratio">3 : 2 · 28 mm</span>
+          <div class="cap"><h3>Five-year-old in a site helmet.</h3></div>
+        </div>
+        <span class="scene-tag">— Scene · Construction · Family</span>
+      </div>
+      <div class="body">
+        <h3>007 · <em>Five-year-old in a site helmet.</em></h3>
+        <div class="promptBlock" id="p7">
+A documentary photograph inside the bare-shell construction phase of a modern duplex home — exposed timber wall studs, concrete floor, a roll of insulation in one corner, plywood subfloor patches. A five-year-old Polish girl wearing a slightly-too-big yellow construction hardhat over her blonde hair, in a denim pinafore and small yellow rubber boots, places one small hand on a wall stud and looks up. Just at the edge of the frame, her father’s hand and forearm — flannel sleeve rolled up — rests on a different stud. The father’s face is intentionally out of frame. Cool diffuse daylight from a window opening behind. Shot on a 28mm lens for context, slightly low angle. Construction-site realism with warmth — the moment a future is being walked through, not posed for. Aspect ratio 3:2 landscape. Then apply the R2 Living house style.
+          <button class="copyBtn" data-target="p7">Copy</button>
+        </div>
+        <div class="specs">
+          <span class="chip"><b>Ratio</b>3 : 2 landscape</span>
+          <span class="chip"><b>Lens</b>28 mm</span>
+          <span class="chip"><b>Light</b>Diffuse, cool</span>
+          <span class="chip"><b>Cast</b>Child · Father (hand)</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 008 -->
+    <article class="prompt">
+      <div class="preview">
+        <div class="frameWrap">
+          <div class="scene sc-readingNook"><span class="lampGlow"></span></div>
+          <span class="frameNo">R2 · PHOTO · 008</span>
+          <span class="ratio">1 : 1 · 50 mm</span>
+          <div class="cap"><h3>One lamp, two heads.</h3></div>
+        </div>
+        <span class="scene-tag">— Scene · Interior · Evening</span>
+      </div>
+      <div class="body">
+        <h3>008 · <em>One lamp, two heads.</em></h3>
+        <div class="promptBlock" id="p8">
+A documentary photograph of a Polish father, 36, sitting on a built-in window seat with deep cushions, reading a hardback storybook to a five-year-old child curled against him. A single warm-bulb floor lamp at the right edge of the frame casts a soft pool of golden light over both of them; the rest of the room falls into deep, comfortable shadow. The father’s phone is face-down on the cushion beside him. Outside the dark window, a faint suggestion of a Polish suburban evening — one distant porch light. Shot on a 50mm lens, intimate medium-close, eye level. Deep warm shadows, true skin tones, no cinematic teal in the highlights. Aspect ratio 1:1 square. Quiet, unposed, real evening — not bedtime-routine stock. Then apply the R2 Living house style.
+          <button class="copyBtn" data-target="p8">Copy</button>
+        </div>
+        <div class="specs">
+          <span class="chip"><b>Ratio</b>1 : 1 square</span>
+          <span class="chip"><b>Lens</b>50 mm</span>
+          <span class="chip"><b>Light</b>Single warm lamp</span>
+          <span class="chip"><b>Cast</b>Father · Child</span>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <footer>
+    <div>
+      <h5>— Working with Nano Banana</h5>
+      <ol>
+        <li>Paste a prompt. Generate three to four variants.</li>
+        <li>Pick the closest. Use “edit” to nudge — never re-roll from scratch. Nano Banana is exceptional at consistent iteration.</li>
+        <li>Maintain face / location continuity by referencing earlier outputs explicitly: “same mother as previous image, different room.”</li>
+        <li>If a scene drifts cinematic, paste this fix: “Reduce contrast, neutralise highlights, mild film grain, no orange-and-teal grade, true Polish daylight.”</li>
+      </ol>
+    </div>
+    <div>
+      <h5>— Bringing them back</h5>
+      <p>Once you have eight you’re happy with, upload them into the project and tell me which photo replaces which frame (e.g. “photo-001.jpg → R2 · PHOTO · 001”). I’ll wire them into Section 06 of the brand sheet in place of the gradient placeholders, and update the social and web mocks too.</p>
+      <p style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-top:12px">v 0.1 · May 2026 · © R2 Living Sp. z o.o.</p>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  document.querySelectorAll('.copyBtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var id = btn.getAttribute('data-target');
+      var el = document.getElementById(id);
+      if(!el) return;
+      // Get text content minus the button label
+      var clone = el.cloneNode(true);
+      clone.querySelectorAll('button').forEach(function(b){ b.remove(); });
+      var text = clone.innerText.trim().replace(/\s+/g,' ');
+      navigator.clipboard.writeText(text).then(function(){
+        var orig = btn.textContent;
+        btn.classList.add('done');
+        btn.textContent = 'Copied';
+        setTimeout(function(){ btn.classList.remove('done'); btn.textContent = orig; }, 1400);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

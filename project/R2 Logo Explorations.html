@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>R2 Living — Logo · Direction D</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14120F;
+    --ink-2:#2A2622;
+    --bone:#F3EFE8;
+    --paper:#FAF7F2;
+    --stone:#BFB6A6;
+    --moss:#3D4A3A;
+    --rule:rgba(20,18,15,.12);
+    --rule-strong:rgba(20,18,15,.28);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#E9E4DA;color:var(--ink);font-family:"Geist",ui-sans-serif,system-ui,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased}
+  body{padding:48px 24px 96px;display:flex;justify-content:center}
+
+  .sheet{
+    width:1280px;max-width:100%;
+    background:var(--paper);
+    box-shadow:0 1px 0 rgba(0,0,0,.04),0 30px 80px -30px rgba(20,18,15,.25),0 8px 24px -10px rgba(20,18,15,.12);
+    border:1px solid var(--rule);
+  }
+  .meta{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 56px;border-bottom:1px solid var(--rule);
+    font-family:"Geist Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);
+  }
+  .meta .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--moss);margin-right:8px;vertical-align:middle}
+
+  header.intro{padding:56px 56px 40px;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:end}
+  .eyebrow{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);}
+  header.intro h1{font-family:"Instrument Serif",serif;font-weight:400;font-size:72px;line-height:.95;letter-spacing:-.015em;margin:14px 0 0}
+  header.intro h1 em{font-style:italic;color:var(--moss)}
+  header.intro p{font-family:"Instrument Serif",serif;font-size:20px;line-height:1.4;color:var(--ink-2);margin:0;max-width:46ch}
+
+  /* Grid */
+  .opts{display:grid;grid-template-columns:repeat(2,1fr)}
+  .opt{border-bottom:1px solid var(--rule);padding:44px 56px;position:relative}
+  .opt:nth-child(odd){border-right:1px solid var(--rule)}
+
+  .optHead{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:20px;border-bottom:1px solid var(--rule);margin-bottom:28px}
+  .optHead .id{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
+  .optHead h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:24px;line-height:1;letter-spacing:-.01em;margin:4px 0 0}
+  .optHead .right{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);text-align:right;max-width:24ch}
+
+  .stage{background:var(--bone);border:1px solid var(--rule);padding:54px 22px;display:flex;align-items:center;justify-content:center;min-height:200px;position:relative}
+  .stage.dark{background:var(--ink);color:var(--bone);padding:22px;min-height:90px}
+  .stage.moss{background:var(--moss);color:var(--bone);padding:22px;min-height:90px}
+  .stage .corner{position:absolute;top:10px;left:12px;font-family:"Geist Mono",monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+  .stage.dark .corner,.stage.moss .corner{color:var(--stone)}
+
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+
+  .note{margin-top:18px;font-size:13px;line-height:1.55;color:var(--ink-2);max-width:46ch}
+  .note b{color:var(--ink);font-weight:500}
+
+  /* ===== Logo D variants ===== */
+  /* All share: Instrument Serif, inline */
+  .L{font-family:"Instrument Serif",serif;display:inline-flex;align-items:baseline;line-height:.9;color:currentColor}
+  .stage.dark .L .two,.stage.moss .L .two{color:var(--stone)}
+
+  /* D1 — original baseline: upright R² + italic Living */
+  .D1 .r{font-size:96px;letter-spacing:-.025em}
+  .D1 .two{font-size:42px;position:relative;top:-32px;margin-left:-1px;margin-right:18px;color:var(--moss)}
+  .D1 .living{font-style:italic;font-size:78px;letter-spacing:-.012em}
+  .D1.sm .r{font-size:34px}
+  .D1.sm .two{font-size:15px;top:-12px;margin-right:8px}
+  .D1.sm .living{font-size:28px}
+
+  /* D2 — both upright, descender weight via size only */
+  .D2 .r{font-size:96px;letter-spacing:-.025em}
+  .D2 .two{font-size:42px;position:relative;top:-32px;margin-left:-1px;margin-right:20px;color:var(--moss)}
+  .D2 .living{font-size:78px;letter-spacing:-.012em}
+  .D2.sm .r{font-size:34px}
+  .D2.sm .two{font-size:15px;top:-12px;margin-right:9px}
+  .D2.sm .living{font-size:28px}
+
+  /* D3 — mid-dot separator */
+  .D3 .r{font-size:96px;letter-spacing:-.025em}
+  .D3 .two{font-size:42px;position:relative;top:-32px;margin-left:-1px;margin-right:16px;color:var(--moss)}
+  .D3 .dot{font-size:78px;line-height:1;position:relative;top:-12px;margin-right:14px;color:var(--moss);font-weight:400}
+  .D3 .living{font-style:italic;font-size:78px;letter-spacing:-.012em}
+  .D3.sm .r{font-size:34px}
+  .D3.sm .two{font-size:15px;top:-12px;margin-right:7px}
+  .D3.sm .dot{font-size:28px;top:-5px;margin-right:6px}
+  .D3.sm .living{font-size:28px}
+
+  /* D4 — tight, italic Living tucked closer, smaller superscript */
+  .D4 .r{font-size:96px;letter-spacing:-.025em}
+  .D4 .two{font-size:32px;position:relative;top:-44px;margin-left:0;margin-right:10px;color:var(--moss)}
+  .D4 .living{font-style:italic;font-size:78px;letter-spacing:-.018em}
+  .D4.sm .r{font-size:34px}
+  .D4.sm .two{font-size:12px;top:-16px;margin-right:5px}
+  .D4.sm .living{font-size:28px}
+
+  /* D5 — all italic, both R² and Living */
+  .D5 .r{font-size:96px;letter-spacing:-.02em;font-style:italic}
+  .D5 .two{font-size:42px;position:relative;top:-32px;margin-left:0;margin-right:14px;color:var(--moss);font-style:italic}
+  .D5 .living{font-style:italic;font-size:78px;letter-spacing:-.012em}
+  .D5.sm .r{font-size:34px}
+  .D5.sm .two{font-size:15px;top:-12px;margin-right:7px}
+  .D5.sm .living{font-size:28px}
+
+  /* D6 — all-caps letterspaced wordmark */
+  .D6 .r{font-size:96px;letter-spacing:-.025em}
+  .D6 .two{font-size:42px;position:relative;top:-32px;margin-left:-1px;margin-right:22px;color:var(--moss)}
+  .D6 .living{font-size:60px;letter-spacing:.08em;text-transform:uppercase}
+  .D6.sm .r{font-size:34px}
+  .D6.sm .two{font-size:15px;top:-12px;margin-right:9px}
+  .D6.sm .living{font-size:22px}
+
+  /* ===== Footer ===== */
+  .pick{padding:36px 56px 48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;border-top:1px solid var(--rule);background:var(--paper)}
+  .pick .col h5{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);margin:0 0 10px;font-weight:500}
+  .pick .col p{font-size:13.5px;line-height:1.55;color:var(--ink-2);margin:0 0 8px}
+  .pick .col strong{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<main class="sheet">
+
+  <div class="meta">
+    <div><span class="dot"></span>R2 Living &nbsp;·&nbsp; Logo · Direction D</div>
+    <div>Round 03 · Six variants on inline serif</div>
+    <div>v 0.3 · May 2026</div>
+  </div>
+
+  <header class="intro">
+    <div>
+      <div class="eyebrow">— Round 03 · Inline serif lockup</div>
+      <h1>Six ways to <em>tune</em> R²&thinsp;Living.</h1>
+    </div>
+    <p>Same family — one typeface, one line, one breath. Each variant tweaks a single lever: italic vs roman, separator vs none, superscript proportion, spacing, and small-caps. Compare the large primary, dark, and moss versions for each.</p>
+  </header>
+
+  <div class="opts">
+
+    <!-- D1 — Baseline (current) -->
+    <div class="opt">
+      <div class="optHead">
+        <div><div class="id">— Option D1</div><h2>Italic descriptor</h2></div>
+        <div class="right">Upright R² · Italic Living<br/>The original</div>
+      </div>
+      <div class="stage">
+        <span class="corner">D1 · 01</span>
+        <span class="L D1"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+      </div>
+      <div class="row2">
+        <div class="stage dark"><span class="corner">D1 · 02</span>
+          <span class="L D1 sm"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+        </div>
+        <div class="stage moss"><span class="corner">D1 · 03</span>
+          <span class="L D1 sm"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+        </div>
+      </div>
+      <p class="note"><b>Reads as:</b> calm, editorial. The italic gives “Living” warmth without breaking the line. <b>Trade-off:</b> two voices in one mark (roman + italic) — slightly more to manage in small sizes.</p>
+    </div>
+
+    <!-- D2 — All roman -->
+    <div class="opt">
+      <div class="optHead">
+        <div><div class="id">— Option D2</div><h2>All roman</h2></div>
+        <div class="right">Upright R² · Upright Living<br/>Quietest</div>
+      </div>
+      <div class="stage">
+        <span class="corner">D2 · 01</span>
+        <span class="L D2"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+      </div>
+      <div class="row2">
+        <div class="stage dark"><span class="corner">D2 · 02</span>
+          <span class="L D2 sm"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+        </div>
+        <div class="stage moss"><span class="corner">D2 · 03</span>
+          <span class="L D2 sm"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+        </div>
+      </div>
+      <p class="note"><b>Reads as:</b> architectural and even-tempered — closer to a press masthead. <b>Trade-off:</b> loses the friendliness the italic brought; “Living” has to do all the warmth on its own.</p>
+    </div>
+
+    <!-- D3 — Mid-dot -->
+    <div class="opt">
+      <div class="optHead">
+        <div><div class="id">— Option D3</div><h2>Mid-dot separator</h2></div>
+        <div class="right">R² · Living<br/>Punctuated</div>
+      </div>
+      <div class="stage">
+        <span class="corner">D3 · 01</span>
+        <span class="L D3"><span class="r">R</span><span class="two">2</span><span class="dot">·</span><span class="living">Living</span></span>
+      </div>
+      <div class="row2">
+        <div class="stage dark"><span class="corner">D3 · 02</span>
+          <span class="L D3 sm"><span class="r">R</span><span class="two">2</span><span class="dot">·</span><span class="living">Living</span></span>
+        </div>
+        <div class="stage moss"><span class="corner">D3 · 03</span>
+          <span class="L D3 sm"><span class="r">R</span><span class="two">2</span><span class="dot">·</span><span class="living">Living</span></span>
+        </div>
+      </div>
+      <p class="note"><b>Reads as:</b> directory-style, technical, confident — “R² · Living” feels like a coordinate. <b>Trade-off:</b> the dot is precious if not well-kerned; harder to scale below 18 px.</p>
+    </div>
+
+    <!-- D4 — Tucked superscript -->
+    <div class="opt">
+      <div class="optHead">
+        <div><div class="id">— Option D4</div><h2>Tucked superscript</h2></div>
+        <div class="right">Smaller, higher “²”<br/>Most refined</div>
+      </div>
+      <div class="stage">
+        <span class="corner">D4 · 01</span>
+        <span class="L D4"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+      </div>
+      <div class="row2">
+        <div class="stage dark"><span class="corner">D4 · 02</span>
+          <span class="L D4 sm"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+        </div>
+        <div class="stage moss"><span class="corner">D4 · 03</span>
+          <span class="L D4 sm"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+        </div>
+      </div>
+      <p class="note"><b>Reads as:</b> a real mathematical exponent — the “²” recedes, “R Living” reads first. Most precise of the set. <b>Trade-off:</b> the “²” gets fragile below 16 px; needs a tweaked “mark only” version for favicons.</p>
+    </div>
+
+    <!-- D5 — All italic -->
+    <div class="opt">
+      <div class="optHead">
+        <div><div class="id">— Option D5</div><h2>All italic</h2></div>
+        <div class="right">Italic R² · Italic Living<br/>Warmest</div>
+      </div>
+      <div class="stage">
+        <span class="corner">D5 · 01</span>
+        <span class="L D5"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+      </div>
+      <div class="row2">
+        <div class="stage dark"><span class="corner">D5 · 02</span>
+          <span class="L D5 sm"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+        </div>
+        <div class="stage moss"><span class="corner">D5 · 03</span>
+          <span class="L D5 sm"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+        </div>
+      </div>
+      <p class="note"><b>Reads as:</b> the most emotional, hand-set, gallery-catalogue feel. Leans away from “tech” and toward “atelier.” <b>Trade-off:</b> at small sizes italics can feel a touch unstable; less authoritative on signage.</p>
+    </div>
+
+    <!-- D6 — Caps -->
+    <div class="opt">
+      <div class="optHead">
+        <div><div class="id">— Option D6</div><h2>Letterspaced caps</h2></div>
+        <div class="right">Upright R² · L&thinsp;I&thinsp;V&thinsp;I&thinsp;N&thinsp;G<br/>Most architectural</div>
+      </div>
+      <div class="stage">
+        <span class="corner">D6 · 01</span>
+        <span class="L D6"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+      </div>
+      <div class="row2">
+        <div class="stage dark"><span class="corner">D6 · 02</span>
+          <span class="L D6 sm"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+        </div>
+        <div class="stage moss"><span class="corner">D6 · 03</span>
+          <span class="L D6 sm"><span class="r">R</span><span class="two">2</span><span class="living">Living</span></span>
+        </div>
+      </div>
+      <p class="note"><b>Reads as:</b> chiselled, architectural, premium-real-estate — closest to a building plate. <b>Trade-off:</b> loses the “Living” warmth; tracking has to be tuned per size.</p>
+    </div>
+
+  </div>
+
+  <div class="pick">
+    <div class="col">
+      <h5>— Premium / atelier</h5>
+      <p><strong>D1, D4, D5</strong> all sit here. D4 is the most precise of the three; D1 is the most balanced; D5 is the warmest.</p>
+    </div>
+    <div class="col">
+      <h5>— Editorial / architectural</h5>
+      <p><strong>D2 and D6</strong> push toward press / masthead / building plate. D6 is the most monumental — works exceptionally well on hoarding.</p>
+    </div>
+    <div class="col">
+      <h5>— My pick</h5>
+      <p><strong>D4 · tucked superscript</strong> — the refinement of the smaller “²” fixes the readability issue you flagged and feels the most premium. We could pair it with <strong>D6</strong> as the signage-only variant.</p>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>

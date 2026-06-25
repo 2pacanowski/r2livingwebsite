@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>R2 Living — Modern homes north of Warsaw</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14120F;
+    --ink-2:#2A2622;
+    --ink-3:#4A443D;
+    --bone:#F3EFE8;
+    --paper:#FAF7F2;
+    --stone:#BFB6A6;
+    --stone-2:#E1DACB;
+    --moss:#3D4A3A;
+    --moss-2:#5C6B57;
+    --sky:#D6DEE0;
+    --rule:rgba(20,18,15,.10);
+    --rule-strong:rgba(20,18,15,.22);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Geist",ui-sans-serif,system-ui,sans-serif;
+    font-weight:400;font-size:16px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  /* ===== Logo lockup ===== */
+  .logo{display:inline-flex;align-items:baseline;font-family:"Instrument Serif",serif;line-height:.9;color:currentColor}
+  .logo .r{letter-spacing:-.025em}
+  .logo .two{position:relative;color:var(--moss);margin-right:.18em}
+  .logo .living{font-style:italic;letter-spacing:-.015em}
+  .logo.s-32 .r{font-size:32px} .logo.s-32 .two{font-size:11px;top:-16px}  .logo.s-32 .living{font-size:25px}
+  .dark .logo .two{color:var(--stone)}
+  .logo-mark{height:26px;width:auto;display:block}
+  .logo-mark.footer{height:30px;filter:invert(1) brightness(1.7)}
+  .iglink{display:inline-flex;align-items:center;gap:10px}
+  .iglink svg{width:17px;height:17px;flex:none}
+
+  /* ===== Nav ===== */
+  nav.top{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,247,242,.86);
+    backdrop-filter:saturate(140%) blur(14px);
+    -webkit-backdrop-filter:saturate(140%) blur(14px);
+    border-bottom:1px solid var(--rule);
+  }
+  nav.top .inner{max-width:1440px;margin:0 auto;padding:14px 56px;display:flex;align-items:center;justify-content:space-between;gap:48px}
+  nav.top .links{display:flex;gap:34px;font-family:"Geist",sans-serif;font-size:13.5px;color:var(--ink-2)}
+  nav.top .links a{position:relative;padding:6px 0;letter-spacing:-.005em}
+  nav.top .links a:hover{color:var(--ink)}
+  nav.top .links a.active{color:var(--ink)}
+  nav.top .links a.active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--moss)}
+  nav.top .right{display:flex;align-items:center;gap:18px}
+  nav.top .lang{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);display:flex;gap:8px}
+  nav.top .lang b{color:var(--ink);font-weight:500}
+  nav.top .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--ink);color:var(--bone);
+    font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    padding:10px 16px;border:1px solid var(--ink);transition:background .2s
+  }
+  nav.top .btn:hover{background:var(--moss);border-color:var(--moss)}
+  nav.top .btn::after{content:"→";font-family:"Geist",sans-serif}
+
+  /* ===== Hero — brand statement ===== */
+  .home-hero{max-width:1440px;margin:0 auto;padding:120px 56px 96px;position:relative}
+  .home-hero .eyebrow{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);display:flex;align-items:center;gap:10px}
+  .home-hero .eyebrow .dot{display:inline-block;width:6px;height:6px;background:var(--moss);border-radius:50%}
+  .home-hero h1{
+    font-family:"Instrument Serif",serif;font-weight:400;
+    font-size:74px;line-height:1.08;letter-spacing:-.022em;
+    margin:30px 0 0;max-width:17ch;
+  }
+  .home-hero h1 em{font-style:italic;color:var(--moss)}
+  .home-hero .lede{font-family:"Instrument Serif",serif;font-size:23px;line-height:1.42;color:var(--ink-2);max-width:50ch;margin-top:52px}
+  .home-hero .heroStats{
+    display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:64px;
+    margin-top:56px;padding-top:34px;border-top:1px solid var(--rule)
+  }
+  .home-hero .heroStats .hs .num{font-family:"Instrument Serif",serif;font-size:48px;line-height:.9;letter-spacing:-.02em;color:var(--ink)}
+  .home-hero .heroStats .hs .num em{font-style:italic;color:var(--moss);font-size:19px;vertical-align:super;position:relative;top:-12px;margin-left:1px}
+  .home-hero .heroStats .hs .lbl{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-top:12px}
+
+  /* ===== Projects ===== */
+  .projects{background:var(--bone);padding:112px 0 120px;border-top:1px solid var(--rule)}
+  .projects .inner{max-width:1440px;margin:0 auto;padding:0 56px}
+  .projects .secLabel{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:60px}
+  .projects .secLabel .eyebrow{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
+  .projects .secLabel h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:40px;line-height:1;letter-spacing:-.015em;color:var(--ink)}
+  .projects .secLabel .count{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+
+  .project{display:grid;grid-template-columns:1.55fr 1fr;gap:0;border:1px solid var(--rule);background:var(--paper);margin-bottom:28px}
+  .project:last-child{margin-bottom:0}
+  .project.flip{grid-template-columns:1fr 1.55fr}
+  .project .pic{position:relative;overflow:hidden;background:var(--stone);min-height:520px}
+  .project.flip .pic{order:2}
+  .project .pic img,.project .pic image-slot{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s ease}
+  .project .pic img{position:absolute;inset:0}
+  .project:hover .pic img{transform:scale(1.035)}
+  .project .pic .tag{
+    position:absolute;top:22px;left:22px;z-index:3;
+    font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    padding:8px 12px;display:inline-flex;align-items:center;gap:9px;
+    background:rgba(20,18,15,.72);color:var(--bone);backdrop-filter:blur(6px)
+  }
+  .project .pic .tag .ind{width:7px;height:7px;border-radius:50%}
+  .project .pic .tag.completed .ind{background:#9FB58A;box-shadow:0 0 10px rgba(159,181,138,.7)}
+  .project .pic .tag.soon .ind{background:var(--stone)}
+
+  .project .info{padding:52px 48px;display:flex;flex-direction:column}
+  .project .info .pnum{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
+  .project .info .pname{font-family:"Instrument Serif",serif;font-weight:400;font-size:60px;line-height:.95;letter-spacing:-.02em;margin:16px 0 8px}
+  .project .info .ploc{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+  .project .info .pdesc{font-family:"Instrument Serif",serif;font-size:21px;line-height:1.4;color:var(--ink-2);margin-top:26px;max-width:34ch}
+  .project .info dl{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px;margin-top:auto;padding-top:36px}
+  .project .info dt{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin-bottom:6px}
+  .project .info dd{font-family:"Instrument Serif",serif;font-size:23px;line-height:1;letter-spacing:-.01em;color:var(--ink)}
+  .project .info dd small{font-family:"Geist Mono",monospace;font-size:9.5px;letter-spacing:.12em;color:var(--ink-2);display:block;margin-top:5px;text-transform:uppercase}
+  .project .info .plink{
+    margin-top:34px;display:inline-flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:18px 22px;border:1px solid var(--ink);background:var(--ink);color:var(--bone);
+    font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    transition:background .2s,color .2s;align-self:flex-start;min-width:240px
+  }
+  .project .info .plink:hover{background:transparent;color:var(--ink)}
+  .project .info .plink::after{content:"→";font-family:"Geist",sans-serif}
+  .project .info .plink.ghost{background:transparent;color:var(--ink);border-color:var(--rule-strong)}
+  .project .info .plink.ghost:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+
+  /* ===== Configure (dark marketing beat) ===== */
+  .configure{background:var(--ink);color:var(--bone);padding:116px 0 104px;border-top:1px solid var(--rule)}
+  .configure .inner{max-width:1440px;margin:0 auto;padding:0 56px}
+  .configure .secLabel{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px}
+  .configure .eyebrow{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss-2)}
+  .configure h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:56px;line-height:1.0;letter-spacing:-.02em;margin-top:18px;max-width:15ch}
+  .configure h2 em{font-style:italic;color:var(--stone-2)}
+  .configure .lede{font-family:"Instrument Serif",serif;font-size:23px;line-height:1.46;color:rgba(243,239,232,.78);max-width:46ch}
+  .configure .lede strong{color:var(--bone);font-weight:400;font-style:italic}
+
+  .configure .items{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(243,239,232,.16)}
+  .configure .citem{padding:38px 40px 42px;border-right:1px solid rgba(243,239,232,.12);display:flex;flex-direction:column;min-height:300px}
+  .configure .citem:first-child{padding-left:0}
+  .configure .citem:last-child{border-right:none;padding-right:0}
+  .configure .citem .top{display:flex;align-items:center;gap:12px}
+  .configure .citem .cnum{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss-2)}
+  .configure .citem .mark{width:9px;height:9px;background:var(--moss-2);transform:rotate(45deg);flex:none}
+  .configure .citem .cname{font-family:"Instrument Serif",serif;font-size:34px;line-height:1.04;letter-spacing:-.01em;color:var(--bone);margin:22px 0 14px}
+  .configure .citem .cname em{font-style:italic;color:var(--stone)}
+  .configure .citem .cdesc{font-family:"Geist",sans-serif;font-size:14.5px;line-height:1.62;color:rgba(243,239,232,.72);max-width:32ch}
+  .configure .citem .ctag{margin-top:auto;padding-top:24px;font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);display:flex;align-items:center;gap:9px}
+  .configure .citem .ctag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--moss-2);flex:none}
+
+  .configure .cta{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;margin-top:56px;padding-top:44px;border-top:1px solid rgba(243,239,232,.16)}
+  .configure .cta .pitch .k{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss-2);margin-bottom:14px}
+  .configure .cta .pitch p{font-family:"Instrument Serif",serif;font-size:27px;line-height:1.32;letter-spacing:-.01em;color:rgba(243,239,232,.92);max-width:52ch}
+  .configure .cta .pitch p em{font-style:italic;color:var(--stone-2)}
+  .configure .cta .link{
+    display:inline-flex;align-items:center;justify-content:space-between;gap:20px;
+    padding:20px 24px;background:var(--bone);color:var(--ink);border:1px solid var(--bone);
+    font-family:"Geist Mono",monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+    transition:background .2s,color .2s,border-color .2s;min-width:300px;white-space:nowrap
+  }
+  .configure .cta .link:hover{background:var(--moss);border-color:var(--moss);color:var(--bone)}
+  .configure .cta .link::after{content:"→";font-family:"Geist",sans-serif;font-size:15px}
+
+  @media(max-width:980px){
+    .configure .secLabel{grid-template-columns:1fr;gap:28px;align-items:start}
+    .configure h2{font-size:44px}
+    .configure .items{grid-template-columns:1fr}
+    .configure .citem,.configure .citem:first-child,.configure .citem:last-child{padding:32px 0;border-right:none;border-bottom:1px solid rgba(243,239,232,.12);min-height:0}
+    .configure .citem:last-child{border-bottom:none}
+    .configure .cta{grid-template-columns:1fr;gap:28px;align-items:start}
+    .configure .cta .link{width:100%}
+  }
+
+  /* ===== About ===== */
+  .aboutSection{max-width:1440px;margin:0 auto;padding:120px 56px}
+  .aboutSection .grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .aboutSection .eyebrow{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
+  .aboutSection h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:60px;line-height:.98;letter-spacing:-.02em;margin-top:16px;max-width:14ch}
+  .aboutSection h2 em{font-style:italic;color:var(--moss)}
+  .aboutSection .body p{font-family:"Geist",sans-serif;font-size:16px;line-height:1.68;color:var(--ink-2);margin-bottom:20px;max-width:50ch}
+  .aboutSection .body p strong{color:var(--ink);font-weight:500}
+  .aboutSection .body p:last-child{margin-bottom:0}
+  .aboutSection .studioCard{background:var(--ink);color:var(--bone);padding:48px 44px;display:flex;flex-direction:column;gap:32px}
+  .aboutSection .studioCard .sc-label{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone)}
+  .aboutSection .studioCard .sc-statement{font-family:"Instrument Serif",serif;font-weight:400;font-size:31px;line-height:1.14;letter-spacing:-.01em;color:var(--bone)}
+  .aboutSection .studioCard .sc-statement em{font-style:italic;color:var(--stone-2)}
+  .aboutSection .studioCard .sc-stats{margin-top:auto;display:flex;flex-direction:column;border-top:1px solid rgba(243,239,232,.16)}
+  .aboutSection .studioCard .sc-stat{display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:18px 0;border-bottom:1px solid rgba(243,239,232,.12)}
+  .aboutSection .studioCard .sc-stat:last-child{border-bottom:none}
+  .aboutSection .studioCard .sc-stat .v{font-family:"Instrument Serif",serif;font-size:36px;line-height:1;letter-spacing:-.02em}
+  .aboutSection .studioCard .sc-stat .v em{font-style:italic;color:var(--stone);font-size:19px}
+  .aboutSection .studioCard .sc-stat .k{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);text-align:right;max-width:18ch}
+
+  /* ===== Contact ===== */
+  .contactSection{background:var(--bone);padding:120px 0;border-top:1px solid var(--rule)}
+  .contactSection .inner{max-width:1440px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .contactSection .eyebrow{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
+  .contactSection h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:60px;line-height:.98;letter-spacing:-.02em;margin:16px 0 22px;max-width:13ch}
+  .contactSection h2 em{font-style:italic;color:var(--moss)}
+  .contactSection .csub{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.42;color:var(--ink-2);max-width:42ch;margin-bottom:40px}
+  .contactSection .deets{list-style:none;border-top:1px solid var(--rule)}
+  .contactSection .deets li{display:grid;grid-template-columns:max-content 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+  .contactSection .deets .k{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss)}
+  .contactSection .deets .v{font-family:"Instrument Serif",serif;font-size:21px;color:var(--ink)}
+
+  .form{background:var(--paper);border:1px solid var(--rule);padding:40px}
+  .form .field{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+  .form label{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss)}
+  .form input,.form textarea{
+    border:none;border-bottom:1px solid var(--rule-strong);padding:10px 0;
+    background:transparent;font-family:"Instrument Serif",serif;font-size:20px;color:var(--ink);
+    width:100%;outline:none;transition:border-color .2s
+  }
+  .form input::placeholder,.form textarea::placeholder{color:rgba(20,18,15,.32)}
+  .form input:focus,.form textarea:focus{border-color:var(--moss)}
+  .form .row2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .form .row2 .field{margin-bottom:0}
+  .form .submit{
+    margin-top:28px;display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--bone);
+    font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    padding:16px 22px;border:none;cursor:pointer;transition:background .2s
+  }
+  .form .submit:hover{background:var(--moss)}
+  .form .submit::after{content:"→"}
+  .form .small{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.14em;color:var(--ink-2);margin-top:14px;text-transform:uppercase;opacity:.7}
+
+  /* ===== Footer ===== */
+  footer{background:var(--ink);color:var(--bone);padding:80px 56px 48px}
+  footer .inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;align-items:start;padding-bottom:60px;border-bottom:1px solid rgba(243,239,232,.14)}
+  footer .brand .logo .two{color:var(--stone)}
+  footer .brand p{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.35;color:rgba(243,239,232,.88);max-width:34ch;margin:24px 0 24px}
+  footer .brand .stamp{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);display:flex;gap:14px;align-items:center}
+  footer .brand .stamp .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--moss)}
+  footer h5{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:18px;font-weight:500}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  footer ul a{color:rgba(243,239,232,.82);font-size:14px;transition:color .2s}
+  footer ul a:hover{color:var(--bone)}
+  footer .disclaimer{max-width:1440px;margin:28px auto 0;font-family:"Geist Mono",monospace;font-size:10.5px;line-height:1.7;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,239,232,.42)}
+  footer .legal{max-width:1440px;margin:24px auto 0;display:flex;justify-content:space-between;font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone)}
+
+  /* ===== Browser chrome ===== */
+  .browserChrome{
+    max-width:1440px;margin:24px auto 0;padding:0 8px;
+    display:flex;align-items:center;gap:10px;font-family:"Geist Mono",monospace;font-size:11px;color:var(--ink-2);letter-spacing:.06em
+  }
+  .browserChrome .dots{display:flex;gap:6px}
+  .browserChrome .dots i{width:11px;height:11px;border-radius:50%;background:var(--stone);display:block}
+  .browserChrome .url{flex:1;background:var(--bone);border:1px solid var(--rule);padding:7px 14px;border-radius:18px;display:flex;align-items:center;gap:10px}
+  .browserChrome .url::before{content:"";width:8px;height:8px;border-radius:50%;background:#9FB58A}
+  .frame{border:1px solid var(--rule);margin:6px auto 60px;max-width:1440px;background:var(--paper);overflow:hidden}
+
+  @media(max-width:980px){
+    .home-hero h1{font-size:60px}
+    .home-hero .heroStats{grid-template-columns:1fr 1fr;gap:32px}
+    .project,.project.flip{grid-template-columns:1fr}
+    .project.flip .pic{order:0}
+    .project .pic{min-height:340px}
+    .aboutSection .grid,.contactSection .inner{grid-template-columns:1fr;gap:48px}
+    footer .inner{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+  <!-- Browser chrome to set context: this is a website mockup -->
+  <div class="browserChrome">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <div class="url">r2living.pl</div>
+    <div>R2 Living — Home</div>
+  </div>
+
+  <div class="frame">
+
+  <!-- ============== NAV ============== -->
+  <nav class="top">
+    <div class="inner">
+      <a href="R2 Living Home.html" aria-label="R2 Living"><img class="logo-mark" src="website-assets/r2-logo-black.svg" alt="R2 Living" /></a>
+      <div class="links">
+        <a class="active" href="#developments">Developments</a>
+        <a href="#configure">Configure</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="right">
+        <div class="lang"><b>EN</b><span>·</span><span>PL</span></div>
+        <a class="btn" href="#contact">Reserve a viewing</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============== HERO ============== -->
+  <section class="home-hero" data-screen-label="Home · hero">
+    <div class="eyebrow"><span class="dot"></span>R2 Living · Boutique developer · Warsaw, PL</div>
+    <h1>A handful of modern homes, built <em>properly,</em> north of Warsaw.</h1>
+    <p class="lede">Two to four duplex projects a year, between the Kampinos forest and the Vistula. Flat-roof modernism, honest materials, and a floor plan you can still shape. The architect signs every drawing.</p>
+    <div class="heroStats">
+      <div class="hs"><div class="num">2</div><div class="lbl">Developments</div></div>
+      <div class="hs"><div class="num">4</div><div class="lbl">Homes total</div></div>
+      <div class="hs"><div class="num">12<em>km</em></div><div class="lbl">North of Warsaw</div></div>
+      <div class="hs"><div class="num">2022</div><div class="lbl">Established</div></div>
+    </div>
+  </section>
+
+  <!-- ============== DEVELOPMENTS ============== -->
+  <section class="projects" id="developments">
+    <div class="inner">
+      <div class="secLabel">
+        <div>
+          <div class="eyebrow">— Developments</div>
+          <h2>Two projects, in &amp; around Łomianki.</h2>
+        </div>
+        <div class="count">02 / Current</div>
+      </div>
+
+      <!-- WSPÓLNA (coming soon) -->
+      <article class="project" data-screen-label="Project · Wspólna">
+        <div class="pic">
+          <span class="tag soon"><span class="ind"></span>Coming soon</span>
+          <img src="website-assets/wspolna-01-garden.jpg" alt="Wspólna duplex, garden elevation" />
+        </div>
+        <div class="info">
+          <div class="pnum">— 01 · Coming soon</div>
+          <div class="pname">Wspólna</div>
+          <div class="ploc">Łomianki Dolne · 52.33° N · 20.87° E</div>
+          <p class="pdesc">A second duplex on the river side of Łomianki — two larger homes, the same quiet language as Porzeczkowa.</p>
+          <dl>
+            <div><dt>Units</dt><dd>2<small>Semi-detached</small></dd></div>
+            <div><dt>Floor area</dt><dd>150 m²<small>Per unit</small></dd></div>
+            <div><dt>Bedrooms</dt><dd>3<small>Per unit</small></dd></div>
+            <div><dt>Bathrooms</dt><dd>3<small>Per unit</small></dd></div>
+          </dl>
+          <a class="plink ghost" href="#contact">Register interest</a>
+        </div>
+      </article>
+
+      <!-- PORZECZKOWA (completed) -->
+      <article class="project flip" data-screen-label="Project · Porzeczkowa">
+        <div class="pic">
+          <span class="tag completed"><span class="ind"></span>Completed</span>
+          <img src="website-assets/porzeczkowa-01-front.jpg" alt="Porzeczkowa front elevation" />
+        </div>
+        <div class="info">
+          <div class="pnum">— 02 · Completed</div>
+          <div class="pname">Porzeczkowa</div>
+          <div class="ploc">Kiełpin, Łomianki · 52.34° N · 20.88° E</div>
+          <p class="pdesc">A modern duplex between the Kampinos forest and the Vistula. Two distinct units behind a single, coherent façade.</p>
+          <dl>
+            <div><dt>Units</dt><dd>2<small>Semi-detached</small></dd></div>
+            <div><dt>Floor area</dt><dd>139–141 m²<small>Per unit</small></dd></div>
+            <div><dt>Bedrooms</dt><dd>3<small>Per unit</small></dd></div>
+            <div><dt>Bathrooms</dt><dd>3<small>Per unit</small></dd></div>
+          </dl>
+          <a class="plink" href="R2 Living Website.html">View development</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============== CONFIGURE ============== -->
+  <section class="configure" id="configure" data-screen-label="Home · configure">
+    <div class="inner">
+      <div class="secLabel">
+        <div>
+          <div class="eyebrow">— Configure your home</div>
+          <h2>Shape the house <em>while we're</em> still building it.</h2>
+        </div>
+        <p class="lede">Every R2 home leaves the studio with a floor plan you can still change. Tell us where the power, the water and the walls should go <strong>while the trades are on site</strong> — and we build it your way the first time.</p>
+      </div>
+
+      <div class="items">
+        <div class="citem">
+          <div class="top"><span class="mark"></span><span class="cnum">01 · Electrical</span></div>
+          <div class="cname">Power <em>outlets</em></div>
+          <p class="cdesc">Place sockets, switches and data points exactly where your furniture lands — before the electrician runs a single cable.</p>
+          <div class="ctag">Set before first fix</div>
+        </div>
+        <div class="citem">
+          <div class="top"><span class="mark"></span><span class="cnum">02 · Plumbing</span></div>
+          <div class="cname">Wet <em>points</em></div>
+          <p class="cdesc">Reposition taps, drains and the kitchen island while the screed is still open and the pipework can move freely.</p>
+          <div class="ctag">Set before screed</div>
+        </div>
+        <div class="citem">
+          <div class="top"><span class="mark"></span><span class="cnum">03 · Layout</span></div>
+          <div class="cname">Partition <em>walls</em></div>
+          <p class="cdesc">Add a room or open one up. Removing or adding internal walls is simplest — and cheapest — before the blockwork goes up.</p>
+          <div class="ctag">Add or remove</div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <div class="pitch">
+          <div class="k">— Decide now, not after handover</div>
+          <p>Changing a socket after you collect the keys means chasing walls, dust and a second bill. Configured during the build, the same change <em>costs you nothing but a few minutes.</em></p>
+        </div>
+        <a class="link" href="R2 Living Website.html#configure">Open the configurator</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== ABOUT ============== -->
+  <section class="aboutSection" id="about">
+    <div class="grid">
+      <div>
+        <div class="eyebrow">— About R2 Living</div>
+        <h2>A small studio that <em>finishes</em> what it starts.</h2>
+        <div class="body">
+          <p><strong>R2 Living is a boutique developer of modern duplex homes in suburban Warsaw.</strong> We take on two to four projects a year — never more — so that each one gets the attention a home deserves.</p>
+          <p>We buy quiet plots on the green edge of the city, draw flat-roof houses in an honest, durable language, and build them in around fourteen months. Materials are deliberately ordinary — through-coloured render, anthracite aluminium, oak floors — so the buildings age gracefully and run cheaply.</p>
+          <p>The architect signs every plan and meets every buyer. No sales floor, no scripted pitch — just the people who design and build the homes.</p>
+        </div>
+      </div>
+      <aside class="studioCard">
+        <div class="sc-label">— The studio, in short</div>
+        <div class="sc-statement">We would rather build <em>four good homes</em> a year than forty forgettable ones.</div>
+        <div class="sc-stats">
+          <div class="sc-stat"><span class="v">2<em>–4</em></span><span class="k">Projects / year</span></div>
+          <div class="sc-stat"><span class="v">~14</span><span class="k">Month build</span></div>
+          <div class="sc-stat"><span class="v">100<em>%</em></span><span class="k">Architect-signed plans</span></div>
+          <div class="sc-stat"><span class="v">2022</span><span class="k">Established, Warsaw</span></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============== CONTACT ============== -->
+  <section class="contactSection" id="contact">
+    <div class="inner">
+      <div class="left">
+        <div class="eyebrow">— Contact</div>
+        <h2>Come and <em>see</em> a home.</h2>
+        <p class="csub">Tell us a little about what you're after. We reply within a day — no mailing list, no sales pitch.</p>
+        <ul class="deets">
+          <li><span class="k">Email</span><span class="v">hello@r2living.pl</span></li>
+          <li><span class="k">Phone</span><span class="v">+48 22 000 00 00</span></li>
+          <li><span class="k">Studio</span><span class="v">Warsaw, Poland</span></li>
+          <li><span class="k">Viewings</span><span class="v">Saturdays, by appointment</span></li>
+        </ul>
+      </div>
+
+      <form class="form" onsubmit="event.preventDefault();this.querySelector('.submit').textContent='Thanks — we\u2019ll be in touch.'">
+        <div class="row2">
+          <div class="field"><label for="fn">First name</label><input id="fn" placeholder="Anna" /></div>
+          <div class="field"><label for="ln">Last name</label><input id="ln" placeholder="Kowalska" /></div>
+        </div>
+        <div class="field"><label for="em">Email</label><input id="em" type="email" placeholder="anna@example.pl" /></div>
+        <div class="field"><label for="ph">Phone</label><input id="ph" placeholder="+48 600 000 000" /></div>
+        <div class="field"><label for="msg">Message</label><textarea id="msg" rows="3" placeholder="e.g. we're a family of four interested in Wspólna, looking to move late 2027…" style="font-family:'Instrument Serif',serif;font-size:18px;resize:none"></textarea></div>
+        <button type="submit" class="submit">Send enquiry</button>
+        <div class="small">By submitting, you agree to our quiet, non-spammy contact policy.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer>
+    <div class="inner">
+      <div class="brand">
+        <img class="logo-mark footer" data-comment-anchor="386589532b-span" src="website-assets/r2-logo-black.svg" alt="R2 Living" />
+        <p>A boutique developer of modern duplex homes in suburban Warsaw. Two to four projects a year. The architect signs every plan.</p>
+      </div>
+
+      <div>
+        <h5>— Developments</h5>
+        <ul>
+          <li><a href="#developments">Wspólna</a></li>
+          <li><a href="R2 Living Website.html">Porzeczkowa</a></li>
+          <li><a href="#">Archive</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>— Company</h5>
+        <ul>
+          <li><a href="#about" data-comment-anchor="ab0b3f839c-a">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>— Connect</h5>
+        <ul>
+          <li><a href="#contact">hello@r2living.pl</a></li>
+          <li><a href="#contact">+48 22 000 00 00</a></li>
+          <li><a class="iglink" href="https://instagram.com/r2living" target="_blank" rel="noopener" data-comment-anchor="2d82d0e5f0-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="19" height="19" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>— Legal</h5>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="disclaimer">Visualisations of buildings, interiors and surroundings are for presentation purposes only. The completed result may differ slightly in finish, materials and detail.</p>
+    <div class="legal">
+      <span>© R2 CAPITAL SP. Z O.O. · 2026</span>
+      <span>r2living.pl</span>
+      <span>Made quietly, in Warsaw</span>
+    </div>
+  </footer>
+
+  </div><!-- /.frame -->
+
+</body>
+</html>

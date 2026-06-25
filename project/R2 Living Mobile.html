@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>R2 Living — Mobile Mockup</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14120F;
+    --ink-2:#2A2622;
+    --ink-3:#4A443D;
+    --bone:#F3EFE8;
+    --paper:#FAF7F2;
+    --stone:#BFB6A6;
+    --moss:#3D4A3A;
+    --rule:rgba(20,18,15,.10);
+    --rule-strong:rgba(20,18,15,.22);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:#E9E4D9;
+    color:var(--ink);
+    font-family:"Geist",ui-sans-serif,system-ui,sans-serif;
+    font-weight:400;font-size:14px;line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  a{color:inherit;text-decoration:none}
+
+  /* ===== Top chrome (set context: this is a website mockup) ===== */
+  .topChrome{
+    max-width:1480px;margin:24px auto 0;padding:0 32px;
+    display:flex;align-items:center;gap:14px;font-family:"Geist Mono",monospace;font-size:11px;color:var(--ink-3);letter-spacing:.06em
+  }
+  .topChrome .dots{display:flex;gap:6px}
+  .topChrome .dots i{width:11px;height:11px;border-radius:50%;background:var(--stone);display:block}
+  .topChrome .url{flex:1;background:var(--bone);border:1px solid var(--rule);padding:7px 14px;border-radius:18px;display:flex;align-items:center;gap:10px}
+  .topChrome .url::before{content:"";width:8px;height:8px;border-radius:50%;background:#9FB58A}
+  .topChrome .title{font-family:"Instrument Serif",serif;font-size:18px;font-style:italic;color:var(--ink);letter-spacing:-.01em}
+
+  .frame{max-width:1480px;margin:8px auto 80px;background:var(--paper);border:1px solid var(--rule);overflow:hidden}
+
+  /* ===== Page header ===== */
+  .pageHead{padding:56px 56px 40px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end}
+  .pageHead .eyebrow{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);margin-bottom:14px}
+  .pageHead h1{font-family:"Instrument Serif",serif;font-weight:400;font-size:72px;line-height:.95;letter-spacing:-.022em}
+  .pageHead h1 em{font-style:italic;color:var(--moss)}
+  .pageHead p{font-family:"Instrument Serif",serif;font-size:20px;line-height:1.4;color:var(--ink-2);max-width:42ch;text-wrap:pretty}
+  .pageHead .stamp{display:inline-flex;gap:14px;align-items:center;margin-top:20px;font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)}
+  .pageHead .stamp .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--moss)}
+
+  /* ===== Section labels ===== */
+  .sectionLabel{padding:32px 56px 24px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px;border-top:1px solid var(--rule)}
+  .sectionLabel .l{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
+  .sectionLabel .l b{color:var(--ink);font-weight:500;margin-right:18px}
+  .sectionLabel .r{font-family:"Instrument Serif",serif;font-size:15.5px;color:var(--ink-2);font-style:italic;text-align:right;max-width:60ch}
+
+  /* ===== Phone (iPhone-ish bezel) ===== */
+  .phone{
+    width:300px;height:638px;
+    border-radius:42px;
+    background:#0E0D0B;
+    padding:9px;
+    position:relative;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,.06) inset,
+      0 0 0 1.5px rgba(20,18,15,.7),
+      0 30px 60px rgba(20,18,15,.18),
+      0 8px 18px rgba(20,18,15,.10);
+    flex-shrink:0;
+  }
+  .phone .screen{
+    width:100%;height:100%;border-radius:34px;overflow:hidden;
+    background:var(--paper);position:relative;
+  }
+  .phone .island{
+    position:absolute;top:8px;left:50%;transform:translateX(-50%);
+    width:96px;height:28px;border-radius:18px;background:#000;z-index:5;
+  }
+  .phone .statusbar{
+    position:absolute;top:0;left:0;right:0;height:42px;z-index:4;
+    display:flex;justify-content:space-between;align-items:center;padding:13px 24px 0;
+    pointer-events:none;color:#fff;
+    font-family:-apple-system,"SF Pro Display",system-ui,sans-serif;font-size:14px;font-weight:600
+  }
+  .phone .statusbar.dark{color:#14120F}
+  .phone .statusbar .right{display:flex;align-items:center;gap:5px}
+  .phone .statusbar .right svg{display:block}
+  .phone iframe{
+    width:100%;height:100%;border:0;display:block;background:var(--paper);
+  }
+  .phone .pointer{
+    position:absolute;left:50%;bottom:-1px;transform:translateX(-50%);
+    width:96px;height:4px;border-radius:2px;background:rgba(255,255,255,.18);z-index:6;
+  }
+
+  /* ===== Scroll rail of static screens ===== */
+  .scrollRow{
+    padding:32px 56px 64px;
+    display:flex;gap:36px;overflow-x:auto;
+    background:
+      linear-gradient(to right,rgba(20,18,15,.025) 1px,transparent 1px) 0 0/40px 40px,
+      linear-gradient(to bottom,rgba(20,18,15,.025) 1px,transparent 1px) 0 0/40px 40px,
+      var(--paper);
+    scrollbar-width:thin;scrollbar-color:var(--stone) transparent;
+  }
+  .scrollRow::-webkit-scrollbar{height:8px}
+  .scrollRow::-webkit-scrollbar-track{background:transparent}
+  .scrollRow::-webkit-scrollbar-thumb{background:var(--stone);border-radius:4px}
+  .phoneCol{flex-shrink:0;display:flex;flex-direction:column;gap:14px;width:300px}
+  .phoneCol .meta{display:flex;justify-content:space-between;align-items:baseline;font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);padding:0 4px}
+  .phoneCol .meta .n{color:var(--moss);font-weight:500}
+  .phoneCol .meta .nm{font-family:"Instrument Serif",serif;font-style:italic;font-size:17px;color:var(--ink);letter-spacing:-.01em;text-transform:none}
+  .phoneCol .caption{font-size:12.5px;line-height:1.5;color:var(--ink-2);padding:0 4px}
+  .phoneCol .caption b{color:var(--ink);font-weight:500}
+
+  /* iframe inside the screen — needs to fit ~300x638 but the mobile site
+     was designed for ~390px. We do CSS scale so the page still flows naturally. */
+  .scaleWrap{
+    position:absolute;inset:0;
+    overflow:hidden;
+  }
+  .scaleWrap iframe{
+    width:391px;          /* design baseline */
+    height:830px;         /* tall enough so we can scrollTop to any anchor */
+    transform-origin:top left;
+    transform:scale(.7544);     /* 295/391 — fits inside 282px inner width */
+    pointer-events:none;        /* static screens — interactivity only on live phone */
+  }
+
+  /* ===== Live demo ===== */
+  .demo{
+    padding:48px 56px 80px;background:var(--bone);border-top:1px solid var(--rule);
+    display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start;
+  }
+  .demo .info{position:sticky;top:24px}
+  .demo .info .eyebrow{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);margin-bottom:14px}
+  .demo .info h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:48px;line-height:1;letter-spacing:-.018em;margin-bottom:18px;text-wrap:pretty}
+  .demo .info h2 em{font-style:italic;color:var(--moss)}
+  .demo .info p{font-family:"Instrument Serif",serif;font-size:18px;line-height:1.45;color:var(--ink-2);max-width:46ch;text-wrap:pretty;margin-bottom:24px}
+  .demo .info ul{list-style:none;border-top:1px solid var(--rule)}
+  .demo .info ul li{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--rule);font-size:13.5px;color:var(--ink-2);line-height:1.55}
+  .demo .info ul li::before{content:"→";font-family:"Geist Mono",monospace;font-size:11px;color:var(--moss);padding-top:2px}
+  .demo .info ul li b{color:var(--ink);font-weight:500}
+  .demo .phoneWrap{display:flex;justify-content:center;position:relative}
+
+  /* live phone — slightly bigger and interactive */
+  .phone.live{width:360px;height:760px;border-radius:50px;padding:11px}
+  .phone.live .screen{border-radius:40px}
+  .phone.live .island{width:114px;height:32px;top:10px;border-radius:20px}
+  .phone.live iframe.real{
+    width:100%;height:100%;
+    pointer-events:auto;
+    transform:none;
+  }
+  .phone.live .scaleWrap iframe{
+    width:100%;height:100%;transform:none;pointer-events:auto;
+  }
+
+  /* hint */
+  .demo .phoneWrap .hint{
+    position:absolute;right:-8px;top:24px;
+    transform:translateX(100%);
+    font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);
+    display:flex;flex-direction:column;gap:6px;padding-left:20px;
+  }
+  .demo .phoneWrap .hint::before{
+    content:"";position:absolute;left:0;top:6px;width:14px;height:1px;background:var(--moss);
+  }
+  .demo .phoneWrap .hint span{font-family:"Instrument Serif",serif;font-style:italic;font-size:13px;color:var(--ink-2);text-transform:none;letter-spacing:normal;line-height:1.4;max-width:18ch}
+
+  /* ===== Legend ===== */
+  .legendFoot{
+    padding:28px 56px;border-top:1px solid var(--rule);background:var(--paper);
+    display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+    font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3)
+  }
+  .legendFoot .grp{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+  .legendFoot .l{display:flex;gap:10px;align-items:center}
+  .legendFoot .l .swatch{display:inline-block;width:14px;height:14px;border:1px solid var(--ink)}
+  .legendFoot .l .swatch.moss{background:var(--moss);border-color:var(--moss)}
+  .legendFoot .l .swatch.stone{background:var(--stone);border-color:var(--stone)}
+  .legendFoot .l .swatch.ink{background:var(--ink);border-color:var(--ink)}
+  .legendFoot .l .swatch.bone{background:var(--bone);border-color:var(--rule)}
+</style>
+</head>
+<body>
+
+  <div class="topChrome">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <div class="url">r2living.pl/porzeczkowa · mobile preview</div>
+    <div class="title">R2 Living — Mobile</div>
+  </div>
+
+  <div class="frame">
+
+    <header class="pageHead">
+      <div>
+        <div class="eyebrow">— Mockup · v.01 · May 2026</div>
+        <h1>The site,<br/>at <em>palm-width.</em></h1>
+        <div class="stamp"><span class="dot"></span>R2 Living · Porzeczkowa · Mobile build · 390 × 844 baseline</div>
+      </div>
+      <div>
+        <p>The desktop site, re-flowed for the device most prospective owners will actually see it on first. Same shell, same materials, same configurator — just one column wide, with the plot table opened up into cards and the floor selector turned into a horizontal rail.</p>
+      </div>
+    </header>
+
+    <div class="sectionLabel">
+      <div class="l"><b>— 01 · Key screens</b>Six representative views · scroll horizontally →</div>
+      <div class="r">Each phone is the real mobile build, scrolled to a different anchor. Open mobile-site.html to interact.</div>
+    </div>
+
+    <div class="scrollRow" id="scrollRow"></div>
+
+    <div class="sectionLabel">
+      <div class="l"><b>— 02 · Live demo</b>Scroll · tap · configure</div>
+      <div class="r">The page below is the same mobile build, embedded interactively. The configurator toggles between Unit A / B and all three floors.</div>
+    </div>
+
+    <section class="demo">
+      <div class="info">
+        <div class="eyebrow">— Notes &amp; behaviour</div>
+        <h2>Same shell.<br/>One column. <em>One</em> thumb.</h2>
+        <p>The mobile build keeps the desktop’s rhythm — eyebrow, large serif title, italic sub — but lets every grid collapse to a single column. The configurator is the only screen with horizontal motion: a swipeable floor rail so the plan can sit at the full width.</p>
+        <ul>
+          <li><b>Nav</b> · sticky, blurred, hamburger left and a “Reserve” CTA always visible right.</li>
+          <li><b>Hero</b> · cropped portrait of the front elevation; the spec stripe becomes a horizontally-scrolling rail.</li>
+          <li><b>Specs &amp; principles</b> · multi-column desktop grids collapse to one or two on mobile.</li>
+          <li><b>Configurator</b> · Unit A/B as a 2-segment, floors as a swipeable pill rail, plan SVG at the full screen width.</li>
+          <li><b>Plots table</b> · becomes two stacked cards with the large unit numeral on the left.</li>
+          <li><b>Form</b> · stacked fields, full-width submit, native iOS selects.</li>
+        </ul>
+      </div>
+      <div class="phoneWrap">
+        <div class="phone live">
+          <div class="screen">
+            <iframe class="real" src="mobile-site.html#hero" title="R2 Living mobile — live"></iframe>
+            <div class="island"></div>
+            <div class="statusbar"><span>9:41</span><div class="right">
+              <svg width="16" height="10" viewBox="0 0 16 10"><rect x="0" y="6" width="2.8" height="4" rx=".6" fill="currentColor"/><rect x="4.2" y="4" width="2.8" height="6" rx=".6" fill="currentColor"/><rect x="8.4" y="2" width="2.8" height="8" rx=".6" fill="currentColor"/><rect x="12.6" y="0" width="2.8" height="10" rx=".6" fill="currentColor"/></svg>
+              <svg width="14" height="10" viewBox="0 0 14 10"><path d="M7 2.6c1.9 0 3.6.8 4.8 2L13 3.4C11.5 1.9 9.4.9 7 .9S2.5 1.9 1 3.4l1.2 1.2c1.2-1.2 2.9-2 4.8-2zM7 5.6c1.2 0 2.2.4 3 1.2l1.1-1.1C10 4.7 8.6 4 7 4S4 4.7 2.9 5.7L4 6.8c.8-.8 1.8-1.2 3-1.2zM7 8.6a1 1 0 100-2 1 1 0 000 2z" fill="currentColor"/></svg>
+              <svg width="22" height="10" viewBox="0 0 22 10"><rect x=".5" y=".5" width="19" height="9" rx="2.5" stroke="currentColor" stroke-opacity=".4" fill="none"/><rect x="2" y="2" width="16" height="6" rx="1" fill="currentColor"/><path d="M20.5 3.5v3c.7-.2 1.3-1 1.3-1.5s-.6-1.3-1.3-1.5z" fill="currentColor" fill-opacity=".4"/></svg>
+            </div></div>
+          </div>
+          <div class="pointer"></div>
+        </div>
+        <div class="hint">
+          <span>Tap, scroll, switch units, change floors — it’s the live build.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="legendFoot">
+      <div class="grp">
+        <div class="l"><span class="swatch ink"></span>Ink · #14120F</div>
+        <div class="l"><span class="swatch moss"></span>Moss · #3D4A3A</div>
+        <div class="l"><span class="swatch stone"></span>Stone · #BFB6A6</div>
+        <div class="l"><span class="swatch bone"></span>Bone · #F3EFE8</div>
+      </div>
+      <div>R2 Living · Mobile mockup · 390 × 844 baseline · iPhone 15-class</div>
+    </div>
+
+  </div>
+
+  <!-- generates the row of static-preview phones -->
+  <script>
+  (function(){
+    const screens = [
+      { n:'01', nm:'Hero',       cap:'Front-elevation crop, headline, dual CTA. Spec rail scrolls horizontally.', anchor:'hero',     top:0,     time:'9:41', dark:false },
+      { n:'02', nm:'Intro',      cap:'Eyebrow → serif title → italic sub. Specs collapse to a 2-col grid.',     anchor:'intro',    top:465,   time:'9:41', dark:true  },
+      { n:'03', nm:'Configurator',cap:'Unit A/B segment, swipeable floor rail, plan SVG at full width.',         anchor:'config',   top:3650,  time:'9:42', dark:true  },
+      { n:'04', nm:'Plots',      cap:'Desktop’s table opens up as two stacked cards. Big unit numeral.',         anchor:'plots',    top:5013,  time:'9:42', dark:false },
+      { n:'05', nm:'Quote',      cap:'Moss background, large serif quote, 2×2 figure grid.',                     anchor:'quote',    top:6763,  time:'9:43', dark:false },
+      { n:'06', nm:'Reserve',    cap:'Stacked fields, full-width submit, native selects.',                       anchor:'reserve',  top:7924,  time:'9:43', dark:true  }
+    ];
+
+    const row = document.getElementById('scrollRow');
+    row.innerHTML = screens.map((s,i) => `
+      <div class="phoneCol">
+        <div class="meta">
+          <span class="n">— ${s.n}</span>
+          <span class="nm">${s.nm}</span>
+        </div>
+        <div class="phone">
+          <div class="screen">
+            <div class="scaleWrap">
+              <iframe src="mobile-site.html#${s.anchor}" title="R2 Living mobile — ${s.nm}" data-top="${s.top}" onload="window.__r2scroll&&window.__r2scroll(this)"></iframe>
+            </div>
+            <div class="island"></div>
+            <div class="statusbar ${s.dark?'':'dark'}"><span>${s.time}</span><div class="right">
+              <svg width="16" height="10" viewBox="0 0 16 10"><rect x="0" y="6" width="2.8" height="4" rx=".6" fill="currentColor"/><rect x="4.2" y="4" width="2.8" height="6" rx=".6" fill="currentColor"/><rect x="8.4" y="2" width="2.8" height="8" rx=".6" fill="currentColor"/><rect x="12.6" y="0" width="2.8" height="10" rx=".6" fill="currentColor"/></svg>
+              <svg width="14" height="10" viewBox="0 0 14 10"><path d="M7 2.6c1.9 0 3.6.8 4.8 2L13 3.4C11.5 1.9 9.4.9 7 .9S2.5 1.9 1 3.4l1.2 1.2c1.2-1.2 2.9-2 4.8-2zM7 5.6c1.2 0 2.2.4 3 1.2l1.1-1.1C10 4.7 8.6 4 7 4S4 4.7 2.9 5.7L4 6.8c.8-.8 1.8-1.2 3-1.2zM7 8.6a1 1 0 100-2 1 1 0 000 2z" fill="currentColor"/></svg>
+              <svg width="22" height="10" viewBox="0 0 22 10"><rect x=".5" y=".5" width="19" height="9" rx="2.5" stroke="currentColor" stroke-opacity=".4" fill="none"/><rect x="2" y="2" width="16" height="6" rx="1" fill="currentColor"/><path d="M20.5 3.5v3c.7-.2 1.3-1 1.3-1.5s-.6-1.3-1.3-1.5z" fill="currentColor" fill-opacity=".4"/></svg>
+            </div></div>
+          </div>
+          <div class="pointer"></div>
+        </div>
+        <div class="caption"><b>${s.nm}.</b> ${s.cap}</div>
+      </div>
+    `).join('');
+
+    // Forcefully snap each iframe to its target, bypassing smooth-scroll in the child doc.
+    window.__r2scroll = function(f){
+      try {
+        var top = parseInt(f.dataset.top||'0', 10);
+        var doc = f.contentDocument || f.contentWindow.document;
+        if (doc && doc.documentElement) doc.documentElement.style.scrollBehavior = 'auto';
+        if (doc && doc.body) doc.body.style.scrollBehavior = 'auto';
+        f.contentWindow.scrollTo({ top: top, left: 0, behavior: 'instant' });
+      } catch(e) {}
+    };
+    // Retry a couple times in case the iframe is still laying out (mobile-site.html is ~9700px tall).
+    [400, 1200, 2400].forEach(function(delay){
+      setTimeout(function(){
+        document.querySelectorAll('.scaleWrap iframe').forEach(window.__r2scroll);
+      }, delay);
+    });
+  })();
+  </script>
+
+</body>
+</html>
