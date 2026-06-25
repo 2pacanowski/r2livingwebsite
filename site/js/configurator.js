@@ -54,10 +54,14 @@
 
   function render() {
     document.querySelectorAll('.tab[data-unit]').forEach(t => {
-      t.classList.toggle('active', t.dataset.unit === state.unit);
+      const active = t.dataset.unit === state.unit;
+      t.classList.toggle('active', active);
+      t.setAttribute('aria-selected', active);
     });
     document.querySelectorAll('.tab[data-floor]').forEach(t => {
-      t.classList.toggle('active', t.dataset.floor === state.floor);
+      const active = t.dataset.floor === state.floor;
+      t.classList.toggle('active', active);
+      t.setAttribute('aria-selected', active);
     });
 
     document.querySelectorAll('.floorSvg').forEach(s => {

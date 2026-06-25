@@ -10,22 +10,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/home.css">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:title" content="R2 Living — Modern homes north of Warsaw" />
+<meta property="og:description" content="R2 Living is a boutique developer of modern duplex homes north of Warsaw. Two to four projects a year, with a floor plan you can still shape." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://r2living.pl/" />
+<meta property="og:image" content="https://r2living.pl/assets/images/porzeczkowa-01-front.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
 
   <!-- ============== NAV ============== -->
   <nav class="top">
     <div class="inner">
-      <a href="index.html" aria-label="R2 Living"><img class="logo-mark" src="assets/r2-logo-black.svg" alt="R2 Living" /></a>
-      <div class="links">
-        <a class="active" href="#developments">Developments</a>
-        <a href="#configure">Configure</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="right">
-        <div class="lang"><b>EN</b><span>·</span><span>PL</span></div>
-        <a class="btn" href="#contact">Reserve a viewing</a>
+      <a href="index.html" aria-label="R2 Living"><img class="logo-mark" src="assets/r2-logo-black.svg" alt="R2 Living" width="109" height="26" /></a>
+      <button class="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="navPanel" id="navPanel">
+        <div class="links">
+          <a class="active" href="#developments">Developments</a>
+          <a href="#configure">Configure</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="right">
+          <div class="lang"><b>EN</b><span>·</span><span>PL</span></div>
+          <a class="btn" href="#contact">Reserve a viewing</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -58,7 +69,7 @@
       <article class="project">
         <div class="pic">
           <span class="tag soon"><span class="ind"></span>Coming soon</span>
-          <img src="assets/images/wspolna-01-garden.jpg" alt="Wspólna duplex, garden elevation" loading="lazy" />
+          <img src="assets/images/wspolna-01-garden.jpg" alt="Wspólna duplex, garden elevation" loading="lazy" width="3200" height="1800" />
         </div>
         <div class="info">
           <div class="pnum">— 01 · Coming soon</div>
@@ -79,7 +90,7 @@
       <article class="project flip">
         <div class="pic">
           <span class="tag completed"><span class="ind"></span>Completed</span>
-          <img src="assets/images/porzeczkowa-01-front.jpg" alt="Porzeczkowa front elevation" loading="lazy" />
+          <img src="assets/images/porzeczkowa-01-front.jpg" alt="Porzeczkowa front elevation" loading="lazy" width="3200" height="1800" />
         </div>
         <div class="info">
           <div class="pnum">— 02 · Completed</div>
@@ -187,7 +198,7 @@
         </div>
         <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" required placeholder="anna@example.pl" /></div>
         <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" placeholder="+48 600 000 000" /></div>
-        <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="3" placeholder="e.g. we're a family of four interested in Wspólna, looking to move late 2027…" style="font-family:'Instrument Serif',serif;font-size:18px;resize:none"></textarea></div>
+        <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="3" class="serif" placeholder="e.g. we're a family of four interested in Wspólna, looking to move late 2027…"></textarea></div>
         <button type="submit" class="submit">Send enquiry</button>
         <div class="small">By submitting, you agree to our quiet, non-spammy contact policy.</div>
       </form>
@@ -198,7 +209,7 @@
   <footer>
     <div class="inner">
       <div class="brand">
-        <img class="logo-mark footer" src="assets/r2-logo-black.svg" alt="R2 Living" />
+        <img class="logo-mark footer" src="assets/r2-logo-black.svg" alt="R2 Living" width="125" height="30" />
         <p>A boutique developer of modern duplex homes in suburban Warsaw. Two to four projects a year. The architect signs every plan.</p>
       </div>
 
@@ -221,7 +232,7 @@
         <ul>
           <li><a href="mailto:hello@r2living.pl">hello@r2living.pl</a></li>
           <li><a href="tel:+48220000000">+48 22 000 00 00</a></li>
-          <li><a class="iglink" href="https://instagram.com/r2living" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="19" height="19" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>Instagram</a></li>
+          <li><a class="iglink" href="https://instagram.com/r2living" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="19" height="19" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>Instagram</a></li>
         </ul>
       </div>
       <div>
@@ -241,5 +252,6 @@
   </footer>
 
   <script src="js/forms.js"></script>
+  <script src="js/nav.js"></script>
 </body>
 </html>

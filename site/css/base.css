@@ -48,6 +48,7 @@ nav.top{
   border-bottom:1px solid var(--rule);
 }
 nav.top .inner{max-width:1440px;margin:0 auto;padding:14px 56px;display:flex;align-items:center;justify-content:space-between;gap:48px}
+nav.top .navPanel{display:contents}
 nav.top .links{display:flex;gap:34px;font-family:"Geist",sans-serif;font-size:13.5px;color:var(--ink-2)}
 nav.top .links a{position:relative;padding:6px 0;letter-spacing:-.005em}
 nav.top .links a:hover{color:var(--ink)}
@@ -64,6 +65,27 @@ nav.top .btn{
 }
 nav.top .btn:hover{background:var(--moss);border-color:var(--moss)}
 nav.top .btn::after{content:"→";font-family:"Geist",sans-serif}
+nav.top .navToggle{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:32px;height:32px;border:none;background:none;cursor:pointer;flex:none;padding:0
+}
+nav.top .navToggle span{display:block;width:100%;height:1.5px;background:var(--ink);transition:transform .2s,opacity .2s}
+nav.top.open .navToggle span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+nav.top.open .navToggle span:nth-child(2){opacity:0}
+nav.top.open .navToggle span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+@media(max-width:768px){
+  nav.top .navToggle{display:flex}
+  nav.top .navPanel{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:28px;background:var(--paper);
+    padding:28px 24px 32px;border-bottom:1px solid var(--rule)
+  }
+  nav.top.open .navPanel{display:flex}
+  nav.top .links{flex-direction:column;gap:18px;font-size:16px}
+  nav.top .right{flex-direction:column;align-items:flex-start;gap:18px}
+  nav.top .btn{width:100%;justify-content:center}
+}
 
 /* ===== Section primitives ===== */
 .eyebrow{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
@@ -80,6 +102,7 @@ p.sub{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.4;color:
   background:transparent;font-family:"Instrument Serif",serif;font-size:20px;color:var(--ink);
   width:100%;outline:none;transition:border-color .2s
 }
+.form textarea.serif{font-family:'Instrument Serif',serif;font-size:18px;resize:none}
 .form input::placeholder,.form textarea::placeholder{color:rgba(20,18,15,.32)}
 .form input:focus,.form select:focus,.form textarea:focus{border-color:var(--moss)}
 .form .row2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -122,4 +145,11 @@ footer .legal{max-width:1440px;margin:24px auto 0;display:flex;justify-content:s
 @media(max-width:980px){
   footer .inner{grid-template-columns:1fr 1fr}
   footer .legal{flex-direction:column;gap:8px}
+}
+
+@media(max-width:480px){
+  nav.top .inner{padding:12px 20px}
+  h2.title{font-size:40px}
+  .form{padding:24px}
+  footer{padding:56px 20px 32px}
 }

@@ -135,3 +135,34 @@
   .project .pic{min-height:340px}
   .aboutSection .grid,.contactSection .inner{grid-template-columns:1fr;gap:48px}
 }
+
+@media(max-width:480px){
+  .home-hero{padding:64px 24px 56px}
+  .home-hero h1{font-size:42px}
+  .home-hero .lede{font-size:19px;margin-top:32px}
+  .home-hero .heroStats{grid-template-columns:1fr 1fr;gap:20px;margin-top:36px;padding-top:24px}
+  .home-hero .heroStats .hs .num{font-size:34px}
+
+  .projects{padding:64px 0 72px}
+  .projects .inner{padding:0 24px}
+  .projects .secLabel{flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:36px}
+  .projects .secLabel h2{font-size:30px}
+  .project .info{padding:32px 24px}
+  .project .info .pname{font-size:42px}
+  .project .info .pdesc{font-size:18px}
+  .project .info dl{grid-template-columns:1fr 1fr;gap:18px 20px}
+  .project .info .plink{min-width:0;width:100%}
+
+  .configure{padding:64px 0 56px}
+  .configure .inner{padding:0 24px}
+  .configure h2{font-size:34px}
+  .configure .lede{font-size:18px}
+  .configure .cta .pitch p{font-size:21px}
+
+  .aboutSection{padding:64px 24px}
+  .aboutSection h2{font-size:40px}
+
+  .contactSection{padding:64px 0}
+  .contactSection h2{font-size:40px}
+  .contactSection .csub{font-size:18px}
+}

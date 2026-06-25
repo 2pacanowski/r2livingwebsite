@@ -74,11 +74,11 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 
 /* ===== Configurator viewer ===== */
 .configViewer{border:1px solid var(--rule);background:var(--paper);overflow:hidden;margin-top:48px}
-.configTabs{display:flex;justify-content:space-between;align-items:stretch;border-bottom:1px solid var(--rule);background:var(--bone)}
-.tabGroup{display:flex;align-items:stretch}
+.configTabs{display:flex;justify-content:space-between;align-items:stretch;border-bottom:1px solid var(--rule);background:var(--bone);overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+.tabGroup{display:flex;align-items:stretch;flex:none}
 .tabGroup .tabLabel{padding:0 24px;font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss);display:flex;align-items:center;border-right:1px solid var(--rule)}
 .tabGroup.right .tabLabel{border-right:none;border-left:1px solid var(--rule)}
-.tab{padding:18px 26px;font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);background:var(--bone);cursor:pointer;border:none;border-right:1px solid var(--rule);position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:5px;transition:background .15s,color .15s;text-align:left;min-width:120px}
+.tab{padding:18px 26px;font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);background:var(--bone);cursor:pointer;border:none;border-right:1px solid var(--rule);position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:5px;transition:background .15s,color .15s;text-align:left;min-width:120px;flex:none;scroll-snap-align:start}
 .tabGroup.right .tab{border-right:none;border-left:1px solid var(--rule)}
 .tab .uname,.tab .fname{font-family:"Instrument Serif",serif;font-size:24px;line-height:1;letter-spacing:-.01em;text-transform:none;color:var(--ink)}
 .tab .ustatus,.tab .farea{font-size:9.5px;color:var(--ink-2);letter-spacing:.14em}
@@ -243,9 +243,42 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .gallery{grid-template-columns:1fr}
   .g-a,.g-b,.g-c,.g-d{grid-column:1 / -1;grid-row:span 5}
   .configBody{grid-template-columns:1fr}
-  .plotsHead,.plot{grid-template-columns:60px 1fr 1fr;gap:12px}
-  .plotsHead span:nth-child(4),.plot .val:nth-of-type(2){display:none}
+  .plotsHead{display:none}
+  .plot{grid-template-columns:1fr;gap:8px;align-items:start}
   .pull .inner{grid-template-columns:1fr;gap:32px}
   .pull .figure{grid-template-columns:1fr 1fr}
   .locStats{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:480px){
+  .hero h1{font-size:42px;max-width:none}
+  .hero .inner{padding:64px 24px 80px;min-height:auto}
+  .hero .lede{font-size:16px}
+  .hero .stripe .stripeInner{padding:14px 24px;flex-wrap:wrap;gap:14px}
+
+  section.block{padding:64px 24px}
+  .sec-head{margin-bottom:36px}
+  h2.title{font-size:38px}
+  p.sub{font-size:18px}
+
+  .gallerySection{padding:64px 0}
+  .locationSection{padding:64px 0}
+  .plotSection{padding:64px 0}
+  .reserveSection{padding:64px 0}
+
+  .plot .pid{font-size:28px}
+  .plot .name{font-size:19px}
+  .plot .val{font-size:18px}
+
+  .configTabs .tab{padding:14px 16px;min-width:96px}
+
+  .pull{padding:64px 24px}
+  .pull h3{font-size:34px}
+  .pull .figure .f .num{font-size:48px}
+
+  .locStats{grid-template-columns:1fr 1fr;gap:16px}
+  .locStats .ls .num{font-size:34px}
+
+  .about .pr h4{font-size:24px}
+  .about .studioCard{padding:32px 24px}
 }
