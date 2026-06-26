@@ -193,9 +193,18 @@
           <!-- <div class="planTitle" id="planTitle"></div> -->
           <!-- <div class="compass">N</div> -->
 
-          <img class="floorSvg active" data-floor="ground" alt="Wspólna ground floor plan" />
-          <img class="floorSvg" data-floor="first" alt="Wspólna first floor plan" />
-          <img class="floorSvg" data-floor="top" alt="Wspólna top floor plan" />
+          <div class="planFrame active" data-floor="ground">
+            <img class="floorSvg active" data-floor="ground" alt="Wspólna ground floor plan" />
+            <svg class="roomOverlay" data-floor="ground"></svg>
+          </div>
+          <div class="planFrame" data-floor="first">
+            <img class="floorSvg" data-floor="first" alt="Wspólna first floor plan" />
+            <svg class="roomOverlay" data-floor="first"></svg>
+          </div>
+          <div class="planFrame" data-floor="top">
+            <img class="floorSvg" data-floor="top" alt="Wspólna top floor plan" />
+            <svg class="roomOverlay" data-floor="top"></svg>
+          </div>
 
           <!-- <div class="planScale">Scale 1:200 · 1 grid sq = 1 m²</div> -->
         </div>
@@ -238,6 +247,7 @@
       {
         "planMode": "image",
         "imagePath": "assets/wspolna-floor-plans/wspolna-unit{unit}-{floor}.svg",
+        "roomRegionsPath": "assets/wspolna-floor-plans/room-regions.json",
         "floors": ["ground", "first", "top"],
         "units": {
           "1": { "assetKey": "A", "floors": {

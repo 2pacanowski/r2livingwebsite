@@ -109,6 +109,13 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 .configPlan.flipped svg .content{transform:scaleX(-1)}
 .configPlan.flipped svg .lbl{transform:scaleX(-1);transform-box:fill-box;transform-origin:center}
 
+.configPlan .planFrame{display:none;position:relative;width:100%;max-width:640px}
+.configPlan .planFrame.active{display:block}
+.configPlan .planFrame .roomOverlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.configPlan .planFrame .roomOverlay path{fill:transparent;pointer-events:auto;transition:fill .15s}
+.configPlan .planFrame .roomOverlay path.hover{fill:rgba(61,74,58,.22)}
+.configSide .roomList .rm.hover{background:rgba(61,74,58,.08)}
+
 .configSide{padding:42px 40px;display:flex;flex-direction:column;background:var(--paper)}
 .configSide .sideHead{padding-bottom:20px;border-bottom:1px solid var(--rule);margin-bottom:24px}
 .configSide .sideHead .floorBig{font-family:"Instrument Serif",serif;font-size:42px;line-height:.95;letter-spacing:-.015em;color:var(--ink)}
