@@ -45,6 +45,7 @@
 
   const state = { unit: 'A', floor: 'ground' };
   const planEl = document.getElementById('configPlan');
+  const planCode = planEl.dataset.planCode || 'PZK-14';
   const titleEl = document.getElementById('planTitle');
   const floorTitleEl = document.getElementById('floorTitle');
   const floorSubEl = document.getElementById('floorSubtitle');
@@ -72,7 +73,7 @@
 
     const floorLabel = state.floor === 'ground' ? 'Ground floor' :
       state.floor === 'first' ? 'First floor' : 'Top floor';
-    titleEl.innerHTML = 'Plan No. <b>PZK-14 · ' + state.unit + '</b> · ' + floorLabel;
+    titleEl.innerHTML = 'Plan No. <b>' + planCode + ' · ' + state.unit + '</b> · ' + floorLabel;
 
     const d = floorData[state.floor];
     floorTitleEl.innerHTML = d.title;

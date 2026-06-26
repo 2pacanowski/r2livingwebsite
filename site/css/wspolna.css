@@ -1,0 +1,4 @@
+@import url("porzeczkowa.css");
+
+/* Wspólna uses the same project-page layout as Porzeczkowa; only the hero image differs. */
+.hero .bg{background-image:url('../assets/images/wspolna-04-dusk.jpg')}

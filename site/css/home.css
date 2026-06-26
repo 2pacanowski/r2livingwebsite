@@ -75,6 +75,8 @@
 .project .info .plink::after{content:"→";font-family:"Geist",sans-serif}
 .project .info .plink.ghost{background:transparent;color:var(--ink);border-color:var(--rule-strong)}
 .project .info .plink.ghost:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.project .info .plinks{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-self:flex-start}
+.project .info .plinks .plink{margin-top:0}
 
 /* ===== Configure (dark marketing beat) ===== */
 .configure{background:var(--ink);color:var(--bone);padding:116px 0 104px;border-top:1px solid var(--rule)}
@@ -168,6 +170,7 @@
   .project .info .pdesc{font-size:18px}
   .project .info dl{grid-template-columns:1fr 1fr;gap:18px 20px}
   .project .info .plink{min-width:0;width:100%}
+  .project .info .plinks{flex-direction:column;width:100%}
 
   .configure{padding:64px 0 56px}
   .configure .inner{padding:0 24px}
