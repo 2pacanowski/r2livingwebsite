@@ -48,8 +48,8 @@
     //   state.floor === 'first' ? 'First floor' : 'Top floor';
     // titleEl.innerHTML = 'Plan No. <b>' + planCode + ' · ' + state.unit + '</b> · ' + floorLabel;
 
-    floorTitleEl.innerHTML = d.title;
-    floorSubEl.textContent = 'Unit ' + state.unit + ' · ' + d.subtitle;
+    floorTitleEl.innerHTML = 'Unit ' + state.unit + ' ' + d.title;
+    floorSubEl.textContent = d.subtitle + ' · ' + d.height + ' ceiling height';
 
     roomListEl.innerHTML = d.rooms.map(r =>
       '<div class="rm"><span class="ix">' + r.ix + '</span>' +
