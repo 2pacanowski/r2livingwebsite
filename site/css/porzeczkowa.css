@@ -113,7 +113,7 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 .configPlan .planFrame.active{display:block}
 .configPlan .planFrame .roomOverlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .configPlan .planFrame .roomOverlay path{fill:transparent;pointer-events:auto;transition:fill .25s,opacity .25s}
-.configPlan .planFrame .roomOverlay path.hover{fill:rgba(61,74,58,.32);opacity:.85;filter:blur(7px)}
+.configPlan .planFrame .roomOverlay path.hover{fill:rgba(61,74,58,.18);opacity:.85;filter:blur(7px)}
 .configSide .roomList .rm.hover{background:rgba(61,74,58,.08)}
 
 .configSide{padding:42px 40px;display:flex;flex-direction:column;background:var(--paper)}
