@@ -84,14 +84,14 @@
         <div class="eyebrow">— 01 · The development</div>
         <h2 class="title">Two homes,<br/>two distinct <em>layouts.</em></h2>
       </div>
-      <p class="sub">Wspólna is two homes — Unit A and Unit B — sharing one plot and one architectural language, yet each drawn to its own floor plan. Not mirrored, not repeated: two individual houses behind a single, coherent façade.</p>
+      <p class="sub">Wspólna is two homes — Unit 1 and Unit 2 — sharing one plot and one architectural language, yet each drawn to its own floor plan. Not mirrored, not repeated: two individual houses behind a single, coherent façade.</p>
     </div>
 
     <div class="intro">
       <div class="body">
         <p>The setting. Łomianki Dolne sits on the quiet, river side of Łomianki — a north-west suburb of Warsaw. Wspólna is a residential street a short walk from local shops and the school, with the Vistula and its riverside paths close by.</p>
         <p>The home. Two storeys, flat-roof modernism, cantilevered eaves and a covered carport per unit. South-facing back gardens, full-height living-room glazing, three bedrooms and a large utility &amp; storage room above. Materials are deliberately ordinary — white through-coloured render, anthracite aluminium, oak floors inside — so the building ages gracefully and runs cheaply.</p>
-        <p><strong>The two units.</strong> Unit A and Unit B are not mirror images of one another. Each has its own floor plan, its own room proportions and its own relationship to the garden and the street — two genuinely different houses that happen to share a wall and a roofline.</p>
+        <p><strong>The two units.</strong> Unit 1 and Unit 2 are not mirror images of one another. Each has its own floor plan, its own room proportions and its own relationship to the garden and the street — two genuinely different houses that happen to share a wall and a roofline.</p>
       </div>
 
       <aside class="specs">
@@ -153,7 +153,7 @@
         <div class="eyebrow">— 03 · FLOORPLAN</div>
         <h2 class="title">The shell.<br/>The rest is <em>yours.</em></h2>
       </div>
-      <p class="sub">Everything dashed in moss is movable — interior walls, wet points, sockets. Switch between Unit A and Unit B, browse the three floors, then book a configuration session.</p>
+      <p class="sub">Everything dashed in moss is movable — interior walls, wet points, sockets. Switch between Unit 1 and Unit 2, browse the three floors, then book a configuration session.</p>
     </div>
 
     <div class="configViewer">
@@ -161,12 +161,12 @@
       <div class="configTabs">
         <div class="tabGroup" role="tablist" aria-label="Unit">
           <div class="tabLabel">— Unit</div>
-          <button class="tab active" role="tab" aria-selected="true" data-unit="A">
-            <span class="uname">A</span>
+          <button class="tab active" role="tab" aria-selected="true" data-unit="1">
+            <span class="uname">1</span>
             <span class="ustatus"><span class="ind"></span>Available</span>
           </button>
-          <button class="tab" role="tab" aria-selected="false" data-unit="B">
-            <span class="uname">B</span>
+          <button class="tab" role="tab" aria-selected="false" data-unit="2">
+            <span class="uname">2</span>
             <span class="ustatus"><span class="ind"></span>Available</span>
           </button>
         </div>
@@ -203,7 +203,7 @@
         <aside class="configSide">
           <div class="sideHead">
             <div class="floorBig" id="floorTitle">Ground <em>floor</em></div>
-            <div class="floorMeta" id="floorSubtitle">Unit A · 92 m² useable</div>
+            <div class="floorMeta" id="floorSubtitle">Unit 1 · 92 m² useable</div>
           </div>
 
           <div class="roomList" id="roomList">
@@ -233,6 +233,102 @@
           <a href="#reserve">Book a configuration session</a>
         </div>
       </div>
+
+      <script type="application/json" id="configData">
+      {
+        "planMode": "image",
+        "imagePath": "assets/wspolna-floor-plans/wspolna-unit{unit}-{floor}.svg",
+        "floors": ["ground", "first", "top"],
+        "units": {
+          "1": { "assetKey": "A", "floors": {
+            "ground": {
+              "title": "Ground <em>floor</em>",
+              "subtitle": "73,87 m² useable",
+              "rooms": [
+                {"ix":"01","name":"Entrance hall","sub":"with large wardrobe & sitting area","size":"4,45 m²"},
+                {"ix":"02","name":"Living & dining room","sub":"open-space layout","size":"36,72 m²"},
+                {"ix":"03","name":"Kitchen","sub":"with peninsula & sitting","size":"9,80 m²"},
+                {"ix":"04","name":"Extra room","sub":"convert to study or guest bedroom","size":"9,87 m²"},
+                {"ix":"05","name":"Corridor","sub":"with storage space","size":"2,81 m²"},
+                {"ix":"06","name":"Storage","sub":"exterior access","size":"6,59 m²"},
+                {"ix":"07","name":"Bathroom","sub":"with shower","size":"3,63 m²"},
+                {"ix":"08","name":"Staircase","sub":"","size":"6,06 m²"}
+              ],
+              "walls": 5, "wets": 3
+            },
+            "first": {
+              "title": "First <em>floor</em>",
+              "subtitle": "68,84 m² useable + 6,32 m² balcony",
+              "rooms": [
+                {"ix":"01","name":"Hall","sub":"with balcony access","size":"10,78 m²"},
+                {"ix":"02","name":"Master bedroom","sub":"ensuite + walk-in wardrobe","size":"16,94 m²"},
+                {"ix":"03","name":"Bathroom 1","sub":"attached to master bedroom","size":"3,88 m²"},
+                {"ix":"04","name":"Bathroom 2","sub":"with shower and bathtub","size":"7,63 m²"},
+                {"ix":"05","name":"Bedroom 1","sub":"with movable wall","size":"11,68 m²"},
+                {"ix":"06","name":"Bedroom 2","sub":"with movable wall","size":"12,21 m²"},
+                {"ix":"07","name":"Laundry room","sub":"with sink & washing machine","size":"3,10 m²"},
+                {"ix":"08","name":"Staircase","sub":"","size":"5,73 m²"},
+                {"ix":"09","name":"Walk-in wardrobe","sub":"attached to master bedroom","size":"3,62 m²"}
+              ],
+              "walls": 4, "wets": 2
+            },
+            "top": {
+              "title": "Top <em>floor</em>",
+              "subtitle": "8,33 m² useable",
+              "rooms": [
+                {"ix":"01","name":"Staircase","sub":"","size":"5,76 m²"},
+                {"ix":"02","name":"Utility room","sub":"HVAC and heating equipment","size":"7,31 m²"},
+                {"ix":"03","name":"Corridor","sub":"    ","size":"1,02 m²"}
+              ],
+              "walls": 2, "wets": 1
+            }
+          }},
+          "2": { "assetKey": "B", "floors": {
+            "ground": {
+              "title": "Ground <em>floor</em>",
+              "subtitle": "73,87 m² useable",
+              "rooms": [
+                {"ix":"01","name":"Entrance hall","sub":"with large wardrobe & sitting area","size":"4,45 m²"},
+                {"ix":"02","name":"Living & dining room","sub":"open-space layout","size":"36,72 m²"},
+                {"ix":"03","name":"Kitchen","sub":"with peninsula & sitting","size":"9,80 m²"},
+                {"ix":"04","name":"Extra room","sub":"convert to study or guest bedroom","size":"9,87 m²"},
+                {"ix":"05","name":"Corridor","sub":"with storage space","size":"2,81 m²"},
+                {"ix":"06","name":"Storage","sub":"exterior access","size":"6,59 m²"},
+                {"ix":"07","name":"Bathroom","sub":"with shower","size":"3,63 m²"},
+                {"ix":"08","name":"Staircase","sub":"","size":"6,06 m²"}
+              ],
+              "walls": 5, "wets": 3
+            },
+            "first": {
+              "title": "First <em>floor</em>",
+              "subtitle": "68,84 m² useable + 6,32 m² balcony",
+              "rooms": [
+                {"ix":"01","name":"Hall","sub":"with balcony access","size":"10,78 m²"},
+                {"ix":"02","name":"Master bedroom","sub":"ensuite + walk-in wardrobe","size":"16,94 m²"},
+                {"ix":"03","name":"Bathroom 1","sub":"attached to master bedroom","size":"3,88 m²"},
+                {"ix":"04","name":"Bathroom 2","sub":"with shower and bathtub","size":"7,63 m²"},
+                {"ix":"05","name":"Bedroom 1","sub":"with movable wall","size":"11,68 m²"},
+                {"ix":"06","name":"Bedroom 2","sub":"with movable wall","size":"12,21 m²"},
+                {"ix":"07","name":"Laundry room","sub":"with sink & washing machine","size":"3,10 m²"},
+                {"ix":"08","name":"Staircase","sub":"","size":"5,73 m²"},
+                {"ix":"09","name":"Walk-in wardrobe","sub":"attached to master bedroom","size":"3,62 m²"}
+              ],
+              "walls": 4, "wets": 2
+            },
+            "top": {
+              "title": "Top <em>floor</em>",
+              "subtitle": "8,33 m² useable",
+              "rooms": [
+                {"ix":"01","name":"Staircase","sub":"","size":"5,76 m²"},
+                {"ix":"02","name":"Utility room","sub":"HVAC and heating equipment","size":"7,31 m²"},
+                {"ix":"03","name":"Corridor","sub":"    ","size":"1,02 m²"}
+              ],
+              "walls": 2, "wets": 1
+            }
+          }}
+        }
+      }
+      </script>
     </div>
   </section>
 
@@ -257,7 +353,7 @@
       </div>
 
       <div class="plot">
-        <div class="pid">A<em>²</em></div>
+        <div class="pid">1<em>²</em></div>
         <div class="name">Wspólna 1<small>East-facing approach</small></div>
         <div class="val">151 m²<small>useable</small></div>
         <div class="val">410 m²<small>plot</small></div>
@@ -266,7 +362,7 @@
       </div>
 
       <div class="plot">
-        <div class="pid">B<em>²</em></div>
+        <div class="pid">2<em>²</em></div>
         <div class="name">Wspólna 2<small>West-facing approach</small></div>
         <div class="val">151 m²<small>useable</small></div>
         <div class="val">410 m²<small>plot</small></div>

@@ -84,14 +84,14 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
         <div class="eyebrow">— 01 · The development</div>
         <h2 class="title">Two homes,<br/>two distinct <em>layouts.</em></h2>
       </div>
-      <p class="sub">Porzeczkowa 5 is two homes — Unit A and Unit B — sharing one plot and one architectural language, yet each drawn to its own floor plan. Not mirrored, not repeated: two individual houses behind a single, coherent façade.</p>
+      <p class="sub">Porzeczkowa 5 is two homes — Unit 1 and Unit 2 — sharing one plot and one architectural language, yet each drawn to its own floor plan. Not mirrored, not repeated: two individual houses behind a single, coherent façade.</p>
     </div>
 
     <div class="intro">
       <div class="body">
         <p>The setting. Kiełpin is the quietest corner of Łomianki — a north-west suburb of Warsaw, bordered by Kampinos National Park on one side and the Vistula river on the other. A four-minute walk takes you to the bus stop on Kolejowa; the city centre is thirty minutes by car, or forty by bus.</p>
         <p>The home. Two storeys, flat-roof modernism, cantilevered eaves and a covered carport per unit. South-facing back gardens, full-height living-room glazing, three bedrooms and a large utility &amp; storage room above. Materials are deliberately ordinary — white through-coloured render, anthracite aluminium, oak floors inside — so the building ages gracefully and runs cheaply.</p>
-        <p><strong>The two units.</strong> Unit A and Unit B are not mirror images of one another. Each has its own floor plan, its own room proportions and its own relationship to the garden and the street — two genuinely different houses that happen to share a wall and a roofline.</p>
+        <p><strong>The two units.</strong> Unit 1 and Unit 2 are not mirror images of one another. Each has its own floor plan, its own room proportions and its own relationship to the garden and the street — two genuinely different houses that happen to share a wall and a roofline.</p>
       </div>
 
       <aside class="specs">
@@ -153,7 +153,7 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
         <div class="eyebrow">— 03 · FLOORPLAN</div>
         <h2 class="title">The shell.<br/>The rest is <em>yours.</em></h2>
       </div>
-      <p class="sub">Everything dashed in moss is movable — interior walls, wet points, sockets. Switch between Unit A and Unit B, browse the three floors, then book a configuration session.</p>
+      <p class="sub">Everything dashed in moss is movable — interior walls, wet points, sockets. Switch between Unit 1 and Unit 2, browse the three floors, then book a configuration session.</p>
     </div>
 
     <div class="configViewer">
@@ -161,12 +161,12 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
       <div class="configTabs">
         <div class="tabGroup" role="tablist" aria-label="Unit">
           <div class="tabLabel">— Unit</div>
-          <button class="tab active" role="tab" aria-selected="true" data-unit="A">
-            <span class="uname">A</span>
+          <button class="tab active" role="tab" aria-selected="true" data-unit="1">
+            <span class="uname">1</span>
             <span class="ustatus"><span class="ind"></span>Available</span>
           </button>
-          <button class="tab" role="tab" aria-selected="false" data-unit="B">
-            <span class="uname">B</span>
+          <button class="tab" role="tab" aria-selected="false" data-unit="2">
+            <span class="uname">2</span>
             <span class="ustatus reserved"><span class="ind"></span>Reserved</span>
           </button>
         </div>
@@ -190,7 +190,7 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
       <!-- Body -->
       <div class="configBody">
         <div class="configPlan" id="configPlan" data-plan-code="PZK-14">
-          <div class="planTitle" id="planTitle">Plan No. <b>PZK-14 · A</b> · Ground floor</div>
+          <div class="planTitle" id="planTitle">Plan No. <b>PZK-14 · 1</b> · Ground floor</div>
           <div class="compass">N</div>
 
           <!-- GROUND FLOOR -->
@@ -398,7 +398,7 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
         <aside class="configSide">
           <div class="sideHead">
             <div class="floorBig" id="floorTitle">Ground <em>floor</em></div>
-            <div class="floorMeta" id="floorSubtitle">Unit A · 92 m² useable</div>
+            <div class="floorMeta" id="floorSubtitle">Unit 1 · 92 m² useable</div>
           </div>
 
           <div class="roomList" id="roomList">
@@ -415,6 +415,95 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
           </div>
         </aside>
       </div>
+
+      <script type="application/json" id="configData">
+      {
+        "planMode": "inline",
+        "floors": ["ground", "first", "top"],
+        "units": {
+          "1": { "floors": {
+            "ground": {
+              "title": "Ground <em>floor</em>",
+              "subtitle": "92 m² useable · 12 m² carport",
+              "rooms": [
+                {"ix":"01","name":"Entrance","sub":"","size":"6 m²"},
+                {"ix":"02","name":"Cloakroom","sub":"","size":"4 m²"},
+                {"ix":"03","name":"WC","sub":"","size":"3 m²"},
+                {"ix":"04","name":"Utility","sub":"","size":"5 m²"},
+                {"ix":"05","name":"Kitchen","sub":"","size":"14 m²"},
+                {"ix":"06","name":"Living · dining","sub":"","size":"38 m²"},
+                {"ix":"07","name":"Stairs · hall","sub":"","size":"22 m²"}
+              ],
+              "walls": 5, "wets": 3
+            },
+            "first": {
+              "title": "First <em>floor</em>",
+              "subtitle": "74 m² useable · 8 m² balcony",
+              "rooms": [
+                {"ix":"01","name":"Master bedroom","sub":"","size":"18 m²"},
+                {"ix":"02","name":"Master ensuite","sub":"","size":"5 m²"},
+                {"ix":"03","name":"Walk-in robe","sub":"","size":"4 m²"},
+                {"ix":"04","name":"Bedroom 02","sub":"","size":"12 m²"},
+                {"ix":"05","name":"Bedroom 03","sub":"","size":"11 m²"},
+                {"ix":"06","name":"Family bathroom","sub":"","size":"7 m²"},
+                {"ix":"07","name":"Landing · stairs","sub":"","size":"17 m²"}
+              ],
+              "walls": 4, "wets": 2
+            },
+            "top": {
+              "title": "Top <em>floor</em>",
+              "subtitle": "18 m² interior · 42 m² rooftop terrace",
+              "rooms": [
+                {"ix":"01","name":"Flex · studio","sub":"","size":"14 m²"},
+                {"ix":"02","name":"Bathroom","sub":"","size":"4 m²"},
+                {"ix":"03","name":"Rooftop terrace","sub":"","size":"42 m²"}
+              ],
+              "walls": 2, "wets": 1
+            }
+          }},
+          "2": { "floors": {
+            "ground": {
+              "title": "Ground <em>floor</em>",
+              "subtitle": "92 m² useable · 12 m² carport",
+              "rooms": [
+                {"ix":"01","name":"Entrance","sub":"","size":"6 m²"},
+                {"ix":"02","name":"Cloakroom","sub":"","size":"4 m²"},
+                {"ix":"03","name":"WC","sub":"","size":"3 m²"},
+                {"ix":"04","name":"Utility","sub":"","size":"5 m²"},
+                {"ix":"05","name":"Kitchen","sub":"","size":"14 m²"},
+                {"ix":"06","name":"Living · dining","sub":"","size":"38 m²"},
+                {"ix":"07","name":"Stairs · hall","sub":"","size":"22 m²"}
+              ],
+              "walls": 5, "wets": 3
+            },
+            "first": {
+              "title": "First <em>floor</em>",
+              "subtitle": "74 m² useable · 8 m² balcony",
+              "rooms": [
+                {"ix":"01","name":"Master bedroom","sub":"","size":"18 m²"},
+                {"ix":"02","name":"Master ensuite","sub":"","size":"5 m²"},
+                {"ix":"03","name":"Walk-in robe","sub":"","size":"4 m²"},
+                {"ix":"04","name":"Bedroom 02","sub":"","size":"12 m²"},
+                {"ix":"05","name":"Bedroom 03","sub":"","size":"11 m²"},
+                {"ix":"06","name":"Family bathroom","sub":"","size":"7 m²"},
+                {"ix":"07","name":"Landing · stairs","sub":"","size":"17 m²"}
+              ],
+              "walls": 4, "wets": 2
+            },
+            "top": {
+              "title": "Top <em>floor</em>",
+              "subtitle": "18 m² interior · 42 m² rooftop terrace",
+              "rooms": [
+                {"ix":"01","name":"Flex · studio","sub":"","size":"14 m²"},
+                {"ix":"02","name":"Bathroom","sub":"","size":"4 m²"},
+                {"ix":"03","name":"Rooftop terrace","sub":"","size":"42 m²"}
+              ],
+              "walls": 2, "wets": 1
+            }
+          }}
+        }
+      }
+      </script>
 
       <!-- Footer legend -->
       <div class="configFoot">
@@ -452,7 +541,7 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
       </div>
 
       <div class="plot">
-        <div class="pid">A<em>²</em></div>
+        <div class="pid">1<em>²</em></div>
         <div class="name">Porzeczkowa 5/1<small>East-facing approach</small></div>
         <div class="val">184 m²<small>useable</small></div>
         <div class="val">410 m²<small>plot</small></div>
@@ -461,7 +550,7 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
       </div>
 
       <div class="plot">
-        <div class="pid">B<em>²</em></div>
+        <div class="pid">2<em>²</em></div>
         <div class="name">Porzeczkowa 5/2<small>West-facing approach</small></div>
         <div class="val">184 m²<small>useable</small></div>
         <div class="val">450 m²<small>plot</small></div>
