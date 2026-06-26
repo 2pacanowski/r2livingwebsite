@@ -14,14 +14,8 @@
   const wetEl = document.getElementById('wetCount');
 
   const state = { unit: unitKeys[0], floor: config.floors[0] };
-  let roomRegions = null;
-
-  if (config.roomRegionsPath) {
-    fetch(config.roomRegionsPath)
-      .then(r => r.ok ? r.json() : null)
-      .then(data => { roomRegions = data; render(); })
-      .catch(() => {});
-  }
+  const roomRegionsEl = document.getElementById('roomRegionsData');
+  const roomRegions = roomRegionsEl ? JSON.parse(roomRegionsEl.textContent) : null;
 
   function polygonToPath(points) {
     return points.map((p, i) => (i === 0 ? 'M' : 'L') + p[0] + ',' + p[1]).join(' ') + ' Z';
