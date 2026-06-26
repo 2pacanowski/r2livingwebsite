@@ -2,41 +2,44 @@
   const floorData = {
     ground: {
       title: 'Ground <em>floor</em>',
-      subtitle: '92 m² useable · 12 m² carport',
+      subtitle: '73,87 m² useable',
       rooms: [
-        { ix: '01', name: 'Entrance', sub: 'with double-height ceiling', size: '6 m²' },
-        { ix: '02', name: 'Cloakroom', sub: 'movable wall to entry', size: '4 m²' },
-        { ix: '03', name: 'WC', sub: 'relocatable wet point', size: '3 m²' },
-        { ix: '04', name: 'Utility', sub: 'boiler, laundry', size: '5 m²' },
-        { ix: '05', name: 'Kitchen', sub: 'island option', size: '14 m²' },
-        { ix: '06', name: 'Living · dining', sub: 'south-facing, full-height glazing', size: '38 m²' },
-        { ix: '07', name: 'Stairs · hall', sub: 'circulation', size: '22 m²' }
+        { ix: '01', name: 'Entrance hall', sub: 'with large wardrobe & sitting area', size: '4,45 m²' },
+        { ix: '02', name: 'Living & dining room', sub: 'open-space layout', size: '36,72 m²' },
+        { ix: '03', name: 'Kitchen', sub: 'with peninsula & sitting', size: '9,80 m²' },
+        { ix: '04', name: 'Extra room', sub: 'convert to study or guest bedroom', size: '9,87 m²' },
+        { ix: '05', name: 'Corridor', sub: 'with storage space', size: '2,81 m²' },
+        { ix: '06', name: 'Storage', sub: 'exterior access', size: '6,59 m²' },
+        { ix: '07', name: 'Bathroom', sub: 'with shower', size: '3,63 m²' },
+        { ix: '08', name: 'Staircase', sub: '', size: '6,06 m²' }
       ],
       walls: 5,
       wets: 3
     },
     first: {
       title: 'First <em>floor</em>',
-      subtitle: '74 m² useable · 8 m² balcony',
+      subtitle: '68,84 m² useable + 6,32 m² balcony',
       rooms: [
-        { ix: '01', name: 'Master bedroom', sub: 'south, garden view', size: '18 m²' },
-        { ix: '02', name: 'Master ensuite', sub: 'walk-in shower', size: '5 m²' },
-        { ix: '03', name: 'Walk-in robe', sub: 'optional · convert to study', size: '4 m²' },
-        { ix: '04', name: 'Bedroom 02', sub: 'front, balcony access', size: '12 m²' },
-        { ix: '05', name: 'Bedroom 03', sub: 'front, balcony access', size: '11 m²' },
-        { ix: '06', name: 'Family bathroom', sub: 'bath + shower', size: '7 m²' },
-        { ix: '07', name: 'Landing · stairs', sub: 'circulation', size: '17 m²' }
+        { ix: '01', name: 'Hall', sub: 'with balcony access', size: '10,78 m²' },
+        { ix: '02', name: 'Master bedroom', sub: 'ensuite + walk-in wardrobe', size: '16,94 m²' },
+        { ix: '03', name: 'Bathroom 1', sub: 'attached to master bedroom', size: '3,88 m²' },
+        { ix: '04', name: 'Bathroom 2', sub: 'with shower and bathtub', size: '7,63 m²' },
+        { ix: '05', name: 'Bedroom 1', sub: 'with movable wall', size: '11,68 m²' },
+        { ix: '06', name: 'Bedroom 2', sub: 'with movable wall', size: '12,21 m²' },
+        { ix: '07', name: 'Laundry room', sub: 'with sink & washing machine', size: '3,10 m²' },
+        { ix: '08', name: 'Staircase', sub: '', size: '5,73 m²' },
+        { ix: '09', name: 'Walk-in wardrobe', sub: 'attached to master bedroom', size: '3,62 m²' }
       ],
       walls: 4,
       wets: 2
     },
     top: {
       title: 'Top <em>floor</em>',
-      subtitle: '18 m² interior · 42 m² rooftop terrace',
+      subtitle: '8,33 m² useable',
       rooms: [
-        { ix: '01', name: 'Flex · studio', sub: 'office, guest room, gym', size: '14 m²' },
-        { ix: '02', name: 'Bathroom', sub: 'shower only', size: '4 m²' },
-        { ix: '03', name: 'Rooftop terrace', sub: 'south-facing, planters retained', size: '42 m²' }
+        { ix: '01', name: 'Staircase', sub: '', size: '5,76 m²' },
+        { ix: '02', name: 'Utility room', sub: 'HVAC and heating equipment', size: '7,31 m²' },
+        { ix: '03', name: 'Corridor', sub: '    ', size: '1,02 m²' }
       ],
       walls: 2,
       wets: 1
@@ -79,9 +82,9 @@
       planEl.classList.toggle('flipped', state.unit === 'B');
     }
 
-    const floorLabel = state.floor === 'ground' ? 'Ground floor' :
-      state.floor === 'first' ? 'First floor' : 'Top floor';
-    titleEl.innerHTML = 'Plan No. <b>' + planCode + ' · ' + state.unit + '</b> · ' + floorLabel;
+    // const floorLabel = state.floor === 'ground' ? 'Ground floor' :
+    //   state.floor === 'first' ? 'First floor' : 'Top floor';
+    // titleEl.innerHTML = 'Plan No. <b>' + planCode + ' · ' + state.unit + '</b> · ' + floorLabel;
 
     const d = floorData[state.floor];
     floorTitleEl.innerHTML = d.title;
