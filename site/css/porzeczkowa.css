@@ -9,7 +9,7 @@
   linear-gradient(90deg,rgba(20,18,15,.65) 0%,rgba(20,18,15,.30) 38%,rgba(20,18,15,.05) 65%,transparent 100%)}
 .hero .inner{
   position:relative;z-index:1;max-width:1440px;margin:0 auto;
-  padding:88px 56px 108px;min-height:820px;
+  padding:88px 56px 108px;min-height:calc(100vh - var(--nav-h));
   display:grid;grid-template-rows:auto 1fr auto;gap:0;
 }
 .hero .topRow{display:flex;justify-content:space-between;align-items:flex-start;gap:32px}

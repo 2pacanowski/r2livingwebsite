@@ -5,6 +5,11 @@
   const panel = nav.querySelector('.navPanel');
   if (!toggle || !panel) return;
 
+  function setNavHeight() {
+    document.documentElement.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+  }
+  setNavHeight();
+
   function close() {
     nav.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
@@ -27,6 +32,7 @@
 
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768) close();
+    setNavHeight();
   });
 
   let lastY = window.scrollY;

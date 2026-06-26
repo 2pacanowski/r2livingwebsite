@@ -12,6 +12,7 @@
   --sky:#D6DEE0;
   --rule:rgba(20,18,15,.10);
   --rule-strong:rgba(20,18,15,.22);
+  --nav-h:56px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}

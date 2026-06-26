@@ -1,6 +1,6 @@
 /* ===== Hero — brand statement ===== */
 .home-hero{
-  position:relative;min-height:760px;display:flex;align-items:flex-end;
+  position:relative;min-height:calc(100vh - var(--nav-h));display:flex;align-items:flex-end;
   background:
     repeating-linear-gradient(45deg, rgba(255,255,255,.06) 0 1px, transparent 1px 14px),
     var(--stone);
@@ -154,7 +154,6 @@
 }
 
 @media(max-width:480px){
-  .home-hero{min-height:600px}
   .home-hero .inner{padding:64px 24px 56px}
   .home-hero h1{font-size:42px}
   .home-hero .lede{font-size:19px;margin-top:32px}
