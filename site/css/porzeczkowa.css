@@ -101,8 +101,10 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 .configPlan .planScale{position:absolute;bottom:24px;left:32px;font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
 .configPlan .compass{position:absolute;top:24px;right:32px;width:34px;height:42px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;font-family:"Geist Mono",monospace;font-size:10px;color:var(--moss);letter-spacing:.12em}
 .configPlan .compass::before{content:"";display:block;width:1px;height:24px;background:var(--moss);margin-bottom:3px}
-.configPlan svg.floorSvg{width:100%;max-width:440px;height:auto;display:none}
-.configPlan svg.floorSvg.active{display:block}
+.configPlan svg.floorSvg,
+.configPlan img.floorSvg{width:100%;max-width:440px;height:auto;display:none;object-fit:contain}
+.configPlan svg.floorSvg.active,
+.configPlan img.floorSvg.active{display:block}
 .configPlan svg .content{transform-origin:200px 290px;transition:transform .45s cubic-bezier(.7,0,.3,1)}
 .configPlan.flipped svg .content{transform:scaleX(-1)}
 .configPlan.flipped svg .lbl{transform:scaleX(-1);transform-box:fill-box;transform-origin:center}

@@ -46,6 +46,7 @@
   const state = { unit: 'A', floor: 'ground' };
   const planEl = document.getElementById('configPlan');
   const planCode = planEl.dataset.planCode || 'PZK-14';
+  const planMode = planEl.dataset.planMode || 'inline';
   const titleEl = document.getElementById('planTitle');
   const floorTitleEl = document.getElementById('floorTitle');
   const floorSubEl = document.getElementById('floorSubtitle');
@@ -65,11 +66,18 @@
       t.setAttribute('aria-selected', active);
     });
 
-    document.querySelectorAll('.floorSvg').forEach(s => {
-      s.classList.toggle('active', s.dataset.floor === state.floor);
-    });
-
-    planEl.classList.toggle('flipped', state.unit === 'B');
+    if (planMode === 'image') {
+      document.querySelectorAll('.floorSvg').forEach(img => {
+        const active = img.dataset.floor === state.floor;
+        img.classList.toggle('active', active);
+        if (active) img.src = 'assets/wspolna-floor-plans/wspolna-unit' + state.unit + '-' + state.floor + '.svg';
+      });
+    } else {
+      document.querySelectorAll('.floorSvg').forEach(s => {
+        s.classList.toggle('active', s.dataset.floor === state.floor);
+      });
+      planEl.classList.toggle('flipped', state.unit === 'B');
+    }
 
     const floorLabel = state.floor === 'ground' ? 'Ground floor' :
       state.floor === 'first' ? 'First floor' : 'Top floor';
