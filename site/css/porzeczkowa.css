@@ -71,6 +71,9 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 .g-b{grid-column:span 4;grid-row:span 4}
 .g-c{grid-column:span 4;grid-row:span 3}
 .g-d{grid-column:span 12;grid-row:span 6}
+.g-e{grid-column:span 4;grid-row:span 5}
+.g-f{grid-column:span 4;grid-row:span 5}
+.g-g{grid-column:span 4;grid-row:span 5}
 
 /* ===== Configurator viewer ===== */
 .configViewer{border:1px solid var(--rule);background:var(--paper);overflow:hidden;margin-top:48px}
@@ -250,7 +253,7 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .sec-head,.intro,.locationGrid,.reserveSection .inner,.about{grid-template-columns:1fr;gap:32px}
   .materials{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr}
-  .g-a,.g-b,.g-c,.g-d{grid-column:1 / -1;grid-row:span 5}
+  .g-a,.g-b,.g-c,.g-d,.g-e,.g-f,.g-g{grid-column:1 / -1;grid-row:span 5}
   .configBody{grid-template-columns:1fr}
   .plotsHead{display:none}
   .plot{grid-template-columns:1fr;gap:8px;align-items:start}
