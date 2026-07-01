@@ -26,7 +26,7 @@
     nav.classList.contains('open') ? close() : open();
   });
 
-  panel.querySelectorAll('.links > a, .links > .navDrop > .navDropTrigger').forEach(a => a.addEventListener('click', close));
+  panel.querySelectorAll('.links > a').forEach(a => a.addEventListener('click', close));
 
   // Developments dropdown
   const dropTrigger = nav.querySelector('.navDropTrigger');
