@@ -26,17 +26,19 @@
     nav.classList.contains('open') ? close() : open();
   });
 
-  panel.querySelectorAll('a:not(.navDropPanel a)').forEach(a => a.addEventListener('click', close));
+  panel.querySelectorAll('.links > a, .links > .navDrop > .navDropTrigger').forEach(a => a.addEventListener('click', close));
 
-  // Developments dropdown — mobile accordion toggle
+  // Developments dropdown
   const dropTrigger = nav.querySelector('.navDropTrigger');
   if (dropTrigger) {
+    // Mobile: intercept click to toggle accordion instead of navigating
     dropTrigger.addEventListener('click', e => {
       if (window.innerWidth > 768) return;
+      e.preventDefault();
       const expanded = dropTrigger.getAttribute('aria-expanded') === 'true';
       dropTrigger.setAttribute('aria-expanded', expanded ? 'false' : 'true');
     });
-    // Close mobile accordion when a dropdown link is clicked
+    // Close nav when a dropdown link is clicked
     nav.querySelectorAll('.navDropPanel a').forEach(a => a.addEventListener('click', close));
     // Mark trigger active when on a project page
     const path = window.location.pathname;
