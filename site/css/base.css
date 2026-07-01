@@ -80,6 +80,47 @@ nav.top.open .navToggle span:nth-child(1){transform:translateY(6.5px) rotate(45d
 nav.top.open .navToggle span:nth-child(2){opacity:0}
 nav.top.open .navToggle span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
+/* ===== Nav dropdown ===== */
+nav.top .navDrop{position:relative;display:flex;align-items:center}
+nav.top .navDropTrigger{
+  background:none;border:none;cursor:pointer;padding:6px 0;
+  font-family:"Geist",sans-serif;font-size:13.5px;letter-spacing:-.005em;
+  color:var(--ink-2);display:flex;align-items:center;gap:5px;
+  position:relative;transition:color .15s
+}
+nav.top .navDropTrigger::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--moss);transform:scaleX(0);transition:transform .2s ease}
+nav.top .navDropTrigger::before{content:"";display:inline-block;width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4px solid currentColor;margin-left:4px;transition:transform .2s ease;flex-shrink:0}
+nav.top .navDrop:hover .navDropTrigger,
+nav.top .navDropTrigger[aria-expanded="true"]{color:var(--ink)}
+nav.top .navDrop:hover .navDropTrigger::after,
+nav.top .navDropTrigger[aria-expanded="true"]::after{transform:scaleX(1)}
+nav.top .navDropTrigger.active{color:var(--ink)}
+nav.top .navDropTrigger.active::after{transform:scaleX(1)}
+nav.top .navDrop:hover .navDropTrigger::before,
+nav.top .navDropTrigger[aria-expanded="true"]::before{transform:rotate(180deg)}
+nav.top .navDropPanel{
+  position:absolute;top:calc(100% + 14px);left:-18px;
+  background:var(--paper);border:1px solid var(--rule);
+  box-shadow:0 8px 28px rgba(20,18,15,.1);
+  min-width:200px;display:flex;flex-direction:column;
+  opacity:0;pointer-events:none;transform:translateY(-6px);
+  transition:opacity .18s ease,transform .18s ease;
+  z-index:100
+}
+nav.top .navDrop:hover .navDropPanel,
+nav.top .navDropTrigger[aria-expanded="true"] + .navDropPanel{
+  opacity:1;pointer-events:auto;transform:translateY(0)
+}
+nav.top .navDropPanel a{
+  display:flex;flex-direction:column;gap:2px;
+  padding:14px 18px;border-bottom:1px solid var(--rule);
+  font-family:"Geist",sans-serif;font-size:13.5px;color:var(--ink-2);
+  transition:background .15s,color .15s
+}
+nav.top .navDropPanel a:last-child{border-bottom:none}
+nav.top .navDropPanel a:hover{background:var(--bone);color:var(--ink)}
+nav.top .navDropPanel a small{font-family:"Geist Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--moss)}
+
 @media(max-width:768px){
   nav.top .navToggle{display:flex}
   nav.top .navPanel{
@@ -91,6 +132,21 @@ nav.top.open .navToggle span:nth-child(3){transform:translateY(-6.5px) rotate(-4
   nav.top .links{flex-direction:column;gap:18px;font-size:16px}
   nav.top .right{flex-direction:column;align-items:flex-start;gap:18px}
   nav.top .btn{width:100%;justify-content:center}
+  /* Mobile accordion */
+  nav.top .navDrop{flex-direction:column;align-items:flex-start;gap:0}
+  nav.top .navDropTrigger{font-size:16px}
+  nav.top .navDropPanel{
+    position:static;box-shadow:none;border:none;border-left:2px solid var(--rule);
+    opacity:1;pointer-events:none;transform:none;
+    max-height:0;overflow:hidden;
+    transition:max-height .25s ease,padding .25s ease;
+    margin-top:0;padding:0 0 0 14px;min-width:0;background:transparent
+  }
+  nav.top .navDropTrigger[aria-expanded="true"] + .navDropPanel{
+    pointer-events:auto;max-height:200px;padding:10px 0 4px 14px
+  }
+  nav.top .navDropPanel a{padding:8px 0;border-bottom:none;font-size:14px}
+  nav.top .navDropPanel a:hover{background:transparent}
 }
 
 /* ===== Section primitives ===== */

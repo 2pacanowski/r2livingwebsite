@@ -13,6 +13,8 @@
   function close() {
     nav.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
+    const dt = nav.querySelector('.navDropTrigger');
+    if (dt) dt.setAttribute('aria-expanded', 'false');
   }
 
   function open() {
@@ -24,7 +26,24 @@
     nav.classList.contains('open') ? close() : open();
   });
 
-  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  panel.querySelectorAll('a:not(.navDropPanel a)').forEach(a => a.addEventListener('click', close));
+
+  // Developments dropdown — mobile accordion toggle
+  const dropTrigger = nav.querySelector('.navDropTrigger');
+  if (dropTrigger) {
+    dropTrigger.addEventListener('click', e => {
+      if (window.innerWidth > 768) return;
+      const expanded = dropTrigger.getAttribute('aria-expanded') === 'true';
+      dropTrigger.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+    // Close mobile accordion when a dropdown link is clicked
+    nav.querySelectorAll('.navDropPanel a').forEach(a => a.addEventListener('click', close));
+    // Mark trigger active when on a project page
+    const path = window.location.pathname;
+    if (path.includes('porzeczkowa') || path.includes('wspolna')) {
+      dropTrigger.classList.add('active');
+    }
+  }
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') close();
