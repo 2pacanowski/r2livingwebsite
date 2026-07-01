@@ -138,7 +138,7 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 .configSide .configurable p{font-size:13px;line-height:1.5;color:var(--ink-2);margin:0}
 .configSide .configurable p strong{color:var(--ink);font-weight:500}
 
-.configFoot{display:flex;justify-content:space-between;align-items:center;padding:20px 32px;border-top:1px solid var(--rule);background:var(--bone);font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);gap:32px;flex-wrap:wrap}
+.configFoot{display:flex;justify-content:end;align-items:center;padding:20px 32px;border-top:1px solid var(--rule);background:var(--bone);font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);gap:32px;flex-wrap:wrap}
 .configFoot .legend{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
 .configFoot .legend .item{display:flex;gap:10px;align-items:center}
 .configFoot .legend .swatch{display:inline-block;width:24px;height:0;border-top:2px solid var(--ink)}
