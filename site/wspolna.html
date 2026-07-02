@@ -567,25 +567,22 @@
         </div>
         <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" required placeholder="anna@example.pl" /></div>
         <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" placeholder="+48 600 000 000" /></div>
-        <div class="row2">
-          <div class="field"><label for="plot">Plot of interest</label>
-            <select id="plot" name="plot">
-              <option>Wspólna 1 · Available</option>
-              <option>Wspólna 2 · Available</option>
-              <option>Either — open</option>
-            </select>
-          </div>
-          <div class="field"><label for="when">Preferred day</label>
-            <select id="when" name="when">
-              <option>Saturday · 10:00</option>
-              <option>Saturday · 14:00</option>
-              <option>Other — please call me</option>
-            </select>
-          </div>
+        <div class="field"><label for="plot">Unit of interest</label>
+          <select id="plot" name="plot">
+            <option value="">— Please select</option>
+            <option>Wspólna — Unit 1</option>
+            <option>Wspólna — Unit 2</option>
+            <option>Either — no preference</option>
+          </select>
         </div>
         <div class="field"><label for="msg">Anything you’d like us to know</label><textarea id="msg" name="message" rows="2" class="serif" placeholder="e.g. we’re a family of four, looking to move in late 2027…"></textarea></div>
+        <div class="field gdpr">
+          <label class="gdprLabel">
+            <input type="checkbox" name="gdpr" required />
+            <span>I agree to R2 Living storing my details to respond to this enquiry. My data will not be shared with third parties or used for marketing without my consent. <a href="privacy.html">Privacy policy →</a></span>
+          </label>
+        </div>
         <button type="submit" class="submit">Send</button>
-        <div class="small">By submitting, you agree to our quiet, non-spammy contact policy.</div>
       </form>
     </div>
   </section>
