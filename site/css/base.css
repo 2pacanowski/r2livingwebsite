@@ -181,7 +181,7 @@ p.sub{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.4;color:
 .form .gdpr{margin-top:8px}
 .form .gdprLabel{display:flex;align-items:flex-start;gap:12px;cursor:pointer}
 .form .gdprLabel input[type="checkbox"]{flex-shrink:0;width:16px;height:16px;margin-top:3px;accent-color:var(--moss);cursor:pointer}
-.form .gdprLabel span{font-family:"Geist",sans-serif;font-size:12px;line-height:1.55;color:var(--ink-2)}
+.form .gdprLabel span{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;line-height:1.65;color:var(--ink-2)}
 .form .gdprLabel span a{color:var(--moss);text-decoration:underline}
 .form .submit{
   margin-top:28px;display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--bone);
