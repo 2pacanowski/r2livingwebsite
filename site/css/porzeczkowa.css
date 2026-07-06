@@ -154,8 +154,8 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 .plotSection h2.title{color:var(--bone)}
 .plotSection h2.title em{color:var(--stone)}
 .plotSection p.sub{color:rgba(243,239,232,.78)}
-.plotsHead{display:grid;grid-template-columns:90px 1.4fr 1fr 1fr 1.2fr 120px;gap:24px;padding:16px 0;border-bottom:1px solid rgba(243,239,232,.18);font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone)}
-.plot{display:grid;grid-template-columns:90px 1.4fr 1fr 1fr 1.2fr 120px;gap:24px;padding:28px 0;border-bottom:1px solid rgba(243,239,232,.14);align-items:center}
+.plotsHead{display:grid;grid-template-columns:90px 1.4fr 1fr 1fr 1.2fr 1fr 150px;gap:24px;padding:16px 0;border-bottom:1px solid rgba(243,239,232,.18);font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone)}
+.plot{display:grid;grid-template-columns:90px 1.4fr 1fr 1fr 1.2fr 1fr 150px;gap:24px;padding:28px 0;border-bottom:1px solid rgba(243,239,232,.14);align-items:center}
 .plot:last-child{border-bottom:none}
 .plot .pid{font-family:"Instrument Serif",serif;font-size:42px;line-height:1;letter-spacing:-.02em}
 .plot .pid em{font-style:italic;color:var(--stone);font-size:20px;vertical-align:super;position:relative;top:-8px;margin-left:-1px}
