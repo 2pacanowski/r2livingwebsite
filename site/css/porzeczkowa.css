@@ -226,8 +226,8 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 .reserveSection .pts li::before{content:"→";font-family:"Geist Mono",monospace;font-size:11px;color:var(--moss);padding-top:2px}
 
 /* ===== About ===== */
-.aboutBody{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:64px}
-.aboutLede{font-family:"Instrument Serif",serif;font-size:21px;line-height:1.55;color:var(--ink-2);max-width:52ch}
+.aboutBody{display:flex;flex-direction:column;gap:20px;margin-bottom:64px;max-width:72ch}
+.aboutLede{font-size:16px;line-height:1.75;color:var(--ink-2)}
 .aboutCards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}
 .ac{padding:32px 0 32px;border-bottom:1px solid var(--rule);padding-right:48px}
 .ac-n{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);margin-bottom:14px}
@@ -237,7 +237,7 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .hero h1{font-size:64px;max-width:9ch}
   .hero .bottom{grid-template-columns:1fr;gap:24px;align-items:start}
   .sec-head,.intro,.locationGrid,.reserveSection .inner{grid-template-columns:1fr;gap:32px}
-  .aboutBody{grid-template-columns:1fr;gap:24px;margin-bottom:40px}
+  .aboutBody{margin-bottom:40px}
   .aboutCards{grid-template-columns:1fr}
   .materials{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr}
