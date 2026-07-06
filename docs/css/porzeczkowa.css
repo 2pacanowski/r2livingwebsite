@@ -286,6 +286,7 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .tabGroup{flex:0 0 100%}
   .tabGroup .tab{flex:1;min-width:0}
   .tabGroup.right .tab:last-child{border-left:1px solid var(--rule);border-right:none}
+  .configViewer{margin-left:-16px;margin-right:-16px}
   .configPlan{padding:20px;min-height:auto}
   .configSide{padding:24px 20px}
   .materials{grid-template-columns:1fr}
