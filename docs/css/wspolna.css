@@ -19,3 +19,9 @@
 #config .configSide .configurable .nums{gap:12px;margin-bottom:8px}
 #config .configSide .configurable .nv{font-size:28px}
 #config .configFoot{padding:6px 32px}
+
+@media(max-width:480px){
+  #config{padding:56px 16px}
+  #config .configBody{height:auto;overflow:visible}
+  #config .configSide{overflow:visible}
+}

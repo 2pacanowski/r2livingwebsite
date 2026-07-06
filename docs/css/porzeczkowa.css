@@ -296,12 +296,14 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .plot .val{font-size:17px}
 
   /* Configurator mobile layout */
+  #config{padding:56px 16px}
   .configViewer{margin-left:-16px;margin-right:-16px}
   .configTabs{display:none}
   .configDropdowns{display:flex}
+  #config .configBody{height:auto;overflow:visible}
   .configPlan{padding:12px;min-height:auto;border-right:none}
   .configPlan img.floorSvg.active{width:100%;height:auto}
-  .configSide{padding:24px 20px}
+  #config .configSide{overflow:visible;padding:24px 20px}
   .swipeHint{display:flex}
   .materials{grid-template-columns:1fr}
 
