@@ -158,6 +158,25 @@ nav.top .navDropPanel a small{font-family:"Geist Mono",monospace;font-size:9.5px
   nav.top .navDropPanel a:hover{background:transparent}
 }
 
+/* ===== Pull quote section ===== */
+.pull{background:var(--moss);color:var(--bone);padding:120px 56px;position:relative;overflow:hidden}
+.pull .inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.pull h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:64px;line-height:1.02;letter-spacing:-.015em;max-width:18ch}
+.pull h3 em{font-style:italic;color:var(--stone-2)}
+.pull .pitch{font-family:"Instrument Serif",serif;font-size:20px;line-height:1.5;color:rgba(243,239,232,.82);margin-top:28px;max-width:42ch}
+.pull .points{list-style:none;display:flex;flex-direction:column;border-top:1px solid rgba(243,239,232,.2)}
+.pull .points li{font-family:"Geist",sans-serif;font-size:15px;line-height:1.5;color:rgba(243,239,232,.88);padding:18px 0;border-bottom:1px solid rgba(243,239,232,.2);display:flex;gap:10px;align-items:baseline}
+.pull .points li::before{content:"→";font-family:"Geist",sans-serif;color:var(--stone-2);flex-shrink:0}
+.pull .points li span{color:var(--bone);font-weight:500}
+.pull .meta{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,239,232,.75);margin-top:18px}
+.pull .figure{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pull .figure .f{padding:24px 0;border-top:1px solid rgba(243,239,232,.28)}
+.pull .figure .f .num{font-family:"Instrument Serif",serif;font-size:84px;line-height:.9;letter-spacing:-.02em}
+.pull .figure .f .num em{font-style:italic;color:var(--stone-2);font-size:36px;vertical-align:super;position:relative;top:-26px;margin-left:-2px}
+.pull .figure .f .lbl{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,239,232,.78);margin-top:14px}
+.pull::after{content:"";position:absolute;right:-200px;bottom:-200px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(243,239,232,.12)}
+.pull::before{content:"";position:absolute;right:-50px;bottom:-50px;width:280px;height:280px;border-radius:50%;border:1px solid rgba(243,239,232,.14)}
+
 /* ===== Section primitives ===== */
 .eyebrow{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
 h2.title{font-family:"Instrument Serif",serif;font-weight:400;font-size:72px;line-height:.96;letter-spacing:-.02em;margin-top:14px;max-width:18ch}
@@ -223,9 +242,18 @@ footer .legal{max-width:1440px;margin:24px auto 0;display:flex;justify-content:s
   footer .legal{flex-direction:column;gap:8px}
 }
 
+@media(max-width:768px){
+  .pull .inner{grid-template-columns:1fr;gap:32px}
+  .pull .figure{grid-template-columns:1fr 1fr}
+}
+
 @media(max-width:480px){
   nav.top .inner{padding:12px 20px}
   h2.title{font-size:40px}
   .form{padding:24px}
   footer{padding:56px 20px 32px}
+  .pull{padding:64px 24px}
+  .pull h3{font-size:34px}
+  .pull .pitch{font-size:17px}
+  .pull .figure .f .num{font-size:48px}
 }
