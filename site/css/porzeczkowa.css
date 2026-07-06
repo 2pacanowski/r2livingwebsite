@@ -225,20 +225,20 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 .reserveSection .pts li{display:grid;grid-template-columns:18px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--rule);font-size:14.5px;color:var(--ink-2)}
 .reserveSection .pts li::before{content:"→";font-family:"Geist Mono",monospace;font-size:11px;color:var(--moss);padding-top:2px}
 
-/* ===== About row ===== */
-.about{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
-.about .principles{display:grid;gap:36px}
-.about .pr{border-top:1px solid var(--rule);padding-top:18px}
-.about .pr .n{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
-.about .pr h4{font-family:"Instrument Serif",serif;font-weight:400;font-size:32px;line-height:1.05;letter-spacing:-.01em;margin:8px 0 10px}
-.about .pr p{font-size:14.5px;line-height:1.6;color:var(--ink-2);max-width:48ch}
-.about .studioCard{align-self:stretch;padding:44px 40px;gap:30px}
-.about .studioCard .sc-statement{font-size:30px;line-height:1.12}
+/* ===== About ===== */
+.aboutBody{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:64px}
+.aboutLede{font-family:"Instrument Serif",serif;font-size:21px;line-height:1.55;color:var(--ink-2);max-width:52ch}
+.aboutCards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}
+.ac{padding:32px 0 32px;border-bottom:1px solid var(--rule);padding-right:48px}
+.ac-n{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);margin-bottom:14px}
+.ac p{font-size:14.5px;line-height:1.65;color:var(--ink-2);max-width:36ch}
 
 @media(max-width:980px){
   .hero h1{font-size:64px;max-width:9ch}
   .hero .bottom{grid-template-columns:1fr;gap:24px;align-items:start}
-  .sec-head,.intro,.locationGrid,.reserveSection .inner,.about{grid-template-columns:1fr;gap:32px}
+  .sec-head,.intro,.locationGrid,.reserveSection .inner{grid-template-columns:1fr;gap:32px}
+  .aboutBody{grid-template-columns:1fr;gap:24px;margin-bottom:40px}
+  .aboutCards{grid-template-columns:1fr}
   .materials{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr}
   .g-a,.g-b,.g-c,.g-d,.g-e,.g-f,.g-g{grid-column:1 / -1;grid-row:span 5}
@@ -274,6 +274,6 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .locStats{grid-template-columns:1fr 1fr;gap:16px}
   .locStats .ls .num{font-size:34px}
 
-  .about .pr h4{font-size:24px}
-  .about .studioCard{padding:32px 24px}
+  .aboutLede{font-size:18px}
+  .ac{padding-right:0}
 }
