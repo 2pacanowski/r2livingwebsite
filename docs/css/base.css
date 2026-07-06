@@ -130,9 +130,10 @@ nav.top .navDropPanel a small{font-family:"Geist Mono",monospace;font-size:9.5px
 @media(max-width:768px){
   nav.top .navToggle{display:flex}
   nav.top .navPanel{
-    display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+    display:none;position:absolute;top:100%;left:0;right:0;
     flex-direction:column;gap:28px;background:var(--paper);
-    padding:80px 24px 32px;overflow-y:auto;z-index:99
+    padding:28px 24px 40px;border-bottom:1px solid var(--rule);
+    min-height:calc(100vh - var(--nav-h));box-shadow:0 8px 32px rgba(20,18,15,.08)
   }
   nav.top.open .navPanel{display:flex}
   nav.top .links{flex-direction:column;gap:18px;font-size:16px}
