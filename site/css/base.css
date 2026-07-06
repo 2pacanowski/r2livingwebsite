@@ -257,3 +257,19 @@ footer .legal{max-width:1440px;margin:24px auto 0;display:flex;justify-content:s
   .pull .pitch{font-size:17px}
   .pull .figure .f .num{font-size:48px}
 }
+
+/* ===== Lightbox ===== */
+.lbOverlay{position:fixed;inset:0;background:rgba(14,12,9,.96);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s ease}
+.lbOverlay.open{opacity:1;pointer-events:auto}
+.lbImgWrap{max-width:90vw;max-height:82vh;display:flex;align-items:center;justify-content:center}
+.lbImg{max-width:90vw;max-height:82vh;object-fit:contain;display:block;user-select:none}
+.lbClose{position:fixed;top:24px;right:28px;background:none;border:none;color:rgba(243,239,232,.6);font-size:32px;line-height:1;cursor:pointer;padding:8px;transition:color .15s}
+.lbClose:hover{color:var(--bone)}
+.lbPrev,.lbNext{position:fixed;top:50%;transform:translateY(-50%);background:none;border:1px solid rgba(243,239,232,.2);color:rgba(243,239,232,.7);font-size:20px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .15s,color .15s;border-radius:0}
+.lbPrev{left:24px}
+.lbNext{right:24px}
+.lbPrev:hover,.lbNext:hover{background:rgba(243,239,232,.1);color:var(--bone)}
+.lbCaption{position:fixed;bottom:28px;left:0;right:0;display:flex;align-items:baseline;justify-content:center;gap:16px;font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.lbCaptionTitle{color:rgba(243,239,232,.9)}
+.lbCaptionSub{color:rgba(243,239,232,.45)}
+.lbCounter{color:rgba(243,239,232,.35);margin-left:16px}
