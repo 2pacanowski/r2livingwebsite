@@ -242,7 +242,7 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .hero h1{font-size:64px;max-width:9ch}
   .hero .bottom{grid-template-columns:1fr;gap:24px;align-items:start}
   .sec-head,.intro,.locationGrid,.reserveSection .inner{grid-template-columns:1fr;gap:32px}
-  .aboutSection{padding:80px 32px}
+  .aboutSection{padding:72px 20px}
   .aboutTop{grid-template-columns:1fr;gap:32px;margin-bottom:48px}
   .aboutCards{grid-template-columns:1fr}
   .materials{grid-template-columns:1fr 1fr}
@@ -255,31 +255,37 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 }
 
 @media(max-width:480px){
-  .hero h1{font-size:42px;max-width:none}
-  .hero .inner{padding:64px 24px 80px;min-height:auto}
-  .hero .lede{font-size:16px}
-  .hero .stripe .stripeInner{padding:14px 24px;flex-wrap:wrap;gap:14px}
+  .hero h1{font-size:38px;max-width:none}
+  .hero .inner{padding:56px 16px 72px;min-height:auto}
+  .hero .lede{font-size:15px}
+  .hero .ctas{flex-direction:column;align-items:stretch}
+  .hero .btn-primary,.hero .btn-ghost{justify-content:center}
+  .hero .stripe .stripeInner{padding:14px 16px;flex-wrap:wrap;gap:12px}
 
-  section.block{padding:64px 24px}
-  .sec-head{margin-bottom:36px}
-  h2.title{font-size:38px}
-  p.sub{font-size:18px}
+  section.block{padding:56px 16px}
+  .sec-head{margin-bottom:32px}
+  h2.title{font-size:34px}
+  p.sub{font-size:16px}
 
-  .gallerySection{padding:64px 0}
-  .locationSection{padding:64px 0}
-  .plotSection{padding:64px 0}
-  .reserveSection{padding:64px 0}
+  .gallerySection{padding:56px 0}
+  .gallerySection .inner{padding:0 16px}
+  .locationSection{padding:56px 0}
+  .locationSection .inner{padding:0 16px}
+  .plotSection{padding:56px 0}
+  .plotSection .inner{padding:0 16px}
+  .reserveSection{padding:56px 0}
+  .reserveSection .inner{padding:0 16px}
+  .aboutSection{padding:56px 16px}
 
   .plot .pid{font-size:28px}
-  .plot .name{font-size:19px}
-  .plot .val{font-size:18px}
+  .plot .name{font-size:18px}
+  .plot .val{font-size:17px}
 
   .configTabs .tab{padding:14px 16px;min-width:96px}
-
 
   .locStats{grid-template-columns:1fr 1fr;gap:16px}
   .locStats .ls .num{font-size:34px}
 
-  .aboutLede{font-size:18px}
+  .aboutLede{font-size:15px}
   .ac{padding-right:0}
 }
