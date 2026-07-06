@@ -258,6 +258,7 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .hero h1{font-size:38px;max-width:none}
   .hero .inner{padding:56px 16px 72px;min-height:auto}
   .hero .lede{font-size:15px}
+  .hero .meta-row{font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .hero .ctas{flex-direction:column;align-items:stretch}
   .hero .btn-primary,.hero .btn-ghost{justify-content:center}
   .hero .stripe .stripeInner{padding:14px 16px;flex-wrap:wrap;gap:12px}
@@ -288,4 +289,6 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 
   .aboutLede{font-size:15px}
   .ac{padding-right:0}
+  .gImg{max-height:70vw}
+  .gImg img{height:100%;object-fit:cover}
 }

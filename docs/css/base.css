@@ -130,9 +130,9 @@ nav.top .navDropPanel a small{font-family:"Geist Mono",monospace;font-size:9.5px
 @media(max-width:768px){
   nav.top .navToggle{display:flex}
   nav.top .navPanel{
-    display:none;position:absolute;top:100%;left:0;right:0;
+    display:none;position:fixed;top:0;left:0;right:0;bottom:0;
     flex-direction:column;gap:28px;background:var(--paper);
-    padding:28px 24px 32px;border-bottom:1px solid var(--rule)
+    padding:80px 24px 32px;overflow-y:auto;z-index:99
   }
   nav.top.open .navPanel{display:flex}
   nav.top .links{flex-direction:column;gap:18px;font-size:16px}
@@ -248,14 +248,17 @@ footer .legal{max-width:1440px;margin:24px auto 0;display:flex;justify-content:s
 }
 
 @media(max-width:480px){
-  nav.top .inner{padding:12px 20px}
+  nav.top .inner{padding:12px 16px}
   h2.title{font-size:40px}
-  .form{padding:24px}
-  footer{padding:56px 20px 32px}
-  .pull{padding:64px 24px}
+  .form{padding:24px 16px}
+  footer{padding:56px 16px 32px}
+  .pull{padding:64px 16px}
   .pull h3{font-size:34px}
   .pull .pitch{font-size:17px}
   .pull .figure .f .num{font-size:48px}
+  .pull .points li{display:block}
+  .pull .points li::before{display:inline;margin-right:6px}
+  .pull .points li span{display:inline}
 }
 
 /* ===== Lightbox ===== */
