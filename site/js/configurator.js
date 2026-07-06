@@ -10,9 +10,6 @@
   const floorTitleEl = document.getElementById('floorTitle');
   const floorSubEl = document.getElementById('floorSubtitle');
   const roomListEl = document.getElementById('roomList');
-  const wallEl = document.getElementById('wallCount');
-  const wetEl = document.getElementById('wetCount');
-  const outletEl = document.getElementById('outletCount');
 
   const state = { unit: unitKeys[0], floor: config.floors[0] };
   const roomRegionsEl = document.getElementById('roomRegionsData');
@@ -87,9 +84,6 @@
       '<span class="sz">' + r.size + '</span></div>'
     ).join('');
 
-    wallEl.textContent = d.walls;
-    wetEl.textContent = d.wets;
-    if (outletEl) outletEl.textContent = d.outlets ?? '';
   }
 
   function setHover(num, on) {
