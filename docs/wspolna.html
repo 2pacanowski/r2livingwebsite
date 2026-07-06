@@ -179,7 +179,26 @@
     </div>
 
     <div class="configViewer">
-      <!-- Tabs -->
+      <!-- Mobile dropdowns (hidden on desktop) -->
+      <div class="configDropdowns">
+        <div class="configDrop">
+          <label class="dropLabel" for="unitSelect">Unit</label>
+          <select id="unitSelect" class="dropSelect">
+            <option value="1">Unit 1</option>
+            <option value="2">Unit 2</option>
+          </select>
+        </div>
+        <div class="configDrop">
+          <label class="dropLabel" for="floorSelect">Floor</label>
+          <select id="floorSelect" class="dropSelect">
+            <option value="ground">Ground floor</option>
+            <option value="first">First floor</option>
+            <option value="top">Top floor</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Tabs (hidden on mobile) -->
       <div class="configTabs">
         <div class="tabGroup" role="tablist" aria-label="Unit">
           <!-- <div class="tabLabel">— Unit</div> -->
@@ -226,6 +245,11 @@
           <div class="planFrame" data-floor="top">
             <img class="floorSvg" data-floor="top" alt="Wspólna top floor plan" />
             <svg class="roomOverlay" data-floor="top"></svg>
+          </div>
+          <div class="swipeHint" aria-hidden="true">
+            <span class="swipeHint-prev">‹</span>
+            <span class="swipeHint-label">swipe to change floor</span>
+            <span class="swipeHint-next">›</span>
           </div>
 
           <!-- <div class="planScale">Scale 1:200 · 1 grid sq = 1 m²</div> -->

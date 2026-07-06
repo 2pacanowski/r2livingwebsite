@@ -77,6 +77,19 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 
 /* ===== Configurator viewer ===== */
 .configViewer{border:1px solid var(--rule);background:var(--paper);overflow:hidden;margin-top:48px}
+
+/* Mobile dropdowns — hidden on desktop */
+.configDropdowns{display:none}
+.configDropdowns{display:none;align-items:stretch;border-bottom:1px solid var(--rule);background:var(--bone)}
+.configDrop{flex:1;display:flex;flex-direction:column;padding:12px 16px;border-right:1px solid var(--rule)}
+.configDrop:last-child{border-right:none}
+.dropLabel{font-family:"Geist Mono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);margin-bottom:5px}
+.dropSelect{font-family:"Instrument Serif",serif;font-size:17px;color:var(--ink);background:transparent;border:none;outline:none;cursor:pointer;width:100%;appearance:none;-webkit-appearance:none;padding-right:16px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2315120f'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0 center}
+
+/* Swipe hint overlay — mobile only */
+.swipeHint{display:none;position:absolute;bottom:12px;left:0;right:0;align-items:center;justify-content:center;gap:10px;pointer-events:none}
+.swipeHint-prev,.swipeHint-next{font-size:18px;color:rgba(21,18,15,.3);line-height:1}
+.swipeHint-label{font-family:"Geist Mono",monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(21,18,15,.3)}
 .configTabs{display:flex;justify-content:space-between;align-items:stretch;border-bottom:1px solid var(--rule);background:var(--bone);overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
 .tabGroup{display:flex;align-items:stretch;flex:none}
 .tabGroup .tabLabel{padding:0 24px;font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss);display:flex;align-items:center;border-right:1px solid var(--rule)}
@@ -282,13 +295,15 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .plot .name{font-size:18px}
   .plot .val{font-size:17px}
 
-  .configTabs{flex-wrap:wrap}
-  .tabGroup{flex:0 0 100%}
-  .tabGroup .tab{flex:1;min-width:0}
-  .tabGroup.right .tab:last-child{border-left:1px solid var(--rule);border-right:none}
+  /* Configurator mobile layout */
   .configViewer{margin-left:-16px;margin-right:-16px}
-  .configPlan{padding:20px;min-height:auto}
+  .configTabs{display:none}
+  .configDropdowns{display:flex}
+  .configPlan{padding:12px;min-height:auto;height:calc(100svh - var(--nav-h) - 74px);border-right:none}
+  .configPlan .planFrame.active{display:flex;align-items:center;justify-content:center;height:100%}
+  .configPlan img.floorSvg.active{max-height:100%;width:auto;max-width:100%}
   .configSide{padding:24px 20px}
+  .swipeHint{display:flex}
   .materials{grid-template-columns:1fr}
 
   .locStats{grid-template-columns:1fr 1fr;gap:16px}

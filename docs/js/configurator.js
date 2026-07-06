@@ -116,5 +116,31 @@
     t.addEventListener('click', () => { state.floor = t.dataset.floor; render(); });
   });
 
+  // Mobile dropdowns
+  const unitSelect = document.getElementById('unitSelect');
+  const floorSelect = document.getElementById('floorSelect');
+  if (unitSelect) unitSelect.addEventListener('change', () => { state.unit = unitSelect.value; render(); });
+  if (floorSelect) floorSelect.addEventListener('change', () => { state.floor = floorSelect.value; render(); });
+
+  // Keep dropdowns in sync when tabs change state
+  const _render = render;
+  render = function() {
+    _render();
+    if (unitSelect) unitSelect.value = state.unit;
+    if (floorSelect) floorSelect.value = state.floor;
+  };
+
+  // Swipe to change floor
+  let swipeStartX = 0;
+  planEl.addEventListener('touchstart', e => { swipeStartX = e.touches[0].clientX; }, { passive: true });
+  planEl.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - swipeStartX;
+    if (Math.abs(dx) < 50) return;
+    const floors = config.floors;
+    const idx = floors.indexOf(state.floor);
+    const next = dx < 0 ? Math.min(idx + 1, floors.length - 1) : Math.max(idx - 1, 0);
+    if (next !== idx) { state.floor = floors[next]; render(); }
+  }, { passive: true });
+
   render();
 })();
