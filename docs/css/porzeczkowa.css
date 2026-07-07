@@ -59,11 +59,9 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 .intro .body p{font-family:"Geist",sans-serif;font-size:16px;line-height:1.65;color:var(--ink-2);margin-bottom:20px;max-width:52ch}
 .intro .body p strong{color:var(--ink);font-weight:500}
 .intro .specs{border-left:1px solid var(--rule);padding-left:48px}
-.intro .specs dl{display:grid;grid-template-columns:1fr;gap:0}
-.intro .specs dl div{display:grid;grid-template-columns:max-content 1fr;gap:0 24px;align-items:center;padding:9px 0;border-top:1px solid var(--rule)}
-.intro .specs dl div:first-child{border-top:none}
-.intro .specs dt{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss)}
-.intro .specs dd{font-family:"Instrument Serif",serif;font-size:20px;line-height:1.2;color:var(--ink);margin-left:0}
+.intro .specs dl{display:grid;grid-template-columns:max-content 1fr;gap:18px 24px}
+.intro .specs dt{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss);align-self:center}
+.intro .specs dd{font-family:"Instrument Serif",serif;font-size:20px;line-height:1.2;color:var(--ink)}
 .intro .specs dd small{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.12em;color:var(--ink-2);display:block;margin-top:4px;text-transform:uppercase}
 
 /* ===== Gallery ===== */
@@ -334,13 +332,19 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .ac{padding-right:0}
   .gImg img{width:100%;height:100%;object-fit:cover}
 
-  /* Specs — 2-column stacked cards */
+  /* Specs — stacked single-column list */
   .intro{grid-template-columns:1fr;gap:40px}
-  .intro .specs{border-left:none;padding-left:0;border-top:1px solid var(--rule);padding-top:0}
-  .intro .specs dl{display:grid;grid-template-columns:1fr 1fr;gap:0}
-  .intro .specs dl div{display:flex;flex-direction:column;padding:16px 0 16px;border-top:1px solid var(--rule)}
-  .intro .specs dl div:nth-child(odd){padding-right:12px}
-  .intro .specs dl div:nth-child(even){padding-left:12px;border-left:1px solid var(--rule)}
-  .intro .specs dt{font-size:10px;letter-spacing:.16em;margin:0}
-  .intro .specs dd{font-size:20px;margin-left:0;margin-top:4px}
+  .intro .specs{border-left:none;padding-left:0;border-top:1px solid var(--rule);padding-top:32px}
+  .intro .specs dl{display:block}
+  .intro .specs dt{
+    font-size:10px;letter-spacing:.16em;
+    padding-top:16px;
+    border-top:1px solid var(--rule);
+    margin-top:0;
+  }
+  .intro .specs dd{
+    font-size:20px;
+    margin-left:0;
+    padding-bottom:16px;
+  }
 }
