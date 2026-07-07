@@ -130,16 +130,87 @@
     if (floorSelect) floorSelect.value = state.floor;
   };
 
-  // Swipe to change floor
-  let swipeStartX = 0;
-  planEl.addEventListener('touchstart', e => { swipeStartX = e.touches[0].clientX; }, { passive: true });
-  planEl.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - swipeStartX;
-    if (Math.abs(dx) < 50) return;
+  // Swipe to change floor — with slide animation
+  let swipeStartX = 0, swipeCurrent = 0, swipeActive = false;
+
+  function slideTransition(direction, callback) {
+    // direction: -1 = slide left (next), 1 = slide right (prev)
+    planEl.style.transition = 'transform 0.28s cubic-bezier(.4,0,.2,1)';
+    planEl.style.transform = 'translateX(' + (direction * -110) + '%)';
+    planEl.addEventListener('transitionend', function onEnd() {
+      planEl.removeEventListener('transitionend', onEnd);
+      planEl.style.transition = 'none';
+      planEl.style.transform = 'translateX(' + (direction * 110) + '%)';
+      callback();
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          planEl.style.transition = 'transform 0.28s cubic-bezier(.4,0,.2,1)';
+          planEl.style.transform = '';
+        });
+      });
+      planEl.addEventListener('transitionend', function onEnd2() {
+        planEl.removeEventListener('transitionend', onEnd2);
+        planEl.style.transition = '';
+        planEl.style.transform = '';
+      });
+    });
+  }
+
+  planEl.addEventListener('touchstart', e => {
+    swipeStartX = e.touches[0].clientX;
+    swipeCurrent = swipeStartX;
+    swipeActive = true;
+  }, { passive: true });
+
+  planEl.addEventListener('touchmove', e => {
+    if (!swipeActive) return;
+    swipeCurrent = e.touches[0].clientX;
+    const dx = swipeCurrent - swipeStartX;
+    planEl.style.transform = 'translateX(' + dx + 'px)';
+  }, { passive: true });
+
+  planEl.addEventListener('touchend', () => {
+    swipeActive = false;
+    const dx = swipeCurrent - swipeStartX;
+    if (Math.abs(dx) < 50) {
+      planEl.style.transition = 'transform 0.2s ease';
+      planEl.style.transform = '';
+      planEl.addEventListener('transitionend', function onSnap() {
+        planEl.removeEventListener('transitionend', onSnap);
+        planEl.style.transition = '';
+      });
+      return;
+    }
     const floors = config.floors;
     const idx = floors.indexOf(state.floor);
     const next = dx < 0 ? Math.min(idx + 1, floors.length - 1) : Math.max(idx - 1, 0);
-    if (next !== idx) { state.floor = floors[next]; render(); }
+    if (next === idx) {
+      planEl.style.transition = 'transform 0.2s ease';
+      planEl.style.transform = '';
+      planEl.addEventListener('transitionend', function onSnap() {
+        planEl.removeEventListener('transitionend', onSnap);
+        planEl.style.transition = '';
+      });
+      return;
+    }
+    const dir = dx < 0 ? 1 : -1;
+    planEl.style.transition = 'transform 0.22s cubic-bezier(.4,0,.2,1)';
+    planEl.style.transform = 'translateX(' + (dx < 0 ? -110 : 110) + '%)';
+    planEl.addEventListener('transitionend', function onOut() {
+      planEl.removeEventListener('transitionend', onOut);
+      state.floor = floors[next];
+      render();
+      planEl.style.transition = 'none';
+      planEl.style.transform = 'translateX(' + (dx < 0 ? 110 : -110) + '%)';
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        planEl.style.transition = 'transform 0.28s cubic-bezier(.4,0,.2,1)';
+        planEl.style.transform = '';
+        planEl.addEventListener('transitionend', function onIn() {
+          planEl.removeEventListener('transitionend', onIn);
+          planEl.style.transition = '';
+        });
+      }));
+    });
   }, { passive: true });
 
   render();

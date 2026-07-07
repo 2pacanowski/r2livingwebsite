@@ -263,7 +263,7 @@ footer .legal{max-width:1440px;margin:24px auto 0;display:flex;justify-content:s
 }
 
 /* ===== Lightbox ===== */
-.lbOverlay{position:fixed;inset:0;background:rgba(14,12,9,.96);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s ease}
+.lbOverlay{position:fixed;inset:0;background:rgba(14,12,9,.96);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s ease;overflow:hidden}
 .lbOverlay.open{opacity:1;pointer-events:auto}
 .lbImgWrap{max-width:90vw;max-height:82vh;display:flex;align-items:center;justify-content:center}
 .lbImg{max-width:90vw;max-height:82vh;object-fit:contain;display:block;user-select:none}
