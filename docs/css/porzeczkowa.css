@@ -42,6 +42,13 @@
   font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(243,239,232,.78)}
 .hero .stripe .item{display:flex;gap:10px;align-items:center}
 .hero .stripe .item b{color:var(--bone);font-weight:500}
+.hero .stripeTrack{display:contents}
+.hero .stripeTrack .stripeInner:nth-child(2){display:none} /* hide duplicate on desktop */
+
+@keyframes heroMarquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
 
 /* ===== Section primitives ===== */
 section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relative}
@@ -270,6 +277,16 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 @media(max-width:480px){
   .hero h1{font-size:38px;max-width:none}
   .hero .inner{padding:56px 16px 120px;min-height:auto}
+  .hero .stripe{overflow:hidden;user-select:none}
+  .hero .stripeTrack{
+    display:flex;width:max-content;
+    animation:heroMarquee 16s linear infinite;
+    cursor:grab;
+  }
+  .hero .stripeTrack.is-dragging{animation-play-state:paused;cursor:grabbing}
+  .hero .stripe .stripeInner{padding:14px 0;flex-shrink:0}
+  .hero .stripe .item{padding:0 20px}
+  .hero .stripe .item::after{content:"·";margin-left:20px;opacity:.4}
   .hero .lede{font-size:15px}
   .hero .meta-row{font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .hero .ctas{flex-direction:column;align-items:stretch}

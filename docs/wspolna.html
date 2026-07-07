@@ -71,12 +71,21 @@
     </div>
 
     <div class="stripe">
-      <div class="stripeInner">
-        <div class="item"><span>Location</span><b>Łomianki</b></div>
-        <div class="item"><span>Units</span><b>2</b></div>
-        <div class="item"><span>Area (per unit)</span><b>168,59 m²</b></div>
-        <div class="item"><span>Plot (per unit)</span><b>410 m²</b></div>
-        <div class="item"><span>Ready</span><b>Q2 2027</b></div>
+      <div class="stripeTrack">
+        <div class="stripeInner">
+          <div class="item"><span>Location</span><b>Łomianki</b></div>
+          <div class="item"><span>Units</span><b>2</b></div>
+          <div class="item"><span>Area (per unit)</span><b>168,59 m²</b></div>
+          <div class="item"><span>Plot (per unit)</span><b>410 m²</b></div>
+          <div class="item"><span>Ready</span><b>Q2 2027</b></div>
+        </div>
+        <div class="stripeInner" aria-hidden="true">
+          <div class="item"><span>Location</span><b>Łomianki</b></div>
+          <div class="item"><span>Units</span><b>2</b></div>
+          <div class="item"><span>Area (per unit)</span><b>168,59 m²</b></div>
+          <div class="item"><span>Plot (per unit)</span><b>410 m²</b></div>
+          <div class="item"><span>Ready</span><b>Q2 2027</b></div>
+        </div>
       </div>
     </div>
   </section>
@@ -650,5 +659,33 @@
   <script src="js/configurator.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/lightbox.js"></script>
+  <script>
+  (function(){
+    if(window.innerWidth > 480) return;
+    const track = document.querySelector('.hero .stripeTrack');
+    if(!track) return;
+    let startX = 0, startTx = 0, dragging = false;
+    function getTx(){
+      const m = new DOMMatrix(getComputedStyle(track).transform);
+      return m.m41;
+    }
+    track.addEventListener('pointerdown', function(e){
+      dragging = true;
+      startX = e.clientX;
+      startTx = getTx();
+      track.classList.add('is-dragging');
+      track.setPointerCapture(e.pointerId);
+    });
+    track.addEventListener('pointermove', function(e){
+      if(!dragging) return;
+      track.style.transform = 'translateX('+(startTx + e.clientX - startX)+'px)';
+    });
+    track.addEventListener('pointerup', function(){
+      dragging = false;
+      track.classList.remove('is-dragging');
+      track.style.transform = '';
+    });
+  })();
+  </script>
 </body>
 </html>
