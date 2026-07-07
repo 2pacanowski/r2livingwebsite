@@ -270,7 +270,8 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .g-a,.g-b,.g-c,.g-d,.g-e,.g-f,.g-g{grid-column:1 / -1;grid-row:auto;aspect-ratio:16/9}
   .configBody{grid-template-columns:1fr}
   .plotsHead{display:none}
-  .plot{grid-template-columns:1fr;gap:8px;align-items:start}
+  .plot{grid-template-columns:1fr;gap:0;align-items:start}
+  .plotSection .inner > .plot + .plot{margin-top:16px}
   .locStats{grid-template-columns:1fr 1fr}
 }
 
@@ -309,9 +310,13 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .reserveSection .inner{padding:0 16px}
   .aboutSection{padding:56px 16px}
 
-  .plot .pid{font-size:28px}
-  .plot .name{font-size:18px}
-  .plot .val{font-size:17px}
+  .plot{border:1px solid rgba(243,239,232,.14);padding:24px 20px;gap:0}
+  .plot:last-child{border-bottom:1px solid rgba(243,239,232,.14)}
+  .plot .pid{font-size:36px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(243,239,232,.1)}
+  .plot .name{font-size:18px;margin-bottom:16px}
+  .plot .val{font-size:17px;padding:10px 0;border-top:1px solid rgba(243,239,232,.08)}
+  .plot > div:has(.status){padding-top:16px}
+  .plot .btn-line{margin-top:16px;width:100%;justify-content:center}
 
   /* Configurator mobile layout */
   #config{padding:56px 16px}
