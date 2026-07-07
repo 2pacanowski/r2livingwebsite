@@ -268,33 +268,13 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 }
 
 @media(max-width:480px){
-  /* Hero: full-bleed photo + bottom card */
-  .hero{min-height:100svh}
-  .hero .bg{filter:saturate(.82) brightness(.88)}
-  .hero .bg::after{background:linear-gradient(180deg,rgba(20,18,15,.18) 0%,rgba(20,18,15,.02) 40%,rgba(20,18,15,.02) 55%,rgba(20,18,15,.22) 100%)}
-  .hero .inner{
-    padding:0 0 96px;min-height:100svh;
-    display:flex;flex-direction:column;justify-content:flex-end;
-    grid-template-rows:none;
-  }
-  .hero .topRow{display:none}
-  .hero .content{
-    background:rgba(243,239,232,.94);backdrop-filter:blur(12px);
-    color:var(--ink);
-    padding:24px 20px 20px;
-    gap:16px;
-    max-width:none;align-self:stretch;
-  }
-  .hero h1{font-size:36px;max-width:none;color:var(--ink);text-shadow:none;line-height:.96}
-  .hero h1 em{color:var(--moss)}
-  .hero .lede{display:none}
-  .hero .bottom{grid-template-columns:1fr;gap:14px;align-items:stretch}
-  .hero .ctas{flex-direction:row;align-items:stretch;gap:10px}
-  .hero .btn-primary{flex:1;justify-content:center;background:var(--ink);color:var(--bone);border-color:var(--ink);padding:14px 12px}
-  .hero .btn-ghost{flex:1;justify-content:center;color:var(--ink);border-color:rgba(21,18,15,.35);padding:14px 12px}
-  .hero .stripe{background:rgba(243,239,232,.97);border-top:1px solid rgba(21,18,15,.12)}
-  .hero .stripe .stripeInner{padding:12px 20px;flex-wrap:wrap;gap:8px 16px;color:rgba(21,18,15,.6)}
-  .hero .stripe .item b{color:var(--ink)}
+  .hero h1{font-size:38px;max-width:none}
+  .hero .inner{padding:56px 16px 72px;min-height:auto}
+  .hero .lede{font-size:15px}
+  .hero .meta-row{font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hero .ctas{flex-direction:column;align-items:stretch}
+  .hero .btn-primary,.hero .btn-ghost{justify-content:center}
+  .hero .stripe .stripeInner{padding:14px 16px;flex-wrap:wrap;gap:12px}
 
   section.block{padding:56px 16px}
   .sec-head{margin-bottom:32px}
