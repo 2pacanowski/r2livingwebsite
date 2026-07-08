@@ -1,62 +1,86 @@
 /* ===== Brand tokens ===== */
 :root {
-  --ink:    #14120F;
-  --ink-2:  #4a4540;
-  --bone:   #F3EFE8;
-  --stone:  #8C8880;
-  --moss:   #3D4A3A;
-  --rule:   #D8D2C8;
-  --paper:  #FAF8F5;
+  --ink:   #14120F;
+  --ink-2: #4a4540;
+  --bone:  #F3EFE8;
+  --stone: #8C8880;
+  --moss:  #3D4A3A;
+  --rule:  #D8D2C8;
+  --paper: #FAF8F5;
 }
 
-/* ===== Reset & base ===== */
+/* ===== Reset ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { font-size: 10px; }
-
 body {
   font-family: "Geist", sans-serif;
-  background: white;
+  background: #ccc;
   color: var(--ink);
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
 
-/* ===== Page layout ===== */
+/* ===== Page — A4 landscape ===== */
 .page {
-  width: 210mm;
-  min-height: 297mm;
-  padding: 16mm 16mm 12mm;
+  width: 297mm;
+  height: 210mm;
+  padding: 10mm 12mm 18mm;   /* bottom = room for footer */
   position: relative;
   background: var(--paper);
+  overflow: hidden;
   page-break-after: always;
   break-after: page;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-
 @media print {
-  .page { page-break-after: always; break-after: page; }
+  body { background: white; }
+  .page { page-break-after: always; break-after: page; margin: 0; }
+  @page { size: A4 landscape; margin: 0; }
 }
 
-/* ===== Page header (all inner pages) ===== */
+/* ===== Footer ===== */
+.footer {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 9mm;
+  padding: 0 12mm;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-top: 0.2mm solid var(--rule);
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--stone);
+  background: var(--paper);
+}
+.footer .f-company { color: var(--ink-2); font-weight: 500; }
+.footer .f-sep { opacity: .4; }
+
+/* ===== Page header ===== */
 .page-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 10mm;
-  padding-bottom: 4mm;
-  border-bottom: 0.3mm solid var(--rule);
+  gap: 8mm;
+  margin-bottom: 6mm;
+  padding-bottom: 3mm;
+  border-bottom: 0.25mm solid var(--rule);
+  flex-shrink: 0;
 }
 .page-eyebrow {
   font-family: "Geist Mono", monospace;
-  font-size: 8px;
-  letter-spacing: .18em;
+  font-size: 7px;
+  letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--moss);
+  flex: 1;
 }
+.logo-sm { display: block; opacity: .7; }
 .page-num {
   font-family: "Geist Mono", monospace;
-  font-size: 8px;
+  font-size: 7px;
   letter-spacing: .1em;
   color: var(--stone);
 }
@@ -65,58 +89,85 @@ body {
 h2 {
   font-family: "Instrument Serif", serif;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 26px;
   line-height: 1.05;
   letter-spacing: -.02em;
-  color: var(--ink);
+  margin-bottom: 4mm;
 }
 h2 em { font-style: italic; color: var(--moss); }
 h3 {
   font-family: "Instrument Serif", serif;
   font-weight: 400;
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1.1;
+  margin-bottom: 3mm;
 }
 h3 em { font-style: italic; color: var(--moss); }
 h4 {
   font-family: "Instrument Serif", serif;
   font-weight: 400;
-  font-size: 14px;
-  margin-bottom: 3px;
+  font-size: 11.5px;
+  margin-bottom: 2px;
 }
 p {
   font-family: "Geist", sans-serif;
-  font-size: 9.5px;
+  font-size: 8.5px;
   line-height: 1.6;
   color: var(--ink-2);
+  margin-bottom: 3mm;
 }
+p:last-child { margin-bottom: 0; }
+
+/* ===== Image blocks ===== */
+.img-block {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.img-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.img-block.tall  { height: 68mm; margin-bottom: 2mm; }
+.img-block.short { height: 38mm; }
+.img-block.fill  { flex: 1; min-height: 0; }
+.img-cap {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 5mm 4mm 2.5mm;
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: rgba(243,239,232,.88);
+  background: linear-gradient(transparent, rgba(20,18,15,.58));
+}
+.img-cap b { color: white; font-weight: 500; margin-right: 3px; }
 
 /* ===== COVER ===== */
 .cover {
   padding: 0;
   background: var(--ink);
-  display: flex;
-  flex-direction: column;
 }
 .cover-img {
-  position: absolute;
-  inset: 0;
-  background: url('../assets/images/wspolna-02-front.jpg') center 40% / cover no-repeat;
+  position: absolute; inset: 0;
+  background: url('../assets/images/wspolna-04-dusk.jpg') center 35% / cover no-repeat;
 }
 .cover-overlay {
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, rgba(20,18,15,.4) 0%, rgba(20,18,15,.1) 30%, rgba(20,18,15,.2) 55%, rgba(20,18,15,.92) 100%);
+    linear-gradient(90deg, rgba(20,18,15,.82) 0%, rgba(20,18,15,.5) 45%, rgba(20,18,15,.1) 100%),
+    linear-gradient(180deg, rgba(20,18,15,.3) 0%, transparent 30%, rgba(20,18,15,.5) 100%);
 }
 .cover-content {
-  position: relative;
-  z-index: 1;
+  position: relative; z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 297mm;
-  padding: 14mm 16mm 14mm;
+  height: 100%;
+  padding: 10mm 14mm 18mm;
   color: var(--bone);
 }
 .cover-top {
@@ -124,315 +175,357 @@ p {
   justify-content: space-between;
   align-items: flex-start;
 }
-.logo-white { display: block; width: 90px; height: auto; }
 .cover-label {
   font-family: "Geist Mono", monospace;
-  font-size: 8px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: rgba(243,239,232,.6);
-  padding-top: 6px;
-}
-.cover-body { }
-.cover-eyebrow {
-  font-family: "Geist Mono", monospace;
-  font-size: 9px;
+  font-size: 7px;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: rgba(243,239,232,.65);
-  display: block;
-  margin-bottom: 6mm;
+  color: rgba(243,239,232,.5);
+  padding-top: 4px;
 }
-.cover-title {
+.cover-eyebrow {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(243,239,232,.6);
+  display: block;
+  margin-bottom: 5mm;
+}
+.cover-body h1 {
   font-family: "Instrument Serif", serif;
   font-weight: 400;
-  font-size: 72px;
-  line-height: .94;
+  font-size: 64px;
+  line-height: .93;
   letter-spacing: -.025em;
   color: var(--bone);
 }
-.cover-title em { font-style: italic; color: #C9D5BE; }
-.cover-foot { border-top: 0.3mm solid rgba(243,239,232,.2); padding-top: 5mm; }
-.cover-meta {
+.cover-body h1 em { font-style: italic; color: #C9D5BE; }
+.cover-foot { border-top: 0.3mm solid rgba(243,239,232,.18); padding-top: 4mm; }
+.cover-stats {
+  display: flex;
+  gap: 10mm;
+}
+.cs b {
+  display: block;
+  font-family: "Instrument Serif", serif;
+  font-size: 16px;
+  color: var(--bone);
+  line-height: 1.1;
+}
+.cs span {
   font-family: "Geist Mono", monospace;
-  font-size: 8px;
+  font-size: 6.5px;
   letter-spacing: .15em;
   text-transform: uppercase;
-  color: rgba(243,239,232,.55);
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
+  color: rgba(243,239,232,.5);
 }
-.cover-meta .sep { color: rgba(243,239,232,.25); }
+/* cover footer override */
+.cover .footer {
+  background: transparent;
+  border-top-color: rgba(243,239,232,.14);
+  color: rgba(243,239,232,.45);
+}
+.cover .footer .f-company { color: rgba(243,239,232,.65); }
 
 /* ===== OVERVIEW ===== */
 .overview-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 14mm;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 10mm;
+  flex: 1;
+  min-height: 0;
 }
-.overview-body h2 { margin-bottom: 6mm; font-size: 28px; }
-.overview-body p { margin-bottom: 4mm; }
+.overview-left { display: flex; flex-direction: column; }
+.overview-left h2 { font-size: 22px; }
+.overview-left > p { font-size: 8px; margin-bottom: 2.5mm; }
 
-.overview-specs { border-left: 0.3mm solid var(--rule); padding-left: 10mm; }
 .specs-title {
   font-family: "Geist Mono", monospace;
-  font-size: 8px;
+  font-size: 7px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--moss);
-  margin-bottom: 5mm;
+  margin-top: 4mm;
+  margin-bottom: 2mm;
 }
-.overview-specs dl { display: flex; flex-direction: column; gap: 0; }
-.overview-specs dl div {
+.specs-dl { display: flex; flex-direction: column; flex: 1; }
+.specs-dl div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4mm;
-  padding: 3mm 0;
-  border-bottom: 0.2mm solid var(--rule);
+  grid-template-columns: 28mm 1fr;
+  gap: 3mm;
+  padding: 1.8mm 0;
+  border-bottom: 0.15mm solid var(--rule);
   align-items: baseline;
 }
-.overview-specs dl div:first-child { border-top: 0.2mm solid var(--rule); }
-.overview-specs dt {
+.specs-dl div:first-child { border-top: 0.15mm solid var(--rule); }
+.specs-dl dt {
   font-family: "Geist Mono", monospace;
-  font-size: 7.5px;
-  letter-spacing: .15em;
+  font-size: 6.5px;
+  letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--stone);
 }
-.overview-specs dd {
+.specs-dl dd {
   font-family: "Instrument Serif", serif;
-  font-size: 13px;
-  line-height: 1.2;
+  font-size: 10.5px;
   color: var(--ink);
   margin: 0;
 }
-.overview-specs dd small {
-  display: block;
-  font-family: "Geist Mono", monospace;
-  font-size: 7px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--stone);
-  margin-top: 1mm;
+
+.overview-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
 }
 
-/* ===== MATERIALS ===== */
-.section-title { font-size: 26px; margin-bottom: 3mm; }
-.section-sub { font-size: 9.5px; color: var(--ink-2); margin-bottom: 8mm; max-width: 80mm; }
+/* ===== SPECIFICATION ===== */
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 10mm;
+  flex: 1;
+  min-height: 0;
+}
+.spec-left { display: flex; flex-direction: column; }
+.spec-sub { font-size: 8px; color: var(--ink-2); margin-bottom: 4mm; max-width: 90mm; }
 .mat-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
+  flex: 1;
 }
 .mat-item {
-  padding: 5mm 6mm 5mm 0;
-  border-bottom: 0.2mm solid var(--rule);
+  padding: 3mm 4mm 3mm 0;
+  border-bottom: 0.15mm solid var(--rule);
 }
-.mat-item:nth-child(odd) { border-right: 0.2mm solid var(--rule); padding-right: 6mm; }
-.mat-item:nth-child(even) { padding-left: 6mm; padding-right: 0; }
+.mat-item:nth-child(odd) { border-right: 0.15mm solid var(--rule); }
+.mat-item:nth-child(even) { padding-left: 4mm; padding-right: 0; }
 .mat-item:nth-last-child(-n+2) { border-bottom: none; }
 .mat-n {
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 1mm;
+}
+.mat-item h4 { font-size: 11px; margin-bottom: 1.5mm; }
+.mat-item p { font-size: 7.5px; line-height: 1.5; margin: 0; color: var(--ink-2); }
+
+.spec-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+}
+
+/* ===== FLOOR PLANS ===== */
+.plans-page { }
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.3mm 1fr 0.3mm 1fr;
+  gap: 0 6mm;
+  flex: 1;
+  min-height: 0;
+}
+.plan-divider {
+  width: 0.2mm;
+  background: var(--rule);
+  align-self: stretch;
+}
+.plan-col {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.plan-label {
   font-family: "Geist Mono", monospace;
   font-size: 7.5px;
   letter-spacing: .15em;
   text-transform: uppercase;
   color: var(--moss);
-  margin-bottom: 2mm;
+  margin-bottom: 3mm;
+  padding-bottom: 2mm;
+  border-bottom: 0.2mm solid var(--rule);
+  flex-shrink: 0;
 }
-.mat-item h4 { font-size: 13px; margin-bottom: 2mm; }
-.mat-item p { font-size: 8.5px; line-height: 1.55; }
-
-/* ===== FLOOR PLANS ===== */
-.plans-intro { margin-bottom: 8mm; }
-.plans-intro h2 { font-size: 22px; margin-bottom: 2mm; }
-.plans-intro p {
-  font-family: "Geist Mono", monospace;
-  font-size: 8px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--stone);
-}
-.plans-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 8mm;
-  align-items: start;
-}
-.plan-item { display: flex; flex-direction: column; align-items: center; gap: 3mm; }
-.plan-label {
-  font-family: "Geist Mono", monospace;
-  font-size: 8px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--moss);
-  align-self: flex-start;
-}
-.plan-item img {
-  width: 100%;
-  height: auto;
+.plan-label span {
   display: block;
-  object-fit: contain;
-}
-.plan-sub {
-  font-family: "Geist Mono", monospace;
-  font-size: 7px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
   color: var(--stone);
-  align-self: flex-start;
+  font-size: 6.5px;
+  letter-spacing: .1em;
+  margin-top: 1mm;
+  text-transform: none;
 }
-
-/* ===== GALLERY ===== */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 65mm 55mm;
-  gap: 3mm;
-}
-.gal-main {
-  grid-column: 1;
-  grid-row: 1;
-  position: relative;
-  overflow: hidden;
-}
-.gal-side {
-  grid-column: 2;
-  grid-row: 1;
+.plan-body {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-height: 0;
   gap: 3mm;
 }
-.gal-item { position: relative; overflow: hidden; flex: 1; }
-.gal-wide {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  position: relative;
-  overflow: hidden;
+.plan-img {
+  flex: 0 0 auto;
+  height: 68mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
 }
-.gal-main img, .gal-item img, .gal-wide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.plan-img--top {
+  height: 52mm;
+}
+.plan-img img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
-.gal-cap {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 6mm 4mm 3mm;
-  font-family: "Geist Mono", monospace;
-  font-size: 7px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(243,239,232,.85);
-  background: linear-gradient(transparent, rgba(20,18,15,.6));
+.plan-rooms {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
-.gal-cap b { color: white; font-weight: 500; margin-right: 4px; }
+.rm {
+  display: grid;
+  grid-template-columns: 8mm 1fr auto;
+  gap: 1.5mm;
+  padding: 1.8mm 0;
+  border-bottom: 0.12mm solid var(--rule);
+  align-items: baseline;
+}
+.rm:last-child { border-bottom: none; }
+.rm.total {
+  border-top: 0.25mm solid var(--ink);
+  border-bottom: none;
+  margin-top: 1mm;
+  padding-top: 2mm;
+}
+.rm.total .rn { font-weight: 500; color: var(--ink); }
+.rm.total .rs { font-weight: 500; color: var(--ink); }
+.ri {
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .1em;
+  color: var(--stone);
+  padding-top: 1px;
+}
+.rn {
+  font-family: "Geist", sans-serif;
+  font-size: 8px;
+  color: var(--ink);
+  line-height: 1.25;
+}
+.rn small {
+  display: block;
+  font-family: "Geist Mono", monospace;
+  font-size: 6px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-top: 0.5mm;
+}
+.rs {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  color: var(--ink);
+  white-space: nowrap;
+}
 
 /* ===== LOCATION ===== */
 .location-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12mm;
-  align-items: start;
+  gap: 10mm;
+  flex: 1;
+  min-height: 0;
 }
-.location-body h2 { font-size: 24px; margin-bottom: 5mm; }
-.location-body > p { margin-bottom: 7mm; }
+.location-left { display: flex; flex-direction: column; }
+.location-left h2 { font-size: 22px; }
+.location-left > p { font-size: 8px; }
 .loc-stats {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 4mm;
-  margin-bottom: 7mm;
-  padding: 5mm 0;
+  margin: 4mm 0;
+  padding: 3.5mm 0;
   border-top: 0.2mm solid var(--rule);
   border-bottom: 0.2mm solid var(--rule);
 }
 .ls .num {
   font-family: "Instrument Serif", serif;
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1;
-  color: var(--ink);
   display: block;
 }
-.ls .num em { font-style: normal; font-size: 14px; color: var(--stone); margin-left: 1px; }
+.ls .num em { font-style: normal; font-size: 11px; color: var(--stone); }
 .ls .lbl {
   font-family: "Geist Mono", monospace;
-  font-size: 7.5px;
-  letter-spacing: .14em;
+  font-size: 6.5px;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--stone);
   display: block;
   margin-top: 1mm;
 }
-.loc-points { display: flex; flex-direction: column; gap: 3mm; }
-.lp {
-  display: grid;
-  grid-template-columns: 28mm 1fr;
-  gap: 4mm;
-  font-size: 8.5px;
-  line-height: 1.5;
-}
-.lp b { font-weight: 500; color: var(--ink); }
+.loc-points { display: flex; flex-direction: column; gap: 2.5mm; flex: 1; }
+.lp { font-size: 8px; line-height: 1.5; }
+.lp b { display: block; font-weight: 500; color: var(--ink); margin-bottom: .5mm; }
 .lp span { color: var(--ink-2); }
-.location-img { position: relative; }
-.location-img img {
-  width: 100%;
-  height: 150mm;
-  object-fit: cover;
-  display: block;
-}
-.coord-badge {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 3mm 4mm;
+.coord-line {
   font-family: "Geist Mono", monospace;
-  font-size: 7px;
+  font-size: 6.5px;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(243,239,232,.8);
-  background: rgba(20,18,15,.55);
+  color: var(--stone);
+  margin-top: 4mm;
+  padding-top: 3mm;
+  border-top: 0.15mm solid var(--rule);
 }
+.location-right { display: flex; flex-direction: column; }
 
-/* ===== PRICING & CONTACT ===== */
-.pricing-grid {
+/* ===== CONTACT / PRICING ===== */
+.contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6mm;
-  margin-bottom: 12mm;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 10mm;
+  flex: 1;
+  min-height: 0;
 }
-.pricing-unit {
-  border: 0.3mm solid var(--rule);
-  padding: 6mm;
+.contact-left { display: flex; flex-direction: column; gap: 5mm; }
+.pricing-units { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+.pu {
+  border: 0.25mm solid var(--rule);
+  padding: 4mm;
   display: flex;
-  gap: 5mm;
+  gap: 3mm;
 }
 .pu-num {
   font-family: "Instrument Serif", serif;
-  font-size: 48px;
+  font-size: 36px;
   line-height: 1;
   color: var(--moss);
   flex-shrink: 0;
-  width: 14mm;
+  width: 10mm;
 }
-.pu-body { flex: 1; }
+.pu-body { flex: 1; min-width: 0; }
 .pu-name {
   font-family: "Instrument Serif", serif;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.2;
-  margin-bottom: 4mm;
-  padding-bottom: 4mm;
-  border-bottom: 0.2mm solid var(--rule);
+  margin-bottom: 3mm;
+  padding-bottom: 3mm;
+  border-bottom: 0.15mm solid var(--rule);
 }
 .pu-name span {
   display: block;
   font-family: "Geist Mono", monospace;
-  font-size: 7.5px;
-  letter-spacing: .14em;
+  font-size: 6px;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--stone);
   margin-top: 1mm;
@@ -440,93 +533,76 @@ p {
 .pu-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3mm;
-  margin-bottom: 4mm;
+  gap: 2mm;
+  margin-bottom: 3mm;
 }
 .pu-stats div b {
   display: block;
   font-family: "Instrument Serif", serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
 }
 .pu-stats div span {
   font-family: "Geist Mono", monospace;
-  font-size: 7px;
-  letter-spacing: .13em;
+  font-size: 6px;
+  letter-spacing: .11em;
   text-transform: uppercase;
   color: var(--stone);
 }
 .pu-price {
   font-family: "Instrument Serif", serif;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.1;
-  padding-top: 4mm;
-  border-top: 0.2mm solid var(--rule);
-  margin-bottom: 3mm;
+  padding-top: 3mm;
+  border-top: 0.15mm solid var(--rule);
+  margin-bottom: 2mm;
 }
 .pu-price span {
   display: block;
   font-family: "Geist Mono", monospace;
-  font-size: 7.5px;
-  letter-spacing: .12em;
+  font-size: 6px;
+  letter-spacing: .11em;
   text-transform: uppercase;
   color: var(--stone);
-  margin-top: 1mm;
+  margin-top: .5mm;
 }
 .pu-status {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   font-family: "Geist Mono", monospace;
-  font-size: 8px;
-  letter-spacing: .16em;
+  font-size: 7px;
+  letter-spacing: .14em;
   text-transform: uppercase;
 }
 .pu-status.avail { color: var(--ink); }
 .pu-status .ind {
-  width: 6px;
-  height: 6px;
+  width: 5px; height: 5px;
   border-radius: 50%;
   background: #9FB58A;
   flex-shrink: 0;
 }
 
-.contact-block {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 10mm;
-  align-items: start;
-  padding-top: 8mm;
-  border-top: 0.3mm solid var(--rule);
+.contact-box {
+  border-top: 0.2mm solid var(--rule);
+  padding-top: 4mm;
+  flex: 1;
 }
-.contact-body h3 { font-size: 22px; margin-bottom: 3mm; }
-.contact-body p { font-size: 9px; max-width: 60mm; }
-.contact-details { display: flex; flex-direction: column; gap: 3mm; }
-.cd-item { display: flex; flex-direction: column; gap: 0.5mm; }
+.contact-box h3 { font-size: 20px; }
+.contact-box > p { font-size: 8px; margin-bottom: 4mm; }
+.contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
+.cd { display: flex; flex-direction: column; gap: .5mm; }
 .cd-l {
   font-family: "Geist Mono", monospace;
-  font-size: 7px;
-  letter-spacing: .16em;
+  font-size: 6.5px;
+  letter-spacing: .15em;
   text-transform: uppercase;
   color: var(--stone);
 }
 .cd-v {
   font-family: "Geist Mono", monospace;
-  font-size: 9px;
-  letter-spacing: .08em;
+  font-size: 8.5px;
+  letter-spacing: .06em;
   color: var(--ink);
 }
-.contact-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 2mm;
-  padding-top: 1mm;
-}
-.contact-logo span {
-  font-family: "Geist Mono", monospace;
-  font-size: 7.5px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--stone);
-}
+.contact-right { display: flex; flex-direction: column; }
