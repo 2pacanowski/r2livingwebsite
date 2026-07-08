@@ -1,0 +1,532 @@
+/* ===== Brand tokens ===== */
+:root {
+  --ink:    #14120F;
+  --ink-2:  #4a4540;
+  --bone:   #F3EFE8;
+  --stone:  #8C8880;
+  --moss:   #3D4A3A;
+  --rule:   #D8D2C8;
+  --paper:  #FAF8F5;
+}
+
+/* ===== Reset & base ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 10px; }
+
+body {
+  font-family: "Geist", sans-serif;
+  background: white;
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ===== Page layout ===== */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 16mm 16mm 12mm;
+  position: relative;
+  background: var(--paper);
+  page-break-after: always;
+  break-after: page;
+  overflow: hidden;
+}
+
+@media print {
+  .page { page-break-after: always; break-after: page; }
+}
+
+/* ===== Page header (all inner pages) ===== */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10mm;
+  padding-bottom: 4mm;
+  border-bottom: 0.3mm solid var(--rule);
+}
+.page-eyebrow {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--moss);
+}
+.page-num {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .1em;
+  color: var(--stone);
+}
+
+/* ===== Typography ===== */
+h2 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+h2 em { font-style: italic; color: var(--moss); }
+h3 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.1;
+}
+h3 em { font-style: italic; color: var(--moss); }
+h4 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+p {
+  font-family: "Geist", sans-serif;
+  font-size: 9.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+/* ===== COVER ===== */
+.cover {
+  padding: 0;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+.cover-img {
+  position: absolute;
+  inset: 0;
+  background: url('../assets/images/wspolna-02-front.jpg') center 40% / cover no-repeat;
+}
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(20,18,15,.4) 0%, rgba(20,18,15,.1) 30%, rgba(20,18,15,.2) 55%, rgba(20,18,15,.92) 100%);
+}
+.cover-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 297mm;
+  padding: 14mm 16mm 14mm;
+  color: var(--bone);
+}
+.cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.logo-white { display: block; width: 90px; height: auto; }
+.cover-label {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(243,239,232,.6);
+  padding-top: 6px;
+}
+.cover-body { }
+.cover-eyebrow {
+  font-family: "Geist Mono", monospace;
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(243,239,232,.65);
+  display: block;
+  margin-bottom: 6mm;
+}
+.cover-title {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: .94;
+  letter-spacing: -.025em;
+  color: var(--bone);
+}
+.cover-title em { font-style: italic; color: #C9D5BE; }
+.cover-foot { border-top: 0.3mm solid rgba(243,239,232,.2); padding-top: 5mm; }
+.cover-meta {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(243,239,232,.55);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cover-meta .sep { color: rgba(243,239,232,.25); }
+
+/* ===== OVERVIEW ===== */
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 14mm;
+}
+.overview-body h2 { margin-bottom: 6mm; font-size: 28px; }
+.overview-body p { margin-bottom: 4mm; }
+
+.overview-specs { border-left: 0.3mm solid var(--rule); padding-left: 10mm; }
+.specs-title {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 5mm;
+}
+.overview-specs dl { display: flex; flex-direction: column; gap: 0; }
+.overview-specs dl div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  padding: 3mm 0;
+  border-bottom: 0.2mm solid var(--rule);
+  align-items: baseline;
+}
+.overview-specs dl div:first-child { border-top: 0.2mm solid var(--rule); }
+.overview-specs dt {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.overview-specs dd {
+  font-family: "Instrument Serif", serif;
+  font-size: 13px;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 0;
+}
+.overview-specs dd small {
+  display: block;
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-top: 1mm;
+}
+
+/* ===== MATERIALS ===== */
+.section-title { font-size: 26px; margin-bottom: 3mm; }
+.section-sub { font-size: 9.5px; color: var(--ink-2); margin-bottom: 8mm; max-width: 80mm; }
+.mat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+.mat-item {
+  padding: 5mm 6mm 5mm 0;
+  border-bottom: 0.2mm solid var(--rule);
+}
+.mat-item:nth-child(odd) { border-right: 0.2mm solid var(--rule); padding-right: 6mm; }
+.mat-item:nth-child(even) { padding-left: 6mm; padding-right: 0; }
+.mat-item:nth-last-child(-n+2) { border-bottom: none; }
+.mat-n {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 2mm;
+}
+.mat-item h4 { font-size: 13px; margin-bottom: 2mm; }
+.mat-item p { font-size: 8.5px; line-height: 1.55; }
+
+/* ===== FLOOR PLANS ===== */
+.plans-intro { margin-bottom: 8mm; }
+.plans-intro h2 { font-size: 22px; margin-bottom: 2mm; }
+.plans-intro p {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8mm;
+  align-items: start;
+}
+.plan-item { display: flex; flex-direction: column; align-items: center; gap: 3mm; }
+.plan-label {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--moss);
+  align-self: flex-start;
+}
+.plan-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+.plan-sub {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--stone);
+  align-self: flex-start;
+}
+
+/* ===== GALLERY ===== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 65mm 55mm;
+  gap: 3mm;
+}
+.gal-main {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  overflow: hidden;
+}
+.gal-side {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+}
+.gal-item { position: relative; overflow: hidden; flex: 1; }
+.gal-wide {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  position: relative;
+  overflow: hidden;
+}
+.gal-main img, .gal-item img, .gal-wide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gal-cap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 6mm 4mm 3mm;
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(243,239,232,.85);
+  background: linear-gradient(transparent, rgba(20,18,15,.6));
+}
+.gal-cap b { color: white; font-weight: 500; margin-right: 4px; }
+
+/* ===== LOCATION ===== */
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12mm;
+  align-items: start;
+}
+.location-body h2 { font-size: 24px; margin-bottom: 5mm; }
+.location-body > p { margin-bottom: 7mm; }
+.loc-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+  margin-bottom: 7mm;
+  padding: 5mm 0;
+  border-top: 0.2mm solid var(--rule);
+  border-bottom: 0.2mm solid var(--rule);
+}
+.ls .num {
+  font-family: "Instrument Serif", serif;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--ink);
+  display: block;
+}
+.ls .num em { font-style: normal; font-size: 14px; color: var(--stone); margin-left: 1px; }
+.ls .lbl {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  display: block;
+  margin-top: 1mm;
+}
+.loc-points { display: flex; flex-direction: column; gap: 3mm; }
+.lp {
+  display: grid;
+  grid-template-columns: 28mm 1fr;
+  gap: 4mm;
+  font-size: 8.5px;
+  line-height: 1.5;
+}
+.lp b { font-weight: 500; color: var(--ink); }
+.lp span { color: var(--ink-2); }
+.location-img { position: relative; }
+.location-img img {
+  width: 100%;
+  height: 150mm;
+  object-fit: cover;
+  display: block;
+}
+.coord-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3mm 4mm;
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(243,239,232,.8);
+  background: rgba(20,18,15,.55);
+}
+
+/* ===== PRICING & CONTACT ===== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6mm;
+  margin-bottom: 12mm;
+}
+.pricing-unit {
+  border: 0.3mm solid var(--rule);
+  padding: 6mm;
+  display: flex;
+  gap: 5mm;
+}
+.pu-num {
+  font-family: "Instrument Serif", serif;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--moss);
+  flex-shrink: 0;
+  width: 14mm;
+}
+.pu-body { flex: 1; }
+.pu-name {
+  font-family: "Instrument Serif", serif;
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 4mm;
+  padding-bottom: 4mm;
+  border-bottom: 0.2mm solid var(--rule);
+}
+.pu-name span {
+  display: block;
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-top: 1mm;
+}
+.pu-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm;
+  margin-bottom: 4mm;
+}
+.pu-stats div b {
+  display: block;
+  font-family: "Instrument Serif", serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+.pu-stats div span {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.pu-price {
+  font-family: "Instrument Serif", serif;
+  font-size: 18px;
+  line-height: 1.1;
+  padding-top: 4mm;
+  border-top: 0.2mm solid var(--rule);
+  margin-bottom: 3mm;
+}
+.pu-price span {
+  display: block;
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-top: 1mm;
+}
+.pu-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.pu-status.avail { color: var(--ink); }
+.pu-status .ind {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #9FB58A;
+  flex-shrink: 0;
+}
+
+.contact-block {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10mm;
+  align-items: start;
+  padding-top: 8mm;
+  border-top: 0.3mm solid var(--rule);
+}
+.contact-body h3 { font-size: 22px; margin-bottom: 3mm; }
+.contact-body p { font-size: 9px; max-width: 60mm; }
+.contact-details { display: flex; flex-direction: column; gap: 3mm; }
+.cd-item { display: flex; flex-direction: column; gap: 0.5mm; }
+.cd-l {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.cd-v {
+  font-family: "Geist Mono", monospace;
+  font-size: 9px;
+  letter-spacing: .08em;
+  color: var(--ink);
+}
+.contact-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2mm;
+  padding-top: 1mm;
+}
+.contact-logo span {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
