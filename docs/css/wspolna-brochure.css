@@ -516,7 +516,7 @@ p:last-child { margin-bottom: 0; }
   grid-template-columns: 8mm 1fr max-content;
   border-top: 0.2mm solid var(--rule);
   border-bottom: none;
-  margin-top: 1mm;
+  margin-top: auto;
   padding-top: 1.5mm;
 }
 .rm.floor-total .rn {
