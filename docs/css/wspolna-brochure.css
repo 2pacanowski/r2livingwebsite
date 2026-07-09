@@ -252,37 +252,67 @@ p:last-child { margin-bottom: 0; }
 .merged-intro { font-size: 8px; margin-bottom: 3.5mm; color: var(--ink-2); }
 .merged-right { display: flex; flex-direction: column; }
 
-.exec-stats {
+.exec-intro {
+  font-size: 9px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-bottom: 5mm;
+}
+.exec-groups {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 5mm 0 4mm;
   border-top: 0.2mm solid var(--rule);
   border-left: 0.2mm solid var(--rule);
+  flex: 1;
 }
-.es {
-  padding: 4mm 4mm 3.5mm;
+.exec-group {
+  padding: 4mm 5mm 4mm 4mm;
   border-right: 0.2mm solid var(--rule);
   border-bottom: 0.2mm solid var(--rule);
+  display: flex;
+  flex-direction: column;
 }
-.es b {
-  display: block;
+.eg-eyebrow {
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 3mm;
+}
+.eg-fig {
   font-family: "Instrument Serif", serif;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 36px;
   line-height: 1;
-  letter-spacing: -.02em;
+  letter-spacing: -.025em;
   color: var(--ink);
-  margin-bottom: 1.5mm;
+  margin-bottom: 1mm;
 }
-.es span {
+.eg-sub {
   font-family: "Geist Mono", monospace;
-  font-size: 6px;
-  letter-spacing: .14em;
+  font-size: 6.5px;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--stone);
+  margin-bottom: 4mm;
+  padding-bottom: 3mm;
+  border-bottom: 0.15mm solid var(--rule);
 }
-.specs-dl.exec-details { margin-top: 0; }
-.specs-dl.exec-details div { padding: 1.6mm 0; }
+.eg-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5mm;
+}
+.eg-details li {
+  font-family: "Geist", sans-serif;
+  font-size: 8px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
 
 .specs-dl.compact div {
   padding: 1.4mm 0;
@@ -290,56 +320,6 @@ p:last-child { margin-bottom: 0; }
 .specs-dl.compact dt { font-size: 6px; }
 .specs-dl.compact dd { font-size: 9.5px; }
 
-/* Material boxes — matches website card style, scaled for print */
-.mat-boxes {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2mm;
-  margin-top: 1mm;
-}
-.mat-box {
-  border: 0.2mm solid var(--rule);
-  padding: 2.5mm 3mm;
-  background: var(--paper);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 18mm;
-}
-.mat-box .mat-n {
-  font-family: "Geist Mono", monospace;
-  font-size: 6px;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--moss);
-  margin-bottom: auto;
-}
-.mat-box h4 {
-  font-family: "Instrument Serif", serif;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 1.2;
-  letter-spacing: -.01em;
-  margin-top: 2mm;
-  margin-bottom: 1mm;
-}
-.mat-box p {
-  font-size: 6.5px;
-  line-height: 1.4;
-  margin: 0;
-  color: var(--stone);
-}
-.mat-disclaimer {
-  font-family: "Geist Mono", monospace;
-  font-size: 6.5px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--stone);
-  margin-top: 2.5mm;
-  padding-top: 2mm;
-  border-top: 0.15mm solid var(--rule);
-  font-style: normal;
-}
 
 /* ===== OVERVIEW ===== */
 .overview-grid {
