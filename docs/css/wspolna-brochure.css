@@ -55,9 +55,11 @@ body {
   text-transform: uppercase;
   color: var(--stone);
   background: var(--paper);
+  opacity: 0.42;
 }
 .footer .f-company { color: var(--ink-2); font-weight: 500; }
 .footer .f-sep { opacity: .4; }
+.cover .footer { opacity: 1; }
 
 /* ===== Page header ===== */
 .page-header {
@@ -89,16 +91,16 @@ body {
 h2 {
   font-family: "Instrument Serif", serif;
   font-weight: 400;
-  font-size: 26px;
-  line-height: 1.05;
-  letter-spacing: -.02em;
+  font-size: 38px;
+  line-height: 1.0;
+  letter-spacing: -.025em;
   margin-bottom: 4mm;
 }
 h2 em { font-style: italic; color: var(--moss); }
 h3 {
   font-family: "Instrument Serif", serif;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 26px;
   line-height: 1.1;
   margin-bottom: 3mm;
 }
@@ -228,6 +230,15 @@ p:last-child { margin-bottom: 0; }
 }
 .cover .footer .f-company { color: rgba(243,239,232,.65); }
 
+/* ===== Moss left accent strip (inner pages) ===== */
+.page:not(.cover)::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2.5mm;
+  background: var(--moss);
+}
+
 /* ===== OVERVIEW ===== */
 .overview-grid {
   display: grid;
@@ -237,7 +248,7 @@ p:last-child { margin-bottom: 0; }
   min-height: 0;
 }
 .overview-left { display: flex; flex-direction: column; }
-.overview-left h2 { font-size: 22px; }
+.overview-left h2 { font-size: 32px; }
 .overview-left > p { font-size: 8px; margin-bottom: 2.5mm; }
 
 .specs-title {
@@ -370,7 +381,9 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: var(--bone);
+  border: 0.2mm solid var(--rule);
+  padding: 2mm;
 }
 .plan-img--top {
   height: 52mm;
@@ -436,6 +449,51 @@ p:last-child { margin-bottom: 0; }
   white-space: nowrap;
 }
 
+/* ===== SITE PLAN ===== */
+.siteplan-page { }
+.siteplan-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.siteplan-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10mm;
+  margin-bottom: 5mm;
+  flex-shrink: 0;
+}
+.siteplan-intro h2 { font-size: 32px; margin-bottom: 2mm; }
+.siteplan-intro p { font-size: 8px; }
+.siteplan-placeholder {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+  border: 0.2mm solid var(--rule);
+  background: var(--bone);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.siteplan-placeholder svg {
+  width: 100%;
+  height: 100%;
+}
+.sp-tag {
+  position: absolute;
+  top: 3mm; right: 3mm;
+  font-family: "Geist Mono", monospace;
+  font-size: 6px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  background: var(--paper);
+  padding: 1.5mm 2.5mm;
+  border: 0.15mm solid var(--rule);
+}
+
 /* ===== LOCATION ===== */
 .location-grid {
   display: grid;
@@ -445,7 +503,7 @@ p:last-child { margin-bottom: 0; }
   min-height: 0;
 }
 .location-left { display: flex; flex-direction: column; }
-.location-left h2 { font-size: 22px; }
+.location-left h2 { font-size: 32px; }
 .location-left > p { font-size: 8px; }
 .loc-stats {
   display: grid;
@@ -551,11 +609,12 @@ p:last-child { margin-bottom: 0; }
 }
 .pu-price {
   font-family: "Instrument Serif", serif;
-  font-size: 14px;
-  line-height: 1.1;
+  font-size: 22px;
+  line-height: 1.05;
   padding-top: 3mm;
   border-top: 0.15mm solid var(--rule);
   margin-bottom: 2mm;
+  letter-spacing: -.01em;
 }
 .pu-price span {
   display: block;
