@@ -423,10 +423,18 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: baseline;
   gap: 4mm;
-  margin-bottom: 4mm;
-  padding-bottom: 3mm;
+  margin-bottom: 3mm;
+  padding-bottom: 2.5mm;
   border-bottom: 0.25mm solid var(--rule);
   flex-shrink: 0;
+}
+.plans-unit-name {
+  font-family: "Instrument Serif", serif;
+  font-size: 16px;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  line-height: 1;
+  flex: 1;
 }
 .plans-total-label {
   font-family: "Geist Mono", monospace;
@@ -472,7 +480,7 @@ p:last-child { margin-bottom: 0; }
 }
 .plan-img {
   flex: 0 0 auto;
-  height: 68mm;
+  height: 60mm;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -499,7 +507,7 @@ p:last-child { margin-bottom: 0; }
   display: grid;
   grid-template-columns: 8mm 1fr auto;
   gap: 1.5mm;
-  padding: 1.8mm 0;
+  padding: 1.4mm 0;
   border-bottom: 0.12mm solid var(--rule);
   align-items: baseline;
 }
