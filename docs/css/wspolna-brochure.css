@@ -252,33 +252,62 @@ p:last-child { margin-bottom: 0; }
 .merged-intro { font-size: 8px; margin-bottom: 3.5mm; color: var(--ink-2); }
 .merged-right { display: flex; flex-direction: column; }
 
-.specs-2col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 6mm;
-}
 .specs-dl.compact div {
   padding: 1.4mm 0;
 }
 .specs-dl.compact dt { font-size: 6px; }
 .specs-dl.compact dd { font-size: 9.5px; }
 
-.mat-grid.compact {
+/* Material boxes — matches website card style, scaled for print */
+.mat-boxes {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  flex: 1;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2mm;
+  margin-top: 1mm;
 }
-.mat-grid.compact .mat-item {
-  padding: 2mm 3mm 2mm 0;
-  border-bottom: 0.15mm solid var(--rule);
+.mat-box {
+  border: 0.2mm solid var(--rule);
+  padding: 2.5mm 3mm;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 18mm;
 }
-.mat-grid.compact .mat-item:nth-child(odd) { border-right: 0.15mm solid var(--rule); }
-.mat-grid.compact .mat-item:nth-child(even) { padding-left: 3mm; padding-right: 0; }
-.mat-grid.compact .mat-item:nth-last-child(-n+2) { border-bottom: none; }
-.mat-grid.compact .mat-n { font-size: 6px; margin-bottom: .5mm; }
-.mat-grid.compact h4 { font-size: 9.5px; margin-bottom: .5mm; }
-.mat-grid.compact p { font-size: 7px; line-height: 1.4; margin: 0; color: var(--stone); }
+.mat-box .mat-n {
+  font-family: "Geist Mono", monospace;
+  font-size: 6px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: auto;
+}
+.mat-box h4 {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -.01em;
+  margin-top: 2mm;
+  margin-bottom: 1mm;
+}
+.mat-box p {
+  font-size: 6.5px;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--stone);
+}
+.mat-disclaimer {
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-top: 2.5mm;
+  padding-top: 2mm;
+  border-top: 0.15mm solid var(--rule);
+  font-style: normal;
+}
 
 /* ===== OVERVIEW ===== */
 .overview-grid {
