@@ -197,12 +197,20 @@ p:last-child { margin-bottom: 0; }
 .cover-body h1 {
   font-family: "Instrument Serif", serif;
   font-weight: 400;
-  font-size: 64px;
+  font-size: 86px;
   line-height: .93;
   letter-spacing: -.025em;
   color: var(--bone);
 }
 .cover-body h1 em { font-style: italic; color: #C9D5BE; }
+.cover-subtitle {
+  font-family: "Geist", sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(243,239,232,.65);
+  margin-top: 3mm;
+  letter-spacing: .02em;
+}
 .cover-foot { border-top: 0.3mm solid rgba(243,239,232,.18); padding-top: 4mm; }
 .cover-stats {
   display: flex;
