@@ -419,24 +419,49 @@ p:last-child { margin-bottom: 0; }
   flex-direction: column;
   min-height: 0;
 }
-.plan-label {
+.plans-total-bar {
+  display: flex;
+  align-items: baseline;
+  gap: 4mm;
+  margin-bottom: 4mm;
+  padding-bottom: 3mm;
+  border-bottom: 0.25mm solid var(--rule);
+  flex-shrink: 0;
+}
+.plans-total-label {
   font-family: "Geist Mono", monospace;
-  font-size: 7.5px;
-  letter-spacing: .15em;
+  font-size: 7px;
+  letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--moss);
+  color: var(--stone);
+}
+.plans-total-val {
+  font-family: "Instrument Serif", serif;
+  font-size: 22px;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.plan-label {
+  font-family: "Instrument Serif", serif;
+  font-size: 15px;
+  letter-spacing: -.01em;
+  color: var(--ink);
   margin-bottom: 3mm;
   padding-bottom: 2mm;
   border-bottom: 0.2mm solid var(--rule);
   flex-shrink: 0;
+  line-height: 1.1;
 }
 .plan-label span {
   display: block;
+  font-family: "Geist Mono", monospace;
   color: var(--stone);
   font-size: 6.5px;
   letter-spacing: .1em;
+  text-transform: uppercase;
   margin-top: 1mm;
-  text-transform: none;
 }
 .plan-body {
   display: flex;
@@ -454,9 +479,6 @@ p:last-child { margin-bottom: 0; }
   background: var(--bone);
   border: 0.2mm solid var(--rule);
   padding: 2mm;
-}
-.plan-img--top {
-  height: 52mm;
 }
 .plan-img img {
   max-width: 100%;
@@ -482,14 +504,25 @@ p:last-child { margin-bottom: 0; }
   align-items: baseline;
 }
 .rm:last-child { border-bottom: none; }
-.rm.total {
-  border-top: 0.25mm solid var(--ink);
+.rm.floor-total {
+  border-top: 0.2mm solid var(--rule);
   border-bottom: none;
   margin-top: 1mm;
-  padding-top: 2mm;
+  padding-top: 1.5mm;
 }
-.rm.total .rn { font-weight: 500; color: var(--ink); }
-.rm.total .rs { font-weight: 500; color: var(--ink); }
+.rm.floor-total .rn {
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.rm.floor-total .rs {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  color: var(--ink-2);
+  font-weight: 500;
+}
 .ri {
   font-family: "Geist Mono", monospace;
   font-size: 6.5px;
