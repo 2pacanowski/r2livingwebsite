@@ -252,6 +252,38 @@ p:last-child { margin-bottom: 0; }
 .merged-intro { font-size: 8px; margin-bottom: 3.5mm; color: var(--ink-2); }
 .merged-right { display: flex; flex-direction: column; }
 
+.exec-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 5mm 0 4mm;
+  border-top: 0.2mm solid var(--rule);
+  border-left: 0.2mm solid var(--rule);
+}
+.es {
+  padding: 4mm 4mm 3.5mm;
+  border-right: 0.2mm solid var(--rule);
+  border-bottom: 0.2mm solid var(--rule);
+}
+.es b {
+  display: block;
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin-bottom: 1.5mm;
+}
+.es span {
+  font-family: "Geist Mono", monospace;
+  font-size: 6px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.specs-dl.exec-details { margin-top: 0; }
+.specs-dl.exec-details div { padding: 1.6mm 0; }
+
 .specs-dl.compact div {
   padding: 1.4mm 0;
 }
