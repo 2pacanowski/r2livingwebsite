@@ -322,6 +322,15 @@ p:last-child { margin-bottom: 0; }
   color: var(--stone);
 }
 /* Feature list */
+.dev-features-header {
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 2mm;
+  margin-top: 4mm;
+}
 .dev-features {
   list-style: none;
   padding: 0;
@@ -343,14 +352,11 @@ p:last-child { margin-bottom: 0; }
   gap: 2mm;
 }
 .dev-features li::before {
-  content: '';
-  display: block;
-  width: 3mm;
-  height: 3mm;
-  min-width: 3mm;
-  border-radius: 50%;
-  background: var(--moss);
-  opacity: 0.55;
+  content: '—';
+  font-family: "Geist Mono", monospace;
+  font-size: 6px;
+  color: var(--stone);
+  flex-shrink: 0;
 }
 
 /* Callout pair */
