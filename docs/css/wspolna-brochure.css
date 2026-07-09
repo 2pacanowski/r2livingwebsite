@@ -549,6 +549,42 @@ p:last-child { margin-bottom: 0; }
   object-position: center 40%;
   display: block;
 }
+.sp-plot-ref {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-top: 3mm;
+  padding-bottom: 3mm;
+  border-bottom: 0.2mm solid var(--rule);
+}
+.sp-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3mm;
+  margin-top: 3mm;
+}
+.sp-stat b {
+  display: block;
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin-bottom: 1.5mm;
+}
+.sp-stat span {
+  display: block;
+  font-family: "Geist Mono", monospace;
+  font-size: 6px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  line-height: 1.4;
+}
+
 .sp-tag {
   position: absolute;
   top: 3mm; right: 3mm;
