@@ -156,6 +156,15 @@ p:last-child { margin-bottom: 0; }
 .cover-img {
   position: absolute; inset: 0;
   background: url('../assets/images/wspolna-04-dusk.jpg') center center / contain no-repeat;
+  isolation: isolate;
+}
+.cover-img::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('../assets/images/wspolna-04-dusk.jpg') center center / cover no-repeat;
+  filter: blur(22px) brightness(0.45) saturate(0.6);
+  z-index: -1;
+  transform: scale(1.05);
 }
 .cover-overlay {
   position: absolute; inset: 0;
