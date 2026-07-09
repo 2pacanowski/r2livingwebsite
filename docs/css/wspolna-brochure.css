@@ -400,6 +400,17 @@ p:last-child { margin-bottom: 0; }
   gap: 2mm;
 }
 
+.plans-disclaimer {
+  font-family: "Geist Mono", monospace;
+  font-size: 6px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--stone);
+  opacity: 0.7;
+  margin-top: 2mm;
+  flex-shrink: 0;
+}
+
 /* ===== FLOOR PLANS ===== */
 .plans-page { }
 .plans-grid {
