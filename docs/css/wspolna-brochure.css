@@ -321,6 +321,38 @@ p:last-child { margin-bottom: 0; }
   text-transform: uppercase;
   color: var(--stone);
 }
+/* Feature list */
+.dev-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 5mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 0.2mm solid var(--rule);
+}
+.dev-features li {
+  font-family: "Geist", sans-serif;
+  font-size: 7.5px;
+  line-height: 1.4;
+  color: var(--ink-2);
+  padding: 2mm 2mm 2mm 0;
+  border-bottom: 0.2mm solid var(--rule);
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+}
+.dev-features li::before {
+  content: '';
+  display: block;
+  width: 3mm;
+  height: 3mm;
+  min-width: 3mm;
+  border-radius: 50%;
+  background: var(--moss);
+  opacity: 0.55;
+}
+
 /* Callout pair */
 .dev-callouts {
   display: grid;
