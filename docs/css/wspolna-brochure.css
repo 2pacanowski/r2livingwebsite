@@ -513,6 +513,7 @@ p:last-child { margin-bottom: 0; }
 }
 .rm:last-child { border-bottom: none; }
 .rm.floor-total {
+  grid-template-columns: 8mm 1fr max-content;
   border-top: 0.2mm solid var(--rule);
   border-bottom: none;
   margin-top: 1mm;
@@ -524,12 +525,14 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--stone);
+  white-space: nowrap;
 }
 .rm.floor-total .rs {
   font-family: "Geist Mono", monospace;
   font-size: 7px;
   color: var(--ink-2);
   font-weight: 500;
+  white-space: nowrap;
 }
 .ri {
   font-family: "Geist Mono", monospace;
