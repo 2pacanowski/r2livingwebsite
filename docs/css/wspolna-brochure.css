@@ -735,6 +735,54 @@ p:last-child { margin-bottom: 0; }
   white-space: nowrap;
 }
 
+/* ===== MATERIALS & SPECIFICATION ===== */
+.matspec-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6mm;
+  min-height: 0;
+  align-content: start;
+}
+.matspec-group {
+  display: flex;
+  flex-direction: column;
+}
+.mg-title {
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--moss);
+  padding-bottom: 2.5mm;
+  margin-bottom: 0;
+  border-bottom: 0.4mm solid var(--moss);
+}
+.mg-table {
+  display: flex;
+  flex-direction: column;
+}
+.mg-row {
+  display: grid;
+  grid-template-columns: 28mm 1fr;
+  gap: 3mm;
+  padding: 2.5mm 0;
+  border-bottom: 0.2mm solid var(--rule);
+}
+.mg-el {
+  font-family: "Geist", sans-serif;
+  font-size: 7.5px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.mg-spec {
+  font-family: "Geist", sans-serif;
+  font-size: 7.5px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
 /* ===== SITE PLAN ===== */
 .siteplan-page { }
 .siteplan-body {
