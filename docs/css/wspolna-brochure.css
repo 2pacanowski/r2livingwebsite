@@ -739,7 +739,7 @@ p:last-child { margin-bottom: 0; }
 .matspec-body {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 72mm;
+  grid-template-columns: 1fr 1fr;
   gap: 10mm;
   min-height: 0;
 }
@@ -777,7 +777,7 @@ p:last-child { margin-bottom: 0; }
 }
 .mg-row {
   display: grid;
-  grid-template-columns: 36mm 1fr;
+  grid-template-columns: 28mm 1fr;
   gap: 3mm;
   padding: 2.5mm 0;
   border-bottom: 0.2mm solid var(--rule);
