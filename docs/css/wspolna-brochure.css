@@ -1098,19 +1098,4 @@ p:last-child { margin-bottom: 0; }
 }
 .contact-box h3 { font-size: 20px; }
 .contact-box > p { font-size: 8px; margin-bottom: 4mm; }
-.contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
-.cd { display: flex; flex-direction: column; gap: .5mm; }
-.cd-l {
-  font-family: "Geist Mono", monospace;
-  font-size: 6.5px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--stone);
-}
-.cd-v {
-  font-family: "Geist Mono", monospace;
-  font-size: 8.5px;
-  letter-spacing: .06em;
-  color: var(--ink);
-}
 .contact-right { display: flex; flex-direction: column; }
