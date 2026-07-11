@@ -356,7 +356,7 @@ p:last-child { margin-bottom: 0; }
 .du-name { font-family: "Instrument Serif", serif; font-size: 14px; font-weight: 400; color: var(--ink); padding-bottom: 2mm; margin-bottom: 2mm; border-bottom: 0.15mm solid var(--rule); }
 .du-name span { display: block; font-family: "Geist Mono", monospace; font-size: 7.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--stone); margin-top: 1mm; }
 .du-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2mm; margin-bottom: 0; }
-.du-stats div b { display: block; font-family: "Instrument Serif", serif; font-size: 16px; font-weight: 400; }
+.du-stats div b { display: block; font-family: "Instrument Serif", serif; font-size: 14px; font-weight: 400; white-space: nowrap; }
 .du-stats div span { font-family: "Geist Mono", monospace; font-size: 7.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--stone); }
 .du-status { display: flex; align-items: center; gap: 2mm; font-family: "Geist Mono", monospace; font-size: 6.5px; letter-spacing: .12em; text-transform: uppercase; }
 .du-status.avail { color: var(--ink); }
