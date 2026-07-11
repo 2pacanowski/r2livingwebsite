@@ -672,7 +672,7 @@ p:last-child { margin-bottom: 0; }
   display: grid;
   grid-template-columns: 8mm 1fr auto;
   gap: 1.5mm;
-  padding: 1.4mm 0;
+  padding: 0.9mm 0;
   border-bottom: 0.12mm solid var(--rule);
   align-items: baseline;
 }
@@ -710,7 +710,7 @@ p:last-child { margin-bottom: 0; }
   font-family: "Geist", sans-serif;
   font-size: 10px;
   color: var(--ink);
-  line-height: 1.25;
+  line-height: 1.15;
 }
 .rn small {
   display: block;
