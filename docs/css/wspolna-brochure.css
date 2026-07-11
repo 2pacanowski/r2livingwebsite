@@ -805,7 +805,7 @@ p:last-child { margin-bottom: 0; }
   flex-shrink: 0;
 }
 .siteplan-intro h2 { font-size: 32px; margin-bottom: 2mm; }
-.siteplan-intro p { font-size: 8px; }
+.siteplan-intro p { font-size: 11px; }
 .siteplan-placeholder {
   flex: 1;
   position: relative;
