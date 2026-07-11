@@ -884,8 +884,14 @@ p:last-child { margin-bottom: 0; }
   padding-top: 4mm;
   border-top: 0.2mm solid var(--rule);
 }
+.loc-warsaw-title {
+  margin-top: 4mm;
+  padding-top: 4mm;
+  border-top: 0.2mm solid var(--rule);
+  margin-bottom: 2mm;
+}
 .loc-warsaw {
-  margin-top: 3mm;
+  margin-top: 0;
   margin-bottom: 0;
 }
 .loc-block-title {
