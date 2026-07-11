@@ -879,35 +879,71 @@ p:last-child { margin-bottom: 0; }
 .location-left { display: flex; flex-direction: column; }
 .location-left h2 { font-size: 32px; }
 .location-left > p { font-size: 11px; }
-.loc-stats {
+.loc-two-col {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4mm;
-  margin: 4mm 0;
-  padding: 3.5mm 0;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 6mm;
+  flex: 1;
+  margin-top: 4mm;
+  padding-top: 4mm;
   border-top: 0.2mm solid var(--rule);
-  border-bottom: 0.2mm solid var(--rule);
 }
-.ls .num {
-  font-family: "Instrument Serif", serif;
-  font-size: 22px;
-  line-height: 1;
-  display: block;
-}
-.ls .num em { font-style: normal; font-size: 11px; color: var(--stone); }
-.ls .lbl {
+.loc-block-title {
   font-family: "Geist Mono", monospace;
   font-size: 8px;
-  letter-spacing: .12em;
+  letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--stone);
-  display: block;
+  color: var(--moss);
+  padding-bottom: 2mm;
+  margin-bottom: 1mm;
+  border-bottom: 0.3mm solid var(--moss);
+}
+.loc-amenity-list { display: flex; flex-direction: column; }
+.la {
+  display: grid;
+  grid-template-columns: 28mm 1fr;
+  gap: 3mm;
+  padding: 1.8mm 0;
+  border-bottom: 0.12mm solid var(--rule);
+}
+.la-cat {
+  font-family: "Geist", sans-serif;
+  font-size: 9.5px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.la-val {
+  font-family: "Geist", sans-serif;
+  font-size: 9.5px;
+  color: var(--ink-2);
+  line-height: 1.4;
+}
+.loc-transport-list { display: flex; flex-direction: column; gap: 3mm; margin-top: 1mm; }
+.lt { display: flex; flex-direction: column; padding-bottom: 3mm; border-bottom: 0.12mm solid var(--rule); }
+.lt:last-child { border-bottom: none; }
+.lt-stat {
+  font-family: "Instrument Serif", serif;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--ink);
+}
+.lt-stat em { font-style: normal; font-size: 13px; color: var(--stone); }
+.lt-mode {
+  font-family: "Geist", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--ink);
   margin-top: 1mm;
 }
-.loc-points { display: flex; flex-direction: column; gap: 2.5mm; flex: 1; }
-.lp { font-size: 11px; line-height: 1.5; }
-.lp b { display: block; font-weight: 500; color: var(--ink); margin-bottom: .5mm; }
-.lp span { color: var(--ink-2); }
+.lt-note {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-top: 0.5mm;
+}
 .coord-line {
   font-family: "Geist Mono", monospace;
   font-size: 6.5px;
