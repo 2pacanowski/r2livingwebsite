@@ -58,20 +58,17 @@ body {
   background: var(--paper);
   opacity: 0.42;
 }
-.footer-disclaimers {
-  font-size: 5.5px;
-  letter-spacing: .06em;
-  text-transform: none;
-  color: var(--stone);
-  line-height: 1.5;
-  display: flex;
-  gap: 5mm;
-}
-.footer-disclaimers span { flex: 1; }
 .footer-contact {
   display: flex;
   align-items: center;
   gap: 6px;
+}
+.footer-disclaimers {
+  font-size: 5.5px;
+  letter-spacing: .04em;
+  text-transform: none;
+  color: var(--stone);
+  line-height: 1.4;
 }
 .footer .f-company { color: var(--ink-2); font-weight: 500; }
 .footer .f-sep { opacity: .4; }
