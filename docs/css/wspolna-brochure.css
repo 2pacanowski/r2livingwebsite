@@ -51,7 +51,7 @@ body {
   gap: 1.5mm;
   border-top: 0.2mm solid var(--rule);
   font-family: "Geist Mono", monospace;
-  font-size: 6px;
+  font-size: 7.5px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--stone);
@@ -64,7 +64,7 @@ body {
   gap: 6px;
 }
 .footer-disclaimers {
-  font-size: 5.5px;
+  font-size: 6.5px;
   letter-spacing: .04em;
   text-transform: none;
   color: var(--stone);
@@ -86,7 +86,7 @@ body {
 }
 .page-eyebrow {
   font-family: "Geist Mono", monospace;
-  font-size: 7px;
+  font-size: 8px;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--moss);
@@ -95,7 +95,7 @@ body {
 .logo-sm { display: block; opacity: .7; }
 .page-num {
   font-family: "Geist Mono", monospace;
-  font-size: 7px;
+  font-size: 8px;
   letter-spacing: .1em;
   color: var(--stone);
 }
@@ -126,7 +126,7 @@ h4 {
 }
 p {
   font-family: "Geist", sans-serif;
-  font-size: 8.5px;
+  font-size: 11px;
   line-height: 1.6;
   color: var(--ink-2);
   margin-bottom: 3mm;
@@ -153,7 +153,7 @@ p:last-child { margin-bottom: 0; }
   bottom: 0; left: 0; right: 0;
   padding: 5mm 4mm 2.5mm;
   font-family: "Geist Mono", monospace;
-  font-size: 6.5px;
+  font-size: 7.5px;
   letter-spacing: .13em;
   text-transform: uppercase;
   color: rgba(243,239,232,.88);
@@ -297,7 +297,7 @@ p:last-child { margin-bottom: 0; }
 }
 .dev-title em { font-style: italic; color: var(--ink-2); }
 .dev-intro {
-  font-size: 8.5px;
+  font-size: 11px;
   line-height: 1.65;
   color: var(--ink-2);
   margin-bottom: 6mm;
@@ -308,7 +308,7 @@ p:last-child { margin-bottom: 0; }
 /* Feature list */
 .dev-features-header {
   font-family: "Geist Mono", monospace;
-  font-size: 6.5px;
+  font-size: 8px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--moss);
@@ -326,7 +326,7 @@ p:last-child { margin-bottom: 0; }
 }
 .dev-features li {
   font-family: "Geist", sans-serif;
-  font-size: 7.5px;
+  font-size: 10px;
   line-height: 1.4;
   color: var(--ink-2);
   padding: 2mm 2mm 2mm 0;
@@ -338,7 +338,7 @@ p:last-child { margin-bottom: 0; }
 .dev-features li::before {
   content: '—';
   font-family: "Geist Mono", monospace;
-  font-size: 6px;
+  font-size: 8px;
   color: var(--stone);
   flex-shrink: 0;
 }
@@ -353,11 +353,11 @@ p:last-child { margin-bottom: 0; }
 .du { border: 0.25mm solid var(--rule); padding: 4mm; display: flex; gap: 3mm; }
 .du-num { font-family: "Instrument Serif", serif; font-size: 36px; font-weight: 400; line-height: 1; color: var(--rule); width: 10mm; flex-shrink: 0; }
 .du-body { flex: 1; min-width: 0; }
-.du-name { font-family: "Instrument Serif", serif; font-size: 12px; font-weight: 400; color: var(--ink); padding-bottom: 2mm; margin-bottom: 2mm; border-bottom: 0.15mm solid var(--rule); }
-.du-name span { display: block; font-family: "Geist Mono", monospace; font-size: 6px; letter-spacing: .12em; text-transform: uppercase; color: var(--stone); margin-top: 1mm; }
+.du-name { font-family: "Instrument Serif", serif; font-size: 14px; font-weight: 400; color: var(--ink); padding-bottom: 2mm; margin-bottom: 2mm; border-bottom: 0.15mm solid var(--rule); }
+.du-name span { display: block; font-family: "Geist Mono", monospace; font-size: 7.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--stone); margin-top: 1mm; }
 .du-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2mm; margin-bottom: 0; }
-.du-stats div b { display: block; font-family: "Instrument Serif", serif; font-size: 14px; font-weight: 400; }
-.du-stats div span { font-family: "Geist Mono", monospace; font-size: 6px; letter-spacing: .1em; text-transform: uppercase; color: var(--stone); }
+.du-stats div b { display: block; font-family: "Instrument Serif", serif; font-size: 16px; font-weight: 400; }
+.du-stats div span { font-family: "Geist Mono", monospace; font-size: 7.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--stone); }
 .du-status { display: flex; align-items: center; gap: 2mm; font-family: "Geist Mono", monospace; font-size: 6.5px; letter-spacing: .12em; text-transform: uppercase; }
 .du-status.avail { color: var(--ink); }
 .du-status .ind { width: 5px; height: 5px; border-radius: 50%; background: #6a9f5e; display: block; flex-shrink: 0; }
@@ -375,7 +375,7 @@ p:last-child { margin-bottom: 0; }
 }
 .dc-eyebrow {
   font-family: "Geist Mono", monospace;
-  font-size: 6px;
+  font-size: 7.5px;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--moss);
@@ -390,7 +390,7 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 1.5mm;
 }
 .dc-note {
-  font-size: 7px;
+  font-size: 9px;
   line-height: 1.5;
   color: var(--stone);
 }
@@ -405,7 +405,7 @@ p:last-child { margin-bottom: 0; }
 .dev-img-bot { flex: 0.9; min-height: 0; }
 
 .exec-intro {
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.6;
   color: var(--ink-2);
   margin-bottom: 5mm;
@@ -426,7 +426,7 @@ p:last-child { margin-bottom: 0; }
 }
 .eg-eyebrow {
   font-family: "Geist Mono", monospace;
-  font-size: 6.5px;
+  font-size: 8px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--moss);
@@ -443,7 +443,7 @@ p:last-child { margin-bottom: 0; }
 }
 .eg-sub {
   font-family: "Geist Mono", monospace;
-  font-size: 6.5px;
+  font-size: 8px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--stone);
@@ -461,7 +461,7 @@ p:last-child { margin-bottom: 0; }
 }
 .eg-details li {
   font-family: "Geist", sans-serif;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.4;
   color: var(--ink-2);
 }
@@ -618,7 +618,7 @@ p:last-child { margin-bottom: 0; }
 
 .plan-label {
   font-family: "Instrument Serif", serif;
-  font-size: 15px;
+  font-size: 17px;
   letter-spacing: -.01em;
   color: var(--ink);
   margin-bottom: 3mm;
@@ -686,7 +686,7 @@ p:last-child { margin-bottom: 0; }
 }
 .rm.floor-total .rn {
   font-family: "Geist Mono", monospace;
-  font-size: 6.5px;
+  font-size: 8px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--stone);
@@ -694,28 +694,28 @@ p:last-child { margin-bottom: 0; }
 }
 .rm.floor-total .rs {
   font-family: "Geist Mono", monospace;
-  font-size: 7px;
+  font-size: 8.5px;
   color: var(--ink-2);
   font-weight: 500;
   white-space: nowrap;
 }
 .ri {
   font-family: "Geist Mono", monospace;
-  font-size: 6.5px;
+  font-size: 8px;
   letter-spacing: .1em;
   color: var(--stone);
   padding-top: 1px;
 }
 .rn {
   font-family: "Geist", sans-serif;
-  font-size: 8px;
+  font-size: 10px;
   color: var(--ink);
   line-height: 1.25;
 }
 .rn small {
   display: block;
   font-family: "Geist Mono", monospace;
-  font-size: 6px;
+  font-size: 7.5px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--stone);
@@ -756,7 +756,7 @@ p:last-child { margin-bottom: 0; }
 }
 .mg-title {
   font-family: "Geist Mono", monospace;
-  font-size: 6.5px;
+  font-size: 8px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--moss);
@@ -777,14 +777,14 @@ p:last-child { margin-bottom: 0; }
 }
 .mg-el {
   font-family: "Geist", sans-serif;
-  font-size: 7.5px;
+  font-size: 9.5px;
   font-weight: 500;
   color: var(--ink);
   line-height: 1.4;
 }
 .mg-spec {
   font-family: "Geist", sans-serif;
-  font-size: 7.5px;
+  font-size: 9.5px;
   color: var(--ink-2);
   line-height: 1.5;
 }
@@ -848,7 +848,7 @@ p:last-child { margin-bottom: 0; }
 .sp-stat span {
   display: block;
   font-family: "Geist Mono", monospace;
-  font-size: 6px;
+  font-size: 7.5px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--stone);
@@ -897,7 +897,7 @@ p:last-child { margin-bottom: 0; }
 .ls .num em { font-style: normal; font-size: 11px; color: var(--stone); }
 .ls .lbl {
   font-family: "Geist Mono", monospace;
-  font-size: 6.5px;
+  font-size: 8px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--stone);
@@ -966,7 +966,7 @@ p:last-child { margin-bottom: 0; }
 }
 .contact-h1 em { font-style: italic; color: #C9D5BE; }
 .contact-sub {
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.65;
   color: rgba(243,239,232,.6);
   max-width: 110mm;
@@ -980,14 +980,14 @@ p:last-child { margin-bottom: 0; }
 .cd { display: flex; flex-direction: column; gap: .5mm; }
 .cd-l {
   font-family: "Geist Mono", monospace;
-  font-size: 6.5px;
+  font-size: 8px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: rgba(243,239,232,.35);
 }
 .cd-v {
   font-family: "Geist Mono", monospace;
-  font-size: 8.5px;
+  font-size: 10px;
   letter-spacing: .04em;
   color: var(--bone);
 }
