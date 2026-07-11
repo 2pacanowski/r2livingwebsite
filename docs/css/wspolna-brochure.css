@@ -879,14 +879,14 @@ p:last-child { margin-bottom: 0; }
 .location-left { display: flex; flex-direction: column; }
 .location-left h2 { font-size: 32px; }
 .location-left > p { font-size: 11px; }
-.loc-two-col {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 6mm;
-  flex: 1;
+.loc-amenity-block {
   margin-top: 4mm;
   padding-top: 4mm;
   border-top: 0.2mm solid var(--rule);
+}
+.loc-warsaw {
+  margin-top: 3mm;
+  margin-bottom: 0;
 }
 .loc-block-title {
   font-family: "Geist Mono", monospace;
@@ -901,8 +901,8 @@ p:last-child { margin-bottom: 0; }
 .loc-amenity-list { display: flex; flex-direction: column; }
 .la {
   display: grid;
-  grid-template-columns: 28mm 1fr;
-  gap: 3mm;
+  grid-template-columns: 36mm 1fr;
+  gap: 4mm;
   padding: 1.8mm 0;
   border-bottom: 0.12mm solid var(--rule);
 }
