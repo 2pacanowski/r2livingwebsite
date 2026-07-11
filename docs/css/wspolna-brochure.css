@@ -878,7 +878,7 @@ p:last-child { margin-bottom: 0; }
 }
 .location-left { display: flex; flex-direction: column; }
 .location-left h2 { font-size: 32px; }
-.location-left > p { font-size: 8px; }
+.location-left > p { font-size: 11px; }
 .loc-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -905,7 +905,7 @@ p:last-child { margin-bottom: 0; }
   margin-top: 1mm;
 }
 .loc-points { display: flex; flex-direction: column; gap: 2.5mm; flex: 1; }
-.lp { font-size: 8px; line-height: 1.5; }
+.lp { font-size: 11px; line-height: 1.5; }
 .lp b { display: block; font-weight: 500; color: var(--ink); margin-bottom: .5mm; }
 .lp span { color: var(--ink-2); }
 .coord-line {
