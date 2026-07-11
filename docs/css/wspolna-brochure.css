@@ -672,7 +672,7 @@ p:last-child { margin-bottom: 0; }
   display: grid;
   grid-template-columns: 8mm 1fr auto;
   gap: 1.5mm;
-  padding: 0.9mm 0;
+  padding: 1.2mm 0;
   border-bottom: 0.12mm solid var(--rule);
   align-items: baseline;
 }
@@ -682,6 +682,7 @@ p:last-child { margin-bottom: 0; }
   border-top: 0.2mm solid var(--rule);
   border-bottom: none;
   flex-shrink: 0;
+  margin-top: 3mm;
   padding-top: 1.5mm;
 }
 .rm.floor-total .rn {
