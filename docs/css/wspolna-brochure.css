@@ -24,7 +24,7 @@ body {
 .page {
   width: 297mm;
   height: 210mm;
-  padding: 10mm 12mm 18mm;   /* bottom = room for footer */
+  padding: 10mm 12mm 22mm;   /* bottom = room for footer */
   position: relative;
   background: var(--paper);
   overflow: hidden;
@@ -43,19 +43,35 @@ body {
 .footer {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 9mm;
+  height: 14mm;
   padding: 0 12mm;
   display: flex;
-  align-items: center;
-  gap: 6px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5mm;
   border-top: 0.2mm solid var(--rule);
   font-family: "Geist Mono", monospace;
-  font-size: 6.5px;
-  letter-spacing: .13em;
+  font-size: 6px;
+  letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--stone);
   background: var(--paper);
   opacity: 0.42;
+}
+.footer-disclaimers {
+  font-size: 5.5px;
+  letter-spacing: .06em;
+  text-transform: none;
+  color: var(--stone);
+  line-height: 1.5;
+  display: flex;
+  gap: 5mm;
+}
+.footer-disclaimers span { flex: 1; }
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 .footer .f-company { color: var(--ink-2); font-weight: 500; }
 .footer .f-sep { opacity: .4; }
@@ -551,16 +567,6 @@ p:last-child { margin-bottom: 0; }
   gap: 2mm;
 }
 
-.plans-disclaimer {
-  font-family: "Geist Mono", monospace;
-  font-size: 6px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--stone);
-  opacity: 0.7;
-  margin-top: 2mm;
-  flex-shrink: 0;
-}
 
 /* ===== FLOOR PLANS ===== */
 .plans-page { }
