@@ -1152,3 +1152,8 @@ p:last-child { margin-bottom: 0; }
 .contact-box h3 { font-size: 20px; }
 .contact-box > p { font-size: 8px; margin-bottom: 4mm; }
 .contact-right { display: flex; flex-direction: column; }
+
+/* Polish brochure: tighter materials page to prevent overflow */
+:lang(pl) .matspec-left { gap: 2.5mm; }
+:lang(pl) .mg-row { padding: 1.3mm 0; }
+:lang(pl) .mg-title { padding-bottom: 1mm; }
