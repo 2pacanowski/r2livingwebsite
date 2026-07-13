@@ -1153,6 +1153,11 @@ p:last-child { margin-bottom: 0; }
 .contact-box > p { font-size: 8px; margin-bottom: 4mm; }
 .contact-right { display: flex; flex-direction: column; }
 
+/* Break page — full-bleed diptych */
+.break-page { padding: 0; }
+.break-diptych { display: flex; width: 100%; height: 100%; gap: 1.5px; }
+.break-panel { flex: 1; background-size: cover; background-position: center; }
+
 /* Polish brochure: tighter materials page to prevent overflow */
 :lang(pl) .matspec-left { gap: 2.5mm; }
 :lang(pl) .mg-row { padding: 1.3mm 0; }
