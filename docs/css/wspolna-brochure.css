@@ -319,6 +319,7 @@ p:last-child { margin-bottom: 0; }
   list-style: none;
   padding: 0;
   margin: 0 0 5mm;
+  flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
