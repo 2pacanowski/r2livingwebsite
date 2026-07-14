@@ -1155,8 +1155,7 @@ p:last-child { margin-bottom: 0; }
 .contact-right { display: flex; flex-direction: column; }
 
 /* Gallery page */
-.gallery-page { padding: 0; gap: 1.5px; }
-.gallery-page::before { display: none; }
+.gallery-page { gap: 1.5px; }
 .gallery-row { display: flex; flex: 1; gap: 1.5px; min-height: 0; }
 .gallery-split { display: flex; gap: 1.5px; flex: 1; min-height: 0; }
 .gallery-main { flex: 1.6; }
