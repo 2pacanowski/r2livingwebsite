@@ -356,7 +356,7 @@ p:last-child { margin-bottom: 0; }
 .du-body { flex: 1; min-width: 0; }
 .du-name { font-family: "Instrument Serif", serif; font-size: 14px; font-weight: 400; color: var(--ink); padding-bottom: 2mm; margin-bottom: 2mm; border-bottom: 0.15mm solid var(--rule); }
 .du-name span { display: block; font-family: "Geist Mono", monospace; font-size: 7.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--stone); margin-top: 1mm; }
-.du-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2mm; margin-bottom: 0; }
+.du-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2mm; margin-bottom: 0; }
 .du-stats div b { display: block; font-family: "Instrument Serif", serif; font-size: 14px; font-weight: 400; white-space: nowrap; }
 .du-stats div span { font-family: "Geist Mono", monospace; font-size: 7.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--stone); }
 .du-status { display: flex; align-items: center; gap: 2mm; font-family: "Geist Mono", monospace; font-size: 6.5px; letter-spacing: .12em; text-transform: uppercase; }
@@ -1153,9 +1153,6 @@ p:last-child { margin-bottom: 0; }
 .contact-box h3 { font-size: 20px; }
 .contact-box > p { font-size: 8px; margin-bottom: 4mm; }
 .contact-right { display: flex; flex-direction: column; }
-
-/* Polish brochure: 2-column stat grid in unit cards */
-:lang(pl) .du-stats { grid-template-columns: repeat(2, 1fr); }
 
 /* Polish brochure: tighter materials page to prevent overflow */
 :lang(pl) .matspec-left { gap: 2.5mm; }
