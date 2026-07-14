@@ -1154,6 +1154,9 @@ p:last-child { margin-bottom: 0; }
 .contact-box > p { font-size: 8px; margin-bottom: 4mm; }
 .contact-right { display: flex; flex-direction: column; }
 
+/* Polish brochure: 2-column stat grid in unit cards */
+:lang(pl) .du-stats { grid-template-columns: repeat(2, 1fr); }
+
 /* Polish brochure: tighter materials page to prevent overflow */
 :lang(pl) .matspec-left { gap: 2.5mm; }
 :lang(pl) .mg-row { padding: 1.3mm 0; }
