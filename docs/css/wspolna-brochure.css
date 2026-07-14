@@ -1160,10 +1160,8 @@ p:last-child { margin-bottom: 0; }
 .gallery-row { display: flex; flex: 1; gap: 1.5px; min-height: 0; }
 .gallery-cell {
   flex: 1;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: var(--ink);
+  background-size: cover;
+  background-position: center center;
   position: relative;
   min-width: 0;
 }
