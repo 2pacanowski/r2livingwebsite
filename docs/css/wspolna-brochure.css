@@ -224,7 +224,7 @@ p:last-child { margin-bottom: 0; }
   margin-top: 3mm;
   letter-spacing: .02em;
 }
-.cover-foot { border-top: 0.3mm solid rgba(243,239,232,.18); padding-top: 4mm; }
+.cover-foot { padding-top: 4mm; }
 .cover-stats {
   display: flex;
   gap: 10mm;
