@@ -1158,12 +1158,26 @@ p:last-child { margin-bottom: 0; }
 .gallery-page { padding: 0; gap: 1.5px; }
 .gallery-page::before { display: none; }
 .gallery-row { display: flex; flex: 1; gap: 1.5px; min-height: 0; }
+.gallery-split { display: flex; gap: 1.5px; flex: 1; min-height: 0; }
+.gallery-main { flex: 1.6; }
+.gallery-aside { flex: 1; display: flex; flex-direction: column; gap: 1.5px; }
 .gallery-cell {
   flex: 1;
   background-size: cover;
   background-position: center center;
   position: relative;
   min-width: 0;
+}
+.gallery-label {
+  position: absolute;
+  top: 3mm; left: 3mm;
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(243,239,232,.75);
+  background: rgba(20,18,15,.35);
+  padding: 1mm 2mm;
 }
 .gallery-cap {
   position: absolute;
