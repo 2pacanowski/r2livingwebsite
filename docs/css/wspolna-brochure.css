@@ -367,7 +367,8 @@ p:last-child { margin-bottom: 0; }
 .dev-callouts {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3mm;
+  column-gap: 3mm;
+  row-gap: 0.5mm;
   margin-top: auto;
 }
 .dev-callout {
