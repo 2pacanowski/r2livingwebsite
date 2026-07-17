@@ -957,7 +957,7 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--stone);
-  margin-top: 1mm;
+  margin-top: 0.2mm;
   opacity: .7;
 }
 .coord-line {
