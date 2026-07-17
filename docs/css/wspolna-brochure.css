@@ -964,7 +964,6 @@ p:last-child { margin-bottom: 0; }
 .location-right {
   display: flex;
   flex-direction: column;
-  margin-right: -12mm;
   margin-top: -4mm;
   overflow: hidden;
 }
