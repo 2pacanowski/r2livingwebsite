@@ -597,8 +597,8 @@ p:last-child { margin-bottom: 0; }
 }
 .plans-unit-name {
   font-family: "Instrument Serif", serif;
-  font-size: 16px;
-  letter-spacing: -.01em;
+  font-size: 22px;
+  letter-spacing: -.02em;
   color: var(--ink);
   line-height: 1;
   flex: 1;
