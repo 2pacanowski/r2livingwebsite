@@ -952,6 +952,79 @@ p:last-child { margin-bottom: 0; }
   color: var(--stone);
   margin-top: 0.5mm;
 }
+/* ===== WHY R2 PAGE ===== */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 12mm;
+  flex: 1;
+  min-height: 0;
+}
+.why-left { display: flex; flex-direction: column; }
+.why-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 4mm;
+}
+.why-title em { font-style: italic; color: var(--moss); }
+.why-intro {
+  font-size: 8px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  margin-bottom: 5mm;
+}
+.why-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5mm;
+}
+.why-points li {
+  font-size: 7.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  padding-left: 3mm;
+  border-left: 0.3mm solid var(--moss);
+}
+.why-points li span {
+  font-weight: 500;
+  color: var(--ink);
+}
+.why-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.why-about {
+  background: var(--bone);
+  padding: 6mm 5mm;
+}
+.why-about-eyebrow {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 3mm;
+}
+.why-about-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 3mm;
+}
+.why-about-title em { font-style: italic; }
+.why-about-body {
+  font-size: 7.5px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
 .loc-source {
   font-family: "Geist Mono", monospace;
   font-size: 6px;
