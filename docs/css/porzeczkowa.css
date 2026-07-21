@@ -3,7 +3,7 @@
   position:relative;background:var(--ink);color:var(--bone);
   overflow:hidden;
 }
-.hero .bg{position:absolute;inset:0;background-image:url('../assets/images/porzeczkowa-01-front.jpg');background-size:cover;background-position:center 60%;filter:saturate(.72) brightness(.78)}
+.hero .bg{position:absolute;inset:0;background-image:url('../assets/compress/porzeczkowa-01-front.jpg');background-size:cover;background-position:center 60%;filter:saturate(.72) brightness(.78)}
 .hero .bg::after{content:"";position:absolute;inset:0;background:
   linear-gradient(180deg,rgba(20,18,15,.55) 0%,rgba(20,18,15,.15) 24%,rgba(20,18,15,.15) 48%,rgba(20,18,15,.85) 100%),
   linear-gradient(90deg,rgba(20,18,15,.65) 0%,rgba(20,18,15,.30) 38%,rgba(20,18,15,.05) 65%,transparent 100%)}

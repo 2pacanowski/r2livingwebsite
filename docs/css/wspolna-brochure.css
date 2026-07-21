@@ -168,7 +168,7 @@ p:last-child { margin-bottom: 0; }
 }
 .cover-img {
   position: absolute; inset: 0;
-  background: url('../assets/images/wspolna-04-dusk.jpg') center 35% / cover no-repeat;
+  background: url('../assets/compress/wspolna-04-dusk.jpg') center 35% / cover no-repeat;
 }
 .cover-overlay {
   position: absolute; inset: 0;
