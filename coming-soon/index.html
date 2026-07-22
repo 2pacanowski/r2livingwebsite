@@ -20,18 +20,20 @@
       --rule:  rgba(243,239,232,.18);
     }
 
-    html, body {
+    html {
+      height: -webkit-fill-available;
       height: 100dvh;
-      font-family: "Geist", sans-serif;
-      background: var(--ink);
-      color: var(--bone);
     }
-
     body {
+      min-height: -webkit-fill-available;
+      min-height: 100dvh;
       position: fixed;
       width: 100%;
       top: 0;
       left: 0;
+      font-family: "Geist", sans-serif;
+      background: var(--ink);
+      color: var(--bone);
     }
 
     /* ── Background slideshow ── */
@@ -73,7 +75,9 @@
     .page {
       position: relative;
       z-index: 1;
+      height: -webkit-fill-available;
       height: 100dvh;
+      max-height: -webkit-fill-available;
       max-height: 100dvh;
       overflow: hidden;
       display: flex;
