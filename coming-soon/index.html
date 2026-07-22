@@ -20,16 +20,18 @@
       --rule:  rgba(243,239,232,.18);
     }
 
-    html {
+    html, body {
       height: 100%;
-      overflow: hidden;
-    }
-    body {
-      height: 100%;
-      overflow: hidden;
       font-family: "Geist", sans-serif;
       background: var(--ink);
       color: var(--bone);
+    }
+
+    body {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
     }
 
     /* ── Background slideshow ── */
