@@ -1,20 +1,33 @@
 /* ===== Hero — brand statement ===== */
 .home-hero{
   position:relative;min-height:calc(100vh - var(--nav-h));display:flex;align-items:flex-end;
-  background:
-    repeating-linear-gradient(45deg, rgba(255,255,255,.06) 0 1px, transparent 1px 14px),
-    var(--stone);
+  background:var(--stone);overflow:hidden;
 }
 .home-hero::before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg, rgba(20,18,15,.15) 0%, rgba(20,18,15,.72) 100%);
+  content:"";position:absolute;inset:0;z-index:2;
+  background:
+    linear-gradient(90deg, rgba(20,18,15,.82) 0%, rgba(20,18,15,.52) 55%, rgba(20,18,15,.28) 100%),
+    linear-gradient(180deg, rgba(20,18,15,.20) 0%, transparent 40%, rgba(20,18,15,.62) 100%);
 }
-.home-hero::after{
-  content:"Hero image placeholder";
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,247,242,.5);
+.home-hero .bg-slide{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center 45%;background-repeat:no-repeat;
+  opacity:0;
+  animation:heroBgFade 25s infinite;
 }
-.home-hero .inner{position:relative;z-index:1;max-width:1440px;margin:0 auto;padding:96px 56px 80px;width:100%}
+.home-hero .bg-slide:nth-child(1){background-image:url('../assets/compress/images/wspolna-04-dusk.jpg');      animation-delay:0s}
+.home-hero .bg-slide:nth-child(2){background-image:url('../assets/compress/images/wspolna-01-garden.jpg');   animation-delay:5s}
+.home-hero .bg-slide:nth-child(3){background-image:url('../assets/compress/images/porzeczkowa-01-front.jpg');animation-delay:10s}
+.home-hero .bg-slide:nth-child(4){background-image:url('../assets/compress/images/wspolna-03-angle.jpg');    animation-delay:15s}
+.home-hero .bg-slide:nth-child(5){background-image:url('../assets/compress/images/porzeczkowa-03-angle.jpg');animation-delay:20s}
+@keyframes heroBgFade{
+  0%   {opacity:0}
+  4%   {opacity:1}
+  20%  {opacity:1}
+  24%  {opacity:0}
+  100% {opacity:0}
+}
+.home-hero .inner{position:relative;z-index:3;max-width:1440px;margin:0 auto;padding:96px 56px 80px;width:100%}
 .home-hero .eyebrow{display:flex;align-items:center;gap:10px;color:var(--bone)}
 .home-hero .eyebrow .dot{display:inline-block;width:6px;height:6px;background:var(--moss);border-radius:50%}
 .home-hero h1{
