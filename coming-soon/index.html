@@ -28,20 +28,39 @@
       overflow: hidden;
     }
 
-    /* ── Background image ── */
+    /* ── Background slideshow ── */
     .bg {
       position: fixed;
       inset: 0;
-      background: url('wspolna-04-dusk.jpg') center 40% / cover no-repeat;
       z-index: 0;
     }
-    .bg::after {
-      content: '';
+    .bg-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 40%;
+      background-repeat: no-repeat;
+      opacity: 0;
+      animation: bgFade 20s infinite;
+    }
+    .bg-slide:nth-child(1) { background-image: url('wspolna-04-dusk.jpg');      animation-delay: 0s; }
+    .bg-slide:nth-child(2) { background-image: url('wspolna-03-angle.jpg');     animation-delay: 5s; }
+    .bg-slide:nth-child(3) { background-image: url('porzeczkowa-01-front.jpg'); animation-delay: 10s; }
+    .bg-slide:nth-child(4) { background-image: url('porzeczkowa-03-angle.jpg'); animation-delay: 15s; }
+    @keyframes bgFade {
+      0%        { opacity: 0; }
+      5%        { opacity: 1; }
+      25%       { opacity: 1; }
+      30%       { opacity: 0; }
+      100%      { opacity: 0; }
+    }
+    .bg-overlay {
       position: absolute;
       inset: 0;
       background:
         linear-gradient(90deg, rgba(20,18,15,.88) 0%, rgba(20,18,15,.60) 50%, rgba(20,18,15,.30) 100%),
         linear-gradient(180deg, rgba(20,18,15,.25) 0%, transparent 35%, rgba(20,18,15,.55) 100%);
+      z-index: 1;
     }
 
     /* ── Layout ── */
@@ -210,7 +229,13 @@
 </head>
 <body>
 
-<div class="bg"></div>
+<div class="bg">
+  <div class="bg-slide"></div>
+  <div class="bg-slide"></div>
+  <div class="bg-slide"></div>
+  <div class="bg-slide"></div>
+  <div class="bg-overlay"></div>
+</div>
 
 <div class="page">
 
