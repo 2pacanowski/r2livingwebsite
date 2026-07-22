@@ -139,12 +139,16 @@
 
 /* ===== About ===== */
 .aboutSection{max-width:1440px;margin:0 auto;padding:120px 56px}
-.aboutSection .grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.aboutSection h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:60px;line-height:.98;letter-spacing:-.02em;margin-top:16px;max-width:14ch}
-.aboutSection h2 em{font-style:italic;color:var(--moss)}
-.aboutSection .body p{font-family:"Geist",sans-serif;font-size:16px;line-height:1.68;color:var(--ink-2);margin-bottom:20px;max-width:50ch}
-.aboutSection .body p strong{color:var(--ink);font-weight:500}
-.aboutSection .body p:last-child{margin-bottom:0}
+.aboutSection .eyebrow{color:var(--ink-2)}
+.aboutSection h2.title{font-family:"Instrument Serif",serif;font-weight:400;font-size:60px;line-height:.98;letter-spacing:-.02em;margin-top:16px;color:var(--ink)}
+.aboutSection h2.title em{font-style:italic;color:var(--moss)}
+.aboutTop{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:80px}
+.aboutBody{display:flex;flex-direction:column;gap:20px;padding-top:8px}
+.aboutLede{font-size:16px;line-height:1.75;color:var(--ink-2)}
+.aboutCards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}
+.ac{padding:32px 48px 32px 0;border-bottom:1px solid var(--rule)}
+.ac-n{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);margin-bottom:14px}
+.ac p{font-size:14.5px;line-height:1.65;color:var(--ink-2);max-width:36ch}
 
 /* ===== Contact ===== */
 .contactSection{background:var(--bone);padding:120px 0;border-top:1px solid var(--rule)}
@@ -163,7 +167,8 @@
   .project,.project.flip{grid-template-columns:1fr}
   .project.flip .pic{order:0}
   .project .pic{min-height:340px}
-  .aboutSection .grid,.contactSection .inner{grid-template-columns:1fr;gap:48px}
+  .aboutTop{grid-template-columns:1fr;gap:32px;margin-bottom:48px}
+  .aboutCards{grid-template-columns:1fr}
 }
 
 @media(max-width:480px){
@@ -191,7 +196,8 @@
   .configure .cta .pitch p{font-size:21px}
 
   .aboutSection{padding:64px 24px}
-  .aboutSection h2{font-size:40px}
+  .aboutSection h2.title{font-size:40px}
+  .ac{padding-right:0}
 
   .contactSection{padding:64px 0}
   .contactSection h2{font-size:40px}
