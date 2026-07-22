@@ -21,12 +21,27 @@
       --rule:  rgba(243,239,232,.18);
     }
 
-    html, body {
-      height: 100%;
-      background: #14120F;
+    html {
+      min-height: 100dvh;
+      background-color: #14120F;
+    }
+    body {
+      min-height: 101dvh;
+      background-color: #14120F;
       overscroll-behavior: none;
       font-family: "Geist", sans-serif;
       color: var(--bone);
+    }
+    /* iOS 26 Liquid Glass bottom toolbar tinting sentinel */
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: calc(1px + env(safe-area-inset-bottom));
+      background-color: #14120F;
+      z-index: 9999;
     }
 
     /* ── Background slideshow ── */
