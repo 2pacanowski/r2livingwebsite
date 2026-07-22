@@ -21,18 +21,11 @@
       --rule:  rgba(243,239,232,.18);
     }
 
-    html {
-      height: 100dvh;
+    html, body {
+      height: 100%;
+      overflow: hidden;
       background: #14120F;
-    }
-    body {
-      min-height: 100dvh;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
       font-family: "Geist", sans-serif;
-      background: #14120F;
       color: var(--bone);
     }
 
@@ -75,9 +68,7 @@
     .page {
       position: relative;
       z-index: 1;
-      height: -webkit-fill-available;
       height: 100dvh;
-      max-height: -webkit-fill-available;
       max-height: 100dvh;
       overflow: hidden;
       display: flex;
