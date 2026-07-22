@@ -151,15 +151,15 @@
 .ac p{font-size:14.5px;line-height:1.65;color:var(--ink-2);max-width:36ch}
 
 /* ===== Contact ===== */
-.contactSection{background:var(--bone);padding:120px 0;border-top:1px solid var(--rule)}
-.contactSection .inner{max-width:1440px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.contactSection h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:60px;line-height:.98;letter-spacing:-.02em;margin:16px 0 22px;max-width:13ch}
-.contactSection h2 em{font-style:italic;color:var(--moss)}
-.contactSection .csub{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.42;color:var(--ink-2);max-width:42ch;margin-bottom:40px}
-.contactSection .deets{list-style:none;border-top:1px solid var(--rule)}
-.contactSection .deets li{display:grid;grid-template-columns:max-content 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--rule);align-items:baseline}
-.contactSection .deets .k{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss)}
-.contactSection .deets .v{font-family:"Instrument Serif",serif;font-size:21px;color:var(--ink)}
+.reserveSection{background:var(--bone);padding:120px 0;border-top:1px solid var(--rule)}
+.reserveSection .inner{max-width:1440px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.reserveSection .left{padding-right:48px}
+.reserveSection h2.title{font-family:"Instrument Serif",serif;font-weight:400;font-size:60px;line-height:.98;letter-spacing:-.02em;margin-top:16px;margin-bottom:18px;color:var(--ink)}
+.reserveSection h2.title em{font-style:italic;color:var(--moss)}
+.reserveSection p.sub{margin-bottom:32px;font-family:"Instrument Serif",serif;font-size:22px;line-height:1.42;color:var(--ink-2);max-width:42ch}
+.reserveSection .pts{list-style:none;border-top:1px solid var(--rule)}
+.reserveSection .pts li{display:grid;grid-template-columns:18px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--rule);font-size:14.5px;color:var(--ink-2)}
+.reserveSection .pts li::before{content:"→";font-family:"Geist Mono",monospace;font-size:11px;color:var(--moss);padding-top:2px}
 
 @media(max-width:980px){
   .home-hero h1{font-size:60px}
@@ -199,7 +199,8 @@
   .aboutSection h2.title{font-size:40px}
   .ac{padding-right:0}
 
-  .contactSection{padding:64px 0}
-  .contactSection h2{font-size:40px}
-  .contactSection .csub{font-size:18px}
+  .reserveSection{padding:64px 0}
+  .reserveSection .inner{grid-template-columns:1fr;gap:32px;padding:0 24px}
+  .reserveSection .left{padding-right:0}
+  .reserveSection p.sub{font-size:18px}
 }

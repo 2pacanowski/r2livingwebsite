@@ -199,17 +199,18 @@
   </section>
 
   <!-- ============== CONTACT ============== -->
-  <section class="contactSection" id="contact">
+  <section class="reserveSection" id="contact">
     <div class="inner">
       <div class="left">
         <div class="eyebrow">— Contact</div>
-        <h2>Come and <em>see</em> a home.</h2>
-        <p class="csub">Tell us a little about what you're after. We reply within a day — no mailing list, no sales pitch.</p>
-        <ul class="deets">
-          <li><span class="k">Email</span><span class="v">hello@r2living.pl</span></li>
-          <li><span class="k">Phone</span><span class="v">+48 22 000 00 00</span></li>
-          <li><span class="k">Studio</span><span class="v">Warsaw, Poland</span></li>
-          <li><span class="k">Viewings</span><span class="v">Saturdays, by appointment</span></li>
+        <h2 class="title">Let's <em>talk</em></h2>
+        <p class="sub">Whether you want to visit the plot, ask about the floor plan, or talk through configuration options — we're easy to reach and happy to answer anything.</p>
+
+        <ul class="pts">
+          <li>Book a site visit and see the plot, the street, and the neighbourhood for yourself.</li>
+          <li>Ask about floor plan configuration</li>
+          <li>No obligation, no sales pitch. Just an honest conversation.</li>
+          <li>We respond within 24 hours.</li>
         </ul>
       </div>
 
@@ -220,9 +221,14 @@
         </div>
         <div class="field"><label for="em">Email</label><input id="em" name="email" type="email" required placeholder="anna@example.pl" /></div>
         <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" placeholder="+48 600 000 000" /></div>
-        <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="3" class="serif" placeholder="e.g. we're a family of four interested in Wspólna, looking to move late 2027…"></textarea></div>
-        <button type="submit" class="submit">Send enquiry</button>
-        <div class="small">By submitting, you agree to our quiet, non-spammy contact policy.</div>
+        <div class="field"><label for="msg">Anything you'd like us to know</label><textarea id="msg" name="message" rows="2" class="serif" placeholder="e.g. we're a family of four, looking to move in late 2027…"></textarea></div>
+        <div class="field gdpr">
+          <label class="gdprLabel">
+            <input type="checkbox" name="gdpr" required />
+            <span>I agree to R2 Living storing my details to respond to this enquiry. My data will not be shared with third parties or used for marketing without my consent. <a href="polityka-prywatnosci.html">Privacy policy →</a></span>
+          </label>
+        </div>
+        <button type="submit" class="submit">Send</button>
       </form>
     </div>
   </section>
