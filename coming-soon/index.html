@@ -241,7 +241,8 @@
     <p class="subtitle">Kameralne domy na spokojnych przedmieściach Warszawy — zaprojektowane z myślą o rodzinach, które cenią przestrzeń, ciszę i jakość wykonania. Już wkrótce.</p>
 
     <!-- Form -->
-    <form class="form-wrap" netlify onsubmit="handleSubmit(event)">
+    <form class="form-wrap" name="coming-soon" netlify onsubmit="handleSubmit(event)">
+      <input type="hidden" name="form-name" value="coming-soon">
       <div class="input-row">
         <input type="email" name="email" placeholder="Twój adres e-mail" required autocomplete="email">
         <button type="submit">Powiadom mnie</button>
@@ -266,9 +267,16 @@
 <script>
   function handleSubmit(e) {
     e.preventDefault();
-    document.querySelector('.form-wrap .input-row').style.display = 'none';
-    document.querySelector('.checkbox-wrap').style.display = 'none';
-    document.getElementById('success').style.display = 'block';
+    const form = e.target;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString(),
+    }).finally(() => {
+      document.querySelector('.form-wrap .input-row').style.display = 'none';
+      document.querySelector('.checkbox-wrap').style.display = 'none';
+      document.getElementById('success').style.display = 'block';
+    });
   }
 </script>
 
