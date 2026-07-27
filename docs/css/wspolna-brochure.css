@@ -151,13 +151,14 @@ p:last-child { margin-bottom: 0; }
 .img-cap {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  padding: 5mm 4mm 2.5mm;
+  padding: 2mm 4mm;
   font-family: "Geist Mono", monospace;
   font-size: 7.5px;
   letter-spacing: .13em;
   text-transform: uppercase;
-  color: rgba(243,239,232,.88);
-  background: linear-gradient(transparent, rgba(20,18,15,.58));
+  color: var(--stone);
+  background: var(--paper);
+  border-top: 0.15mm solid var(--rule);
 }
 .img-cap b { color: white; font-weight: 500; margin-right: 3px; }
 
@@ -171,10 +172,7 @@ p:last-child { margin-bottom: 0; }
   background: url('../assets/compress/wspolna-04-dusk.jpg') center 35% / cover no-repeat;
 }
 .cover-overlay {
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(90deg, rgba(20,18,15,.82) 0%, rgba(20,18,15,.5) 45%, rgba(20,18,15,.1) 100%),
-    linear-gradient(180deg, rgba(20,18,15,.3) 0%, transparent 30%, rgba(20,18,15,.5) 100%);
+  display: none;
 }
 .cover-content {
   position: relative; z-index: 1;
@@ -1183,20 +1181,22 @@ p:last-child { margin-bottom: 0; }
   font-size: 7px;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: rgba(243,239,232,.75);
-  background: rgba(20,18,15,.35);
+  color: var(--stone);
+  background: var(--paper);
   padding: 1mm 2mm;
+  border: 0.15mm solid var(--rule);
 }
 .gallery-cap {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  padding: 4mm 3mm 2mm;
+  padding: 2mm 3mm;
   font-family: "Geist Mono", monospace;
   font-size: 7px;
   letter-spacing: .13em;
   text-transform: uppercase;
-  color: rgba(243,239,232,.88);
-  background: linear-gradient(transparent, rgba(20,18,15,.55));
+  color: var(--stone);
+  background: var(--paper);
+  border-top: 0.15mm solid var(--rule);
 }
 
 /* Polish brochure: tighter materials page to prevent overflow */
