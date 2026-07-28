@@ -157,7 +157,7 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: .13em;
   text-transform: uppercase;
   color: rgba(243,239,232,.88);
-  background: linear-gradient(transparent, rgba(20,18,15,.58));
+  /* background: linear-gradient(transparent, rgba(20,18,15,.58)); */
 }
 .img-cap b { color: white; font-weight: 500; margin-right: 3px; }
 
@@ -168,14 +168,14 @@ p:last-child { margin-bottom: 0; }
 }
 .cover-img {
   position: absolute; inset: 0;
-  background: url('../assets/compress/wspolna-04-dusk.jpg') center 35% / cover no-repeat;
+  background: url('../assets/brochureimg/Wspolna\ Dusk\ Gradient4.png') center 35% / cover no-repeat;
 }
-.cover-overlay {
+/* .cover-overlay {
   position: absolute; inset: 0;
   background:
     linear-gradient(90deg, rgba(20,18,15,.82) 0%, rgba(20,18,15,.5) 45%, rgba(20,18,15,.1) 100%),
     linear-gradient(180deg, rgba(20,18,15,.3) 0%, transparent 30%, rgba(20,18,15,.5) 100%);
-}
+} */
 .cover-content {
   position: relative; z-index: 1;
   display: flex;
@@ -1196,7 +1196,6 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: .13em;
   text-transform: uppercase;
   color: rgba(243,239,232,.88);
-  background: linear-gradient(transparent, rgba(20,18,15,.55));
 }
 
 /* Polish brochure: tighter materials page to prevent overflow */
