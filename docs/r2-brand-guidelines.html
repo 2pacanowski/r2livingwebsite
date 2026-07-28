@@ -1,0 +1,1747 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>R2 Living — Brand Guidelines</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+
+/* ── Fonts ─────────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/InstrumentSerif-400-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: italic;
+  font-weight: 400;
+  src: url('assets/fonts/InstrumentSerif-400-italic-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF;
+}
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 300;
+  src: url('assets/fonts/Geist-300-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF;
+}
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/Geist-400-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF;
+}
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 500;
+  src: url('assets/fonts/Geist-500-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF;
+}
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/GeistMono-400-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF;
+}
+@font-face {
+  font-family: "Geist Mono";
+  font-style: normal;
+  font-weight: 500;
+  src: url('assets/fonts/GeistMono-500-normal-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF;
+}
+
+/* ── Reset & base ──────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:   #14120F;
+  --ink-2: #4a4540;
+  --bone:  #F3EFE8;
+  --stone: #8C8880;
+  --moss:  #3D4A3A;
+  --rule:  #D8D2C8;
+  --paper: #FAF8F5;
+  --white: #FFFFFF;
+}
+
+html { font-size: 10px; }
+
+body {
+  font-family: "Geist", sans-serif;
+  background: #ccc;
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ── Page shell (A4 portrait) ──────────────────────────────────────────────── */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  background: var(--paper);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto 12px;
+  display: flex;
+  flex-direction: column;
+  page-break-after: always;
+  break-after: page;
+}
+
+@media print {
+  body { background: white; }
+  .page { margin: 0; }
+  @page { size: A4 portrait; margin: 0; }
+}
+
+/* ── Shared: moss accent strip ─────────────────────────────────────────────── */
+.page:not(.cover)::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 5px;
+  background: var(--moss);
+}
+
+/* ── Shared: page header ───────────────────────────────────────────────────── */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9mm 12mm 5mm 15mm;
+  border-bottom: 0.3px solid var(--rule);
+  flex-shrink: 0;
+}
+.page-eyebrow {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--moss);
+}
+.page-num {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  color: var(--stone);
+  letter-spacing: .1em;
+}
+
+/* ── Shared: page footer ───────────────────────────────────────────────────── */
+.page-footer {
+  margin-top: auto;
+  padding: 4mm 12mm 5mm 15mm;
+  border-top: 0.3px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--stone);
+  opacity: .55;
+}
+
+/* ── Shared: inner content area ────────────────────────────────────────────── */
+.page-body {
+  flex: 1;
+  padding: 8mm 12mm 6mm 15mm;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Shared: section title treatment ───────────────────────────────────────── */
+.sec-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin-bottom: 2mm;
+}
+.sec-title em {
+  font-style: italic;
+  color: var(--moss);
+}
+
+.eyebrow {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--moss);
+  display: block;
+}
+
+.rule { border: none; border-top: 0.4px solid var(--rule); margin: 3mm 0; }
+.rule.thick { border-top-width: 1px; border-color: var(--ink); }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PAGE 1 — COVER
+══════════════════════════════════════════════════════════════════════════════ */
+.cover {
+  background: var(--ink);
+  min-height: 297mm;
+}
+.cover::before { display: none; }
+.cover-inner {
+  padding: 12mm 14mm;
+  display: flex;
+  flex-direction: column;
+  height: 297mm;
+  color: var(--bone);
+}
+
+.cover-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 5mm;
+  border-bottom: 0.4px solid rgba(243,239,232,.15);
+  margin-bottom: auto;
+}
+.cover-brand {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(243,239,232,.5);
+}
+.cover-year {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(243,239,232,.35);
+}
+
+.cover-body {
+  margin-top: auto;
+  margin-bottom: 12mm;
+}
+.cover-eyebrow {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(243,239,232,.45);
+  display: block;
+  margin-bottom: 5mm;
+}
+.cover-h1 {
+  font-family: "Instrument Serif", serif;
+  font-size: 86px;
+  font-weight: 400;
+  line-height: .92;
+  letter-spacing: -.025em;
+  color: var(--bone);
+  margin-bottom: 4mm;
+}
+.cover-h1 em {
+  font-style: italic;
+  color: #C9D5BE;
+}
+.cover-sub {
+  font-family: "Geist", sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(243,239,232,.5);
+  letter-spacing: .04em;
+  line-height: 1.6;
+}
+
+.cover-bottom {
+  border-top: 0.4px solid rgba(243,239,232,.12);
+  padding-top: 5mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.cover-tagline {
+  font-family: "Geist", sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(243,239,232,.4);
+  line-height: 1.5;
+  max-width: 70mm;
+}
+.cover-url {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(243,239,232,.3);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PAGE 2 — BRAND OVERVIEW
+══════════════════════════════════════════════════════════════════════════════ */
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10mm;
+  flex: 1;
+}
+.overview-left {}
+.overview-right {}
+
+.overview-blocks { display: flex; flex-direction: column; gap: 6mm; margin-top: 5mm; }
+.ov-block {}
+.ov-block-title {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 1.5mm;
+}
+.ov-block p {
+  font-family: "Geist", sans-serif;
+  font-size: 9.5px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+
+.pillars { margin-top: 5mm; display: flex; flex-direction: column; gap: 0; }
+.pillar {
+  display: flex;
+  gap: 4mm;
+  padding: 3.5mm 0;
+  border-bottom: 0.3px solid var(--rule);
+}
+.pillar:first-child { border-top: 0.3px solid var(--rule); }
+.pillar-accent {
+  width: 3px;
+  background: var(--moss);
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+.pillar-body {}
+.pillar-name {
+  font-family: "Geist", sans-serif;
+  font-size: 9.5px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 1mm;
+}
+.pillar-desc {
+  font-family: "Geist", sans-serif;
+  font-size: 8.5px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PAGE 3 — COLOUR PALETTE
+══════════════════════════════════════════════════════════════════════════════ */
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3mm;
+  margin: 5mm 0;
+}
+.swatch {}
+.swatch-block {
+  height: 32mm;
+  border-radius: 2px;
+}
+.swatch-block.light { border: 0.4px solid var(--rule); }
+.swatch-name {
+  font-family: "Geist", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-top: 2.5mm;
+  margin-bottom: 0.5mm;
+}
+.swatch-hex {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  color: var(--stone);
+  letter-spacing: .05em;
+}
+
+.colour-usage {
+  margin-top: 4mm;
+  flex: 1;
+}
+.colour-usage-title {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 2mm;
+  padding-bottom: 2mm;
+  border-bottom: 0.4px solid var(--rule);
+}
+.cu-table {
+  display: grid;
+  grid-template-columns: 28mm 1fr 1fr;
+  gap: 0;
+}
+.cu-row {
+  display: contents;
+}
+.cu-row > * {
+  font-family: "Geist", sans-serif;
+  font-size: 8.5px;
+  color: var(--ink-2);
+  line-height: 1.5;
+  padding: 1.8mm 3mm 1.8mm 0;
+  border-bottom: 0.3px solid var(--rule);
+}
+.cu-row .cu-name {
+  font-weight: 500;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+}
+.cu-swatch-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+.cu-head > * {
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  padding: 0 3mm 2mm 0;
+  border-bottom: 0.5px solid var(--ink);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PAGE 4 — TYPOGRAPHY
+══════════════════════════════════════════════════════════════════════════════ */
+.type-faces {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8mm;
+  margin-top: 5mm;
+  flex: 1;
+}
+.typeface {
+  display: flex;
+  flex-direction: column;
+}
+.tf-label {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 1.5mm;
+}
+.tf-name {
+  font-family: "Geist Mono", monospace;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 2.5mm;
+  padding-bottom: 2.5mm;
+  border-bottom: 0.4px solid var(--rule);
+}
+.tf-specimen {
+  margin-bottom: 4mm;
+}
+.tf-specimen-normal {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+.tf-specimen-italic {
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  color: var(--moss);
+}
+.tf-specimen-mono {
+  font-family: "Geist Mono", monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: var(--moss);
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+.tf-specimen-sans {
+  font-family: "Geist", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.tf-specimen-sans-light {
+  font-family: "Geist", sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.tf-weights {
+  margin-bottom: 4mm;
+}
+.tf-weights-label {
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 1.5mm;
+}
+.tf-weight-row {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  color: var(--ink-2);
+  padding: 1mm 0;
+  border-bottom: 0.2px solid var(--rule);
+}
+.tf-weight-row::before { content: "— "; color: var(--stone); }
+
+.tf-use-label {
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-top: 3mm;
+  margin-bottom: 1.5mm;
+}
+.tf-use-list {
+  list-style: none;
+  flex: 1;
+}
+.tf-use-list li {
+  font-family: "Geist", sans-serif;
+  font-size: 8px;
+  color: var(--ink-2);
+  line-height: 1.5;
+  padding: 0.8mm 0 0.8mm 3mm;
+  border-bottom: 0.2px solid var(--rule);
+  position: relative;
+}
+.tf-use-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  color: var(--moss);
+}
+.tf-avoid {
+  margin-top: 3mm;
+  font-family: "Geist", sans-serif;
+  font-size: 7.5px;
+  color: var(--stone);
+  line-height: 1.5;
+  padding-top: 2mm;
+  border-top: 0.3px solid var(--rule);
+}
+.tf-avoid::before {
+  content: "Avoid: ";
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PAGE 5 — TYPE SCALE
+══════════════════════════════════════════════════════════════════════════════ */
+.type-scale { flex: 1; display: flex; flex-direction: column; gap: 0; margin-top: 4mm; }
+.ts-row {
+  display: grid;
+  grid-template-columns: 40mm 1fr 28mm;
+  gap: 5mm;
+  align-items: baseline;
+  padding: 3.5mm 0;
+  border-bottom: 0.3px solid var(--rule);
+}
+.ts-row:first-child { border-top: 0.4px solid var(--ink); }
+.ts-label {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.ts-specimen { line-height: 1; }
+.ts-meta {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  color: var(--stone);
+  text-align: right;
+  letter-spacing: .06em;
+}
+
+.spacing-rules {
+  margin-top: 6mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm 8mm;
+}
+.sp-rule {}
+.sp-rule-name {
+  font-family: "Geist", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.5mm;
+}
+.sp-rule-val {
+  font-family: "Geist Mono", monospace;
+  font-size: 8.5px;
+  color: var(--moss);
+  letter-spacing: .06em;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PAGE 6 — VOICE & TONE
+══════════════════════════════════════════════════════════════════════════════ */
+.voice-intro {
+  font-family: "Geist", sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink-2);
+  margin: 4mm 0 6mm;
+  max-width: 140mm;
+}
+.voice-dimensions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm 8mm;
+  margin-bottom: 6mm;
+}
+.vd {
+  padding: 4mm;
+  background: var(--bone);
+}
+.vd-name {
+  font-family: "Instrument Serif", serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 2mm;
+}
+.vd-text {
+  font-family: "Geist", sans-serif;
+  font-size: 8.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.do-dont { margin-top: 4mm; }
+.do-dont-title {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 2mm;
+  padding-bottom: 2mm;
+  border-bottom: 0.4px solid var(--rule);
+}
+.dd-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 6mm;
+}
+.dd-col-head {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 1.5mm 0;
+  margin-bottom: 1mm;
+  border-bottom: 0.5px solid var(--ink);
+}
+.dd-col-head.do { color: var(--moss); }
+.dd-col-head.dont { color: var(--stone); }
+.dd-item {
+  font-family: "Geist", sans-serif;
+  font-size: 8.5px;
+  line-height: 1.5;
+  padding: 1.8mm 0;
+  border-bottom: 0.3px solid var(--rule);
+  color: var(--ink-2);
+}
+.dd-do { color: var(--ink); }
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PAGE 7 — PHOTOGRAPHY
+══════════════════════════════════════════════════════════════════════════════ */
+.photo-intro {
+  font-family: "Geist", sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink-2);
+  margin: 4mm 0 6mm;
+  max-width: 140mm;
+}
+.photo-cats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6mm;
+  margin-bottom: 6mm;
+}
+.photo-cat {}
+.photo-cat-name {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 2mm;
+  padding-bottom: 2mm;
+  border-bottom: 1px solid var(--moss);
+}
+.photo-cat ul {
+  list-style: none;
+}
+.photo-cat li {
+  font-family: "Geist", sans-serif;
+  font-size: 8px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  padding: 1mm 0 1mm 3mm;
+  border-bottom: 0.2px solid var(--rule);
+  position: relative;
+}
+.photo-cat li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--moss);
+  font-weight: 700;
+}
+
+.grading-rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm 8mm;
+  padding-top: 4mm;
+  border-top: 0.4px solid var(--rule);
+  margin-top: auto;
+}
+.gr {}
+.gr-name {
+  font-family: "Geist", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 1mm;
+}
+.gr-text {
+  font-family: "Geist", sans-serif;
+  font-size: 8px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PAGE 8 — SOCIAL MEDIA FORMATS
+══════════════════════════════════════════════════════════════════════════════ */
+.social-intro {
+  font-family: "Geist", sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--ink-2);
+  margin: 4mm 0 5mm;
+  max-width: 130mm;
+}
+.platforms-table {
+  display: grid;
+  grid-template-columns: 34mm 24mm 30mm 1fr;
+  gap: 0;
+  margin-bottom: 6mm;
+}
+.pt-head > * {
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--stone);
+  padding: 0 3mm 2mm 0;
+  border-bottom: 0.5px solid var(--ink);
+}
+.pt-row { display: contents; }
+.pt-row > * {
+  font-family: "Geist", sans-serif;
+  font-size: 8px;
+  color: var(--ink-2);
+  line-height: 1.5;
+  padding: 1.8mm 3mm 1.8mm 0;
+  border-bottom: 0.3px solid var(--rule);
+}
+.pt-row .pt-plat {
+  font-weight: 500;
+  color: var(--ink);
+}
+.pt-row .pt-res {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  color: var(--stone);
+}
+
+.format-diagrams {
+  display: flex;
+  gap: 6mm;
+  align-items: flex-start;
+  margin-top: 4mm;
+  padding-top: 4mm;
+  border-top: 0.4px solid var(--rule);
+}
+.format-diagram { display: flex; flex-direction: column; align-items: center; gap: 2mm; }
+.fd-frame {
+  border: 0.6px solid var(--rule);
+  background: var(--bone);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.fd-layer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fd-layer-label {
+  font-family: "Geist Mono", monospace;
+  font-size: 5.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 2px;
+  line-height: 1.3;
+}
+.fd-caption {
+  font-family: "Geist Mono", monospace;
+  font-size: 6.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--stone);
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PAGE 9 — CAPTION & COPY GUIDE
+══════════════════════════════════════════════════════════════════════════════ */
+.copy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+  flex: 1;
+  margin-top: 4mm;
+}
+.copy-left {}
+.copy-right {}
+
+.caption-parts { display: flex; flex-direction: column; gap: 3.5mm; }
+.cp {
+  padding: 3mm 4mm;
+  border-left: 2px solid var(--moss);
+  background: var(--bone);
+}
+.cp-title {
+  font-family: "Geist", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 1.5mm;
+}
+.cp-text {
+  font-family: "Geist", sans-serif;
+  font-size: 8px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.cp-example {
+  font-family: "Geist Mono", monospace;
+  font-size: 7.5px;
+  color: var(--moss);
+  margin-top: 1.5mm;
+  line-height: 1.5;
+  letter-spacing: .02em;
+}
+
+.hashtag-groups { display: flex; flex-direction: column; gap: 3.5mm; margin-top: 0; }
+.hg {}
+.hg-name {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 1mm;
+}
+.hg-tags {
+  font-family: "Geist Mono", monospace;
+  font-size: 8px;
+  color: var(--moss);
+  line-height: 1.7;
+  letter-spacing: .04em;
+}
+
+.cadence-table { margin-top: 5mm; }
+.cadence-title {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 2mm;
+  padding-bottom: 2mm;
+  border-bottom: 0.4px solid var(--rule);
+}
+.cad-row {
+  display: flex;
+  gap: 4mm;
+  align-items: baseline;
+  padding: 2.5mm 0;
+  border-bottom: 0.3px solid var(--rule);
+}
+.cad-freq {
+  font-family: "Instrument Serif", serif;
+  font-size: 16px;
+  color: var(--ink);
+  min-width: 24mm;
+}
+.cad-context {
+  font-family: "Geist", sans-serif;
+  font-size: 8.5px;
+  color: var(--ink-2);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   PAGE 10 — CONTENT THEMES & CHECKLIST
+══════════════════════════════════════════════════════════════════════════════ */
+.themes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8mm;
+  flex: 1;
+  margin-top: 4mm;
+}
+.themes-col {}
+.checklist-col {}
+
+.theme-items { display: flex; flex-direction: column; gap: 0; }
+.theme-item {
+  padding: 3.5mm 0;
+  border-bottom: 0.3px solid var(--rule);
+}
+.theme-item:first-child { border-top: 0.4px solid var(--ink); }
+.theme-name {
+  font-family: "Geist", sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 1mm;
+}
+.theme-desc {
+  font-family: "Geist", sans-serif;
+  font-size: 8px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.check-section { margin-bottom: 4mm; }
+.check-section-name {
+  font-family: "Geist Mono", monospace;
+  font-size: 7px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--moss);
+  margin-bottom: 1.5mm;
+  padding-bottom: 1.5mm;
+  border-bottom: 0.5px solid var(--moss);
+}
+.check-item {
+  display: flex;
+  gap: 2.5mm;
+  align-items: flex-start;
+  padding: 1.5mm 0;
+  border-bottom: 0.2px solid var(--rule);
+}
+.check-box {
+  width: 9px;
+  height: 9px;
+  border: 0.5px solid var(--rule);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.check-text {
+  font-family: "Geist", sans-serif;
+  font-size: 8px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAGE 1 — COVER
+══════════════════════════════════════════════════════════════════ -->
+<div class="page cover">
+  <div class="cover-inner">
+    <div class="cover-topbar">
+      <span class="cover-brand">R2 Living</span>
+      <span class="cover-year">Brand Guidelines · 2026</span>
+    </div>
+
+    <div class="cover-body">
+      <span class="cover-eyebrow">Typography · Colour · Voice · Social media</span>
+      <h1 class="cover-h1">Brand<br/><em>Guide&shy;lines.</em></h1>
+      <p class="cover-sub">Modern duplex homes north of Warsaw.<br/>Two to four projects a year. The architect signs every plan.</p>
+    </div>
+
+    <div class="cover-bottom">
+      <p class="cover-tagline">This document defines how R2 Living looks, speaks, and presents itself across all channels.</p>
+      <span class="cover-url">r2living.pl</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAGE 2 — BRAND OVERVIEW
+══════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-eyebrow">— 01 · Brand Overview</span>
+    <span class="page-num">2 / 10</span>
+  </div>
+  <div class="page-body">
+    <h2 class="sec-title">Built boutique.<br/><em>Every project, fully.</em></h2>
+    <div class="overview-grid">
+      <div class="overview-left">
+        <div class="overview-blocks">
+          <div class="ov-block">
+            <div class="ov-block-title">Who we are</div>
+            <hr class="rule"/>
+            <p>R2 Living is the residential development brand of R2 Capital, a Warsaw-based real estate investment company. We build modern flat-roof duplex homes in the quieter suburbs of Warsaw — two to four projects per year.</p>
+          </div>
+          <div class="ov-block">
+            <div class="ov-block-title">What makes us different</div>
+            <hr class="rule"/>
+            <p>We build one project at a time. Small enough that nothing slips, deliberate enough that nothing is rushed. Every buyer gets direct access to the investor, progress updates, and a floor plan they can still shape before the trades arrive.</p>
+          </div>
+          <div class="ov-block">
+            <div class="ov-block-title">Who we build for</div>
+            <hr class="rule"/>
+            <p>Families choosing a neighbourhood — not settling for one. People who want Kampinos forest and Vistula air without giving up a Warsaw commute. Buyers who value honesty: published specs, no fine print, no surprises at handover.</p>
+          </div>
+        </div>
+      </div>
+      <div class="overview-right">
+        <span class="eyebrow" style="margin-bottom:2mm;">Brand pillars</span>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pillar-accent"></div>
+            <div class="pillar-body">
+              <div class="pillar-name">Boutique scale</div>
+              <div class="pillar-desc">One project at a time. Nothing slips, nothing is rushed.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-accent"></div>
+            <div class="pillar-body">
+              <div class="pillar-name">Open by default</div>
+              <div class="pillar-desc">Progress updates, site visits, and direct access to the investor.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-accent"></div>
+            <div class="pillar-body">
+              <div class="pillar-name">Honest specs</div>
+              <div class="pillar-desc">Materials and floor plans published from day one. No fine print.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-accent"></div>
+            <div class="pillar-body">
+              <div class="pillar-name">Flat-roof modernism</div>
+              <div class="pillar-desc">Clean geometry, honest materials, no applied ornamentation.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-accent"></div>
+            <div class="pillar-body">
+              <div class="pillar-name">Suburban calm</div>
+              <div class="pillar-desc">Good schools, quiet streets, 30 minutes to Warsaw centre.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>R2 Capital sp. z o.o. · hello@r2living.pl · r2living.pl</span>
+    <span>Brand Guidelines · 2026</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAGE 3 — COLOUR PALETTE
+══════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-eyebrow">— 02 · Colour Palette</span>
+    <span class="page-num">3 / 10</span>
+  </div>
+  <div class="page-body">
+    <h2 class="sec-title">Colour <em>palette.</em></h2>
+    <p style="font-family:'Geist',sans-serif;font-size:9.5px;color:var(--ink-2);line-height:1.6;margin:2mm 0 0;max-width:140mm;">Six tones drawn from raw concrete, aged timber, and forest undergrowth. The palette is intentionally restrained — warmth without colour, depth without saturation.</p>
+
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-block" style="background:#14120F;"></div>
+        <div class="swatch-name">Ink</div>
+        <div class="swatch-hex">#14120F</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#4a4540;"></div>
+        <div class="swatch-name">Ink 2</div>
+        <div class="swatch-hex">#4A4540</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#3D4A3A;"></div>
+        <div class="swatch-name">Moss</div>
+        <div class="swatch-hex">#3D4A3A</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block light" style="background:#F3EFE8;"></div>
+        <div class="swatch-name">Bone</div>
+        <div class="swatch-hex">#F3EFE8</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#8C8880;"></div>
+        <div class="swatch-name">Stone</div>
+        <div class="swatch-hex">#8C8880</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block light" style="background:#D8D2C8;"></div>
+        <div class="swatch-name">Rule</div>
+        <div class="swatch-hex">#D8D2C8</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block light" style="background:#FAF8F5;"></div>
+        <div class="swatch-name">Paper</div>
+        <div class="swatch-hex">#FAF8F5</div>
+      </div>
+    </div>
+
+    <div class="colour-usage">
+      <div class="colour-usage-title">Colour usage guide</div>
+      <div class="cu-table">
+        <div class="cu-row cu-head">
+          <div>Colour</div>
+          <div>Primary use</div>
+          <div>Social media application</div>
+        </div>
+        <div class="cu-row">
+          <div class="cu-name"><span class="cu-swatch-dot" style="background:#14120F;"></span>Ink</div>
+          <div>Headlines, body text, dark backgrounds</div>
+          <div>Story cover backgrounds, quote card fills</div>
+        </div>
+        <div class="cu-row">
+          <div class="cu-name"><span class="cu-swatch-dot" style="background:#3D4A3A;"></span>Moss</div>
+          <div>Accent, italic headings, CTAs, eyebrows</div>
+          <div>Accent borders, highlight frames, icon tints</div>
+        </div>
+        <div class="cu-row">
+          <div class="cu-name"><span class="cu-swatch-dot" style="background:#F3EFE8;border:0.5px solid #D8D2C8;"></span>Bone</div>
+          <div>Light section backgrounds, text on dark</div>
+          <div>Text overlaid on dark photography</div>
+        </div>
+        <div class="cu-row">
+          <div class="cu-name"><span class="cu-swatch-dot" style="background:#8C8880;"></span>Stone</div>
+          <div>Captions, metadata, muted UI elements</div>
+          <div>Small label text, location tags, data overlays</div>
+        </div>
+        <div class="cu-row">
+          <div class="cu-name"><span class="cu-swatch-dot" style="background:#FAF8F5;border:0.5px solid #D8D2C8;"></span>Paper</div>
+          <div>Page canvas — the neutral background</div>
+          <div>Information card backgrounds, whitespace</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>R2 Capital sp. z o.o. · hello@r2living.pl · r2living.pl</span>
+    <span>Brand Guidelines · 2026</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAGE 4 — TYPOGRAPHY
+══════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-eyebrow">— 03 · Typography</span>
+    <span class="page-num">4 / 10</span>
+  </div>
+  <div class="page-body">
+    <h2 class="sec-title">Type&shy;graphy <em>system.</em></h2>
+    <div class="type-faces">
+
+      <!-- Instrument Serif -->
+      <div class="typeface">
+        <div class="tf-label">Headings &amp; display</div>
+        <div class="tf-name">Instrument Serif</div>
+        <div class="tf-specimen">
+          <div class="tf-specimen-normal" style="font-family:'Instrument Serif',serif;">Modern<br/>homes,</div>
+          <div class="tf-specimen-italic" style="font-family:'Instrument Serif',serif;">built<br/>properly.</div>
+        </div>
+        <div class="tf-weights">
+          <div class="tf-weights-label">Available weights</div>
+          <div class="tf-weight-row">Regular · 400</div>
+          <div class="tf-weight-row">Italic · 400i</div>
+        </div>
+        <span class="tf-use-label">Use for</span>
+        <ul class="tf-use-list">
+          <li>Section headings (h1, h2) on all channels</li>
+          <li>Pull-quote text on social media</li>
+          <li>Property name and address display</li>
+          <li>Large statistics and key figures</li>
+          <li>Italic accent text (always in Moss)</li>
+        </ul>
+        <p class="tf-avoid">Never bold. Never for body copy or captions.</p>
+      </div>
+
+      <!-- Geist -->
+      <div class="typeface">
+        <div class="tf-label">Body &amp; interface</div>
+        <div class="tf-name">Geist</div>
+        <div class="tf-specimen">
+          <div class="tf-specimen-sans">Flat-roof modernism,<br/>honest materials,</div>
+          <div class="tf-specimen-sans-light">and a floor plan you can<br/>still shape.</div>
+        </div>
+        <div class="tf-weights">
+          <div class="tf-weights-label">Available weights</div>
+          <div class="tf-weight-row">Light · 300</div>
+          <div class="tf-weight-row">Regular · 400</div>
+          <div class="tf-weight-row">Medium · 500</div>
+          <div class="tf-weight-row">SemiBold · 600</div>
+        </div>
+        <span class="tf-use-label">Use for</span>
+        <ul class="tf-use-list">
+          <li>All body copy on website and documents</li>
+          <li>Social media caption text</li>
+          <li>Navigation, buttons, and UI labels</li>
+          <li>Specification and bullet-point text</li>
+          <li>Callout values and key figures</li>
+        </ul>
+        <p class="tf-avoid">Never italic — use Instrument Serif instead. Minimum 9px.</p>
+      </div>
+
+      <!-- Geist Mono -->
+      <div class="typeface">
+        <div class="tf-label">Labels &amp; metadata</div>
+        <div class="tf-name">Geist Mono</div>
+        <div class="tf-specimen">
+          <div class="tf-specimen-mono">ŁOMIANKI<br/>05-092<br/>WARSAW, PL</div>
+          <div style="font-family:'Geist Mono',monospace;font-size:8px;color:var(--stone);letter-spacing:.14em;text-transform:uppercase;margin-top:3mm;">ESTABLISHED 2022 · 4 HOMES</div>
+        </div>
+        <div class="tf-weights">
+          <div class="tf-weights-label">Available weights</div>
+          <div class="tf-weight-row">Regular · 400</div>
+          <div class="tf-weight-row">Medium · 500</div>
+        </div>
+        <span class="tf-use-label">Use for</span>
+        <ul class="tf-use-list">
+          <li>Eyebrows and section labels</li>
+          <li>Measurements, area figures, data</li>
+          <li>Page numbers, image captions</li>
+          <li>Navigation tags and location labels</li>
+          <li>Price and delivery callouts</li>
+        </ul>
+        <p class="tf-avoid">Always uppercase with 0.14–0.22em letter-spacing. Never mixed case.</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>R2 Capital sp. z o.o. · hello@r2living.pl · r2living.pl</span>
+    <span>Brand Guidelines · 2026</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAGE 5 — TYPE SCALE
+══════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-eyebrow">— 03 · Typography Scale</span>
+    <span class="page-num">5 / 10</span>
+  </div>
+  <div class="page-body">
+    <h2 class="sec-title">Type <em>scale.</em></h2>
+    <div class="type-scale">
+      <div class="ts-row">
+        <div class="ts-label">Display / h1</div>
+        <div class="ts-specimen" style="font-family:'Instrument Serif',serif;font-size:52px;letter-spacing:-.02em;color:var(--ink);line-height:1;">A handful of</div>
+        <div class="ts-meta">52px · Instrument Serif</div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label">Section / h2</div>
+        <div class="ts-specimen" style="font-family:'Instrument Serif',serif;font-size:36px;letter-spacing:-.02em;color:var(--ink);line-height:1.05;">Modern homes, <em style="font-style:italic;color:var(--moss);">built properly.</em></div>
+        <div class="ts-meta">36px · Instrument Serif</div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label">Eyebrow</div>
+        <div class="ts-specimen" style="font-family:'Geist Mono',monospace;font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss);">— Developments · Łomianki, PL</div>
+        <div class="ts-meta">8px · Geist Mono · tracked</div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label">Lead / lede</div>
+        <div class="ts-specimen" style="font-family:'Geist',sans-serif;font-size:13px;font-weight:300;line-height:1.6;color:var(--ink-2);">Two to four duplex projects a year in peaceful suburban locations.</div>
+        <div class="ts-meta">13px · Geist Light</div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label">Body copy</div>
+        <div class="ts-specimen" style="font-family:'Geist',sans-serif;font-size:10px;line-height:1.6;color:var(--ink-2);">Flat-roof modernism, honest materials, and a floor plan you can match to your lifestyle.</div>
+        <div class="ts-meta">10px · Geist Regular</div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label">Caption / meta</div>
+        <div class="ts-specimen" style="font-family:'Geist Mono',monospace;font-size:7.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--stone);">Front elevation · Unit 1 · Porzeczkowa V</div>
+        <div class="ts-meta">7.5px · Geist Mono · uppercase</div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-label">Stat / figure</div>
+        <div class="ts-specimen"><span style="font-family:'Instrument Serif',serif;font-size:32px;color:var(--ink);letter-spacing:-.02em;line-height:1;">671</span><span style="font-family:'Geist Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-left:2mm;vertical-align:middle;">m² delivered</span></div>
+        <div class="ts-meta">32px Serif + 9px Mono</div>
+      </div>
+    </div>
+
+    <div class="spacing-rules" style="margin-top:5mm;padding-top:4mm;border-top:0.4px solid var(--rule);">
+      <span class="eyebrow" style="grid-column:1/-1;margin-bottom:2mm;">Spacing &amp; leading rules</span>
+      <div class="sp-rule">
+        <div class="sp-rule-name">Display heading leading</div>
+        <div class="sp-rule-val">0.92 – 1.0 × font-size</div>
+      </div>
+      <div class="sp-rule">
+        <div class="sp-rule-name">Body copy leading</div>
+        <div class="sp-rule-val">1.5 – 1.65 × font-size</div>
+      </div>
+      <div class="sp-rule">
+        <div class="sp-rule-name">Heading letter-spacing</div>
+        <div class="sp-rule-val">−0.02 to −0.03em</div>
+      </div>
+      <div class="sp-rule">
+        <div class="sp-rule-name">Eyebrow / mono tracking</div>
+        <div class="sp-rule-val">0.14 – 0.22em</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>R2 Capital sp. z o.o. · hello@r2living.pl · r2living.pl</span>
+    <span>Brand Guidelines · 2026</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAGE 6 — VOICE & TONE
+══════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-eyebrow">— 04 · Voice &amp; Tone</span>
+    <span class="page-num">6 / 10</span>
+  </div>
+  <div class="page-body">
+    <h2 class="sec-title">Voice <em>&amp; tone.</em></h2>
+    <p class="voice-intro">R2 Living speaks like a knowledgeable friend who happens to build houses — not a salesperson, not a corporate brochure. Direct, calm, and genuinely confident without being boastful. We say what we mean and don't pad.</p>
+
+    <div class="voice-dimensions">
+      <div class="vd">
+        <div class="vd-name">Direct</div>
+        <p class="vd-text">We cut to what matters. No filler, no fluff. Short sentences. Active verbs. "We build one project at a time" — not "Our business model is characterised by a focused approach."</p>
+      </div>
+      <div class="vd">
+        <div class="vd-name">Honest</div>
+        <p class="vd-text">We publish specs and materials from day one. Our copy matches our product. We don't overpromise or use superlatives we can't back up with a measurement.</p>
+      </div>
+      <div class="vd">
+        <div class="vd-name">Warm</div>
+        <p class="vd-text">We're human. We care about the neighbourhood — the schools nearby, the walk to the river, the kitchen light in the afternoon. We write about life, not just property.</p>
+      </div>
+      <div class="vd">
+        <div class="vd-name">Precise</div>
+        <p class="vd-text">We use the right number, the exact measurement, the correct material name. When something is 36.72 m² we say 36.72 m². Precision is a form of respect.</p>
+      </div>
+    </div>
+
+    <div class="do-dont">
+      <div class="do-dont-title">Real copy examples — do / don't</div>
+      <div class="dd-table">
+        <div class="dd-col-head do">✓ Write this</div>
+        <div class="dd-col-head dont">✗ Not this</div>
+        <div class="dd-item dd-do">Two homes on a peaceful Łomianki street.</div>
+        <div class="dd-item">Luxurious residences in a prestigious location.</div>
+        <div class="dd-item dd-do">136–142 m² per unit. Builder's finish.</div>
+        <div class="dd-item">Spacious, well-appointed homes with premium finishes.</div>
+        <div class="dd-item dd-do">Delivery Q2 2027. No slippage so far.</div>
+        <div class="dd-item">Coming soon — contact us for details.</div>
+        <div class="dd-item dd-do">The kitchen faces south. Morning light.</div>
+        <div class="dd-item">Beautifully light-filled, south-facing kitchen.</div>
+        <div class="dd-item dd-do">We respond within 24 hours.</div>
+        <div class="dd-item">Our dedicated team is always on hand to assist.</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>R2 Capital sp. z o.o. · hello@r2living.pl · r2living.pl</span>
+    <span>Brand Guidelines · 2026</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAGE 7 — PHOTOGRAPHY DIRECTION
+══════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-eyebrow">— 05 · Photography Direction</span>
+    <span class="page-num">7 / 10</span>
+  </div>
+  <div class="page-body">
+    <h2 class="sec-title">Photo&shy;graphy <em>direction.</em></h2>
+    <p class="photo-intro">Photography is our strongest brand asset. Every image should feel like a place worth living in — not a product shot. Natural light always; no HDR, no artificial saturation, no heavy retouching. The mood is calm, considered, and slightly underexposed at dusk.</p>
+
+    <div class="photo-cats">
+      <div class="photo-cat">
+        <div class="photo-cat-name">Exterior</div>
+        <ul>
+          <li>Shoot at golden hour or dusk — warmth without drama</li>
+          <li>Three-quarter view is the hero angle (depth + materiality)</li>
+          <li>Include surrounding vegetation and sky for context</li>
+          <li>Avoid midday flat light or direct overhead sun</li>
+          <li>Anthracite frames and white render must read clean, not harsh</li>
+        </ul>
+      </div>
+      <div class="photo-cat">
+        <div class="photo-cat-name">Interior</div>
+        <ul>
+          <li>Natural light only — no flash or artificial fill as primary</li>
+          <li>Shoot rooms empty or with minimal, genuine furniture</li>
+          <li>Show the quality of light as it falls across the floor</li>
+          <li>Wide angles to convey space — avoid fish-eye distortion</li>
+          <li>Focus on material texture: concrete stair, tile surface, timber</li>
+        </ul>
+      </div>
+      <div class="photo-cat">
+        <div class="photo-cat-name">Aerial &amp; context</div>
+        <ul>
+          <li>Show the plot's relationship to forest and river</li>
+          <li>Include neighbourhood context: streets, trees, proximity to nature</li>
+          <li>Morning light preferred to show north Warsaw topography</li>
+          <li>Avoid heavy post-processing or saturated sky replacements</li>
+          <li>Low enough to show street-level; high enough for plot shape</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grading-rules">
+      <span class="eyebrow" style="grid-column:1/-1;margin-bottom:2mm;">Colour grading &amp; editing</span>
+      <div class="gr">
+        <div class="gr-name">Tone</div>
+        <p class="gr-text">Slightly underexposed. Dark shadows, bright windows. Never crushed blacks or blown highlights.</p>
+      </div>
+      <div class="gr">
+        <div class="gr-name">Saturation</div>
+        <p class="gr-text">Natural, never boosted. White render, anthracite frames, and green should read true to life.</p>
+      </div>
+      <div class="gr">
+        <div class="gr-name">Retouching</div>
+        <p class="gr-text">Remove temporary site debris only. Never remove power lines, neighbours, or permanent site context.</p>
+      </div>
+      <div class="gr">
+        <div class="gr-name">Format</div>
+        <p class="gr-text">Deliver RAW + exported TIFF/JPG. Minimum 3200px long edge for print; 2400px for digital.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>R2 Capital sp. z o.o. · hello@r2living.pl · r2living.pl</span>
+    <span>Brand Guidelines · 2026</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAGE 8 — SOCIAL MEDIA FORMATS
+══════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-eyebrow">— 06 · Social Media Formats</span>
+    <span class="page-num">8 / 10</span>
+  </div>
+  <div class="page-body">
+    <h2 class="sec-title">Social media <em>formats.</em></h2>
+    <p class="social-intro">Instagram is our primary platform. Every format serves a different role — match the content type to the format rather than forcing one template across all.</p>
+
+    <div class="platforms-table">
+      <div class="pt-head">
+        <div>Platform</div>
+        <div>Format</div>
+        <div>Resolution</div>
+        <div>Primary use</div>
+      </div>
+      <div class="pt-row"><div class="pt-plat">Instagram Feed</div><div>1:1 Square</div><div class="pt-res">1080 × 1080 px</div><div>Primary brand platform. Property photography and development updates.</div></div>
+      <div class="pt-row"><div class="pt-plat"></div><div>4:5 Portrait</div><div class="pt-res">1080 × 1350 px</div><div>Single-image posts. More feed real estate. Use for hero property shots.</div></div>
+      <div class="pt-row"><div class="pt-plat">Instagram Story</div><div>9:16</div><div class="pt-res">1080 × 1920 px</div><div>Construction updates, site visits, behind-the-scenes. Text in safe zone.</div></div>
+      <div class="pt-row"><div class="pt-plat">Instagram Reel</div><div>9:16</div><div class="pt-res">1080 × 1920 px</div><div>Time-lapses, walk-throughs, neighbourhood context. 30–60 s for reach.</div></div>
+      <div class="pt-row"><div class="pt-plat">Facebook Post</div><div>1.91:1</div><div class="pt-res">1200 × 628 px</div><div>Boosted content. Always include development name and r2living.pl.</div></div>
+      <div class="pt-row"><div class="pt-plat">LinkedIn</div><div>1:1 or 1.91:1</div><div class="pt-res">1200 × 1200 px</div><div>Company updates, investor news, planning milestones. Tone more formal.</div></div>
+    </div>
+
+    <div class="format-diagrams">
+      <!-- 1:1 feed -->
+      <div class="format-diagram">
+        <div class="fd-frame" style="width:42mm;height:42mm;">
+          <div class="fd-layer" style="flex:1;background:var(--stone);"><span class="fd-layer-label" style="color:var(--bone);">full-bleed photo</span></div>
+          <div class="fd-layer" style="height:7mm;background:var(--ink);flex-shrink:0;flex-direction:column;gap:0.5mm;">
+            <span class="fd-layer-label" style="color:var(--moss);font-size:4.5px;">EYEBROW MONO</span>
+            <span class="fd-layer-label" style="font-family:'Instrument Serif',serif;font-size:7px;color:var(--bone);">Heading Serif</span>
+          </div>
+        </div>
+        <div class="fd-caption">1:1 Feed</div>
+      </div>
+      <!-- 4:5 feed -->
+      <div class="format-diagram">
+        <div class="fd-frame" style="width:42mm;height:52mm;">
+          <div class="fd-layer" style="flex:1;background:var(--stone);"><span class="fd-layer-label" style="color:var(--bone);">photo</span></div>
+          <div class="fd-layer" style="height:12mm;background:var(--ink);flex-shrink:0;flex-direction:column;gap:1mm;padding:2mm;">
+            <span class="fd-layer-label" style="color:var(--moss);font-size:4.5px;">— ŁOMIANKI · 2026</span>
+            <span class="fd-layer-label" style="font-family:'Instrument Serif',serif;font-size:8px;color:var(--bone);">Property name.</span>
+            <span class="fd-layer-label" style="color:var(--stone);font-size:4px;">r2living.pl</span>
+          </div>
+        </div>
+        <div class="fd-caption">4:5 Portrait</div>
+      </div>
+      <!-- Story -->
+      <div class="format-diagram">
+        <div class="fd-frame" style="width:24mm;height:42mm;">
+          <div class="fd-layer" style="height:4mm;background:var(--ink);flex-shrink:0;"><span class="fd-layer-label" style="color:var(--stone);font-size:4px;">safe zone</span></div>
+          <div class="fd-layer" style="flex:1;background:var(--stone);"><span class="fd-layer-label" style="color:var(--bone);">photo</span></div>
+          <div class="fd-layer" style="height:10mm;background:var(--paper);flex-shrink:0;flex-direction:column;gap:0.5mm;padding:1.5mm;">
+            <span class="fd-layer-label" style="color:var(--moss);font-size:4px;">UPDATE · Q4 2026</span>
+            <span class="fd-layer-label" style="font-family:'Instrument Serif',serif;font-size:7px;color:var(--ink);">Progress headline</span>
+            <span class="fd-layer-label" style="color:var(--stone);font-size:4px;">safe zone</span>
+          </div>
+        </div>
+        <div class="fd-caption">9:16 Story</div>
+      </div>
+      <!-- Stat card -->
+      <div class="format-diagram">
+        <div class="fd-frame" style="width:42mm;height:42mm;background:var(--ink);">
+          <div class="fd-layer" style="height:6mm;flex-shrink:0;padding:2mm;"><span class="fd-layer-label" style="color:var(--moss);font-size:4.5px;">— DEVELOPMENT UPDATE</span></div>
+          <div class="fd-layer" style="flex:1;flex-direction:column;gap:1mm;">
+            <span style="font-family:'Instrument Serif',serif;font-size:22px;color:var(--bone);letter-spacing:-.02em;line-height:1;">671<span style="font-size:10px;color:var(--stone);"> m²</span></span>
+            <span class="fd-layer-label" style="color:var(--stone);font-size:5px;letter-spacing:.14em;">NET AREA DELIVERED</span>
+          </div>
+          <div class="fd-layer" style="height:5mm;flex-shrink:0;"><span class="fd-layer-label" style="color:var(--stone);font-size:4.5px;">r2living.pl</span></div>
+        </div>
+        <div class="fd-caption">Stat card</div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>R2 Capital sp. z o.o. · hello@r2living.pl · r2living.pl</span>
+    <span>Brand Guidelines · 2026</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAGE 9 — CAPTION & COPY GUIDE
+══════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-eyebrow">— 07 · Caption &amp; Copy Guide</span>
+    <span class="page-num">9 / 10</span>
+  </div>
+  <div class="page-body">
+    <h2 class="sec-title">Caption &amp; <em>copy guide.</em></h2>
+    <div class="copy-grid">
+      <div class="copy-left">
+        <span class="eyebrow" style="margin-bottom:3mm;">Instagram caption formula</span>
+        <div class="caption-parts">
+          <div class="cp">
+            <div class="cp-title">Hook — first line</div>
+            <p class="cp-text">The first line is the only line visible before "more". Make it earn the tap. One fact, one observation, one question. Under 15 words.</p>
+            <p class="cp-example">"Q4 framing is done. The staircase goes in next week."</p>
+          </div>
+          <div class="cp">
+            <div class="cp-title">Body — 2–4 sentences</div>
+            <p class="cp-text">Expand on the hook with context, a measurement, a material detail. Write for someone who already cares — not someone who needs to be persuaded.</p>
+            <p class="cp-example">"Unit 1 staircase: monolithic reinforced concrete, 282 cm ceiling height on the first floor. The kind of detail you notice every day."</p>
+          </div>
+          <div class="cp">
+            <div class="cp-title">CTA — soft close</div>
+            <p class="cp-text">Never hard-sell. Invite, not push. End with a link prompt or a soft call to action.</p>
+            <p class="cp-example">"Floor plans at r2living.pl" · "DM us to book a site visit." · "More in our story today."</p>
+          </div>
+          <div class="cp">
+            <div class="cp-title">Line breaks</div>
+            <p class="cp-text">Use blank lines between sections. Instagram does not render paragraph breaks without them. One idea per paragraph. Never a wall of text.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="copy-right">
+        <span class="eyebrow" style="margin-bottom:3mm;">Hashtag strategy</span>
+        <p style="font-family:'Geist',sans-serif;font-size:8.5px;color:var(--ink-2);line-height:1.6;margin-bottom:4mm;">Use 5–10 hashtags per post. Place after the caption — after 3–4 line breaks — or in the first comment. Never in the body copy.</p>
+        <div class="hashtag-groups">
+          <div class="hg">
+            <div class="hg-name">Brand tags (always use)</div>
+            <div class="hg-tags">#r2living  #r2capital  #r2livingpl</div>
+          </div>
+          <div class="hg">
+            <div class="hg-name">Location</div>
+            <div class="hg-tags">#lomianki  #kielpin  #warsawsuburbs  #podmiejskiwarszawa</div>
+          </div>
+          <div class="hg">
+            <div class="hg-name">Property</div>
+            <div class="hg-tags">#nieruchomosci  #domywarszawa  #blizniak  #deweloper  #nowydompod</div>
+          </div>
+          <div class="hg">
+            <div class="hg-name">Architecture</div>
+            <div class="hg-tags">#modernarchitecture  #flatroof  #moderndom  #architekturanowoczesna</div>
+          </div>
+          <div class="hg">
+            <div class="hg-name">Lifestyle</div>
+            <div class="hg-tags">#podmiejskiezycie  #naturearound  #kampinos  #podmiejski</div>
+          </div>
+        </div>
+
+        <div class="cadence-table">
+          <div class="cadence-title">Posting cadence</div>
+          <div class="cad-row">
+            <div class="cad-freq">3–4× / week</div>
+            <div class="cad-context">During active construction</div>
+          </div>
+          <div class="cad-row">
+            <div class="cad-freq">1–2× / week</div>
+            <div class="cad-context">Between construction milestones</div>
+          </div>
+          <div class="cad-row">
+            <div class="cad-freq">1× / week</div>
+            <div class="cad-context">Project in sales or completed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>R2 Capital sp. z o.o. · hello@r2living.pl · r2living.pl</span>
+    <span>Brand Guidelines · 2026</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAGE 10 — CONTENT THEMES & CHECKLIST
+══════════════════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-eyebrow">— 08 · Content Themes &amp; Checklist</span>
+    <span class="page-num">10 / 10</span>
+  </div>
+  <div class="page-body">
+    <h2 class="sec-title">Content <em>themes &amp; checklist.</em></h2>
+    <div class="themes-grid">
+      <div class="themes-col">
+        <span class="eyebrow" style="margin-bottom:3mm;">Content theme pillars</span>
+        <div class="theme-items">
+          <div class="theme-item">
+            <div class="theme-name">Construction progress</div>
+            <p class="theme-desc">Weekly or bi-weekly. Show the building going up — framing, screed, windows being fitted. Use real measurements. Caption: what stage, what's next.</p>
+          </div>
+          <div class="theme-item">
+            <div class="theme-name">Material &amp; specification</div>
+            <p class="theme-desc">Feature one material per post: the Porotherm block, triple-glazed frames, torch-on felt roof. Photograph the texture. Explain why it matters.</p>
+          </div>
+          <div class="theme-item">
+            <div class="theme-name">Neighbourhood &amp; location</div>
+            <p class="theme-desc">The Vistula in the morning. The Kampinos forest edge. A quiet Łomianki street. Show why someone would choose to live here.</p>
+          </div>
+          <div class="theme-item">
+            <div class="theme-name">Floor plan &amp; configurator</div>
+            <p class="theme-desc">Explain the layout — which rooms face which direction, why the kitchen is where it is. Show the configurator: "Power outlets before the electrician arrives."</p>
+          </div>
+          <div class="theme-item">
+            <div class="theme-name">Behind the scenes</div>
+            <p class="theme-desc">Site visits. Investor conversations. The architect on site. Show the care behind the product without staging anything.</p>
+          </div>
+          <div class="theme-item">
+            <div class="theme-name">Community &amp; delivery</div>
+            <p class="theme-desc">Keys handed over. Family moving in. Garden in summer. Show that people actually live in R2 homes — and chose well.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="checklist-col">
+        <span class="eyebrow" style="margin-bottom:3mm;">Pre-publish checklist</span>
+        <div class="check-section">
+          <div class="check-section-name">Visual</div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">Image is sharp, minimum 2400px on long edge</div></div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">No heavy filters — colours read true to the building</div></div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">R2 brand colours visible (Ink background, Moss accent, or Bone text)</div></div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">No watermarks or third-party branding visible</div></div>
+        </div>
+        <div class="check-section">
+          <div class="check-section-name">Copy</div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">First line works standalone (visible before "more")</div></div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">No superlatives without evidence (luxury, premium, best)</div></div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">Measurements in correct format: m², not sqm</div></div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">Polish diacritics correct: Łomianki, Wspólna, Kiełpin</div></div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">Hashtags at end or in first comment — not in body copy</div></div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">CTA included and relevant to current project phase</div></div>
+        </div>
+        <div class="check-section">
+          <div class="check-section-name">Brand</div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">Tone is direct and honest — not salesy</div></div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">Instrument Serif used for any text-overlay headings</div></div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">Geist Mono labels in uppercase with generous tracking</div></div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">Moss #3D4A3A used for italic accents and highlights only</div></div>
+          <div class="check-item"><div class="check-box"></div><div class="check-text">r2living.pl in bio is current and linking correctly</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>R2 Capital sp. z o.o. · hello@r2living.pl · r2living.pl</span>
+    <span>Brand Guidelines · 2026</span>
+  </div>
+</div>
+
+</body>
+</html>
