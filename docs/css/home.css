@@ -36,7 +36,7 @@
   margin:30px 0 0;max-width:17ch;
 }
 .home-hero h1 em{font-style:italic;color:var(--moss-2,#9FB58A)}
-.home-hero .lede{font-family:"Instrument Serif",serif;font-size:23px;line-height:1.42;color:var(--stone-2);max-width:50ch;margin-top:52px}
+.home-hero .lede{font-family:"Geist",sans-serif;font-size:23px;line-height:1.42;color:var(--stone-2);max-width:50ch;margin-top:52px}
 .home-hero .heroStats{
   display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:64px;
   margin-top:56px;padding-top:34px;border-top:1px solid rgba(250,247,242,.18)
@@ -73,7 +73,7 @@
 .project .info .pnum{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
 .project .info .pname{font-family:"Instrument Serif",serif;font-weight:400;font-size:60px;line-height:.95;letter-spacing:-.02em;margin:16px 0 8px}
 .project .info .ploc{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
-.project .info .pdesc{font-family:"Instrument Serif",serif;font-size:21px;line-height:1.4;color:var(--ink-2);margin-top:26px;max-width:34ch}
+.project .info .pdesc{font-family:"Geist",sans-serif;font-size:21px;line-height:1.4;color:var(--ink-2);margin-top:26px;max-width:34ch}
 .project .info dl{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px;margin-top:auto;padding-top:36px}
 .project .info dt{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin-bottom:6px}
 .project .info dd{font-family:"Instrument Serif",serif;font-size:23px;line-height:1;letter-spacing:-.01em;color:var(--ink)}
@@ -98,7 +98,7 @@
 .configure .eyebrow{color:var(--moss-2)}
 .configure h2.title{color:var(--bone);max-width:15ch}
 .configure h2.title em{color:var(--stone-2)}
-.configure .lede{font-family:"Instrument Serif",serif;font-size:23px;line-height:1.46;color:rgba(243,239,232,.78);max-width:46ch}
+.configure .lede{font-family:"Geist",sans-serif;font-size:23px;line-height:1.46;color:rgba(243,239,232,.78);max-width:46ch}
 .configure .lede strong{color:var(--bone);font-weight:400;font-style:italic}
 
 .configure .items{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(243,239,232,.16)}
