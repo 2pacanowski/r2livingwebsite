@@ -48,9 +48,9 @@
 /* ===== Projects ===== */
 .projects{background:var(--bone);padding:112px 0 120px;border-top:1px solid var(--rule)}
 .projects .inner{max-width:1440px;margin:0 auto;padding:0 56px}
-.projects .secLabel{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:60px}
-.projects .secLabel h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:40px;line-height:1;letter-spacing:-.015em;color:var(--ink)}
-.projects .secLabel .count{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+.projects .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:80px;margin-bottom:64px}
+.projects .sec-head h2{font-family:"Instrument Serif",serif;font-weight:400;font-size:40px;line-height:1;letter-spacing:-.015em;color:var(--ink)}
+.projects .sec-head .count{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
 
 .project{display:grid;grid-template-columns:1.55fr 1fr;gap:0;border:1px solid var(--rule);background:var(--paper);margin-bottom:28px}
 .project:last-child{margin-bottom:0}
@@ -94,7 +94,7 @@
 /* ===== Configure (dark marketing beat) ===== */
 .configure{background:var(--ink);color:var(--bone);padding:116px 0 104px;border-top:1px solid var(--rule)}
 .configure .inner{max-width:1440px;margin:0 auto;padding:0 56px}
-.configure .secLabel{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:64px}
+.configure .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px}
 .configure .eyebrow{color:var(--moss-2)}
 .configure h2.title{color:var(--bone);max-width:15ch}
 .configure h2.title em{color:var(--stone-2)}
@@ -128,7 +128,7 @@
 .configure .cta .link::after{content:"→";font-family:"Geist",sans-serif;font-size:15px}
 
 @media(max-width:980px){
-  .configure .secLabel{grid-template-columns:1fr;gap:28px;align-items:start}
+  .configure .sec-head{grid-template-columns:1fr;gap:28px;align-items:start}
 
   .configure .items{grid-template-columns:1fr}
   .configure .citem,.configure .citem:first-child,.configure .citem:last-child{padding:32px 0;border-right:none;border-bottom:1px solid rgba(243,239,232,.12);min-height:0}
@@ -138,7 +138,7 @@
 }
 
 /* ===== About ===== */
-.aboutSection{max-width:1440px;margin:0 auto;padding:120px 56px}
+.aboutSection{padding:120px 56px}
 .aboutSection .eyebrow{color:var(--ink-2)}
 .aboutSection h2.title{color:var(--ink)}
 .aboutTop{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:80px}
@@ -154,7 +154,7 @@
 .reserveSection .inner{max-width:1440px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
 .reserveSection .left{padding-right:48px}
 .reserveSection h2.title{color:var(--ink);margin-bottom:18px}
-.reserveSection p.sub{margin-bottom:32px;font-family:"Instrument Serif",serif;font-size:22px;line-height:1.42;color:var(--ink-2);max-width:42ch}
+.reserveSection p.sub{margin-bottom:32px}
 .reserveSection .pts{list-style:none;border-top:1px solid var(--rule)}
 .reserveSection .pts li{display:grid;grid-template-columns:18px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--rule);font-size:14.5px;color:var(--ink-2)}
 .reserveSection .pts li::before{content:"→";font-family:"Geist Mono",monospace;font-size:11px;color:var(--moss);padding-top:2px}
@@ -178,8 +178,8 @@
 
   .projects{padding:64px 0 72px}
   .projects .inner{padding:0 24px}
-  .projects .secLabel{flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:36px}
-  .projects .secLabel h2{font-size:30px}
+  .projects .sec-head{flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:36px}
+  .projects .sec-head h2{font-size:30px}
   .project .info{padding:32px 24px}
   .project .info .pname{font-size:42px}
   .project .info .pdesc{font-size:18px}
@@ -193,12 +193,12 @@
   .configure .lede{font-size:18px}
   .configure .cta .pitch p{font-size:21px}
 
-  .aboutSection{padding:64px 24px}
+  .aboutSection{padding:56px 16px}
   h2.title{font-size:34px}
   .ac{padding-right:0}
 
   .reserveSection{padding:64px 0}
   .reserveSection .inner{grid-template-columns:1fr;gap:32px;padding:0 24px}
   .reserveSection .left{padding-right:0}
-  .reserveSection p.sub{font-size:18px}
+  .reserveSection p.sub{font-size:20px}
 }
