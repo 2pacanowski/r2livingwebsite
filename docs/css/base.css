@@ -212,17 +212,35 @@ p.sub{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.4;color:
 .form .submit::after{content:"→"}
 .form .small{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.14em;color:var(--ink-2);margin-top:14px;text-transform:uppercase;opacity:.7}
 
-/* ===== Shared studio card ===== */
-.studioCard{background:var(--ink);color:var(--bone);padding:48px 44px;display:flex;flex-direction:column;gap:32px}
-.studioCard .sc-label{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone)}
-.studioCard .sc-statement{font-family:"Instrument Serif",serif;font-weight:400;font-size:31px;line-height:1.14;letter-spacing:-.01em;color:var(--bone)}
-.studioCard .sc-statement em{font-style:italic;color:var(--stone-2)}
-.studioCard .sc-stats{margin-top:auto;display:flex;flex-direction:column;border-top:1px solid rgba(243,239,232,.16)}
-.studioCard .sc-stat{display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:18px 0;border-bottom:1px solid rgba(243,239,232,.12)}
-.studioCard .sc-stat:last-child{border-bottom:none}
-.studioCard .sc-stat .v{font-family:"Instrument Serif",serif;font-size:36px;line-height:1;letter-spacing:-.02em}
-.studioCard .sc-stat .v em{font-style:italic;color:var(--stone);font-size:19px}
-.studioCard .sc-stat .k{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);text-align:right;max-width:18ch}
+/* ===== Section head =====
+   Shared by every section on every page. Pages override colour only. */
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px}
+
+/* ===== About section — geometry =====
+   Pages set background/colour and --about-rule; geometry lives here only.
+   1328px = the 1440px .inner max-width minus its 2x56px gutters, so the About
+   content column stays flush with every other section's .inner at wide viewports
+   while the section itself remains full-bleed (the dark pages need the band). */
+.aboutSection{padding:120px 56px}
+.aboutTop{max-width:1328px;margin:0 auto 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.aboutBody{display:flex;flex-direction:column;gap:20px;padding-top:8px}
+.aboutLede{font-family:"Geist",sans-serif;font-size:16px;line-height:1.75}
+.aboutCards{max-width:1328px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--about-rule,var(--rule))}
+.ac{padding:32px 48px 32px 0;border-bottom:1px solid var(--about-rule,var(--rule))}
+.ac:last-child{padding-right:0}
+.ac-n{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px}
+.ac p{font-family:"Geist",sans-serif;font-size:14.5px;line-height:1.65;max-width:36ch}
+
+/* ===== Reserve / contact section =====
+   Identical on all three pages — bone background, so no per-page colour needed. */
+.reserveSection{background:var(--bone);padding:120px 0}
+.reserveSection .inner{max-width:1440px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.reserveSection .left{padding-right:48px}
+.reserveSection h2.title{margin-bottom:18px}
+.reserveSection p.sub{margin-bottom:32px}
+.reserveSection .pts{list-style:none;border-top:1px solid var(--rule)}
+.reserveSection .pts li{display:grid;grid-template-columns:18px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--rule);font-family:"Geist",sans-serif;font-size:14.5px;color:var(--ink-2)}
+.reserveSection .pts li::before{content:"→";font-family:"Geist Mono",monospace;font-size:11px;color:var(--moss);padding-top:2px}
 
 /* ===== Footer ===== */
 footer{background:var(--ink);color:var(--bone);padding:80px 56px 48px}
@@ -241,6 +259,13 @@ footer .legal{max-width:1440px;margin:24px auto 0;display:flex;justify-content:s
 @media(max-width:980px){
   footer .inner{grid-template-columns:1fr 1fr}
   footer .legal{flex-direction:column;gap:8px}
+
+  .sec-head{grid-template-columns:1fr;gap:32px;align-items:start}
+  .aboutTop{grid-template-columns:1fr;gap:32px;margin-bottom:48px}
+  .aboutCards{grid-template-columns:1fr}
+  .ac,.ac:last-child{padding-right:0}
+  .reserveSection .inner{grid-template-columns:1fr;gap:32px}
+  .reserveSection .left{padding-right:0}
 }
 
 @media(max-width:768px){
@@ -250,7 +275,12 @@ footer .legal{max-width:1440px;margin:24px auto 0;display:flex;justify-content:s
 
 @media(max-width:480px){
   nav.top .inner{padding:12px 16px}
-  h2.title{font-size:40px}
+  h2.title{font-size:34px}
+  p.sub{font-size:20px}
+  .sec-head{margin-bottom:32px}
+  .aboutSection{padding:56px 16px}
+  .reserveSection{padding:56px 0}
+  .reserveSection .inner{padding:0 16px}
   .form{padding:24px 16px}
   footer{padding:56px 16px 32px}
   .pull{padding:64px 16px}

@@ -235,36 +235,22 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
 
 /* ===== Pull quote ===== */
 
-/* ===== Reserve / Contact ===== */
-.reserveSection{background:var(--bone);padding:120px 0}
-.reserveSection .inner{max-width:1440px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
-.reserveSection .left{padding-right:48px}
-.reserveSection h2.title{margin-bottom:18px}
-.reserveSection p.sub{margin-bottom:32px}
-.reserveSection .pts{list-style:none;border-top:1px solid var(--rule)}
-.reserveSection .pts li{display:grid;grid-template-columns:18px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--rule);font-size:14.5px;color:var(--ink-2)}
-.reserveSection .pts li::before{content:"→";font-family:"Geist Mono",monospace;font-size:11px;color:var(--moss);padding-top:2px}
+/* ===== Reserve / Contact =====
+   Geometry lives in base.css. Nothing to override here. */
 
-/* ===== About ===== */
-.aboutSection{background:var(--ink);color:var(--bone);padding:120px 56px}
+/* ===== About — dark variant (geometry in base.css) ===== */
+.aboutSection{background:var(--ink);color:var(--bone);--about-rule:rgba(243,239,232,.15)}
 .aboutSection .eyebrow{color:var(--stone)}
 .aboutSection h2.title{color:var(--bone)}
 .aboutSection h2.title em{color:var(--stone)}
-.aboutTop{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:80px}
-.aboutBody{display:flex;flex-direction:column;gap:20px;padding-top:8px}
-.aboutLede{font-size:16px;line-height:1.75;color:rgba(243,239,232,.78)}
-.aboutCards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(243,239,232,.15)}
-.ac{padding:32px 48px 32px 0;border-bottom:1px solid rgba(243,239,232,.15)}
-.ac-n{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:14px}
-.ac p{font-size:14.5px;line-height:1.65;color:rgba(243,239,232,.7);max-width:36ch}
+.aboutLede{color:rgba(243,239,232,.78)}
+.ac-n{color:var(--stone)}
+.ac p{color:rgba(243,239,232,.7)}
 
 @media(max-width:980px){
   .hero h1{font-size:64px;max-width:9ch}
   .hero .bottom{grid-template-columns:1fr;gap:24px;align-items:start}
-  .sec-head,.intro,.locationGrid,.reserveSection .inner{grid-template-columns:1fr;gap:32px}
-  .aboutSection{padding:72px 20px}
-  .aboutTop{grid-template-columns:1fr;gap:32px;margin-bottom:48px}
-  .aboutCards{grid-template-columns:1fr}
+  .intro,.locationGrid{grid-template-columns:1fr;gap:32px}
   .materials{grid-template-columns:1fr 1fr}
   .gallery{grid-template-columns:1fr;grid-auto-rows:auto}
   .g-a,.g-b,.g-c,.g-d,.g-e,.g-f,.g-g{grid-column:1 / -1;grid-row:auto;aspect-ratio:16/9}
@@ -296,9 +282,6 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .hero .stripe .stripeInner{padding:14px 16px;flex-wrap:wrap;gap:12px}
 
   section.block{padding:56px 16px}
-  .sec-head{margin-bottom:32px}
-  h2.title{font-size:34px}
-  p.sub{font-size:20px}
 
   .gallerySection{padding:56px 0}
   .gallerySection .inner{padding:0 16px}
@@ -306,9 +289,6 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .locationSection .inner{padding:0 16px}
   .plotSection{padding:56px 0}
   .plotSection .inner{padding:0 16px}
-  .reserveSection{padding:56px 0}
-  .reserveSection .inner{padding:0 16px}
-  .aboutSection{padding:56px 16px}
 
   .plot{border:1px solid rgba(243,239,232,.14);padding:24px 20px;gap:0}
   .plot:last-child{border-bottom:1px solid rgba(243,239,232,.14)}
@@ -334,6 +314,5 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .locStats .ls .num{font-size:34px}
 
   .aboutLede{font-size:15px}
-  .ac{padding-right:0}
   .gImg img{width:100%;height:100%;object-fit:cover}
 }
