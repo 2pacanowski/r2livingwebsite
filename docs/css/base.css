@@ -245,10 +245,8 @@ p.sub{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.4;color:
 /* ===== Footer ===== */
 footer{background:var(--ink);color:var(--bone);padding:80px 56px 48px}
 footer .inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;align-items:start;padding-bottom:60px;border-bottom:1px solid rgba(243,239,232,.14)}
-footer .brand .logo .two{color:var(--stone)}
-footer .brand p{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.35;color:rgba(243,239,232,.88);max-width:34ch;margin:24px 0 24px}
-footer .brand .stamp{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);display:flex;gap:14px;align-items:center}
-footer .brand .stamp .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--moss)}
+footer .brand p{font-family:"Geist",sans-serif;font-size:16px;line-height:1.6;color:rgba(243,239,232,.88);max-width:34ch;margin:24px 0}
+footer .brand .legalInfo{font-family:"Geist Mono",monospace;font-size:10.5px;line-height:1.7;letter-spacing:.04em;color:var(--stone)}
 footer h5{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:18px;font-weight:500}
 footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 footer ul a{color:rgba(243,239,232,.82);font-size:14px;transition:color .2s}
