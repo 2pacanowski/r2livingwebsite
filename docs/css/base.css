@@ -36,7 +36,14 @@ a{color:inherit;text-decoration:none}
 .logo.s-22 .r{font-size:22px} .logo.s-22 .two{font-size:8px;top:-11px}   .logo.s-22 .living{font-size:18px}
 .dark .logo .two{color:var(--stone)}
 .logo-mark{height:26px;width:auto;display:block}
-.logo-mark.footer{height:30px;filter:invert(1) brightness(1.7)}
+.logo-mark.footer{
+  height:30px;aspect-ratio:138/33;display:block;
+  background-color:var(--paper);
+  -webkit-mask-image:url('../assets/r2-logo-black.svg');mask-image:url('../assets/r2-logo-black.svg');
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-size:contain;mask-size:contain;
+  -webkit-mask-position:left center;mask-position:left center;
+}
 .iglink{display:inline-flex;align-items:center;gap:10px}
 .iglink svg{width:17px;height:17px;flex:none}
 
@@ -237,7 +244,7 @@ p.sub{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.4;color:
 .reserveSection .inner{max-width:1440px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
 .reserveSection .left{padding-right:48px}
 .reserveSection h2.title{margin-bottom:18px}
-.reserveSection p.sub{margin-bottom:32px}
+.reserveSection p.sub{font-family:"Geist",sans-serif;font-size:15px;line-height:1.55;margin-bottom:32px}
 .reserveSection .pts{list-style:none;border-top:1px solid var(--rule)}
 .reserveSection .pts li{display:grid;grid-template-columns:18px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--rule);font-family:"Geist",sans-serif;font-size:14.5px;color:var(--ink-2)}
 .reserveSection .pts li::before{content:"→";font-family:"Geist Mono",monospace;font-size:11px;color:var(--moss);padding-top:2px}

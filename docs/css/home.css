@@ -28,8 +28,7 @@
   100% {opacity:0}
 }
 .home-hero .inner{position:relative;z-index:3;max-width:1440px;margin:0 auto;padding:96px 56px 80px;width:100%}
-.home-hero .eyebrow{display:flex;align-items:center;gap:10px;color:var(--bone)}
-.home-hero .eyebrow .dot{display:inline-block;width:6px;height:6px;background:var(--moss);border-radius:50%}
+.home-hero .eyebrow{color:var(--bone)}
 .home-hero h1{
   font-family:"Instrument Serif",serif;font-weight:400;color:var(--bone);
   font-size:104px;line-height:.94;letter-spacing:-.025em;
@@ -48,7 +47,6 @@
 /* ===== Projects ===== */
 .projects{background:var(--bone);padding:120px 0;border-top:1px solid var(--rule)}
 .projects .inner{max-width:1440px;margin:0 auto;padding:0 56px}
-.projects .sec-head .count{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);justify-self:end}
 
 .project{display:grid;grid-template-columns:1.55fr 1fr;gap:0;border:1px solid var(--rule);background:var(--paper);margin-bottom:28px}
 .project:last-child{margin-bottom:0}
@@ -95,7 +93,7 @@
 .configure .eyebrow{color:var(--moss-2)}
 .configure h2.title{color:var(--bone);max-width:15ch}
 .configure h2.title em{color:var(--stone-2)}
-.configure p.sub{font-family:"Geist",sans-serif;font-size:23px;line-height:1.46;color:rgba(243,239,232,.78);max-width:46ch}
+.configure p.sub{font-family:"Geist",sans-serif;font-size:16px;line-height:1.6;color:rgba(243,239,232,.78);max-width:46ch}
 .configure p.sub strong{color:var(--bone);font-weight:400;font-style:italic}
 
 .configure .items{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(243,239,232,.16)}
@@ -166,6 +164,6 @@
 
   .configure{padding:56px 0}
   .configure .inner{padding:0 16px}
-  .configure p.sub{font-size:18px}
+  .configure p.sub{font-size:15px}
   .configure .cta .pitch p{font-size:21px}
 }
