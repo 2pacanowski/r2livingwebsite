@@ -37,7 +37,7 @@ a{color:inherit;text-decoration:none}
 .dark .logo .two{color:var(--stone)}
 .logo-mark{height:26px;width:auto;display:block}
 .logo-mark.footer{
-  height:30px;aspect-ratio:138/33;display:block;
+  height:30px;width:125px;aspect-ratio:138/33;display:block;flex:none;
   background-color:var(--paper);
   -webkit-mask-image:url('../assets/r2-logo-black.svg');mask-image:url('../assets/r2-logo-black.svg');
   -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
