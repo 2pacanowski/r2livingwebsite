@@ -50,9 +50,9 @@
   to{transform:translateX(-50%)}
 }
 
-/* ===== Section primitives ===== */
+/* ===== Section primitives =====
+   .sec-head geometry lives in base.css (with the responsive collapse). */
 section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relative}
-.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px}
 
 /* ===== Intro / specs ===== */
 .intro{display:grid;grid-template-columns:1.4fr 1fr;gap:80px;border-top:1px solid var(--rule);padding-top:64px}

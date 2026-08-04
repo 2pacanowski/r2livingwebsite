@@ -63,6 +63,9 @@ nav.top .links a.active::after{transform:scaleX(1)}
 nav.top .links a.active{color:var(--ink)}
 nav.top .right{display:flex;align-items:center;gap:18px}
 nav.top .lang{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);display:flex;gap:8px}
+nav.top .lang a{color:var(--ink-2);transition:color .15s}
+nav.top .lang a:hover{color:var(--ink)}
+nav.top .lang a.active{color:var(--ink);font-weight:500;pointer-events:none}
 nav.top .lang b{color:var(--ink);font-weight:500}
 nav.top .btn{
   display:inline-flex;align-items:center;gap:10px;
