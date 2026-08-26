@@ -68,6 +68,8 @@
 .project .pic .tag .ind{width:7px;height:7px;border-radius:50%}
 .project .pic .tag.completed .ind{background:#9FB58A;box-shadow:0 0 10px rgba(159,181,138,.7)}
 .project .pic .tag.soon .ind{background:var(--stone)}
+.project .pic .picPlaceholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.project .pic .picPlaceholder span{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--bone);opacity:.75}
 
 .project .info{padding:52px 48px;display:flex;flex-direction:column}
 .project .info .pnum{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss)}
