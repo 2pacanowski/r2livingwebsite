@@ -245,9 +245,14 @@ p.sub{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.4;color:
 .reserveSection .pts{list-style:none;border-top:1px solid var(--rule)}
 .reserveSection .pts li{display:grid;grid-template-columns:18px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--rule);font-family:"Geist",sans-serif;font-size:14.5px;color:var(--ink-2)}
 .reserveSection .pts li::before{content:"→";font-family:"Geist Mono",monospace;font-size:11px;color:var(--moss);padding-top:2px}
-.reserveSection .waLink{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--moss);transition:color .2s}
-.reserveSection .waLink:hover{color:var(--ink)}
-.reserveSection .waLink::after{content:"→";font-family:"Geist",sans-serif}
+.reserveSection .waLink{
+  display:inline-flex;align-items:center;gap:10px;margin-top:22px;
+  background:#25D366;color:#fff;border:1px solid #25D366;
+  font-family:"Geist Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  padding:15px 22px;transition:background .2s,border-color .2s
+}
+.reserveSection .waLink:hover{background:#1DA851;border-color:#1DA851;color:#fff}
+.reserveSection .waLink svg{width:18px;height:18px;flex:none;fill:#fff}
 
 /* ===== Footer ===== */
 footer{background:var(--ink);color:var(--bone);padding:80px 56px 48px}
