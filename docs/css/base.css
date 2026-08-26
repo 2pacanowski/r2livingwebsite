@@ -263,6 +263,10 @@ footer h5{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.22
 footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 footer ul a{color:rgba(243,239,232,.82);font-size:14px;transition:color .2s}
 footer ul a:hover{color:var(--bone)}
+footer .footerSocial{grid-column:1/-1;display:flex;justify-content:flex-end;gap:14px;margin-top:4px}
+footer .footerSocial a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid rgba(243,239,232,.22);color:rgba(243,239,232,.75);transition:color .2s,border-color .2s,background .2s}
+footer .footerSocial a:hover{color:var(--bone);border-color:rgba(243,239,232,.4);background:rgba(243,239,232,.06)}
+footer .footerSocial svg{width:17px;height:17px}
 footer .disclaimer{max-width:1440px;margin:28px auto 0;font-family:"Geist Mono",monospace;font-size:10.5px;line-height:1.7;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,239,232,.42)}
 footer .legal{max-width:1440px;margin:24px auto 0;display:flex;justify-content:space-between;font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone)}
 
