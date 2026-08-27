@@ -92,6 +92,9 @@
 .project .info .plink.ghost:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
 .project .info .plinks{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-self:flex-start}
 .project .info .plinks .plink{margin-top:0}
+@media(min-width:481px){
+  .project .info .plinks .plink{flex:none;width:240px}
+}
 
 /* ===== Configure (dark marketing beat) ===== */
 .configure{background:var(--ink);color:var(--bone);padding:120px 0;border-top:1px solid rgba(243,239,232,.16)}
