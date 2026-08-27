@@ -52,16 +52,16 @@ nav.top{
   transition:transform .25s ease;
 }
 nav.top.hidden{transform:translateY(-100%)}
-nav.top .inner{max-width:1440px;margin:0 auto;padding:14px 56px;display:flex;align-items:center;justify-content:space-between;gap:48px}
+nav.top .inner{max-width:1440px;margin:0 auto;padding:14px 56px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;justify-items:start;gap:48px}
 nav.top .navPanel{display:contents}
-nav.top .links{display:flex;gap:34px;font-family:"Geist",sans-serif;font-size:13.5px;color:var(--ink-2)}
+nav.top .links{justify-self:center;display:flex;gap:34px;font-family:"Geist",sans-serif;font-size:13.5px;color:var(--ink-2)}
 nav.top .links a{position:relative;padding:6px 0;letter-spacing:-.005em}
 nav.top .links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--moss);transform:scaleX(0);transition:transform .2s ease}
 nav.top .links a:hover{color:var(--ink)}
 nav.top .links a:hover::after,
 nav.top .links a.active::after{transform:scaleX(1)}
 nav.top .links a.active{color:var(--ink)}
-nav.top .right{display:flex;align-items:center;gap:18px}
+nav.top .right{justify-self:end;display:flex;align-items:center;gap:18px}
 nav.top .lang{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);display:flex;gap:8px}
 nav.top .lang a{color:var(--ink-2);transition:color .15s}
 nav.top .lang a:hover{color:var(--ink)}
@@ -132,6 +132,7 @@ nav.top .navDropPanel a:hover{background:var(--bone);color:var(--ink)}
 nav.top .navDropPanel a small{font-family:"Geist Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--moss)}
 
 @media(max-width:768px){
+  nav.top .inner{display:flex;justify-content:space-between}
   nav.top .navToggle{display:flex}
   nav.top .navPanel{
     display:none;position:absolute;top:100%;left:0;right:0;
