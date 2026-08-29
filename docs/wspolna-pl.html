@@ -420,13 +420,13 @@
       <div class="sec-head">
         <div>
           <div class="eyebrow">— 05 · Działki</div>
-          <h2 class="title">Dwa domy.<br/>Oba <em>dostępne.</em></h2>
+          <h2 class="title">Dwa adresy,<br/>oba wciąż <em>dostępne.</em></h2>
         </div>
       </div>
 
       <div class="plotsHead">
-        <span>— Lokal</span>
-        <span>Nazwa</span>
+        <span>Lokal</span>
+        <span>Adres</span>
         <span>Powierzchnia</span>
         <span>Działka</span>
         <span>Cena</span>
@@ -436,22 +436,54 @@
 
       <div class="plot">
         <div class="pid">1</div>
-        <div class="name">Wspólna 20/1<small>Podejście od strony wschodniej</small></div>
-        <div class="val">169,59 m²<small>powierzchnia netto</small></div>
+        <div class="name">Wspólna 20/1<small>od strony wschodniej</small></div>
+        <div class="val">169,59 m²<small>netto</small></div>
         <div class="val">438 m²<small>działka</small></div>
-        <div class="val">1 790 000 PLN<small>10 554,87 PLN / m²</small></div>
+        <div class="val">1 790 000 PLN<small>10 554,87 PLN / m²</small>
+          <button type="button" class="priceHistoryLink" data-modal="ph-1">Historia cen</button>
+        </div>
         <div><span class="status avail"><span class="ind"></span>Dostępny</span></div>
-        <a class="btn-line" href="#reserve">Zgłoś zainteresowanie</a>
+        <a class="btn-line" href="#reserve">Umów wizytę</a>
       </div>
 
       <div class="plot">
         <div class="pid">2</div>
-        <div class="name">Wspólna 20/2<small>Podejście od strony zachodniej</small></div>
-        <div class="val">169,59 m²<small>powierzchnia netto</small></div>
+        <div class="name">Wspólna 20/2<small>od strony zachodniej</small></div>
+        <div class="val">169,59 m²<small>netto</small></div>
         <div class="val">382 m²<small>działka</small></div>
-        <div class="val">1 790 000 PLN<small>10 554,87 PLN / m²</small></div>
+        <div class="val">1 790 000 PLN<small>10 554,87 PLN / m²</small>
+          <button type="button" class="priceHistoryLink" data-modal="ph-2">Historia cen</button>
+        </div>
         <div><span class="status avail"><span class="ind"></span>Dostępny</span></div>
-        <a class="btn-line" href="#reserve">Zgłoś zainteresowanie</a>
+        <a class="btn-line" href="#reserve">Umów wizytę</a>
+      </div>
+    </div>
+
+    <div class="phOverlay" id="ph-1" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Historia cen Wspólna 20/1">
+      <div class="phBox">
+        <button type="button" class="phClose" aria-label="Zamknij">&times;</button>
+        <span class="phEyebrow">— Historia cen</span>
+        <div class="phHead"><h4>Wspólna 20/1</h4></div>
+        <table class="phTable">
+          <thead><tr><th>Data</th><th>Cena</th></tr></thead>
+          <tbody>
+            <tr><td>28.07.2026</td><td>1 790 000 PLN</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="phOverlay" id="ph-2" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Historia cen Wspólna 20/2">
+      <div class="phBox">
+        <button type="button" class="phClose" aria-label="Zamknij">&times;</button>
+        <span class="phEyebrow">— Historia cen</span>
+        <div class="phHead"><h4>Wspólna 20/2</h4></div>
+        <table class="phTable">
+          <thead><tr><th>Data</th><th>Cena</th></tr></thead>
+          <tbody>
+            <tr><td>28.07.2026</td><td>1 790 000 PLN</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -663,6 +695,7 @@
   <script src="js/configurator-pl.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/lightbox.js"></script>
+  <script src="js/priceHistory.js"></script>
   <script>
   (function(){
     if(window.innerWidth > 480) return;

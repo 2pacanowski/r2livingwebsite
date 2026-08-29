@@ -445,7 +445,9 @@
         <div class="name">Wspólna 20/1<small>East-facing approach</small></div>
         <div class="val">169,59 m²<small>net area</small></div>
         <div class="val">438 m²<small>plot</small></div>
-        <div class="val">1 790 000 PLN<small>10 554,87 PLN / m²</small></div>
+        <div class="val">1 790 000 PLN<small>10 554,87 PLN / m²</small>
+          <button type="button" class="priceHistoryLink" data-modal="ph-1">Price History</button>
+        </div>
         <div><span class="status avail"><span class="ind"></span>Available</span></div>
         <a class="btn-line" href="#reserve">Register interest</a>
       </div>
@@ -455,9 +457,39 @@
         <div class="name">Wspólna 20/2<small>West-facing approach</small></div>
         <div class="val">169,59 m²<small>net area</small></div>
         <div class="val">382 m²<small>plot</small></div>
-        <div class="val">1 790 000 PLN<small>10 554,87 PLN / m²</small></div>
+        <div class="val">1 790 000 PLN<small>10 554,87 PLN / m²</small>
+          <button type="button" class="priceHistoryLink" data-modal="ph-2">Price History</button>
+        </div>
         <div><span class="status avail"><span class="ind"></span>Available</span></div>
         <a class="btn-line" href="#reserve">Register interest</a>
+      </div>
+    </div>
+
+    <div class="phOverlay" id="ph-1" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Price history for Wspólna 20/1">
+      <div class="phBox">
+        <button type="button" class="phClose" aria-label="Close">&times;</button>
+        <span class="phEyebrow">— Price History</span>
+        <div class="phHead"><h4>Wspólna 20/1</h4></div>
+        <table class="phTable">
+          <thead><tr><th>Date</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>28.07.2026</td><td>1 790 000 PLN</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="phOverlay" id="ph-2" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Price history for Wspólna 20/2">
+      <div class="phBox">
+        <button type="button" class="phClose" aria-label="Close">&times;</button>
+        <span class="phEyebrow">— Price History</span>
+        <div class="phHead"><h4>Wspólna 20/2</h4></div>
+        <table class="phTable">
+          <thead><tr><th>Date</th><th>Price</th></tr></thead>
+          <tbody>
+            <tr><td>28.07.2026</td><td>1 790 000 PLN</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -669,6 +701,7 @@
   <script src="js/configurator.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/lightbox.js"></script>
+  <script src="js/priceHistory.js"></script>
   <script>
   (function(){
     if(window.innerWidth > 480) return;
