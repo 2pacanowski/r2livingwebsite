@@ -57,3 +57,6 @@
 @media(max-width:480px){
   .phBox{padding:28px 24px}
 }
+
+/* ===== Plots area-calculation note (Wspólna only) ===== */
+.plotsNote{margin-top:8px;font-family:"Geist",sans-serif;font-size:12.5px;line-height:1.65;color:rgba(243,239,232,.55)}
