@@ -30,11 +30,11 @@
 .home-hero .inner{
   position:relative;z-index:3;max-width:1440px;margin:0 auto;
   padding:88px 56px 108px;min-height:min(calc(100vh - var(--nav-h)), 1080px);
-  display:grid;grid-template-rows:auto 1fr auto;gap:0;width:100%;
+  display:grid;align-content:end;gap:0;width:100%;
 }
 .home-hero .topRow{display:flex;justify-content:space-between;align-items:flex-start;gap:32px}
 .home-hero .eyebrow{color:var(--bone)}
-.home-hero .content{align-self:end;max-width:980px;display:flex;flex-direction:column;gap:36px}
+.home-hero .content{align-self:end;max-width:100%;display:flex;flex-direction:column;gap:36px}
 .home-hero h1{
   font-family:"Instrument Serif",serif;font-weight:400;color:var(--bone);
   font-size:104px;line-height:.94;letter-spacing:-.025em;
@@ -156,7 +156,7 @@
 }
 
 @media(max-width:480px){
-  .home-hero .inner{padding:25px 16px 80px;min-height:75svh;display:grid;grid-template-rows:auto 1fr auto}
+  .home-hero .inner{padding:25px 16px 80px;min-height:75svh;display:grid;align-content:end}
   .home-hero h1{font-size:38px;max-width:none}
   .home-hero .lede{font-size:15px}
   .home-hero .ctas{flex-direction:column;align-items:stretch}
