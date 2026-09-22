@@ -293,8 +293,8 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .exploreSection .links a{min-width:0}
   .exploreSection .links .stats{grid-template-columns:1fr 1fr;row-gap:12px}
   .hero h1{font-size:38px;max-width:none}
-  .hero{min-height:88svh}
-  .hero .inner{padding:25px 16px 80px;min-height:88svh;display:grid;grid-template-rows:auto 1fr auto}
+  .hero{min-height:75svh}
+  .hero .inner{padding:25px 16px 80px;min-height:75svh;display:grid;grid-template-rows:auto 1fr auto}
   .hero .stripe{overflow:hidden;user-select:none}
   .hero .stripeTrack{
     display:flex;width:max-content;
@@ -309,7 +309,6 @@ section.block{max-width:1440px;margin:0 auto;padding:120px 56px;position:relativ
   .hero .meta-row{font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .hero .ctas{flex-direction:column;align-items:stretch}
   .hero .btn-primary,.hero .btn-ghost{justify-content:center}
-  .hero .stripe .stripeInner{padding:14px 16px;flex-wrap:wrap;gap:12px}
 
   section.block{padding:56px 16px}
 
