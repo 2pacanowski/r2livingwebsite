@@ -156,6 +156,7 @@
 }
 
 @media(max-width:480px){
+  .home-hero{min-height:75svh}
   .home-hero .inner{padding:25px 16px 80px;min-height:75svh;display:grid;align-content:end}
   .home-hero h1{font-size:38px;max-width:none}
   .home-hero .lede{font-size:15px}
@@ -164,6 +165,7 @@
 
   .projects{padding:56px 0}
   .projects .inner{padding:0 16px}
+  .project .pic{min-height:220px}
   .project .info{padding:32px 20px}
   .project .info .pname{font-size:42px}
   .project .info .pdesc{font-size:14px}

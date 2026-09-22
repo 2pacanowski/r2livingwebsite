@@ -36,8 +36,8 @@
               <a href="porzeczkowa.html">Porzeczkowa V</a>
             </div>
           </div>
-          <a href="#config">Configure</a>
-          <a href="#about">About</a>
+          <a href="index.html#configure">Configure</a>
+          <a href="index.html#about">About</a>
         </div>
         <div class="right">
           <div class="lang"><a href="porzeczkowa.html" class="active">EN</a><span>·</span><a href="porzeczkowa-pl.html">PL</a></div>
@@ -51,12 +51,6 @@
   <section class="hero">
     <div class="bg"></div>
     <div class="inner">
-      <div class="topRow">
-        <div class="meta-row">PORZECZKOWA 5
-·
-KIEŁPIN · 52.34° N · 20.88° E</div>
-      </div>
-
       <div></div>
 
       <div class="content">
@@ -71,12 +65,21 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
     </div>
 
     <div class="stripe">
-      <div class="stripeInner">
-        <div class="item"><span>Plot</span><b>PORZECZKOWA 5</b></div>
-        <div class="item"><span>Units</span><b>2</b></div>
-        <div class="item"><span>Floor area (per unit)</span><b>164 & 170 m²</b></div>
-        <div class="item"><span>Plot</span><b>369 & 431 m²</b></div>
-        <div class="item"><span>Ready</span><b>completed</b></div>
+      <div class="stripeTrack">
+        <div class="stripeInner">
+          <div class="item"><span>Plot</span><b>PORZECZKOWA 5</b></div>
+          <div class="item"><span>Units</span><b>2</b></div>
+          <div class="item"><span>Floor area (per unit)</span><b>164 & 170 m²</b></div>
+          <div class="item"><span>Plot</span><b>369 & 431 m²</b></div>
+          <div class="item"><span>Ready</span><b>completed</b></div>
+        </div>
+        <div class="stripeInner" aria-hidden="true">
+          <div class="item"><span>Plot</span><b>PORZECZKOWA 5</b></div>
+          <div class="item"><span>Units</span><b>2</b></div>
+          <div class="item"><span>Floor area (per unit)</span><b>164 & 170 m²</b></div>
+          <div class="item"><span>Plot</span><b>369 & 431 m²</b></div>
+          <div class="item"><span>Ready</span><b>completed</b></div>
+        </div>
       </div>
     </div>
   </section>
@@ -239,12 +242,12 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
               title="Map of Porzeczkowa 5, Kiełpin, Łomianki"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=20.7600%2C52.3050%2C20.9800%2C52.3850&amp;layer=mapnik&amp;marker=52.3400%2C20.8800"></iframe>
+              src="https://www.openstreetmap.org/export/embed.html?bbox=20.752532%2C52.316521%2C20.972532%2C52.396521&amp;layer=mapnik&amp;marker=52.356521%2C20.862532"></iframe>
           </div>
           <div class="mapBar">
             <span>Porzeczkowa 5 · Kiełpin, Łomianki</span>
-            <span class="coord">52.34° N · 20.88° E</span>
-            <a href="https://www.openstreetmap.org/?mlat=52.34&amp;mlon=20.88#map=13/52.34/20.88" target="_blank" rel="noopener">Open map →</a>
+            <span class="coord">52.36° N · 20.86° E</span>
+            <a href="https://www.openstreetmap.org/?mlat=52.356521&amp;mlon=20.862532#map=13/52.356521/20.862532" target="_blank" rel="noopener">Open map →</a>
           </div>
         </div>
 
@@ -403,7 +406,7 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
       <div>
         <h5>— Company</h5>
         <ul>
-          <li><a href="#about">About</a></li>
+          <li><a href="index.html#about">About</a></li>
         </ul>
       </div>
       <div>
@@ -436,5 +439,33 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
   <script src="js/configurator.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/lightbox.js"></script>
+  <script>
+  (function(){
+    if(window.innerWidth > 480) return;
+    const track = document.querySelector('.hero .stripeTrack');
+    if(!track) return;
+    let startX = 0, startTx = 0, dragging = false;
+    function getTx(){
+      const m = new DOMMatrix(getComputedStyle(track).transform);
+      return m.m41;
+    }
+    track.addEventListener('pointerdown', function(e){
+      dragging = true;
+      startX = e.clientX;
+      startTx = getTx();
+      track.classList.add('is-dragging');
+      track.setPointerCapture(e.pointerId);
+    });
+    track.addEventListener('pointermove', function(e){
+      if(!dragging) return;
+      track.style.transform = 'translateX('+(startTx + e.clientX - startX)+'px)';
+    });
+    track.addEventListener('pointerup', function(){
+      dragging = false;
+      track.classList.remove('is-dragging');
+      track.style.transform = '';
+    });
+  })();
+  </script>
 </body>
 </html>

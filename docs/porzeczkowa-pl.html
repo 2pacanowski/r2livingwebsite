@@ -36,8 +36,8 @@
               <a href="porzeczkowa-pl.html">Porzeczkowa V</a>
             </div>
           </div>
-          <a href="#config">Konfigurator</a>
-          <a href="#about">O nas</a>
+          <a href="index-pl.html#configure">Konfigurator</a>
+          <a href="index-pl.html#about">O nas</a>
         </div>
         <div class="right">
           <div class="lang"><a href="porzeczkowa.html">EN</a><span>·</span><a href="porzeczkowa-pl.html" class="active">PL</a></div>
@@ -51,12 +51,6 @@
   <section class="hero">
     <div class="bg"></div>
     <div class="inner">
-      <div class="topRow">
-        <div class="meta-row">PORZECZKOWA 5
-·
-KIEŁPIN · 52.34° N · 20.88° E</div>
-      </div>
-
       <div></div>
 
       <div class="content">
@@ -71,12 +65,21 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
     </div>
 
     <div class="stripe">
-      <div class="stripeInner">
-        <div class="item"><span>Lokalizacja</span><b>Kiełpin</b></div>
-        <div class="item"><span>Lokale</span><b>2</b></div>
-        <div class="item"><span>Powierzchnia (na lokal)</span><b>170 lub 164 m²</b></div>
-        <div class="item"><span>Działka</span><b>431 lub 369 m²</b></div>
-        <div class="item"><span>Termin</span><b>Oddano w użytkowanie</b></div>
+      <div class="stripeTrack">
+        <div class="stripeInner">
+          <div class="item"><span>Lokalizacja</span><b>Kiełpin</b></div>
+          <div class="item"><span>Lokale</span><b>2</b></div>
+          <div class="item"><span>Powierzchnia (na lokal)</span><b>170 lub 164 m²</b></div>
+          <div class="item"><span>Działka</span><b>431 lub 369 m²</b></div>
+          <div class="item"><span>Termin</span><b>Oddano w użytkowanie</b></div>
+        </div>
+        <div class="stripeInner" aria-hidden="true">
+          <div class="item"><span>Lokalizacja</span><b>Kiełpin</b></div>
+          <div class="item"><span>Lokale</span><b>2</b></div>
+          <div class="item"><span>Powierzchnia (na lokal)</span><b>170 lub 164 m²</b></div>
+          <div class="item"><span>Działka</span><b>431 lub 369 m²</b></div>
+          <div class="item"><span>Termin</span><b>Oddano w użytkowanie</b></div>
+        </div>
       </div>
     </div>
   </section>
@@ -231,15 +234,15 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
         <div class="mapFrame">
           <div class="mapCanvas">
             <iframe
-              title="Mapa Wspólna, Łomianki Dolne"
+              title="Mapa Porzeczkowa 5, Kiełpin, Łomianki"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=20.7792%2C52.3074%2C20.9992%2C52.3874&amp;layer=mapnik&amp;marker=52.3474%2C20.8892"></iframe>
+              src="https://www.openstreetmap.org/export/embed.html?bbox=20.752532%2C52.316521%2C20.972532%2C52.396521&amp;layer=mapnik&amp;marker=52.356521%2C20.862532"></iframe>
           </div>
           <div class="mapBar">
-            <span>Wspólna · Łomianki Dolne</span>
-            <span class="coord">52°20'50.7"N · 20°53'21.2"E</span>
-            <a href="https://www.openstreetmap.org/?mlat=52.3474&amp;mlon=20.8892#map=14/52.3474/20.8892" target="_blank" rel="noopener">Otwórz mapę →</a>
+            <span>Porzeczkowa 5 · Kiełpin, Łomianki</span>
+            <span class="coord">52.36° N · 20.86° E</span>
+            <a href="https://www.openstreetmap.org/?mlat=52.356521&amp;mlon=20.862532#map=13/52.356521/20.862532" target="_blank" rel="noopener">Otwórz mapę →</a>
           </div>
         </div>
 
@@ -398,7 +401,7 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
       <div>
         <h5>— Firma</h5>
         <ul>
-          <li><a href="#about">O nas</a></li>
+          <li><a href="index-pl.html#about">O nas</a></li>
         </ul>
       </div>
       <div>
@@ -431,5 +434,33 @@ KIEŁPIN · 52.34° N · 20.88° E</div>
   <script src="js/configurator-pl.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/lightbox.js"></script>
+  <script>
+  (function(){
+    if(window.innerWidth > 480) return;
+    const track = document.querySelector('.hero .stripeTrack');
+    if(!track) return;
+    let startX = 0, startTx = 0, dragging = false;
+    function getTx(){
+      const m = new DOMMatrix(getComputedStyle(track).transform);
+      return m.m41;
+    }
+    track.addEventListener('pointerdown', function(e){
+      dragging = true;
+      startX = e.clientX;
+      startTx = getTx();
+      track.classList.add('is-dragging');
+      track.setPointerCapture(e.pointerId);
+    });
+    track.addEventListener('pointermove', function(e){
+      if(!dragging) return;
+      track.style.transform = 'translateX('+(startTx + e.clientX - startX)+'px)';
+    });
+    track.addEventListener('pointerup', function(){
+      dragging = false;
+      track.classList.remove('is-dragging');
+      track.style.transform = '';
+    });
+  })();
+  </script>
 </body>
 </html>

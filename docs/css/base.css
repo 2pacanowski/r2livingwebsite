@@ -298,6 +298,8 @@ footer .legal{max-width:1440px;margin:24px auto 0;display:flex;justify-content:s
   .reserveSection .inner{padding:0 16px}
   .form{padding:24px 16px}
   footer{padding:56px 16px 32px}
+  footer .inner{grid-template-columns:1fr;gap:40px;padding-bottom:40px}
+  footer .footerSocial{justify-content:flex-start}
   .pull{padding:64px 16px}
   .pull h3{font-size:34px}
   .pull .pitch{font-size:17px}

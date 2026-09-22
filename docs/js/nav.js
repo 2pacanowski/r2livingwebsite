@@ -27,6 +27,7 @@
   });
 
   panel.querySelectorAll('.links > a').forEach(a => a.addEventListener('click', close));
+  panel.querySelectorAll('.right > a').forEach(a => a.addEventListener('click', close));
 
   // Developments dropdown
   const dropTrigger = nav.querySelector('.navDropTrigger');
