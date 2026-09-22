@@ -191,6 +191,7 @@ p.sub{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.4;color:
 
 /* ===== Shared form ===== */
 .form{background:var(--paper);border:1px solid var(--rule);padding:40px}
+.form .hp-field{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden}
 .form .field{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
 .form label{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--moss)}
 .form input,.form select,.form textarea{
@@ -258,7 +259,7 @@ p.sub{font-family:"Instrument Serif",serif;font-size:22px;line-height:1.4;color:
 /* ===== Footer ===== */
 footer{background:var(--ink);color:var(--bone);padding:80px 56px 48px}
 footer .inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;align-items:start;padding-bottom:60px;border-bottom:1px solid rgba(243,239,232,.14)}
-footer .brand p{font-family:"Geist",sans-serif;font-size:16px;line-height:1.6;color:rgba(243,239,232,.88);max-width:34ch;margin:24px 0}
+footer .brand p{font-family:"Geist",sans-serif;font-size:15px;line-height:1.6;color:rgba(243,239,232,.88);max-width:34ch;margin:24px 0}
 footer .brand .legalInfo{font-family:"Geist Mono",monospace;font-size:10.5px;line-height:1.7;letter-spacing:.04em;color:var(--stone)}
 footer h5{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:18px;font-weight:500}
 footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}

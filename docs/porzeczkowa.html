@@ -363,7 +363,9 @@
         </a>
       </div>
 
-      <form class="form" id="contactForm">
+      <form class="form" id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hp-field"><label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
         <div class="row2">
           <div class="field"><label for="fn">First name</label><input id="fn" name="firstName" required placeholder="Anna" /></div>
           <div class="field"><label for="ln">Last name</label><input id="ln" name="lastName" required placeholder="Kowalska" /></div>
