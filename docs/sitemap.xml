@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://r2living.pl/index-pl.html</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://r2living.pl/index-pl.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://r2living.pl/index.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://r2living.pl/index-pl.html" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://r2living.pl/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://r2living.pl/index-pl.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://r2living.pl/index.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://r2living.pl/index-pl.html" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://r2living.pl/wspolna-pl.html</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://r2living.pl/wspolna-pl.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://r2living.pl/wspolna.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://r2living.pl/wspolna-pl.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://r2living.pl/wspolna.html</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://r2living.pl/wspolna-pl.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://r2living.pl/wspolna.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://r2living.pl/wspolna-pl.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://r2living.pl/porzeczkowa-pl.html</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://r2living.pl/porzeczkowa-pl.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://r2living.pl/porzeczkowa.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://r2living.pl/porzeczkowa-pl.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://r2living.pl/porzeczkowa.html</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://r2living.pl/porzeczkowa-pl.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://r2living.pl/porzeczkowa.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://r2living.pl/porzeczkowa-pl.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://r2living.pl/wspolna-brochure-pl.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://r2living.pl/polityka-prywatnosci.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+</urlset>
