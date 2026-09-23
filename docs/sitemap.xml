@@ -3,19 +3,19 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://r2living.pl/index-pl.html</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://r2living.pl/index-pl.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://r2living.pl/index.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://r2living.pl/index-pl.html" />
+    <loc>https://r2living.pl/</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://r2living.pl/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://r2living.pl/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://r2living.pl/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://r2living.pl/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://r2living.pl/index-pl.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://r2living.pl/index.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://r2living.pl/index-pl.html" />
+    <loc>https://r2living.pl/en</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://r2living.pl/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://r2living.pl/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://r2living.pl/" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
