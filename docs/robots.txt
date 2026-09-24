@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /unlisted/
 
 Sitemap: https://r2living.pl/sitemap.xml

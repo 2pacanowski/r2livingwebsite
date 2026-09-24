@@ -57,12 +57,6 @@
   </url>
 
   <url>
-    <loc>https://r2living.pl/wspolna-brochure-pl.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
     <loc>https://r2living.pl/polityka-prywatnosci.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
