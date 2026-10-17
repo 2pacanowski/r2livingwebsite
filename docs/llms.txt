@@ -1,0 +1,21 @@
+# R2 Living
+
+> R2 Living is a boutique real estate developer building modern semi-detached duplex homes in the quiet suburbs north of Warsaw, Poland (the Łomianki area). Owned by R2 Capital sp. z o.o. The company builds 2 to 4 projects a year and lets buyers configure parts of the floor plan while the home is still under construction.
+
+## Developments
+
+- [Wspólna XX](https://r2living.pl/wspolna): Semi-detached duplex under construction in Łomianki. 2 units, 169.59 m² total floor area each, 3 bedrooms, 3 bathrooms, plots of 438 m² and 382 m². 1,690,000 PLN per unit. Ready Q2 2027. Both units available. English version: https://r2living.pl/en/wspolna
+- [Porzeczkowa V](https://r2living.pl/porzeczkowa): Completed semi-detached duplex in Kiełpin, Łomianki. 2 units, 170 m² and 164 m² total floor area, 3 bedrooms and 3 bathrooms each, plots of 431 m² and 369 m². Both units sold. English version: https://r2living.pl/en/porzeczkowa
+
+## Company
+
+- Home (Polish, default): https://r2living.pl/
+- Home (English): https://r2living.pl/en
+- Contact: hello@r2living.pl, +48 515 581 363, WhatsApp https://wa.me/48515581363
+- Legal entity: R2 Capital sp. z o.o., Al. Solidarności 68/121, 00-240 Warszawa, Poland. NIP 5253097676, KRS 0001252926.
+- Privacy policy: https://r2living.pl/polityka-prywatnosci.html
+
+## Notes
+
+- All content exists in Polish (default, no URL prefix) and English (/en prefix).
+- Prices and availability shown above reflect the site at time of writing; always confirm current figures against the linked pages.
